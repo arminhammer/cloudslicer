@@ -2,18 +2,30 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
+    <div id="ytapiplayer">
+      You need Flash player 8+ and JavaScript enabled to view this video.
+    </div>
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">Kick-start your next web app with Angular Fullstack</p>
     <img src="assets/images/yeoman.png" alt="I'm Yeoman">
   </div>
 </header>
 
+<script type="text/javascript">
+
+  var params = { allowScriptAccess: "always" };
+  var atts = { id: "myytplayer" };
+  swfobject.embedSWF("http://www.youtube.com/v/VIDEO_ID?enablejsapi=1&playerapiid=ytplayer&version=3",
+    "ytapiplayer", "425", "356", "8", null, null, params, atts);
+
+</script>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      <h1 class="page-header">Videos</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="video in videoList">
+        <li><a href="#" tooltip="{{video.info}}">{{video.name}}<button type="button" class="close" ng-click="deleteVideo(video)">&times;</button></a></li>
       </ul>
     </div>
   </div>
@@ -21,9 +33,9 @@
   <form class="thing-form">
     <label>Syncs in realtime across clients</label>
     <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
+      <input type="text" class="form-control" placeholder="Add a new video here." ng-model="newVideo">
       <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+        <button type="submit" class="btn btn-primary" ng-click="addVideo()">Add New</button>
       </span>
     </p>
   </form>

@@ -2,26 +2,26 @@
 
 angular.module('beatschApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+    $scope.videoList = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
+    $http.get('/api/videos').success(function(videoList) {
+      $scope.videoList = videoList;
+      socket.syncUpdates('video', $scope.videoList);
     });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
+    $scope.addVideo = function() {
+      if($scope.newVideo === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+      $http.post('/api/videos', { name: $scope.newVideo });
+      $scope.newVideo = '';
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.deleteVideo = function(video) {
+      $http.delete('/api/videos/' + video._id);
     };
 
     $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('video');
     });
   });
