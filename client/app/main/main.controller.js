@@ -2,6 +2,9 @@
 
 angular.module('beatschApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
+
+    $scope.testVideo = 'TdrL3QxjyVw';
+
     $scope.videoList = [];
 
     $http.get('/api/videos').success(function(videoList) {
