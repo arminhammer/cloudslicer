@@ -3,28 +3,28 @@
 angular.module('beatschApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
 
-    $scope.testVideo = 'TdrL3QxjyVw';
+    $scope.testSong = 'TdrL3QxjyVw';
 
-    $scope.videoList = [];
+    $scope.songList = [];
 
-    $http.get('/api/videos').success(function(videoList) {
-      $scope.videoList = videoList;
-      socket.syncUpdates('video', $scope.videoList);
+    $http.get('/api/songs').success(function(songList) {
+      $scope.songList = songList;
+      socket.syncUpdates('song', $scope.songList);
     });
 
-    $scope.addVideo = function() {
-      if($scope.newVideo === '') {
+    $scope.addSong = function() {
+      if($scope.newSong === '') {
         return;
       }
-      $http.post('/api/videos', { name: $scope.newVideo });
-      $scope.newVideo = '';
+      $http.post('/api/songs', { name: $scope.newSong });
+      $scope.newSong = '';
     };
 
-    $scope.deleteVideo = function(video) {
-      $http.delete('/api/videos/' + video._id);
+    $scope.deleteSong = function(song) {
+      $http.delete('/api/songs/' + song._id);
     };
 
     $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('video');
+      socket.unsyncUpdates('song');
     });
   });
