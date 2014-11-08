@@ -7,16 +7,18 @@ angular.module('beatschApp')
 
     $scope.songList = new SongList();
 
-    $http.get('/api/songs').success(function(songList) {
-      $scope.songList = songList;
-      socket.syncUpdates('song', $scope.songList);
+    $scope.playList = [];
+
+    $http.get('/api/songs/playlist').success(function(playlist) {
+      $scope.playList = playlist;
+      socket.syncUpdates('song', $scope.playList);
     });
 
     $scope.addSong = function() {
       if($scope.newSong === '') {
         return;
       }
-      $http.post('/api/songs', { title: $scope.newSong });
+      $http.post('/api/songs', { title: $scope.newSong, votes: 1, inPlaylist: false });
       $scope.newSong = '';
     };
 
@@ -42,7 +44,7 @@ angular.module('beatschApp')
           for(var i=0; i < songList.length; i++) {
             this.list.push(songList[i]);
           }
-          socket.syncUpdates('song', this.list);
+          //socket.syncUpdates('song', this.list);
           //this.list = songList;
          }.bind(this));
 

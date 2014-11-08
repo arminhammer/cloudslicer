@@ -7,29 +7,9 @@
 </header>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Songs</h1>
-      <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
-        <div ng-repeat='song in songList'>
-          <span class='score'>{{song.title}}</span>
-      <span class='title'>
-        <a ng-href='{{song.title}}' target='_blank'>{{song.title}}</a>
-      </span>
-          <div style='clear: both;'></div>
-        </div>
-        <!--<div ng-show='reddit.busy'>Loading data...</div>-->
-      </div>
-      <!--
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="song in songList">
-        <li><a href="#" tooltip="{{song.info}}">{{song.name}}<button type="button" class="close" ng-click="deleteSong(song)">&times;</button></a></li>
-      </ul>
-      -->
-    </div>
-  </div>
 
   <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
+    <label>Add a new song to the playlist</label>
     <p class="input-group">
       <input type="text" class="form-control" placeholder="Add a new song here." ng-model="newSong">
       <span class="input-group-btn">
@@ -37,6 +17,37 @@
       </span>
     </p>
   </form>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Playlist</h1>
+      <div>
+
+        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in playList | orderBy: '-votes'">
+          <li><a href="#" tooltip="{{song.title}}">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}<button type="button" class="close" ng-click="deleteSong(song)">&times;</button></a></li>
+        </ul>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Song Catalog</h1>
+      <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
+
+        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in songList.list">
+          <li><a href="#" tooltip="{{song}}">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}</a></li>
+        </ul>
+
+      </div>
+
+
+    </div>
+  </div>
+
 </div>
 
 <footer class="footer">

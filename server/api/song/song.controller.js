@@ -5,10 +5,29 @@ var Song = require('./song.model');
 
 // Get list of songs
 exports.index = function(req, res) {
-  Song.find(function (err, songs) {
+  Song.find({ 'inPlaylist' : false }, function (err, songs) {
     if(err) { return handleError(res, err); }
     return res.json(200, songs);
   });
+};
+
+exports.playlist = function(req, res) {
+  Song.find({ 'inPlaylist' : true })
+    .sort('votes')
+    .exec(function (err, songs) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, songs);
+  });
+
+  /*
+  Song.find()
+    .where('inPlaylist').equals(fart)
+    .sort('votes')
+    .exec(function (err, songs) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, songs);
+  });
+  */
 };
 
 // Get a single song
