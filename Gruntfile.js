@@ -377,6 +377,12 @@ module.exports = function (grunt) {
         connectCommits: false,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
       },
+      pages: {
+        options: {
+          remote: 'git@github.com:arminhammer/beatsch.git',
+          branch: 'gh-pages'
+        }
+      },
       heroku: {
         options: {
           remote: 'heroku',
@@ -492,7 +498,7 @@ module.exports = function (grunt) {
           ]
         }
       }
-    },
+    }
   });
 
   // Used for delaying livereload until after server has restarted
