@@ -53,7 +53,8 @@ exports.addVote = function(req, res) {
   Song.findById(req.params.id, function (err, song) {
     if (err) { return handleError(res, err); }
     if(!song) { return res.send(404); }
-    song.votes++;
+    song.votes.current++;
+    song.votes.total++;
     if(!song.inPlaylist) {
       song.inPlaylist = true;
     }

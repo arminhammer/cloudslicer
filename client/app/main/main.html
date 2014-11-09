@@ -23,8 +23,8 @@
       <h1 class="page-header">Playlist</h1>
       <div>
 
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in playList | orderBy: '-votes'">
-          <li><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}</a></li>
+        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in playList | orderBy: '-votes.current'">
+          <li><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }} Current Votes: {{ song.votes.current }}, Total Votes: {{ song.votes.total }}, inPlaylist: {{ song.inPlaylist }}</a></li>
         </ul>
 
       </div>
@@ -39,7 +39,7 @@
       <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
 
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in songList.list | orderBy: '-votes'">
-          <li><a href="#" tooltip="{{song}}" ng-click="voteFor(song)">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}</a></li>
+          <li><a href="#" tooltip="{{song}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }} Current Votes: {{ song.votes.current }}, Total Votes: {{ song.votes.total }}, inPlaylist: {{ song.inPlaylist }}</a></li>
         </ul>
 
       </div>

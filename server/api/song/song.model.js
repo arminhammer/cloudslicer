@@ -5,9 +5,18 @@ var mongoose = require('mongoose'),
 
 var SongSchema = new Schema({
   title: String,
+  artist: String,
   info: String,
   inPlaylist: Boolean,
-  votes: Number
+  source: String,
+  url: {
+    full: String,
+    youtubeid: String
+  },
+  votes: {
+    current: Number,
+    total: Number
+  }
 });
 
 module.exports = mongoose.model('Song', SongSchema);
