@@ -35,6 +35,12 @@ var Playlist = function() {
     console.log('track %s added to the playlist', track);
   }
 
+  this.getTrackList = function() {
+
+    return tracks;
+
+  }
+
   this.start = function() {
 
     manager = setInterval(manage, 1000);

@@ -7,6 +7,8 @@ var Playlist = require('./playlist');
 var playList = new Playlist();
 playList.addTrack({ title: 'Title1', tLength: 10000 });
 playList.addTrack({ title: 'Title2', tLength: 25000 });
+playList.addTrack({ title: 'Title3', tLength: 20000 });
+
 playList.start();
 
 // Get list of songs
@@ -18,12 +20,17 @@ exports.index = function(req, res) {
 };
 
 exports.playlist = function(req, res) {
+
+  return res.json(200, playList.getTrackList());
+
+  /*
   Song.find({ 'inPlaylist' : true })
     .sort('votes.current')
     .exec(function (err, songs) {
     if(err) { return handleError(res, err); }
     return res.json(200, songs);
   });
+  */
 
   /*
   Song.find()

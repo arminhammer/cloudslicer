@@ -7,7 +7,6 @@
 
 var Song = require('../api/song/song.model');
 var User = require('../api/user/user.model');
-var Playlist = require('../api/playlist/playlist.model');
 
 Song.find({}).remove(function() {
   Song.create(
