@@ -2,6 +2,12 @@
 
 var _ = require('lodash');
 var Song = require('./song.model');
+var Playlist = require('./playlist');
+
+var playList = new Playlist();
+playList.addTrack({ title: 'Title1', tLength: 10000 });
+playList.addTrack({ title: 'Title2', tLength: 25000 });
+playList.start();
 
 // Get list of songs
 exports.index = function(req, res) {

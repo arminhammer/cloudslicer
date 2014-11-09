@@ -67,7 +67,7 @@ angular.module('beatschApp')
 
       console.log('youtube.player.ready');
 
-      console.log("Playlist before");
+      console.log('Playlist before');
       console.log(player.getPlaylist());
 
       player.cuePlaylist({
@@ -80,30 +80,30 @@ angular.module('beatschApp')
 
       });
 
-      console.log("Playlist after");
+      console.log('Playlist after');
       console.log(player.getPlaylist());
 
     });
 
-    $scope.$on('youtube.player.playing', function ($event, player) {
+    $scope.$on('youtube.player.playing', function () {
 
       console.log('youtube.player.playing');
 
     });
 
-    $scope.$on('youtube.player.paused', function ($event, player) {
+    $scope.$on('youtube.player.paused', function () {
 
       console.log('youtube.player.paused');
 
     });
 
-    $scope.$on('youtube.player.buffering', function ($event, player) {
+    $scope.$on('youtube.player.buffering', function () {
 
       console.log('youtube.player.buffering');
 
     });
 
-    $scope.$on('youtube.player.queued', function ($event, player) {
+    $scope.$on('youtube.player.queued', function () {
 
       console.log('youtube.player.queued');
 
