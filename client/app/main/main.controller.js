@@ -18,6 +18,22 @@ angular.module('beatschApp')
 
     $scope.songList = new SongList();
 
+    $scope.playListVideoIds = function() {
+
+      var playList = $scope.playList;
+      var count = playList.length;
+      var returnList = [];
+
+      for(var i = 0; i < count; i++) {
+
+          returnList.push(playList[i].url.videoId);
+
+      }
+
+      return returnList;
+
+    };
+
     $scope.playList = [];
 
     $http.get('/api/songs/playlist').success(function(playlist) {
@@ -47,10 +63,62 @@ angular.module('beatschApp')
       socket.unsyncUpdates('song');
     });
 
-    $scope.$on('youtube.player.ended', function ($event, player) {
-      // play it again
-      player.playVideo();
+    $scope.$on('youtube.player.ready', function ($event, player) {
+
+      console.log('youtube.player.ready');
+
+      console.log("Playlist before");
+      console.log(player.getPlaylist());
+
+      player.cuePlaylist({
+
+        listType: 'playlist',
+        list: $scope.playListVideoIds(),
+        index: 0,
+        startSeconds: 0,
+        suggestedQuality: 'default'
+
+      });
+
+      console.log("Playlist after");
+      console.log(player.getPlaylist());
+
     });
+
+    $scope.$on('youtube.player.playing', function ($event, player) {
+
+      console.log('youtube.player.playing');
+
+    });
+
+    $scope.$on('youtube.player.paused', function ($event, player) {
+
+      console.log('youtube.player.paused');
+
+    });
+
+    $scope.$on('youtube.player.buffering', function ($event, player) {
+
+      console.log('youtube.player.buffering');
+
+    });
+
+    $scope.$on('youtube.player.queued', function ($event, player) {
+
+      console.log('youtube.player.queued');
+
+    });
+
+    $scope.$on('youtube.player.ended', function ($event, player) {
+
+        console.log('youtube.player.ended');
+        var nextVid = $scope.playList[1].url.youtubeid;
+        console.log('nextVid: %s', nextVid);
+        player.loadVideoById(nextVid);
+        player.playVideo();
+
+    });
+
   })
   .factory('SongList', function($http) {
 
