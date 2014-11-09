@@ -13,7 +13,7 @@ exports.index = function(req, res) {
 
 exports.playlist = function(req, res) {
   Song.find({ 'inPlaylist' : true })
-    .sort('votes')
+    .sort('votes.current')
     .exec(function (err, songs) {
     if(err) { return handleError(res, err); }
     return res.json(200, songs);

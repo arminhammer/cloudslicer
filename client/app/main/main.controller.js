@@ -3,7 +3,18 @@
 angular.module('beatschApp')
   .controller('MainCtrl', function ($scope, $http, socket, SongList) {
 
-    $scope.testSong = 'TdrL3QxjyVw';
+    $scope.currentSong = 'tUmlmDtxcBo';
+
+    $scope.getNextSong = function() {
+
+      if($scope.playList.length === 0) {
+        return '';
+      }
+      else {
+        return $scope.playList[0].url.youtubeid;
+      }
+
+    };
 
     $scope.songList = new SongList();
 
@@ -24,7 +35,7 @@ angular.module('beatschApp')
       if($scope.newSong === '') {
         return;
       }
-      $http.post('/api/songs', { title: $scope.newSong, votes: 1, inPlaylist: false });
+      $http.post('/api/songs', { title: $scope.newSong, votes: {current: 1, total: 1 }, inPlaylist: false });
       $scope.newSong = '';
     };
 
@@ -34,6 +45,11 @@ angular.module('beatschApp')
 
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('song');
+    });
+
+    $scope.$on('youtube.player.ended', function ($event, player) {
+      // play it again
+      player.playVideo();
     });
   })
   .factory('SongList', function($http) {

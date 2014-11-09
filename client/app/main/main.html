@@ -1,11 +1,5 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <youtube-video song-id="testSong"></youtube-song>
-  </div>
-</header>
-
 <div class="container">
 
   <form class="thing-form">
@@ -17,6 +11,12 @@
       </span>
     </p>
   </form>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <youtube-video video-id="getNextSong()"></youtube-video>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-lg-12">

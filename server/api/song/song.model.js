@@ -6,7 +6,6 @@ var mongoose = require('mongoose'),
 var SongSchema = new Schema({
   title: String,
   artist: String,
-  info: String,
   inPlaylist: Boolean,
   source: String,
   url: {
@@ -16,7 +15,8 @@ var SongSchema = new Schema({
   votes: {
     current: Number,
     total: Number
-  }
+  },
+  _submitter: { type: Number, ref: 'User'}
 });
 
 module.exports = mongoose.model('Song', SongSchema);
