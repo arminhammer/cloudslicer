@@ -24,7 +24,7 @@
       <div>
 
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in playList | orderBy: '-votes'">
-          <li><a href="#" tooltip="{{song.title}}">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}<button type="button" class="close" ng-click="deleteSong(song)">&times;</button></a></li>
+          <li><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}</a></li>
         </ul>
 
       </div>
@@ -38,8 +38,8 @@
       <h1 class="page-header">Song Catalog</h1>
       <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
 
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in songList.list">
-          <li><a href="#" tooltip="{{song}}">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}</a></li>
+        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in songList.list | orderBy: '-votes'">
+          <li><a href="#" tooltip="{{song}}" ng-click="voteFor(song)">{{ song.title }} Votes: {{ song.votes }}, inPlaylist: {{ song.inPlaylist }}</a></li>
         </ul>
 
       </div>

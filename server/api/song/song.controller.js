@@ -48,6 +48,23 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing song in the DB.
+exports.addVote = function(req, res) {
+  //if(req.body._id) { delete req.body._id; }
+  Song.findById(req.params.id, function (err, song) {
+    if (err) { return handleError(res, err); }
+    if(!song) { return res.send(404); }
+    song.votes++;
+    if(!song.inPlaylist) {
+      song.inPlaylist = true;
+    }
+    song.save(function (err) {
+      if (err) { return handleError(res, err); }
+      return res.json(200, song);
+    });
+  });
+};
+
+// Updates an existing song in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
   Song.findById(req.params.id, function (err, song) {

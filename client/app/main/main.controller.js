@@ -14,6 +14,12 @@ angular.module('beatschApp')
       socket.syncUpdates('song', $scope.playList);
     });
 
+    $scope.voteFor = function(song) {
+      $http.get('/api/songs/' + song._id + '/vote');
+      socket.syncUpdates('song', $scope.playList);
+      socket.syncUpdates('song', $scope.songList.list);
+    };
+
     $scope.addSong = function() {
       if($scope.newSong === '') {
         return;
