@@ -15,6 +15,7 @@ Song.find({}).remove(function() {
       artist: 'Lana Del Rey',
       inPlaylist: false,
       source: 'youtube',
+      length: 30000,
       url: {
         full: 'https://www.youtube.com/watch?v=TdrL3QxjyVw',
         youtubeid: 'TdrL3QxjyVw'
@@ -29,6 +30,7 @@ Song.find({}).remove(function() {
       artist: 'Jaymes Young',
       inPlaylist: false,
       source: 'youtube',
+      length: 30000,
       url: {
         full: 'https://www.youtube.com/watch?v=liwCcSH9xzw',
         youtubeid: 'liwCcSH9xzw'
@@ -43,6 +45,7 @@ Song.find({}).remove(function() {
       artist: 'Hot Natured & Ali Love',
       inPlaylist: false,
       source: 'youtube',
+      length: 30000,
       url: {
         full: 'https://www.youtube.com/watch?v=PXx1CLAJ-OA',
         youtubeid: 'PXx1CLAJ-OA'
@@ -57,6 +60,7 @@ Song.find({}).remove(function() {
       artist: 'Ylvis',
       inPlaylist: false,
       source: 'youtube',
+      length: 30000,
       url: {
         full: 'https://www.youtube.com/watch?v=mbyzgeee2mg',
         youtubeid: 'mbyzgeee2mg'
@@ -71,6 +75,7 @@ Song.find({}).remove(function() {
       artist: 'Tame Impala',
       inPlaylist: false,
       source: 'youtube',
+      length: 30000,
       url: {
         full: 'https://www.youtube.com/watch?v=wycjnCCgUes',
         youtubeid: 'wycjnCCgUes'

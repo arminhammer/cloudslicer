@@ -8,6 +8,7 @@ var SongSchema = new Schema({
   artist: String,
   inPlaylist: Boolean,
   source: String,
+  length: Number,
   url: {
     full: String,
     youtubeid: String
