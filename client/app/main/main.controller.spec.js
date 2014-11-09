@@ -13,7 +13,7 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/songs')
+    $httpBackend.expectGET('/api/songs/playlist')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
@@ -24,6 +24,6 @@ describe('Controller: MainCtrl', function () {
 
   it('should attach a list of things to the scope', function () {
     $httpBackend.flush();
-    expect(scope.songList.length).toBe(4);
+    expect(scope.playList.length).toBe(4);
   });
 });

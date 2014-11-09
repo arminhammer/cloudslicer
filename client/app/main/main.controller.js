@@ -36,7 +36,7 @@ angular.module('beatschApp')
       socket.unsyncUpdates('song');
     });
   })
-  .factory('SongList', function($http, socket) {
+  .factory('SongList', function($http) {
 
     var SongList = function() {
       this.list = [];
