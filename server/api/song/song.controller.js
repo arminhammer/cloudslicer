@@ -5,9 +5,9 @@ var Song = require('./song.model');
 var Playlist = require('./playlist');
 
 var playList = new Playlist();
-playList.addTrack({ title: 'Title1', tLength: 10000 });
-playList.addTrack({ title: 'Title2', tLength: 25000 });
-playList.addTrack({ title: 'Title3', tLength: 20000 });
+playList.addTrack({ title: 'Title1', tLength: 5000, votes: {current: 5 } });
+playList.addTrack({ title: 'Title2', tLength: 7000, votes: {current: 15 } });
+playList.addTrack({ title: 'Title3', tLength: 15500, votes: {current: 2 }});
 
 playList.start();
 

@@ -20,6 +20,15 @@
 
   <div class="row">
     <div class="col-lg-12">
+      <h1 class="page-header">Currently Playing</h1>
+      <div>
+        <a href="#" tooltip="{{ playList.currentSong().title}}" ng-click="voteFor(playList.currentSong())">{{ playList.currentSong().artist }} - {{ playList.currentSong().title }} Current Votes: {{ playList.currentSong().votes.current }}, Total Votes: {{ playList.currentSong().votes.total }}, inPlaylist: {{ playList.currentSong().inPlaylist }}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
       <h1 class="page-header">Playlist</h1>
       <div>
 

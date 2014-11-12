@@ -9,16 +9,27 @@ var Playlist = function() {
 
   console.log('Playlist length: %d', tracks.length);
 
+  function compareTracks(a, b) {
+    return b.votes.current- a.votes.current;
+  }
+
   var manage = function() {
 
     console.log('Managing');
     console.log('Playlist length: %d', tracks.length);
-    if(currentSong == null) {
+    if(currentSong === null) {
 
-      currentSong = {};
-      currentSong.track = tracks.shift();
-      currentSong.position = 0;
-      console.log('Now playing %s', currentSong.track.title);
+      if(tracks.length > 0) {
+        currentSong = {};
+        tracks.sort(compareTracks);
+        currentSong.track = tracks.shift();
+        currentSong.position = 0;
+        console.log('Now playing %s', currentSong.track.title);
+      }
+      else {
+
+      }
+
     }
     else {
 
@@ -61,7 +72,11 @@ var Playlist = function() {
     clearInterval(manager);
     manager = null;
 
-  }
+  };
+
+  this.currentSong = function() {
+    return currentSong;
+  };
 
 };
 
