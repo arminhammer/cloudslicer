@@ -4,7 +4,7 @@
 
 'use strict';
 
-var Playlist = require('./playlist')();
+var Playlist = require('./../playlist/playlist')();
 
 exports.register = function(socket) {
 

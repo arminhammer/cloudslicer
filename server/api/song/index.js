@@ -6,7 +6,7 @@ var controller = require('./song.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
-router.get('/playlist', controller.playlist);
+//router.get('/playlist', controller.playlist);
 router.get('/:id', controller.show);
 router.get('/:id/vote', controller.addVote);
 router.post('/', controller.create);

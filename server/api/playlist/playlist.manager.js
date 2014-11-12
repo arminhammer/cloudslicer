@@ -1,13 +1,51 @@
 /**
  * Created by armin on 11/9/14.
  */
-var Playlist = function() {
+
+var Playlist = require('./playlist.model');
+var Song = require('../song/song.model');
+
+var PlaylistManager = function() {
 
   var tracks = [];
   var manager = null;
   var currentSong = null;
 
   console.log('Playlist length: %d', tracks.length);
+
+  this.initialize = function() {
+
+    Playlist.find({}, function(err, tracks) {
+      console.log('Found %d tracks', tracks.length);
+      if(tracks.length < 1) {
+
+        console.log('Playlist is empty.');
+
+        Song.find({})
+          .sort('-votes.total')
+          .limit(10)
+          .exec(function(err, songs) {
+
+            console.log('Found %d songs to add', songs.length);
+            for(var i = 0; i < songs.length; i++) {
+              Playlist.create({ position: i, song: songs[i]._id }, function(err, newTrack) {
+                if (err) return handleError(err);
+                console.log('Adding %s to playlist.', newTrack);
+              });
+
+            }
+
+          });
+
+      }
+
+    });
+
+    if(tracks.length < 1) {
+
+    }
+
+  }
 
   function compareTracks(a, b) {
 
@@ -101,14 +139,8 @@ var Playlist = function() {
 
 };
 
-module.exports = Playlist
+function handleError(err) {
+  console.log('Ran into error %s', err);
+}
 
-
-
-
-
-
-
-
-
-;
+module.exports = PlaylistManager;

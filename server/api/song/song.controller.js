@@ -2,14 +2,6 @@
 
 var _ = require('lodash');
 var Song = require('./song.model');
-var Playlist = require('./playlist');
-
-var playList = new Playlist();
-playList.addTrack({ title: 'Title1', tLength: 5000, votes: {current: 5 } });
-playList.addTrack({ title: 'Title2', tLength: 7000, votes: {current: 15 } });
-playList.addTrack({ title: 'Title3', tLength: 15500, votes: {current: 2 }});
-
-playList.start();
 
 // Get list of songs
 exports.index = function(req, res) {
@@ -19,9 +11,9 @@ exports.index = function(req, res) {
   });
 };
 
-exports.playlist = function(req, res) {
+//exports.playlist = function(req, res) {
 
-  return res.json(200, playList.getTrackList());
+  //return res.json(200, playList.getTrackList());
 
   /*
   Song.find({ 'inPlaylist' : true })
@@ -41,7 +33,7 @@ exports.playlist = function(req, res) {
     return res.json(200, songs);
   });
   */
-};
+//};
 
 // Get a single song
 exports.show = function(req, res) {

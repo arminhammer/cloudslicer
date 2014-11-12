@@ -40,7 +40,7 @@ angular.module('beatschApp')
 
     $scope.playList = [];
 
-    $http.get('/api/songs/playlist').success(function(playlist) {
+    $http.get('/api/playlist').success(function(playlist) {
       $scope.playList = playlist;
       socket.syncUpdates('song', $scope.playList);
     });

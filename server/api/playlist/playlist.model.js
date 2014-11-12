@@ -4,9 +4,11 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var PlaylistSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+
+  position: Number,
+  song: { type: String, ref: 'Song'},
+  playing: Boolean
+
 });
 
 module.exports = mongoose.model('Playlist', PlaylistSchema);
