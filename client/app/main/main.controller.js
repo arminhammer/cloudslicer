@@ -3,36 +3,40 @@
 angular.module('beatschApp')
   .controller('MainCtrl', function ($scope, $http, socket, SongList) {
 
-    $scope.currentSong = 'tUmlmDtxcBo';
+    //$scope.currentSong = 'tUmlmDtxcBo';
 
-    $scope.getNextSong = function() {
+    /*
+     $scope.getNextSong = function() {
 
-      if($scope.playList.length === 0) {
-        return '';
-      }
-      else {
-        return $scope.playList[0].url.youtubeid;
-      }
+     if($scope.playList.length === 0) {
+     return '';
+     }
+     else {
+     return $scope.playList[0].url.youtubeid;
+     }
 
-    };
+     };
+     */
 
     $scope.songList = new SongList();
 
-    $scope.playListVideoIds = function() {
+    /*
+     $scope.playListVideoIds = function() {
 
-      var playList = $scope.playList;
-      var count = playList.length;
-      var returnList = [];
+     var playList = $scope.playList;
+     var count = playList.length;
+     var returnList = [];
 
-      for(var i = 0; i < count; i++) {
+     for(var i = 0; i < count; i++) {
 
-          returnList.push(playList[i].url.videoId);
+     returnList.push(playList[i].url.videoId);
 
-      }
+     }
 
-      return returnList;
+     return returnList;
 
-    };
+     };
+     */
 
     $scope.playList = [];
 
@@ -111,11 +115,11 @@ angular.module('beatschApp')
 
     $scope.$on('youtube.player.ended', function ($event, player) {
 
-        console.log('youtube.player.ended');
-        var nextVid = $scope.playList[1].url.youtubeid;
-        console.log('nextVid: %s', nextVid);
-        player.loadVideoById(nextVid);
-        player.playVideo();
+      console.log('youtube.player.ended');
+      var nextVid = $scope.playList[1].url.youtubeid;
+      console.log('nextVid: %s', nextVid);
+      player.loadVideoById(nextVid);
+      player.playVideo();
 
     });
 
@@ -136,7 +140,7 @@ angular.module('beatschApp')
           }
           //socket.syncUpdates('song', this.list);
           //this.list = songList;
-         }.bind(this));
+        }.bind(this));
 
       /*
        var last = this.list[this.list.length - 1];

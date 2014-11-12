@@ -10,25 +10,42 @@ var Playlist = function() {
   console.log('Playlist length: %d', tracks.length);
 
   function compareTracks(a, b) {
+
     return b.votes.current- a.votes.current;
+
   }
+
+  function switchTracks() {
+
+    if(tracks.length > 0) {
+      currentSong = {};
+      tracks.sort(compareTracks);
+      currentSong.track = tracks.shift();
+      currentSong.position = 0;
+      console.log('Now playing %s', currentSong.track.title);
+    }
+    else {
+
+    }
+
+  }
+
+  this.switchTracks = function(callback) {
+
+    switchTracks();
+
+    callback();
+
+  };
 
   var manage = function() {
 
     console.log('Managing');
     console.log('Playlist length: %d', tracks.length);
+
     if(currentSong === null) {
 
-      if(tracks.length > 0) {
-        currentSong = {};
-        tracks.sort(compareTracks);
-        currentSong.track = tracks.shift();
-        currentSong.position = 0;
-        console.log('Now playing %s', currentSong.track.title);
-      }
-      else {
-
-      }
+      switchTracks();
 
     }
     else {
@@ -48,11 +65,13 @@ var Playlist = function() {
   // TODO
   this.refill = function() {
 
-  }
+  };
 
   this.addTrack = function(track) {
+
     tracks.push(track);
     console.log('track %s added to the playlist', track);
+
   };
 
   this.getTrackList = function() {
@@ -75,9 +94,21 @@ var Playlist = function() {
   };
 
   this.currentSong = function() {
+
     return currentSong;
+
   };
 
 };
 
-module.exports = Playlist;
+module.exports = Playlist
+
+
+
+
+
+
+
+
+
+;
