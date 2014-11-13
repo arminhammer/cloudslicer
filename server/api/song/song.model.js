@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var SongSchema = new Schema({
+
   title: String,
   artist: String,
   inPlaylist: Boolean,

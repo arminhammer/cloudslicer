@@ -8,11 +8,11 @@ var Song = require('../song/song.model');
 var PlaylistManager = function() {
 
   var manager = null;
-  var currentSong = {};
+  var currentSong = null;
 
   //console.log('Playlist length: %d', tracks.length);
 
-  this.refill = function(max) {
+  function refill(max) {
 
     console.log('Refilling playlist');
 
@@ -27,20 +27,28 @@ var PlaylistManager = function() {
           .limit(max)
           .exec(function(err, songs) {
 
-            Playlist.create({ position: 0, song: songs[0]._id, playing: true }, function(err, newTrack) {
+            Playlist.create({ position: 0, song: songs[0], playing: true }, function(err, newTrack) {
               if (err) return handleError(err);
               console.log('Adding %s to playlist.', newTrack);
+
+              currentSong.track = songs[0];
+              currentSong.position = 0;
+              currentSong.playlist = newTrack;
+
+              console.log('currentSong is');
+              console.log(currentSong.track);
+
             });
 
-            currentSong.track = songs[0];
-            currentSong.position = 0;
+
+            function announceAdd(err, newTrack) {
+              if (err) return handleError(err);
+              console.log('Adding %s to playlist.', newTrack);
+            }
 
             console.log('Found %d songs to add', songs.length);
             for(var i = 1; i < songs.length; i++) {
-              Playlist.create({ position: i, song: songs[i]._id, playing: false }, function(err, newTrack) {
-                if (err) return handleError(err);
-                console.log('Adding %s to playlist.', newTrack);
-              });
+              Playlist.create({ position: i, song: songs[i]._id, playing: false }, announceAdd)
 
             }
 
@@ -50,10 +58,12 @@ var PlaylistManager = function() {
 
     });
 
-  };
+  }
 
   this.start = function() {
 
+    currentSong = {};
+    refill(40);
     manager = setInterval(manage, 1000);
 
   };
@@ -75,71 +85,73 @@ var PlaylistManager = function() {
   function manage() {
 
     console.log('Managing');
-    var playlistLength = 0;
 
-    Playlist.find({}, function(err, tracks) {
+    /*
+     Playlist.find({}, function(err, tracks) {
 
-      //console.log('Manage found %d tracks', tracks.length);
-      //playlistLength = tracks.length;
-      //console.log('Playlist length 1: %d', playlistLength);
+     //console.log('Manage found %d tracks', tracks.length);
+     //playlistLength = tracks.length;
+     //console.log('Playlist length 1: %d', playlistLength);
+     });
+     */
 
-        if (currentSong.position <= currentSong.track.tLength) {
-          currentSong.position += 1000;
-          console.log('%s now at %d of %d', currentSong.track.title, currentSong.position, currentSong.track.tLength);
+    console.log('currentSong is %s, position %d of %d', currentSong.track.title, currentSong.position, currentSong.track.length);
+
+    if (currentSong.position <= currentSong.track.length) {
+      //TODO: Change back to increments of 1000
+      currentSong.position += 30000;
+      console.log('%s now at %d of %d', currentSong.track.title, currentSong.position, currentSong.track.length);
+      console.log('playlist id is %s', currentSong.playlist._id);
+    }
+    else {
+
+      Playlist.remove( { _id: currentSong.playlist._id }, function (err, pTrack) {
+
+        if(err) { console.log(err); }
+
+        if(!pTrack) {
+
+          console.log('Can\'t find currentTrack in the playlist!');
+          return;
+
         }
-        else {
 
-          Playlist.findById(currentSong.track._id, function (err, playlist) {
+        Playlist.find({})
+          .sort('-votes')
+          .limit(1)
+          .exec(function (err, nextSong) {
 
-            if(err) { console.log(err); }
+            console.log('currentSong will become');
+            console.log(nextSong);
 
-            if(!playlist) {
+            currentSong.position = 0;
+            currentSong.playlist = nextSong[0];
 
-              console.log('Can\'t find currentTrack in the playlist!');
+            Song.findById(nextSong[0].song, function(err, nextSongSong) {
 
-            }
+                if(err) { console.log(err); }
 
-            playlist.remove(function(err) {
+                console.log('embedded song is');
+                console.log(nextSongSong);
 
-              if (err) {
-                console.log(err);
-              }
+                currentSong.track = nextSongSong;
 
-              console.log('Removed %s from the playlist.', playlist);
-
-              Playlist.find({})
-                .sort('-votes')
-                .limit(1)
-                .exec(function (err, song) {
-
-                  currentSong.track = song[0];
-                  currentSong.position = 0;
-
-                });
-
-            });
+              });
 
           });
+      });
 
-        }
-
-    });
+    }
 
   }
 
+  //TODO: redo this function
   this.addTrack = function(track) {
 
-    tracks.push(track);
+    //tracks.push(track);
     console.log('track %s added to the playlist', track);
 
   };
-
-  this.getTrackList = function() {
-
-    return tracks;
-
-  };
-
 
   this.currentSong = function() {
 

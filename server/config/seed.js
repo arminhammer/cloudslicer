@@ -23,7 +23,7 @@ Song.find({}).remove(function() {
       },
       votes: {
         current: 0,
-        total: 0
+        total: 20
       }
     },
     {
@@ -38,7 +38,7 @@ Song.find({}).remove(function() {
       },
       votes: {
         current: 0,
-        total: 0
+        total: 50
       }
     },
     {
@@ -53,7 +53,7 @@ Song.find({}).remove(function() {
       },
       votes: {
         current: 0,
-        total: 0
+        total: 40
       }
     },
     {
@@ -68,7 +68,7 @@ Song.find({}).remove(function() {
       },
       votes: {
         current: 0,
-        total: 0
+        total: 10
       }
     },
     {
@@ -83,7 +83,7 @@ Song.find({}).remove(function() {
       },
       votes: {
         current: 0,
-        total: 0
+        total: 39
       }
     })
 });
