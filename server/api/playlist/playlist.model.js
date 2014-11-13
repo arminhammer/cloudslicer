@@ -7,6 +7,7 @@ var PlaylistSchema = new Schema({
 
   position: Number,
   song: { type: String, ref: 'Song'},
+  votes: Number,
   playing: Boolean
 
 });

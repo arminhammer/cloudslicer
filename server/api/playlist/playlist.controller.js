@@ -6,7 +6,8 @@ var Playlist = require('./playlist.model');
 var PlaylistManager = require('./playlist.manager');
 
 var playlistManager = new PlaylistManager();
-playlistManager.initialize();
+playlistManager.refill(40);
+playlistManager.start();
 
 //playList.addTrack({ title: 'Title1', tLength: 5000, votes: {current: 5 } });
 //playList.addTrack({ title: 'Title2', tLength: 7000, votes: {current: 15 } });
