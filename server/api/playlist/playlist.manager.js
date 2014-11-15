@@ -29,7 +29,7 @@ var PlaylistManager = function() {
           .limit(max)
           .exec(function(err, songs) {
 
-            Playlist.create({ position: 0, song: songs[0], playing: true }, function(err, newTrack) {
+            Playlist.create({ position: 0, _song: songs[0], played: false, votes: 0 }, function(err, newTrack) {
               if (err) return handleError(err);
               console.log('Adding %s to playlist.', newTrack);
 
@@ -50,7 +50,7 @@ var PlaylistManager = function() {
 
             console.log('Found %d songs to add', songs.length);
             for(var i = 1; i < songs.length; i++) {
-              Playlist.create({ position: i, song: songs[i]._id, playing: false }, announceAdd)
+              Playlist.create({ position: i, _song: songs[i]._id, playing: false }, announceAdd)
 
             }
 
@@ -97,7 +97,7 @@ var PlaylistManager = function() {
      });
      */
 
-    console.log('currentSong is %s, position %d of %d', currentSong.track.title, currentSong.position, currentSong.track.length);
+    //console.log('currentSong is %s, position %d of %d', currentSong.track.title, currentSong.position, currentSong.track.length);
 
     //Change the track to vote on every  2 minutes
     if (currentSong.timer <= votingPeriod) {

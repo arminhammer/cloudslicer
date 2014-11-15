@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('beatschApp')
-  .controller('MainCtrl', function ($scope, $http, socket, SongList) {
+  .controller('MainCtrl', function ($scope, $http, socket) {
 
     //$scope.currentSong = 'tUmlmDtxcBo';
 
@@ -18,7 +18,7 @@ angular.module('beatschApp')
      };
      */
 
-    $scope.songList = new SongList();
+    //$scope.songList = new SongList();
 
     /*
      $scope.playListVideoIds = function() {
@@ -38,12 +38,29 @@ angular.module('beatschApp')
      };
      */
 
+    $scope.currentSong = null;
+
+    $scope.catalog = [];
+
     $scope.playList = [];
+
+    $http.get('/api/playlist/current').success(function(song) {
+      console.log('Current song is');
+      console.log(song);
+      $scope.currentSong = song[0];
+      socket.syncUpdates('playlist', $scope.playList);
+    });
 
     $http.get('/api/playlist').success(function(playlist) {
       $scope.playList = playlist;
-      socket.syncUpdates('song', $scope.playList);
+      socket.syncUpdates('playlist', $scope.playList);
     });
+
+    $http.get('/api/songs').success(function(songs) {
+      $scope.catalog = songs;
+      socket.syncUpdates('song', $scope.catalog);
+    });
+
 
     $scope.voteFor = function(song) {
       $http.get('/api/songs/' + song._id + '/vote');
@@ -74,6 +91,7 @@ angular.module('beatschApp')
       console.log('Playlist before');
       console.log(player.getPlaylist());
 
+      /*
       player.cuePlaylist({
 
         listType: 'playlist',
@@ -86,6 +104,7 @@ angular.module('beatschApp')
 
       console.log('Playlist after');
       console.log(player.getPlaylist());
+      */
 
     });
 
@@ -123,7 +142,8 @@ angular.module('beatschApp')
 
     });
 
-  })
+  });
+  /*
   .factory('SongList', function($http) {
 
     var SongList = function() {
@@ -147,9 +167,10 @@ angular.module('beatschApp')
        for(var i = 1; i <= 8; i++) {
        this.list.push({title: last + i});
        }
-       */
+
     };
 
     return SongList;
 
   });
+*/

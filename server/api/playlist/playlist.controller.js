@@ -28,6 +28,20 @@ exports.index = function(req, res) {
 };
 
 // Get a single playlist
+exports.current = function(req, res) {
+  Playlist.find({ played: false })
+    .sort('-position')
+    .limit(1)
+    .populate('_song')
+    .exec(function (err, playlist) {
+      if(err) { return handleError(res, err); }
+      if(!playlist) { return res.send(404); }
+      return res.json(playlist);
+    });
+};
+
+
+// Get a single playlist
 exports.show = function(req, res) {
   Playlist.findById(req.params.id, function (err, playlist) {
     if(err) { return handleError(res, err); }

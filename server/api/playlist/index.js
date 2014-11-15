@@ -6,6 +6,7 @@ var controller = require('./playlist.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
+router.get('/current', controller.current);
 router.get('/:id', controller.show);
 router.post('/', controller.create);
 router.put('/:id', controller.update);

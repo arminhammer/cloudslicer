@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var PlaylistSchema = new Schema({
 
   position: Number,
-  _song: { type: String, ref: 'Song'},
+  _song: { type: Schema.Types.ObjectId, ref: 'Song'},
   votes: Number,
   played: Boolean
 
