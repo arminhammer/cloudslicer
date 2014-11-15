@@ -46,27 +46,20 @@ angular.module('beatschApp')
 
     $scope.playList = [];
 
-    $http.get('/api/playlist/current').success(function(song) {
-      console.log('Current song is');
-      console.log(song);
-      $scope.currentSong = song[0];
-      socket.syncUpdates('playlist', $scope.currentSong);
-      socket.syncUpdates('playlist', $scope.playList);
-      socket.syncUpdates('playlist', $scope.playLog);
-    });
-
     $http.get('/api/playlist').success(function(playlist) {
+
       $scope.playList = playlist;
-      socket.syncUpdates('playlist', $scope.currentSong);
       socket.syncUpdates('playlist', $scope.playList);
-      socket.syncUpdates('playlist', $scope.playLog);
+
     });
 
-    $http.get('/api/playlist/log').success(function(playLog) {
+    $http.get('/api/playlog').success(function(playLog) {
+
+      $scope.currentSong = playLog[0];
       $scope.playLog = playLog;
-      socket.syncUpdates('playlist', $scope.currentSong);
-      socket.syncUpdates('playlist', $scope.playList);
-      socket.syncUpdates('playlist', $scope.playLog);
+      socket.syncUpdates('playlog', $scope.currentSong);
+      socket.syncUpdates('playlog', $scope.playLog);
+
     });
 
 

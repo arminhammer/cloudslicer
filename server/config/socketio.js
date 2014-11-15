@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/playlog/playlog.socket').register(socket);
   require('../api/playlist/playlist.socket').register(socket);
   require('../api/song/song.socket').register(socket);
 

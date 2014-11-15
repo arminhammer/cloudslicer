@@ -8,6 +8,7 @@
 var Song = require('../api/song/song.model');
 var User = require('../api/user/user.model');
 var Playlist = require('../api/playlist/playlist.model');
+var Playlog = require('../api/playlog/playlog.model');
 
 Song.find({}).remove(function() {
   Song.create(
@@ -92,6 +93,9 @@ Playlist.find({}).remove(function() {
 
 });
 
+Playlog.find({}).remove(function() {
+
+});
   /*
 
   var songCount = 0;
