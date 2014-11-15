@@ -17,19 +17,24 @@ playlistManager.start();
 
 // Get list of playlists
 exports.index = function(req, res) {
-  Playlist.find({})
-    .populate('_song')
-    .exec(function (err, playlists) {
-      if(err) {
-        return handleError(res, err);
-      }
-      return res.json(200, playlists);
-    });
+  Playlist.find({
+    $or: [
+      { played: 0 },
+      {}
+  ]
+})
+.populate('_song')
+  .exec(function (err, playlists) {
+    if(err) {
+      return handleError(res, err);
+    }
+    return res.json(200, playlists);
+  });
 };
 
 // Get a single playlist
 exports.current = function(req, res) {
-  Playlist.find({ played: false })
+  Playlist.find({ played: 1 })
     .sort('-position')
     .limit(1)
     .populate('_song')
@@ -40,6 +45,17 @@ exports.current = function(req, res) {
     });
 };
 
+exports.playLog = function(req, res) {
+  Playlist.find({ played: 2 })
+    .sort('-position')
+    .limit(10)
+    .populate('_song')
+    .exec(function (err, playlist) {
+      if(err) { return handleError(res, err); }
+      if(!playlist) { return res.send(404); }
+      return res.json(playlist);
+    });
+};
 
 // Get a single playlist
 exports.show = function(req, res) {

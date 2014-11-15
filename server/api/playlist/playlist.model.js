@@ -8,7 +8,7 @@ var PlaylistSchema = new Schema({
   position: Number,
   _song: { type: Schema.Types.ObjectId, ref: 'Song'},
   votes: Number,
-  played: Boolean
+  played: Number
 
 });
 
