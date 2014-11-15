@@ -17,10 +17,14 @@ playlistManager.start();
 
 // Get list of playlists
 exports.index = function(req, res) {
-  Playlist.find(function (err, playlists) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, playlists);
-  });
+  Playlist.find({})
+    .populate('_song')
+    .exec(function (err, playlists) {
+      if(err) {
+        return handleError(res, err);
+      }
+      return res.json(200, playlists);
+    });
 };
 
 // Get a single playlist
@@ -67,5 +71,6 @@ exports.destroy = function(req, res) {
 };
 
 function handleError(res, err) {
+
   return res.send(500, err);
 }
