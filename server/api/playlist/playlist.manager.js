@@ -10,7 +10,7 @@ var PlaylistManager = function() {
 
   var manager = null;
   var currentSong = null;
-  var votingPeriod = 1000;
+  var votingPeriod = 10000;
   var countInterval = 1000;
   var timer = 0;
 
@@ -67,7 +67,7 @@ var PlaylistManager = function() {
 
             console.log('Found %d songs to add', songs.length);
             for(var i = 0; i < songs.length; i++) {
-              Playlist.create({ _song: songs[i]._id, played: 0, votes: 0 }, announceAdd)
+              Playlist.create({ _song: songs[i]._id, played:0, votes: 0 }, announceAdd)
 
             }
 
@@ -134,7 +134,7 @@ var PlaylistManager = function() {
 
     console.log('Managing');
 
-    if (timer <= votingPeriod) {
+    if (timer < votingPeriod) {
       timer += countInterval;
       console.log('votingPeriod now at %d of %d', timer, votingPeriod);
       //console.log('playlist id is %s', currentSong.playlist._id);
@@ -145,7 +145,7 @@ var PlaylistManager = function() {
 
       Playlist.count(function(err, count) {
               console.log(count);
-          if(count < 3) {
+          if(count < 2) {
             refill(40, function() {
               console.log('Refilled.');
               switchTrack();
@@ -154,6 +154,7 @@ var PlaylistManager = function() {
         else {
             switchTrack();
           }
+        timer = 0;
       });
 
 

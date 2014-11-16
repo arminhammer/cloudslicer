@@ -57,7 +57,7 @@ angular.module('beatschApp')
 
       $scope.currentSong = playLog[0];
       $scope.playLog = playLog;
-      socket.syncUpdates('playlog', $scope.currentSong);
+      //socket.syncUpdates('playlog', $scope.currentSong);
       socket.syncUpdates('playlog', $scope.playLog);
 
     });

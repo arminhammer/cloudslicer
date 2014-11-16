@@ -5,7 +5,9 @@ var Playlog = require('./playlog.model');
 
 // Get list of playlogs
 exports.index = function(req, res) {
-  Playlog.find(function (err, playlogs) {
+  Playlog.find({})
+    .populate('_song')
+    .exec(function (err, playlogs) {
     if(err) { return handleError(res, err); }
     return res.json(200, playlogs);
   });

@@ -30,8 +30,8 @@
     <div class="col-lg-12">
       <h1 class="page-header">Playlist Log</h1>
       <div>
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playLog | orderBy: 'position'">
-          <li><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track.position }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes.total }}, Played: {{ track.played }}</a></li>
+        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playLog | orderBy: 'date'">
+          <li><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes.total }}</a></li>
         </ul>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="col-lg-12">
       <h1 class="page-header">Playlist</h1>
       <div>
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playList | orderBy: 'position'">
+        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playList | orderBy: 'votes'">
           <li><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track.position }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes.total }}, Played: {{ track.played }}</a></li>
         </ul>
       </div>

@@ -7,13 +7,26 @@
 var Playlog = require('./playlog.model');
 
 exports.register = function(socket) {
+
   Playlog.schema.post('save', function (doc) {
-    onSave(socket, doc);
+
+    Playlog.findById(doc._id).
+      populate('_song')
+      .exec(function(err, popDoc) {
+
+        onSave(socket, popDoc);
+
+      });
+
   });
+
   Playlog.schema.post('remove', function (doc) {
+
     onRemove(socket, doc);
+
   });
-}
+
+};
 
 function onSave(socket, doc, cb) {
   socket.emit('playlog:save', doc);
