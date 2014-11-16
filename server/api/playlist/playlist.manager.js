@@ -49,43 +49,12 @@ var PlaylistManager = function() {
 
         console.log('Playlist is empty.');
 
-        /*
-        var currentPosition = 0;
-        var nextPosition = 0;
-        getCurrentPosition(function(currentValue) {
-
-
-          console.log('CURRENT VAL: %d', currentValue);
-          currentPosition = currentValue;
-          nextPosition = currentPosition++;
-
-        });
-
-        console.log('CURRENT IS %d, NEXT IS %d', currentPosition, nextPosition);
-        */
-
         console.log('Song search...');
 
         Song.find({})
           .sort('-votes.total')
           .limit(max)
           .exec(function(err, songs) {
-
-            /*
-            Playlist.create({ position: 0, _song: songs[0], played: 1, votes: 0 }, function(err, newTrack) {
-
-              if (err) return handleError(err);
-              console.log('Adding %s to playlist.', newTrack);
-
-              currentSong.playlist = newTrack;
-
-              console.log('currentSong is');
-              console.log(currentSong.playlist._song);
-
-              newTrack.save(function() {});
-
-            });
-            */
 
             function announceAdd(err, newTrack) {
 
@@ -165,18 +134,6 @@ var PlaylistManager = function() {
 
     console.log('Managing');
 
-    /*
-     Playlist.find({}, function(err, tracks) {
-
-     //console.log('Manage found %d tracks', tracks.length);
-     //playlistLength = tracks.length;
-     //console.log('Playlist length 1: %d', playlistLength);
-     });
-     */
-
-    //console.log('currentSong is %s, position %d of %d', currentSong.track.title, currentSong.position, currentSong.track.length);
-
-    //Change the track to vote on every  2 minutes
     if (timer <= votingPeriod) {
       timer += countInterval;
       console.log('votingPeriod now at %d of %d', timer, votingPeriod);
@@ -202,97 +159,6 @@ var PlaylistManager = function() {
 
     }
 
-      /*
-      var nextPosition = 0;
-      getCurrentPosition(function(currentValue) {
-
-        console.log('CURRENT VAL: %d', currentValue);
-        nextPosition = currentValue++;
-
-      });
-
-      Playlist.findOneAndUpdate( { _id: currentSong.playlist._id }, { position: nextPosition, played: 2 }, function (err, pTrack) {
-
-        if(err) { console.log(err); }
-
-        if(!pTrack) {
-
-          console.log('Can\'t find currentTrack in the playlist!');
-          return;
-
-        }
-
-        Playlist.find({ played: 0 })
-          .sort('-votes')
-          .limit(1)
-          .populate('_song')
-          .exec(function (err, nextSong) {
-
-            if(err) {
-              console.log('There was an error: %s', err);
-            }
-
-            console.log('nextSong.length: %d', nextSong.length);
-            if(nextSong.length < 1) {
-              console.log('The playlist is empty!  Refilling...');
-              refill(40, function() {
-
-                timer = 0;
-
-                Playlist.find({ played: 0})
-                  .sort('-votes')
-                  .limit(1)
-                  .exec(function (err, nextCurrentSong) {
-                    nextCurrentSong.played = 1;
-                    Playlist.findOneAndUpdate( { _id: nextCurrentSong._id }, function(err, updatedSong) {
-
-                      currentSong.playlist = updatedSong;
-                      console.log('currentSong is now');
-                      console.log(currentSong.playlist);
-
-                    });
-
-
-                  });
-
-              });
-
-            }
-            else {
-
-              console.log('currentSong will become');
-              console.log(nextSong[0]);
-              timer = 0;
-
-              Playlist.findOneAndUpdate({_id: nextSong[0]._id}, {played: 1}, function (err, nextCurrentSong) {
-                currentSong.playlist = nextCurrentSong;
-                console.log('currentSong is now');
-                console.log(currentSong.playlist);
-              });
-
-            }
-
-            /*
-             currentSong.playlist = nextSong[0];
-
-             Song.findById(nextSong[0].song, function(err, nextSongSong) {
-
-             if(err) { console.log(err); }
-
-             console.log('embedded song is');
-             console.log(nextSongSong);
-
-             currentSong.track = nextSongSong;
-
-             });
-
-
-          });
-
-      });
-
-    }
-       */
   }
 
   //TODO: redo this function

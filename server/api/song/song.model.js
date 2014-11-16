@@ -18,7 +18,8 @@ var SongSchema = new Schema({
     current: Number,
     total: Number
   },
-  _submitter: { type: Number, ref: 'User'}
+  _submitter: { type: Number, ref: 'User'},
+  active: Boolean
 });
 
 module.exports = mongoose.model('Song', SongSchema);
