@@ -52,6 +52,30 @@ angular.module('beatschApp')
       $http.delete('/api/songs/' + song._id);
     };
 
+    function getNextSongInPlaylist() {
+
+      var currentDate = $scope.currentSong.date;
+
+      var count = 0;
+
+      while(count < $scope.playLog.length) {
+
+        if($scope.playLog[count].date > currentDate) {
+
+          console.log('Found %s', $scope.playLog[count]._song.title);
+          return $scope.playLog[count];
+
+        }
+
+        count++;
+
+      }
+
+      console.log('Could not find a more recent song, replaying current song %s', $scope.currentSong.title);
+      return $scope.currentSong;
+
+    }
+
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('song');
     });
@@ -59,24 +83,6 @@ angular.module('beatschApp')
     $scope.$on('youtube.player.ready', function ($event, player) {
 
       console.log('youtube.player.ready');
-
-      console.log('Playlist before');
-      console.log(player.getPlaylist());
-
-      /*
-       player.cuePlaylist({
-
-       listType: 'playlist',
-       list: $scope.playListVideoIds(),
-       index: 0,
-       startSeconds: 0,
-       suggestedQuality: 'default'
-
-       });
-
-       console.log('Playlist after');
-       console.log(player.getPlaylist());
-       */
 
     });
 
@@ -107,9 +113,9 @@ angular.module('beatschApp')
     $scope.$on('youtube.player.ended', function ($event, player) {
 
       console.log('youtube.player.ended');
-      var nextVid = $scope.playList[1].url.youtubeid;
+      var nextVid = getNextSongInPlaylist();
       console.log('nextVid: %s', nextVid);
-      player.loadVideoById(nextVid);
+      player.loadVideoById(nextVid._song.url.youtubeid);
       player.playVideo();
 
     });
