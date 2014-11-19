@@ -29,7 +29,7 @@ angular.module('beatschApp')
 
       $scope.currentSong = playLog[playLog.length-1];
 
-      socket.syncUpdates('playlog', $scope.currentSong);
+      //socket.syncUpdates('playlog', $scope.currentSong);
       socket.syncUpdates('playlog', $scope.playLog);
 
     });
@@ -50,6 +50,17 @@ angular.module('beatschApp')
 
     $scope.deleteSong = function(song) {
       $http.delete('/api/songs/' + song._id);
+    };
+
+    $scope.getLocation = function(val) {
+      return $http.get('https://www.googleapis.com/youtube/v3/search?part=snippet&q=YouTube+Data+API&order=rating&videoDefinition=high&videoEmbeddable=true&type=video&videoCaption=closedCaption&key=AIzaSyCNYKLmc5xIjQ7-M1gGZMn3OK8vLJ-qFzM', {
+        params: {
+        }
+      }).then(function(response){
+        return response.data.results.map(function(item){
+          return item.formatted_address;
+        });
+      });
     };
 
     function getNextSongInPlaylist() {
