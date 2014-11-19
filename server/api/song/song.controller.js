@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Song = require('./song.model');
+var Playlist = require('../playlist/playlist.model');
 
 // Get list of songs
 exports.index = function(req, res) {
@@ -13,26 +14,26 @@ exports.index = function(req, res) {
 
 //exports.playlist = function(req, res) {
 
-  //return res.json(200, playList.getTrackList());
+//return res.json(200, playList.getTrackList());
 
-  /*
-  Song.find({ 'inPlaylist' : true })
-    .sort('votes.current')
-    .exec(function (err, songs) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, songs);
-  });
-  */
+/*
+ Song.find({ 'inPlaylist' : true })
+ .sort('votes.current')
+ .exec(function (err, songs) {
+ if(err) { return handleError(res, err); }
+ return res.json(200, songs);
+ });
+ */
 
-  /*
-  Song.find()
-    .where('inPlaylist').equals(fart)
-    .sort('votes')
-    .exec(function (err, songs) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, songs);
-  });
-  */
+/*
+ Song.find()
+ .where('inPlaylist').equals(fart)
+ .sort('votes')
+ .exec(function (err, songs) {
+ if(err) { return handleError(res, err); }
+ return res.json(200, songs);
+ });
+ */
 //};
 
 // Get a single song
@@ -58,8 +59,27 @@ exports.addVote = function(req, res) {
   Song.findById(req.params.id, function (err, song) {
     if (err) { return handleError(res, err); }
     if(!song) { return res.send(404); }
-    song.votes.current++;
-    song.votes.total++;
+    song.votes++;
+
+    Playlist.find({ _song: song }, function(err, hit) {
+      if (err) { return handleError(res, err); }
+
+      if(hit.length > 0) {
+        console.log('Found hit');
+        console.log(hit[0]);
+        hit[0].votes++;
+        hit[0].save();
+      }
+      else {
+        console.log('Found no hit');
+        console.log(hit);
+        Playlist.create({ _song: song._id, votes: 1 }, function() {
+          console.log('Added %s to playlist.', song.title);
+        })
+      }
+
+    });
+
     if(!song.inPlaylist) {
       song.inPlaylist = true;
     }

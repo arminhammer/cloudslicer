@@ -12,12 +12,12 @@ var SongSchema = new Schema({
   length: Number,
   url: {
     full: String,
-    youtubeid: String
+    youtubeid: {
+      type:String,
+      unique: true
+    }
   },
-  votes: {
-    current: Number,
-    total: Number
-  },
+  votes: Number,
   _submitter: { type: Number, ref: 'User'},
   active: Boolean
 });

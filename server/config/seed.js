@@ -22,10 +22,7 @@ Song.find({}).remove(function() {
         full: 'https://www.youtube.com/watch?v=TdrL3QxjyVw',
         youtubeid: 'TdrL3QxjyVw'
       },
-      votes: {
-        current: 0,
-        total: 20
-      }
+      votes: 20
     },
     {
       title: 'Moondust (Sound Remedy Remix)',
@@ -37,10 +34,7 @@ Song.find({}).remove(function() {
         full: 'https://www.youtube.com/watch?v=liwCcSH9xzw',
         youtubeid: 'liwCcSH9xzw'
       },
-      votes: {
-        current: 0,
-        total: 50
-      }
+      votes: 50
     },
     {
       title: 'Benediction',
@@ -52,10 +46,7 @@ Song.find({}).remove(function() {
         full: 'https://www.youtube.com/watch?v=PXx1CLAJ-OA',
         youtubeid: 'PXx1CLAJ-OA'
       },
-      votes: {
-        current: 0,
-        total: 40
-      }
+      votes: 40
     },
     {
       title: 'Stonehenge',
@@ -67,10 +58,7 @@ Song.find({}).remove(function() {
         full: 'https://www.youtube.com/watch?v=mbyzgeee2mg',
         youtubeid: 'mbyzgeee2mg'
       },
-      votes: {
-        current: 0,
-        total: 10
-      }
+      votes: 10
     },
     {
       title: 'Feels Like We Only Go Backwards',
@@ -82,10 +70,7 @@ Song.find({}).remove(function() {
         full: 'https://www.youtube.com/watch?v=wycjnCCgUes',
         youtubeid: 'wycjnCCgUes'
       },
-      votes: {
-        current: 0,
-        total: 39
-      }
+      votes: 39
     })
 });
 
