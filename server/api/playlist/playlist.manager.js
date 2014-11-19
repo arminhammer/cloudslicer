@@ -10,35 +10,9 @@ var PlaylistManager = function() {
 
   var manager = null;
   var currentSong = null;
-  var votingPeriod = 10000;
+  var votingPeriod = 50000;
   var countInterval = 1000;
-  var timer = 0;
-
-  //console.log('Playlist length: %d', tracks.length);
-
-  function getCurrentPosition(callback) {
-
-    Playlist.find({})
-      .sort('-position')
-      .limit(1)
-      .exec(function(err, position) {
-
-        console.log('POSITION');
-        console.log(position);
-
-        var value = 0;
-
-        if(position.length >= 1) {
-          value = position[0].position;
-        }
-
-        console.log('Current Position of playlist is %d', value);
-
-        callback(value);
-
-      });
-
-  }
+  var timer = 50000;
 
   function refill(max, callback) {
 
@@ -97,16 +71,9 @@ var PlaylistManager = function() {
 
   };
 
-
-  function compareTracks(a, b) {
-
-    return b.votes.current- a.votes.current;
-
-  }
-
   function switchTrack() {
 
-    Playlist.find({played: 0})
+    Playlist.find({})
       .sort('-votes')
       .limit(1)
       .populate('_song')

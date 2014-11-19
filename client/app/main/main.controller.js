@@ -53,21 +53,21 @@ angular.module('beatschApp')
 
     });
 
-    $http.get('/api/playlog').success(function(playLog) {
-
-      $scope.currentSong = playLog[0];
-      $scope.playLog = playLog;
-      //socket.syncUpdates('playlog', $scope.currentSong);
-      socket.syncUpdates('playlog', $scope.playLog);
-
-    });
-
-
     $http.get('/api/songs').success(function(songs) {
       $scope.catalog = songs;
       socket.syncUpdates('song', $scope.catalog);
     });
 
+    $http.get('/api/playlog').success(function(playLog) {
+
+      $scope.playLog = playLog;
+
+      $scope.currentSong = playLog[playLog.length-1];
+
+      socket.syncUpdates('playlog', $scope.currentSong);
+      socket.syncUpdates('playlog', $scope.playLog);
+
+    });
 
     $scope.voteFor = function(song) {
       $http.get('/api/songs/' + song._id + '/vote');
@@ -99,19 +99,19 @@ angular.module('beatschApp')
       console.log(player.getPlaylist());
 
       /*
-      player.cuePlaylist({
+       player.cuePlaylist({
 
-        listType: 'playlist',
-        list: $scope.playListVideoIds(),
-        index: 0,
-        startSeconds: 0,
-        suggestedQuality: 'default'
+       listType: 'playlist',
+       list: $scope.playListVideoIds(),
+       index: 0,
+       startSeconds: 0,
+       suggestedQuality: 'default'
 
-      });
+       });
 
-      console.log('Playlist after');
-      console.log(player.getPlaylist());
-      */
+       console.log('Playlist after');
+       console.log(player.getPlaylist());
+       */
 
     });
 
@@ -150,34 +150,34 @@ angular.module('beatschApp')
     });
 
   });
-  /*
-  .factory('SongList', function($http) {
+/*
+ .factory('SongList', function($http) {
 
-    var SongList = function() {
-      this.list = [];
-    };
+ var SongList = function() {
+ this.list = [];
+ };
 
-    SongList.prototype.loadMore = function() {
+ SongList.prototype.loadMore = function() {
 
-      $http.get('/api/songs')
-        .success(function(songList) {
-          console.log('list length: %s', songList.length);
-          for(var i=0; i < songList.length; i++) {
-            this.list.push(songList[i]);
-          }
-          //socket.syncUpdates('song', this.list);
-          //this.list = songList;
-        }.bind(this));
+ $http.get('/api/songs')
+ .success(function(songList) {
+ console.log('list length: %s', songList.length);
+ for(var i=0; i < songList.length; i++) {
+ this.list.push(songList[i]);
+ }
+ //socket.syncUpdates('song', this.list);
+ //this.list = songList;
+ }.bind(this));
 
-      /*
-       var last = this.list[this.list.length - 1];
-       for(var i = 1; i <= 8; i++) {
-       this.list.push({title: last + i});
-       }
+ /*
+ var last = this.list[this.list.length - 1];
+ for(var i = 1; i <= 8; i++) {
+ this.list.push({title: last + i});
+ }
 
-    };
+ };
 
-    return SongList;
+ return SongList;
 
-  });
-*/
+ });
+ */
