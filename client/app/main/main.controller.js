@@ -52,13 +52,21 @@ angular.module('beatschApp')
       $http.delete('/api/songs/' + song._id);
     };
 
-    $scope.getLocation = function(val) {
-      return $http.get('https://www.googleapis.com/youtube/v3/search?part=snippet&q=YouTube+Data+API&order=rating&videoDefinition=high&videoEmbeddable=true&type=video&videoCaption=closedCaption&key=AIzaSyCNYKLmc5xIjQ7-M1gGZMn3OK8vLJ-qFzM', {
+    $scope.searchYoutube = function(searchValue) {
+      return $http.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
+          part: 'snippet',
+          q: searchValue,
+          order: 'rating',
+          videoDefinition: 'high',
+          videoEmbeddable: 'true',
+          type: 'video',
+          videoCaption: 'closedCaption',
+          key: 'AIzaSyCNYKLmc5xIjQ7-M1gGZMn3OK8vLJ-qFzM'
         }
       }).then(function(response){
-        return response.data.results.map(function(item){
-          return item.formatted_address;
+        return response.data.items.map(function(video){
+          return video.snippet.title;
         });
       });
     };

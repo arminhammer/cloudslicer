@@ -7,7 +7,7 @@
     <p class="input-group">
 
     <h4>Asynchronous results</h4>
-    <input type="text" ng-model="asyncSelected" placeholder="Add a new song from Youtube here." typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control">
+    <input type="text" ng-model="asyncSelected" placeholder="Add a new song from Youtube here." typeahead="title for title in searchYoutube($viewValue)" typeahead-loading="loadingLocations" typeahead-wait-ms="50" class="form-control">
     <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
 
       <span class="input-group-btn">
