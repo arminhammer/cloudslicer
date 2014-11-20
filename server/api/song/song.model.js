@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+  Schema = mongoose.Schema;
 
 var SongSchema = new Schema({
 
@@ -10,13 +10,27 @@ var SongSchema = new Schema({
   inPlaylist: Boolean,
   source: String,
   length: Number,
-  url: {
-    full: String,
-    youtubeid: {
-      type:String,
-      unique: true
+  url: String,
+  videoId: {
+    type:String,
+    unique: true
+  },
+  publishedAt: Date,
+  channelId: String,
+  description: String,
+  thumbnails: {
+    default: {
+      url: String
+    },
+    medium: {
+      url: String
+    },
+    high: {
+      url: String
     }
   },
+  channelTitle: String,
+  liveBroadcastContent: String,
   votes: Number,
   _submitter: { type: Number, ref: 'User'},
   active: Boolean

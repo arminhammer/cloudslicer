@@ -6,35 +6,11 @@ var Playlist = require('../playlist/playlist.model');
 
 // Get list of songs
 exports.index = function(req, res) {
-  Song.find({ 'inPlaylist' : false }, function (err, songs) {
+  Song.find({ }, function (err, songs) {
     if(err) { return handleError(res, err); }
     return res.json(200, songs);
   });
 };
-
-//exports.playlist = function(req, res) {
-
-//return res.json(200, playList.getTrackList());
-
-/*
- Song.find({ 'inPlaylist' : true })
- .sort('votes.current')
- .exec(function (err, songs) {
- if(err) { return handleError(res, err); }
- return res.json(200, songs);
- });
- */
-
-/*
- Song.find()
- .where('inPlaylist').equals(fart)
- .sort('votes')
- .exec(function (err, songs) {
- if(err) { return handleError(res, err); }
- return res.json(200, songs);
- });
- */
-//};
 
 // Get a single song
 exports.show = function(req, res) {
@@ -88,6 +64,24 @@ exports.addVote = function(req, res) {
       return res.json(200, song);
     });
   });
+};
+
+exports.addSong = function(req, res) {
+
+  console.log('Adding song...');
+  console.log(req.body);
+  Song.find({ videoId: req.body.id.videoId }, function (err, songs) {
+    if (err) { return handleError(res, err); }
+    if(songs.length > 1) {
+      console.log('Found song in the list already!');
+      console.log(songs[0]);
+    }
+    else {
+      console.log('Song is not in the catalog yet.');
+
+    }
+  });
+
 };
 
 // Updates an existing song in the DB.

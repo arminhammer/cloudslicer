@@ -15,63 +15,51 @@ Song.find({}).remove(function() {
     {
       title: 'Summertime Sadness',
       artist: 'Lana Del Rey',
-      inPlaylist: false,
       source: 'youtube',
       length: 283000,
-      url: {
-        full: 'https://www.youtube.com/watch?v=TdrL3QxjyVw',
-        youtubeid: 'TdrL3QxjyVw'
-      },
+      url: 'https://www.youtube.com/watch?v=TdrL3QxjyVw',
+      videoId: 'TdrL3QxjyVw',
       votes: 20
     },
     {
       title: 'Moondust (Sound Remedy Remix)',
       artist: 'Jaymes Young',
-      inPlaylist: false,
       source: 'youtube',
       length: 360000,
-      url: {
-        full: 'https://www.youtube.com/watch?v=liwCcSH9xzw',
-        youtubeid: 'liwCcSH9xzw'
-      },
+      url: 'https://www.youtube.com/watch?v=liwCcSH9xzw',
+      videoId: 'liwCcSH9xzw',
       votes: 50
     },
     {
       title: 'Benediction',
       artist: 'Hot Natured & Ali Love',
-      inPlaylist: false,
       source: 'youtube',
       length: 393000,
-      url: {
-        full: 'https://www.youtube.com/watch?v=PXx1CLAJ-OA',
-        youtubeid: 'PXx1CLAJ-OA'
-      },
+      url: 'https://www.youtube.com/watch?v=PXx1CLAJ-OA',
+      videoId: 'PXx1CLAJ-OA',
       votes: 40
     },
     {
       title: 'Stonehenge',
       artist: 'Ylvis',
-      inPlaylist: false,
       source: 'youtube',
       length: 235000,
-      url: {
-        full: 'https://www.youtube.com/watch?v=mbyzgeee2mg',
-        youtubeid: 'mbyzgeee2mg'
-      },
+      url: 'https://www.youtube.com/watch?v=mbyzgeee2mg',
+      videoId: 'mbyzgeee2mg',
       votes: 10
     },
     {
       title: 'Feels Like We Only Go Backwards',
       artist: 'Tame Impala',
-      inPlaylist: false,
       source: 'youtube',
       length: 201000,
-      url: {
-        full: 'https://www.youtube.com/watch?v=wycjnCCgUes',
-        youtubeid: 'wycjnCCgUes'
-      },
+      url: 'https://www.youtube.com/watch?v=wycjnCCgUes',
+      videoId: 'wycjnCCgUes',
       votes: 39
-    })
+    },
+    function() {
+      console.log('finished populating songs');
+    });
 });
 
 Playlist.find({}).remove(function() {
@@ -81,53 +69,6 @@ Playlist.find({}).remove(function() {
 Playlog.find({}).remove(function() {
 
 });
-  /*
-
-  var songCount = 0;
-
-  Song.count({}, function(err, count) {
-    songCount = count;
-  });
-
-  Song.find({}).select('title').exec(function(err, titles) {
-
-    console.log(titles);
-
-    var randomSong1Count = Math.floor(Math.random() * (songCount - 0)) + 0;
-    var randomSong2Count = Math.floor(Math.random() * (songCount - 0)) + 0;
-
-    console.log('Numbers are %d and %d', randomSong1Count, randomSong2Count);
-
-    var song1ID = titles[randomSong1Count]._id;
-    var song2ID = titles[randomSong2Count]._id;
-
-    console.log('IDs are: %s and %s', song1ID, song2ID);
-
-    //var song1 = Song.find({ titles[randomSong1Count] }).exec(function() {});
-    //var song2 = Song.find({ titles[randomSong2Count] }).exec(function() {});
-
-    //console.log(song1);
-    //console.log(song2);
-
-    Playlist.create({
-      current: 0,
-      tracks: [
-        song1ID,
-        song2ID
-      ]
-    }, function() {
-      console.log('Playlist created.');
-    });
-
-  });
-
-
-
-//console.log('All songs are length %d', allSongs.length);
-//console.log(allSongs);
-
-})
- */
 
 User.find({}).remove(function() {
   User.create({

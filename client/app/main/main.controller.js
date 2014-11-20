@@ -41,11 +41,17 @@ angular.module('beatschApp')
     };
 
     $scope.addSong = function() {
+
       if($scope.newSong === '') {
         return;
       }
-      $http.post('/api/songs', { title: $scope.newSong, votes: {current: 1, total: 1 }, inPlaylist: false });
+
+      console.log('Adding new song');
+      console.log($scope.newSong);
+
+      $http.post('/api/songs/add', $scope.newSong);
       $scope.newSong = '';
+
     };
 
     $scope.deleteSong = function(song) {
@@ -57,16 +63,16 @@ angular.module('beatschApp')
         params: {
           part: 'snippet',
           q: searchValue,
-          order: 'rating',
-          videoDefinition: 'high',
+          order: 'viewCount',
+          //videoDefinition: 'high',
           videoEmbeddable: 'true',
           type: 'video',
-          videoCaption: 'closedCaption',
+          //videoCaption: 'closedCaption',
           key: 'AIzaSyCNYKLmc5xIjQ7-M1gGZMn3OK8vLJ-qFzM'
         }
       }).then(function(response){
         return response.data.items.map(function(video){
-          return video.snippet.title;
+          return video;
         });
       });
     };
@@ -134,7 +140,7 @@ angular.module('beatschApp')
       console.log('youtube.player.ended');
       var nextVid = getNextSongInPlaylist();
       console.log('nextVid: %s', nextVid);
-      player.loadVideoById(nextVid._song.url.youtubeid);
+      player.loadVideoById(nextVid._song.videoId);
       player.playVideo();
 
     });

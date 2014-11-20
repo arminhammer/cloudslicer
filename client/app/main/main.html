@@ -3,12 +3,11 @@
 <div class="container">
 
   <form class="thing-form">
-    <label>Add a new song to the playlist</label>
     <p class="input-group">
 
-    <h4>Asynchronous results</h4>
-    <input type="text" ng-model="asyncSelected" placeholder="Add a new song from Youtube here." typeahead="title for title in searchYoutube($viewValue)" typeahead-loading="loadingLocations" typeahead-wait-ms="50" class="form-control">
-    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+      <input type="text" ng-model="newSong" placeholder="Add a new song from Youtube here." typeahead="video as video.snippet.title for video in searchYoutube($viewValue) | filter: $viewValue" typeahead-loading="loadingLocations" typeahead-wait-ms="0" class="form-control">
+
+      <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
 
       <span class="input-group-btn">
           <button type="submit" class="btn btn-primary" ng-click="addSong()">Add New</button>
@@ -18,7 +17,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <youtube-video video-id="currentSong._song.url.youtubeid"></youtube-video>
+      <youtube-video video-id="currentSong._song.videoId"></youtube-video>
     </div>
   </div>
 
