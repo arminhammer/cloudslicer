@@ -6,7 +6,7 @@ var Playlist = require('../playlist/playlist.model');
 
 // Get list of songs
 exports.index = function(req, res) {
-  Song.find({ }, function (err, songs) {
+  Song.find({}, function (err, songs) {
     if(err) { return handleError(res, err); }
     return res.json(200, songs);
   });

@@ -56,10 +56,9 @@ Song.find({}).remove(function() {
       url: 'https://www.youtube.com/watch?v=wycjnCCgUes',
       videoId: 'wycjnCCgUes',
       votes: 39
-    },
-    function() {
-      console.log('finished populating songs');
-    });
+    }, function(err) {
+      console.log('The error is %s', err);
+    })
 });
 
 Playlist.find({}).remove(function() {
