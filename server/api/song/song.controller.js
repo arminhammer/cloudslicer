@@ -72,13 +72,13 @@ exports.addSong = function(req, res) {
   console.log(req.body);
   Song.find({ videoId: req.body.id.videoId }, function (err, songs) {
     if (err) { return handleError(res, err); }
-    if(songs.length > 1) {
+    if(songs.length > 0) {
       console.log('Found song in the list already!');
       console.log(songs[0]);
     }
     else {
       console.log('Song is not in the catalog yet.');
-
+      console.log(songs);
     }
   });
 
