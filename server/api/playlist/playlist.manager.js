@@ -11,7 +11,7 @@ var PlaylistManager = function() {
   var manager = null;
   var currentSong = null;
   var votingPeriod = 50000;
-  var countInterval = 1000;
+  var countInterval = 5000;
   var timer = 0;
   var socket = null;
 
