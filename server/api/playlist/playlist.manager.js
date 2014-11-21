@@ -11,9 +11,9 @@ var PlaylistManager = function() {
   var manager = null;
   var currentSong = null;
   var votingPeriod = 50000;
-  var countInterval = 5000;
+  var countInterval = 1000;
   var timer = 0;
-  var socket = null;
+  var sockets = {};
 
   function refill(max, callback) {
 
@@ -22,31 +22,31 @@ var PlaylistManager = function() {
     Playlist.find({ played: 0 }, function(err, tracks) {
       console.log('Found %d tracks', tracks.length);
 
-        console.log('Playlist is empty.');
+      console.log('Playlist is empty.');
 
-        console.log('Song search...');
+      console.log('Song search...');
 
-        Song.find({})
-          .sort('-votes.total')
-          .limit(max)
-          .exec(function(err, songs) {
+      Song.find({})
+        .sort('-votes.total')
+        .limit(max)
+        .exec(function(err, songs) {
 
-            function announceAdd(err, newTrack) {
+          function announceAdd(err, newTrack) {
 
-              if (err) return handleError(err);
+            if (err) return handleError(err);
 
-              console.log('Adding %s to playlist.', newTrack);
-              newTrack.save(function() {});
+            console.log('Adding %s to playlist.', newTrack);
+            newTrack.save(function() {});
 
-            }
+          }
 
-            console.log('Found %d songs to add', songs.length);
-            for(var i = 0; i < songs.length; i++) {
-              Playlist.create({ _song: songs[i]._id, played:0, votes: 0 }, announceAdd)
+          console.log('Found %d songs to add', songs.length);
+          for(var i = 0; i < songs.length; i++) {
+            Playlist.create({ _song: songs[i]._id, played:0, votes: 0 }, announceAdd)
 
-            }
+          }
 
-          });
+        });
 
     });
 
@@ -54,18 +54,34 @@ var PlaylistManager = function() {
 
   }
 
-  this.start = function(sSocket) {
+  this.register = function(sSocket) {
+
+    sockets[sSocket.id] = sSocket;
+
+    console.log('Registered %s', sockets[sSocket.id]);
+    //console.log(socket[sSocket.id]);
+
+  };
+
+  this.unregister = function(sSocket) {
+
+    sockets[sSocket.id] = null;
+
+    console.log('Unregistered %s', sSocket.id);
+    //console.log(socket[sSocket.id]);
+
+  };
+
+  this.start = function() {
 
     currentSong = {};
-
-    socket = sSocket;
 
     //console.log('Found socket: %s', socket);
     //socket.emit('playlist:timer', timer);
 
     refill(40, function() {
 
-      manager = setInterval(function() { manage(socket); }, countInterval);
+      manager = setInterval(function() { manage(sockets); }, countInterval);
 
     });
 
@@ -104,13 +120,21 @@ var PlaylistManager = function() {
 
   }
 
-  function manage(socket) {
+  function manage(sockets) {
 
     console.log('Managing');
 
     console.log('Manager is emitting %d on the socket', timer);
-    //console.log(socket);
-    socket.emit('timer', timer);
+
+    for (var socket in sockets) {
+      if (sockets.hasOwnProperty(socket)) {
+        console.log('Emitting to %s', socket);
+        if(sockets[socket]) {
+          sockets[socket].emit('timer', timer);
+        }
+      }
+    }
+    //socket.emit('timer', timer);
 
     if (timer > 0) {
       timer -= countInterval;
@@ -122,16 +146,16 @@ var PlaylistManager = function() {
       console.log('Counting');
 
       Playlist.count(function(err, count) {
-              console.log(count);
-          if(count < 2) {
-            refill(40, function() {
-              console.log('Refilled.');
-              switchTrack();
-            });
-          }
-        else {
+        console.log(count);
+        if(count < 2) {
+          refill(40, function() {
+            console.log('Refilled.');
             switchTrack();
-          }
+          });
+        }
+        else {
+          switchTrack();
+        }
         timer = votingPeriod;
       });
 

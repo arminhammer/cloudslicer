@@ -9,6 +9,7 @@ var Playlist = require('./playlist.model');
 var PlaylistManager = require('./playlist.manager');
 
 var playlistManager = new PlaylistManager();
+playlistManager.start();
 
 exports.register = function(socket) {
 
@@ -30,9 +31,16 @@ exports.register = function(socket) {
     onRemove(socket, doc);
   });
 
-  playlistManager.start(socket);
+  playlistManager.register(socket);
 
 }
+
+exports.unregister = function(socket) {
+
+  playlistManager.unregister(socket);
+
+}
+
 
 function onSave(socket, doc, cb) {
 

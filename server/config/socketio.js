@@ -8,6 +8,7 @@ var config = require('./environment');
 
 // When the user disconnects.. perform this
 function onDisconnect(socket) {
+  require('../api/playlist/playlist.socket').unregister(socket);
 }
 
 // When the user connects.. perform this
@@ -20,6 +21,7 @@ function onConnect(socket) {
   // Insert sockets below
   require('../api/playlog/playlog.socket').register(socket);
   require('../api/playlist/playlist.socket').register(socket);
+  //require('../api/playlist/playlist.manager').register(socket);
   require('../api/song/song.socket').register(socket);
 
 }
