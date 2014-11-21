@@ -75,10 +75,49 @@ exports.addSong = function(req, res) {
     if(songs.length > 0) {
       console.log('Found song in the list already!');
       console.log(songs[0]);
+      Playlist.create({
+        _song: songs[0]._id,
+        votes: 1
+      }, function(err, playlist) {
+
+        console.log('Successfully added to the playlist');
+
+      })
     }
     else {
       console.log('Song is not in the catalog yet.');
       console.log(songs);
+      Song.create({
+        title: req.body.snippet.title,
+        artist: req.body.snippet.title,
+        source: 'youtube',
+        length: 300000,
+        url: 'https://www.youtube.com/watch?v=' + req.body.id.videoId,
+        videoId: req.body.id.videoId,
+        publishedAt: req.body.snippet.publishedAt,
+        channelId: req.body.snippet.channelId,
+        description: req.body.snippet.description,
+        thumbnailUrlDefault: req.body.snippet.thumbnails.default.url,
+        thumbnailUrlMedium: req.body.snippet.thumbnails.medium.url,
+        thumbnailUrlHigh: req.body.snippet.thumbnails.high.url,
+        channelTitle: req.body.snippet.channelTitle,
+        liveBroadcastContent: req.body.snippet.liveBroadcastContent,
+        votes: 1,
+        active: true
+      }, function(err, song) {
+        if(err) {
+          console.log('There was an error adding the song to the catalog: %s', err);
+        }
+
+        Playlist.create({
+          _song: song._id,
+          votes: 1
+        }, function(err, playlist) {
+
+          console.log('Successfully added to the playlist');
+
+        })
+      })
     }
   });
 

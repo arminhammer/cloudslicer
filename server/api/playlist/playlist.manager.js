@@ -12,7 +12,8 @@ var PlaylistManager = function() {
   var currentSong = null;
   var votingPeriod = 50000;
   var countInterval = 1000;
-  var timer = 50000;
+  var timer = 0;
+  var socket = null;
 
   function refill(max, callback) {
 
@@ -53,12 +54,18 @@ var PlaylistManager = function() {
 
   }
 
-  this.start = function() {
+  this.start = function(sSocket) {
 
     currentSong = {};
+
+    socket = sSocket;
+
+    //console.log('Found socket: %s', socket);
+    //socket.emit('playlist:timer', timer);
+
     refill(40, function() {
 
-      manager = setInterval(manage, countInterval);
+      manager = setInterval(function() { manage(socket); }, countInterval);
 
     });
 
@@ -97,12 +104,16 @@ var PlaylistManager = function() {
 
   }
 
-  function manage() {
+  function manage(socket) {
 
     console.log('Managing');
 
-    if (timer < votingPeriod) {
-      timer += countInterval;
+    console.log('Manager is emitting %d on the socket', timer);
+    //console.log(socket);
+    socket.emit('timer', timer);
+
+    if (timer > 0) {
+      timer -= countInterval;
       console.log('votingPeriod now at %d of %d', timer, votingPeriod);
       //console.log('playlist id is %s', currentSong.playlist._id);
     }
@@ -121,7 +132,7 @@ var PlaylistManager = function() {
         else {
             switchTrack();
           }
-        timer = 0;
+        timer = votingPeriod;
       });
 
 

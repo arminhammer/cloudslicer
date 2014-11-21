@@ -3,11 +3,6 @@
 var _ = require('lodash');
 var Playlist = require('./playlist.model');
 
-var PlaylistManager = require('./playlist.manager');
-
-var playlistManager = new PlaylistManager();
-playlistManager.start();
-
 //playList.addTrack({ title: 'Title1', tLength: 5000, votes: {current: 5 } });
 //playList.addTrack({ title: 'Title2', tLength: 7000, votes: {current: 15 } });
 //playList.addTrack({ title: 'Title3', tLength: 15500, votes: {current: 2 }});

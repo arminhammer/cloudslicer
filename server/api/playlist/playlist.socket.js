@@ -6,7 +6,12 @@
 
 var Playlist = require('./playlist.model');
 
+var PlaylistManager = require('./playlist.manager');
+
+var playlistManager = new PlaylistManager();
+
 exports.register = function(socket) {
+
   Playlist.schema.post('save', function (doc) {
 
     Playlist.findById(doc._id).
@@ -20,15 +25,23 @@ exports.register = function(socket) {
       });
 
   });
+
   Playlist.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
+
+  playlistManager.start(socket);
+
 }
 
 function onSave(socket, doc, cb) {
+
   socket.emit('playlist:save', doc);
+
 }
 
 function onRemove(socket, doc, cb) {
+
   socket.emit('playlist:remove', doc);
+
 }

@@ -11,6 +11,12 @@ angular.module('beatschApp')
 
     $scope.playList = [];
 
+    $scope.timer = 0;
+
+    socket.socket.on('timer', function(timer) {
+      $scope.timer = timer;
+    });
+
     $http.get('/api/playlist').success(function(playlist) {
 
       $scope.playList = playlist;
@@ -105,7 +111,7 @@ angular.module('beatschApp')
       socket.unsyncUpdates('song');
     });
 
-    $scope.$on('youtube.player.ready', function ($event, player) {
+    $scope.$on('youtube.player.ready', function () {
 
       console.log('youtube.player.ready');
 

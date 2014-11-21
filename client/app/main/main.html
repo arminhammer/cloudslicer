@@ -45,6 +45,10 @@
       <h1 class="page-header">Playlist</h1>
 
       <div>
+        {{ timer }}
+      </div>
+
+      <div>
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playList | orderBy: '-votes'">
           <li><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
         </ul>
