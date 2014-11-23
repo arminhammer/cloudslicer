@@ -65,7 +65,7 @@ var PlaylistManager = function() {
 
   this.unregister = function(sSocket) {
 
-    sockets[sSocket.id] = null;
+    delete sockets[sSocket.id];
 
     console.log('Unregistered %s', sSocket.id);
     //console.log(socket[sSocket.id]);

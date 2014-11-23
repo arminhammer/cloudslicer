@@ -8,6 +8,7 @@ var config = require('./environment');
 
 // When the user disconnects.. perform this
 function onDisconnect(socket) {
+  console.log('Socket %s disconnected.', socket);
   require('../api/playlist/playlist.socket').unregister(socket);
 }
 
