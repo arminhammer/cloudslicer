@@ -9,6 +9,7 @@ var Song = require('../api/song/song.model');
 var User = require('../api/user/user.model');
 var Playlist = require('../api/playlist/playlist.model');
 var Playlog = require('../api/playlog/playlog.model');
+var Chat = require('../api/chat/chat.model');
 
 Song.find({}).remove(function() {
   Song.create(
@@ -67,6 +68,20 @@ Playlist.find({}).remove(function() {
 
 Playlog.find({}).remove(function() {
 
+});
+
+Chat.find({}).remove(function() {
+  Chat.create({
+      date: Date.now(),
+      body: 'This is a test chat 1'
+    },
+    {
+      date: Date.now(),
+      body: 'This is a test chat 2'
+    },
+    function() {
+      console.log('Finished inserting chats.');
+    })
 });
 
 User.find({}).remove(function() {

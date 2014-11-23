@@ -4,9 +4,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ChatSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  date: Date,
+  body: String,
+  _user: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 module.exports = mongoose.model('Chat', ChatSchema);

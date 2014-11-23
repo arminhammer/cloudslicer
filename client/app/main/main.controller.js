@@ -151,4 +151,18 @@ angular.module('beatschApp')
 
     });
 
+    $scope.chats = [];
+
+    $http.get('/api/chats').success(function(chats) {
+      $scope.chats = chats;
+      socket.syncUpdates('chat', $scope.chats);
+    });
+
+    $scope.addChat = function() {
+      if($scope.newChat === '') {
+        return;
+      }
+      $http.post('/api/chats', { date: Date.now(), body: $scope.newChat });
+      $scope.newChat = '';
+    };
   });
