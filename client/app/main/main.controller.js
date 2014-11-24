@@ -38,6 +38,18 @@ angular.module('beatschApp')
       //socket.syncUpdates('playlog', $scope.currentSong);
       socket.syncUpdates('playlog', $scope.playLog);
 
+      jQuery(function(){
+        //
+        $("#bgndVideo").attr('data-property', "{videoURL: '" + $scope.currentSong._song.videoId + "',containment:'body', showControls:true, autoPlay:true, loop:false, vol:100, mute:false, startAt:0, opacity:1, addRaster:false, quality:'default'}");
+        $("#bgndVideo").YTPlayer({
+          onReady: function (player) {
+            console.log(player.id + " player is ready");
+          }
+        });
+
+      });
+
+
     });
 
     $scope.voteFor = function(song) {
@@ -111,9 +123,11 @@ angular.module('beatschApp')
       socket.unsyncUpdates('song');
     });
 
-    $scope.$on('youtube.player.ready', function () {
+    $scope.$on('youtube.player.ready', function ($event, player) {
 
       console.log('youtube.player.ready');
+
+      player.playVideo();
 
     });
 
@@ -165,4 +179,31 @@ angular.module('beatschApp')
       $http.post('/api/chats', { date: Date.now(), body: $scope.newChat });
       $scope.newChat = '';
     };
-  });
+
+    $scope.playerVars = {
+      controls: 0,
+      autoplay: 1
+    };
+    /*
+    $scope.vidObj = {
+      videoURL: 'http://youtu.be/VuaJAgx0x_4',
+      containment: 'body',
+      autoPlay:true,
+      mute:false,
+      startAt: 0,
+      opacity: 1,
+      loop:false,
+      ratio: 16/9,
+      addRaster:true,
+      quality: 'default'
+    };
+    */
+
+  })
+  .directive('beatschPlayer', [function() {
+
+    return {
+      //template: '<a id="bgndVideo" class="player" data-property="{{ vidObj }}">My video</a>'
+    };
+
+  }]);
