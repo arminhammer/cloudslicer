@@ -106,6 +106,7 @@ angular.module('beatschApp')
         if($scope.playLog[count].date > currentDate) {
 
           console.log('Found %s', $scope.playLog[count]._song.title);
+          $scope.currentSong = $scope.playLog[count];
           return $scope.playLog[count];
 
         }
@@ -123,11 +124,29 @@ angular.module('beatschApp')
       socket.unsyncUpdates('song');
     });
 
+    function switchBackground(imgUrl) {
+
+      jQuery('body').css('background-image', 'url(' + imgUrl + ')')
+        .fadeIn('slow');
+
+      /*
+      jQuery('body').fadeOut('slow', function() {
+
+        jQuery('body').css('background-image', 'url(' + imgUrl + ')')
+          .fadeIn('slow');
+
+      });
+*/
+    }
+
     $scope.$on('youtube.player.ready', function ($event, player) {
 
       console.log('youtube.player.ready');
 
       player.playVideo();
+
+      console.log('url: %s', $scope.currentSong._song.thumbnailUrlHigh);
+      switchBackground($scope.currentSong._song.thumbnailUrlHigh);
 
     });
 
@@ -162,6 +181,7 @@ angular.module('beatschApp')
       console.log('nextVid: %s', nextVid);
       player.loadVideoById(nextVid._song.videoId);
       player.playVideo();
+      switchBackground($scope.currentSong._song.thumbnailUrlHigh);
 
     });
 
@@ -181,7 +201,7 @@ angular.module('beatschApp')
     };
 
     $scope.playerVars = {
-      controls: 0,
+      controls: 1,
       autoplay: 1
     };
     /*
