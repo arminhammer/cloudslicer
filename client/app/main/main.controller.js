@@ -38,6 +38,12 @@ angular.module('beatschApp')
       //socket.syncUpdates('playlog', $scope.currentSong);
       socket.syncUpdates('playlog', $scope.playLog);
 
+
+       jQuery("#my-thumbs-list").mThumbnailScroller({
+        axis:"y"
+      });
+
+      /*
       jQuery(function(){
         //
         $("#bgndVideo").attr('data-property', "{videoURL: '" + $scope.currentSong._song.videoId + "',containment:'body', showControls:true, autoPlay:true, loop:false, vol:100, mute:false, startAt:0, opacity:1, addRaster:false, quality:'default'}");
@@ -48,7 +54,7 @@ angular.module('beatschApp')
         });
 
       });
-
+      */
 
     });
 
@@ -129,15 +135,15 @@ angular.module('beatschApp')
       jQuery('body').css('background-image', 'url(' + imgUrl + ')')
         .fadeIn('slow');
 
-      /*
-      jQuery('body').fadeOut('slow', function() {
-
-        jQuery('body').css('background-image', 'url(' + imgUrl + ')')
-          .fadeIn('slow');
-
-      });
-*/
     }
+
+    /*
+    (function() {
+
+
+
+    })();
+    */
 
     $scope.$on('youtube.player.ready', function ($event, player) {
 
