@@ -6,12 +6,26 @@ var Playlog = require('./playlog.model');
 // Get list of playlogs
 exports.index = function(req, res) {
   Playlog.find({})
+    .sort('-date')
     .populate('_song')
     .exec(function (err, playlogs) {
     if(err) { return handleError(res, err); }
     return res.json(200, playlogs);
   });
 };
+
+// Get list of playlogs
+exports.indexLimited = function(req, res) {
+  Playlog.find({})
+    .sort('-date')
+    .limit(req.params.limit)
+    .populate('_song')
+    .exec(function (err, playlogs) {
+      if(err) { return handleError(res, err); }
+      return res.json(200, playlogs);
+    });
+};
+
 
 // Get a single playlog
 exports.show = function(req, res) {

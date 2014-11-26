@@ -29,7 +29,7 @@ angular.module('beatschApp')
       socket.syncUpdates('song', $scope.catalog);
     });
 
-    $http.get('/api/playlog').success(function(playLog) {
+    $http.get('/api/playlog/10').success(function(playLog) {
 
       $scope.playLog = playLog;
 
@@ -136,14 +136,6 @@ angular.module('beatschApp')
         .fadeIn('slow');
 
     }
-
-    /*
-    (function() {
-
-
-
-    })();
-    */
 
     $scope.$on('youtube.player.ready', function ($event, player) {
 

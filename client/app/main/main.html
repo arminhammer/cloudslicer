@@ -23,7 +23,7 @@
     <div class="col-lg-6">
 
       <div id="videoPlayer">
-        <youtube-video player-width="'480'" player-height="'320'" video-id="currentSong._song.videoId" player-vars="playerVars"></youtube-video>
+        <youtube-video player-width="'550'" player-height="'320'" video-id="currentSong._song.videoId" player-vars="playerVars"></youtube-video>
       </div>
 
       <div class="beatschBlock" id="currentlyPlaying">
@@ -35,8 +35,8 @@
 
       <div class="beatschBlock" id="playLog">
         <h1 class="page-header">Play Log</h1>
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playLog | orderBy: 'date'">
-          <li><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
+        <ul class=" beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
+          <li ng-repeat="track in playLog | orderBy: 'date'"><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
         </ul>
       </div>
 
@@ -70,8 +70,8 @@
           </div>
 
           <div>
-            <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playList | orderBy: '-votes'">
-              <li><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
+            <ul class="beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
+              <li ng-repeat="track in playList | orderBy: '-votes'"><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
             </ul>
           </div>
         </div>
@@ -79,20 +79,23 @@
 
       <div class="row">
         <div class="beatschBlock" id="chatBlock">
+          <div>
           <h1 class="page-header">Chats:</h1>
-          <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="chat in chats">
-            <li><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
-          </ul>
-
-          <form class="chat-form">
-            <label>Chat</label>
-            <p class="input-group">
-              <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addChat()">Submit</button>
-      </span>
-            </p>
-          </form>
+            <ul class="nav nav-tabs nav-stacked">
+              <li ng-repeat="chat in chats"><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
+            </ul>
+          </div>
+          <div>
+            <form class="chat-form">
+              <label>Chat</label>
+              <p class="input-group">
+                <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary" ng-click="addChat()">Submit</button>
+                </span>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -104,8 +107,8 @@
     <div class="col-lg-12 beatschBlock" id="songCatalog">
       <h1 class="page-header">Song Catalog</h1>
       <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in catalog | orderBy: '-votes'">
-          <li><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }}, Votes: {{ song.votes }}</a></li>
+        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
+          <li ng-repeat="song in catalog | orderBy: '-votes'"><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }}, Votes: {{ song.votes }}</a></li>
         </ul>
       </div>
     </div>
