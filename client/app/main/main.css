@@ -48,3 +48,36 @@ body {
   filter:alpha(opacity=70);
   opacity:.8;
 }
+
+#videoPlayer {
+
+}
+
+#thumbList {
+
+}
+
+#addVideoForm {
+
+}
+
+#currentlyPlaying {
+
+}
+
+#playLog{
+  /*float: right;
+  width: 50%; */
+}
+
+#playList {
+
+}
+
+#songCatalog {
+
+}
+
+#chatBlock {
+
+}

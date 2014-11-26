@@ -19,69 +19,89 @@
 
 
   <div class="row">
-    <div class="col-lg-12">
-      <youtube-video player-width="'480'" player-height="'320'" video-id="currentSong._song.videoId" player-vars="playerVars"></youtube-video>
-    </div>
 
-    <div id="my-thumbs-list">
-      <ul ng-repeat="track in playLog | orderBy: 'date'">
-        <li><a href="#"><img src="{{ track._song.thumbnailUrlHigh }}" /></a></li>
-      </ul>
-    </div>
-  </div>
+    <div class="col-lg-6">
 
-  <form class="thing-form">
-    <p class="input-group">
+      <div id="videoPlayer">
+        <youtube-video player-width="'480'" player-height="'320'" video-id="currentSong._song.videoId" player-vars="playerVars"></youtube-video>
+      </div>
 
-      <input type="text" ng-model="newSong" placeholder="Add a new song from Youtube here." typeahead="video as video.snippet.title for video in searchYoutube($viewValue) | filter: $viewValue" typeahead-loading="loadingLocations" typeahead-wait-ms="0" class="form-control">
+      <div class="beatschBlock" id="currentlyPlaying">
+        <h1 class="page-header">Currently Playing</h1>
+        <div>
+          <a href="#" tooltip="{{ currentSong._song.title }}">{{ currentSong.position}}: {{ currentSong._song.artist }} - {{ currentSong._song.title }} Current Votes: {{ currentSong.votes }}, Total Votes: {{ currentSong._song.votes }}, Played: {{ currentSong.played }}</a>
+        </div>
+      </div>
 
-      <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-
-      <span class="input-group-btn">
-          <button type="submit" class="btn btn-primary" ng-click="addSong()">Add New</button>
-        </span>
-    </p>
-  </form>
-
-  <div class="row">
-    <div class="col-lg-12 beatschBlock">
-      <h1 class="page-header">Currently Playing</h1>
-      <div>
-        <a href="#" tooltip="{{ currentSong._song.title }}">{{ currentSong.position}}: {{ currentSong._song.artist }} - {{ currentSong._song.title }} Current Votes: {{ currentSong.votes }}, Total Votes: {{ currentSong._song.votes }}, Played: {{ currentSong.played }}</a> </div>
-    </div>
-  </div>
-
-  <div class="row"></div>
-
-  <div class="row">
-    <div class="col-lg-12 beatschBlock">
-      <h1 class="page-header">Playlist Log</h1>
-      <div>
+      <div class="beatschBlock" id="playLog">
+        <h1 class="page-header">Play Log</h1>
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playLog | orderBy: 'date'">
           <li><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
         </ul>
       </div>
+
     </div>
+
+    <div class="col-lg-6">
+
+      <div class="row">
+        <div id="addVideoForm">
+          <form class="thing-form" >
+            <p class="input-group">
+
+              <input type="text" ng-model="newSong" placeholder="Add a new song from Youtube here." typeahead="video as video.snippet.title for video in searchYoutube($viewValue) | filter: $viewValue" typeahead-loading="loadingLocations" typeahead-wait-ms="0" class="form-control">
+
+              <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-click="addSong()">Add New</button>
+        </span>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="beatschBlock" id="playList">
+          <h1 class="page-header">Playlist</h1>
+
+          <div>
+            {{ timer }}
+          </div>
+
+          <div>
+            <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playList | orderBy: '-votes'">
+              <li><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="beatschBlock" id="chatBlock">
+          <h1 class="page-header">Chats:</h1>
+          <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="chat in chats">
+            <li><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
+          </ul>
+
+          <form class="chat-form">
+            <label>Chat</label>
+            <p class="input-group">
+              <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addChat()">Submit</button>
+      </span>
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <div class="row">
-    <div class="col-lg-12 beatschBlock">
-      <h1 class="page-header">Playlist</h1>
-
-      <div>
-        {{ timer }}
-      </div>
-
-      <div>
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playList | orderBy: '-votes'">
-          <li><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-12 beatschBlock">
+    <div class="col-lg-12 beatschBlock" id="songCatalog">
       <h1 class="page-header">Song Catalog</h1>
       <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in catalog | orderBy: '-votes'">
@@ -89,26 +109,6 @@
         </ul>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-12 beatschBlock">
-      <h1 class="page-header">Chats:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="chat in chats">
-        <li><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <form class="chat-form">
-      <label>Chat</label>
-      <p class="input-group">
-        <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addChat()">Submit</button>
-      </span>
-      </p>
-    </form>
   </div>
 
 </div>
