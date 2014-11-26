@@ -13,14 +13,14 @@
 
   <!--<beatsch-player></beatsch-player>-->
   <!--<a id="bgndVideo" class="player" >My video</a>-->
- <!-- <a id="bgndVideo" class="bgndPlayer" data-property="{videoURL:'http://youtu.be/BsekcY04xvQ',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</a>
--->
+  <!-- <a id="bgndVideo" class="bgndPlayer" data-property="{videoURL:'http://youtu.be/BsekcY04xvQ',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</a>
+ -->
 
 
 
   <div class="row">
     <div class="col-lg-12">
-<youtube-video player-width="'480'" player-height="'320'" video-id="currentSong._song.videoId" player-vars="playerVars"></youtube-video>
+      <youtube-video player-width="'480'" player-height="'320'" video-id="currentSong._song.videoId" player-vars="playerVars"></youtube-video>
     </div>
 
     <div id="my-thumbs-list">
@@ -44,15 +44,17 @@
   </form>
 
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 beatschBlock">
       <h1 class="page-header">Currently Playing</h1>
       <div>
         <a href="#" tooltip="{{ currentSong._song.title }}">{{ currentSong.position}}: {{ currentSong._song.artist }} - {{ currentSong._song.title }} Current Votes: {{ currentSong.votes }}, Total Votes: {{ currentSong._song.votes }}, Played: {{ currentSong.played }}</a> </div>
     </div>
   </div>
 
+  <div class="row"></div>
+
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 beatschBlock">
       <h1 class="page-header">Playlist Log</h1>
       <div>
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in playLog | orderBy: 'date'">
@@ -63,7 +65,7 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 beatschBlock">
       <h1 class="page-header">Playlist</h1>
 
       <div>
@@ -79,7 +81,7 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 beatschBlock">
       <h1 class="page-header">Song Catalog</h1>
       <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="song in catalog | orderBy: '-votes'">
@@ -89,26 +91,24 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Chats:</h1>
-        <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="chat in chats">
-          <li><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
-        </ul>
-      </div>
+  <div class="row">
+    <div class="col-lg-12 beatschBlock">
+      <h1 class="page-header">Chats:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="chat in chats">
+        <li><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
+      </ul>
     </div>
-    <div class="row">
-      <form class="chat-form">
-        <label>Chat</label>
-        <p class="input-group">
-          <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
+  </div>
+  <div class="row">
+    <form class="chat-form">
+      <label>Chat</label>
+      <p class="input-group">
+        <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
       <span class="input-group-btn">
         <button type="submit" class="btn btn-primary" ng-click="addChat()">Submit</button>
       </span>
-        </p>
-      </form>
-    </div>
+      </p>
+    </form>
   </div>
 
 </div>

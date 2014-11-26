@@ -39,8 +39,8 @@ angular.module('beatschApp')
       socket.syncUpdates('playlog', $scope.playLog);
 
 
-       jQuery("#my-thumbs-list").mThumbnailScroller({
-        axis:"y"
+       jQuery('#my-thumbs-list').mThumbnailScroller({
+        axis:'y'
       });
 
       /*
