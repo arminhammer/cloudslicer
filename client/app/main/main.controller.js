@@ -5,6 +5,8 @@ angular.module('beatschApp')
 
     $scope.currentSong = null;
 
+    //$rootScope.currentSong = "Test Current Song"
+
     $scope.catalog = [];
 
     $scope.playLog = [];
