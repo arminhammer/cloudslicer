@@ -7,7 +7,7 @@ var router = express.Router();
 
 router.get('/', controller.index);
 router.get('/:id', controller.show);
-router.get('/:id/vote', controller.addVote);
+router.post('/vote', controller.addVote);
 router.post('/', controller.create);
 router.post('/add', controller.addSong);
 router.put('/:id', controller.update);

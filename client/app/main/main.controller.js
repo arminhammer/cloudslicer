@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('beatschApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth) {
 
     $scope.currentSong = null;
 
@@ -61,7 +61,21 @@ angular.module('beatschApp')
     });
 
     $scope.voteFor = function(song) {
-      $http.get('/api/songs/' + song._id + '/vote');
+      console.log('Voting as ');
+      console.log(Auth.getCurrentUser());
+      if(Auth.getCurrentUser()) {
+        console.log('User is not null');
+        if(Auth.getCurrentUser()._id) {
+          console.log('Id is not null!');
+        }
+        else {
+          console.log('Id is null.');
+        }
+      }
+      else {
+        console.log('User is null!');
+      }
+      $http.post('/api/songs/vote', { song: song, user: Auth.getCurrentUser() });
       //socket.syncUpdates('song', $scope.playList);
       //socket.syncUpdates('song', $scope.songList.list);
     };
@@ -75,6 +89,7 @@ angular.module('beatschApp')
       console.log('Adding new song');
       console.log($scope.newSong);
 
+      //TODO turn this into { newSong: $scope.newSong }
       $http.post('/api/songs/add', $scope.newSong);
       $scope.newSong = '';
 

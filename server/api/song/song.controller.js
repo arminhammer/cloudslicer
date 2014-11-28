@@ -3,6 +3,7 @@
 var _ = require('lodash');
 var Song = require('./song.model');
 var Playlist = require('../playlist/playlist.model');
+var Vote = require('../vote/vote.model');
 
 // Get list of songs
 exports.index = function(req, res) {
@@ -32,10 +33,17 @@ exports.create = function(req, res) {
 // Updates an existing song in the DB.
 exports.addVote = function(req, res) {
   //if(req.body._id) { delete req.body._id; }
-  Song.findById(req.params.id, function (err, song) {
+  console.log('req is ');
+  console.log(req.body);
+  Song.findById(req.body.song._id, function (err, song) {
     if (err) { return handleError(res, err); }
     if(!song) { return res.send(404); }
-    song.votes++;
+    //song.votes++;
+
+    var userQuery = null;
+    if(req.body.user._id) {
+      userQuery = req.body.user._id;
+    }
 
     Playlist.find({ _song: song }, function(err, hit) {
       if (err) { return handleError(res, err); }
@@ -43,26 +51,57 @@ exports.addVote = function(req, res) {
       if(hit.length > 0) {
         console.log('Found hit');
         console.log(hit[0]);
-        hit[0].votes++;
+        //hit[0].votes++;
         hit[0].save();
       }
       else {
         console.log('Found no hit');
         console.log(hit);
-        Playlist.create({ _song: song._id, votes: 1 }, function() {
-          console.log('Added %s to playlist.', song.title);
-        })
+
+        Vote.create({user: userQuery, date: Date.now(), active: true }, function(err, newVote) {
+          if(err) { console.log('Error creating new vote: %s', err); }
+
+          song.votes.push(newVote);
+
+          Playlist.create({ _song: song._id }, function(err, newPlaylist) {
+
+            newPlaylist.votes.push(newVote);
+            newPlaylist.save(function(err) {
+
+              if (err) { return handleError(res, err); }
+              console.log('Added %s to playlist.', song.title);
+              console.log(newPlaylist);
+
+              song.save(function (err) {
+                console.log('Saving song...');
+                console.log(song);
+                if (err) { return handleError(res, err); }
+
+                return res.status(200).json(song);
+              });
+
+            });
+
+          })
+
+        });
+
       }
 
     });
 
-    if(!song.inPlaylist) {
+    /*if(!song.inPlaylist) {
       song.inPlaylist = true;
     }
+
     song.save(function (err) {
       if (err) { return handleError(res, err); }
+      console.log('Saving song...');
+      console.log(song);
       return res.status(200).json(song);
     });
+     */
+
   });
 };
 
@@ -150,5 +189,5 @@ exports.destroy = function(req, res) {
 };
 
 function handleError(res, err) {
-  return res.send(500, err);
+  return res.status(500).send(err);
 }

@@ -38,7 +38,7 @@
       <div class="beatschBlock" id="playLog">
         <h1 class="page-header">Play Log</h1>
         <ul class=" beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-          <li ng-repeat="track in playLog | orderBy: 'date'"><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
+          <li ng-repeat="track in playLog | orderBy: 'date'"><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes.length }}, Total Votes: {{ track._song.votes.length }}</a></li>
         </ul>
       </div>
 
@@ -73,7 +73,7 @@
 
           <div>
             <ul class="beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-              <li ng-repeat="track in playList | orderBy: '-votes'"><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes }}, Total Votes: {{ track._song.votes }}</a></li>
+              <li ng-repeat="track in playList | orderBy: '-votes.length'"><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes.length }}, Total votes: {{ track._song.votes.length }}</a></li>
             </ul>
           </div>
         </div>
@@ -110,7 +110,7 @@
       <h1 class="page-header">Song Catalog</h1>
       <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
         <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-          <li ng-repeat="song in catalog | orderBy: '-votes'"><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }}, Votes: {{ song.votes }}</a></li>
+          <li ng-repeat="song in catalog | orderBy: '-votes.length'"><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }}, Votes: {{ song.votes.length }}</a></li>
         </ul>
       </div>
     </div>
