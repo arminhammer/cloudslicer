@@ -200,7 +200,7 @@ exports.addSong = function(req, res) {
         console.log('Song is not in the catalog yet.');
         console.log(songs);
 
-        var newSong = new Song;
+        var newSong = new Song();
         newSong.title = req.body.newSong.snippet.title;
         newSong.artist = req.body.newSong.snippet.title;
         newSong.source = 'youtube';
