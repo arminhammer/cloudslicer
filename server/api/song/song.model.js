@@ -22,10 +22,11 @@ var SongSchema = new Schema({
   thumbnailUrlHigh: String,
   channelTitle: String,
   liveBroadcastContent: String,
-  votes: Number,
+  votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }],
   _submitter: { type: Number, ref: 'User'},
-  active: Boolean
-
+  active: Boolean,
+  label: [String],
+  playcount: Number
 });
 
 module.exports = mongoose.model('Song', SongSchema);

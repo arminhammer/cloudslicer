@@ -8,7 +8,7 @@ var PlaylogSchema = new Schema({
   //position: Number,
   date: Date,
   _song: { type: Schema.Types.ObjectId, ref: 'Song'},
-  votes: Number
+  votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }]
 
 });
 

@@ -18,7 +18,10 @@ var UserSchema = new Schema({
   facebook: {},
   twitter: {},
   google: {},
-  github: {}
+  github: {},
+  votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }],
+  songs: [{ type: Schema.Types.ObjectId, ref: 'Song' }],
+  active: Boolean
 });
 
 /**

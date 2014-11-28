@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var PlaylistSchema = new Schema({
 
   _song: { type: Schema.Types.ObjectId, ref: 'Song'},
-  votes: Number
+  votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }]
 
 });
 

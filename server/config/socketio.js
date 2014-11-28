@@ -20,6 +20,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/vote/vote.socket').register(socket);
   require('../api/chat/chat.socket').register(socket);
   require('../api/playlog/playlog.socket').register(socket);
   require('../api/playlist/playlist.socket').register(socket);
