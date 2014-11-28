@@ -45,48 +45,57 @@ exports.addVote = function(req, res) {
       userQuery = req.body.user._id;
     }
 
-    Playlist.find({ _song: song }, function(err, hit) {
-      if (err) { return handleError(res, err); }
+    Vote.create({user: userQuery, date: Date.now(), active: true }, function(err, newVote) {
+      if(err) { console.log('Error creating new vote: %s', err); }
 
-      if(hit.length > 0) {
-        console.log('Found hit');
-        console.log(hit[0]);
-        //hit[0].votes++;
-        hit[0].save();
-      }
-      else {
-        console.log('Found no hit');
-        console.log(hit);
+      song.votes.push(newVote);
 
-        Vote.create({user: userQuery, date: Date.now(), active: true }, function(err, newVote) {
-          if(err) { console.log('Error creating new vote: %s', err); }
+      song.save(function (err) {
 
-          song.votes.push(newVote);
+        console.log('Saving song...');
+        console.log(song);
 
-          Playlist.create({ _song: song._id }, function(err, newPlaylist) {
+        if (err) { return handleError(res, err); }
 
-            newPlaylist.votes.push(newVote);
-            newPlaylist.save(function(err) {
+        Playlist.find({ _song: song }, function(err, hit) {
 
-              if (err) { return handleError(res, err); }
-              console.log('Added %s to playlist.', song.title);
-              console.log(newPlaylist);
+          if (err) { return handleError(res, err); }
 
-              song.save(function (err) {
-                console.log('Saving song...');
-                console.log(song);
-                if (err) { return handleError(res, err); }
+          if(hit.length > 0) {
 
-                return res.status(200).json(song);
-              });
-
+            console.log('Found hit');
+            console.log(hit[0]);
+            hit[0].votes.push(newVote);
+            hit[0].save(function() {
+              console.log('Saved vote to playlist');
             });
 
-          })
+          }
+          else {
+
+            console.log('Found no hit');
+            console.log(hit);
+
+            Playlist.create({ _song: song._id }, function(err, newPlaylist) {
+
+              newPlaylist.votes.push(newVote);
+              newPlaylist.save(function(err) {
+
+                if (err) { return handleError(res, err); }
+                console.log('Added %s to playlist.', song.title);
+                console.log(newPlaylist);
+
+              });
+
+            })
+
+          }
 
         });
 
-      }
+        return res.status(200).json(song);
+
+      });
 
     });
 
