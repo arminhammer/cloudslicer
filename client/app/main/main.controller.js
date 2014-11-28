@@ -89,8 +89,7 @@ angular.module('beatschApp')
       console.log('Adding new song');
       console.log($scope.newSong);
 
-      //TODO turn this into { newSong: $scope.newSong }
-      $http.post('/api/songs/add', $scope.newSong);
+      $http.post('/api/songs/add', { newSong: $scope.newSong, user: Auth.getCurrentUser() });
       $scope.newSong = '';
 
     };

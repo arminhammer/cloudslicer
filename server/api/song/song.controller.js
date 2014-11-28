@@ -99,18 +99,6 @@ exports.addVote = function(req, res) {
 
     });
 
-    /*if(!song.inPlaylist) {
-      song.inPlaylist = true;
-    }
-
-    song.save(function (err) {
-      if (err) { return handleError(res, err); }
-      console.log('Saving song...');
-      console.log(song);
-      return res.status(200).json(song);
-    });
-     */
-
   });
 };
 
@@ -118,55 +106,169 @@ exports.addSong = function(req, res) {
 
   console.log('Adding song...');
   console.log(req.body);
-  Song.find({ videoId: req.body.id.videoId }, function (err, songs) {
-    if (err) { return handleError(res, err); }
-    if(songs.length > 0) {
-      console.log('Found song in the list already!');
-      console.log(songs[0]);
-      Playlist.create({
-        _song: songs[0]._id,
-        votes: 1
-      }, function(err, playlist) {
 
-        console.log('Successfully added to the playlist');
+  Song.find({ videoId: req.body.newSong.id.videoId }, function (err, songs) {
 
-      })
+    if (err) {
+      return handleError(res, err);
     }
-    else {
-      console.log('Song is not in the catalog yet.');
-      console.log(songs);
-      Song.create({
-        title: req.body.snippet.title,
-        artist: req.body.snippet.title,
-        source: 'youtube',
-        length: 300000,
-        url: 'https://www.youtube.com/watch?v=' + req.body.id.videoId,
-        videoId: req.body.id.videoId,
-        publishedAt: req.body.snippet.publishedAt,
-        channelId: req.body.snippet.channelId,
-        description: req.body.snippet.description,
-        thumbnailUrlDefault: req.body.snippet.thumbnails.default.url,
-        thumbnailUrlMedium: req.body.snippet.thumbnails.medium.url,
-        thumbnailUrlHigh: req.body.snippet.thumbnails.high.url,
-        channelTitle: req.body.snippet.channelTitle,
-        liveBroadcastContent: req.body.snippet.liveBroadcastContent,
-        votes: 1,
-        active: true
-      }, function(err, song) {
-        if(err) {
-          console.log('There was an error adding the song to the catalog: %s', err);
-        }
 
-        Playlist.create({
-          _song: song._id,
-          votes: 1
-        }, function(err, playlist) {
-
-          console.log('Successfully added to the playlist');
-
-        })
-      })
+    var userQuery = null;
+    if (req.body.user._id) {
+      userQuery = req.body.user._id;
     }
+
+    Vote.create({user: userQuery, date: Date.now(), active: true}, function (err, newVote) {
+
+      if (err) {
+        return handleError(res, err);
+      }
+
+      if (songs.length > 0) {
+
+        console.log('Found song in the list already!');
+        console.log(songs[0]);
+
+        songs[0].votes.push(newVote);
+
+        songs[0].save(function (err, song) {
+
+          console.log('Saving song...');
+          console.log(song);
+
+          if (err) {
+            return handleError(res, err);
+          }
+
+          Playlist.find({_song: song}, function (err, hit) {
+
+            if (err) {
+              return handleError(res, err);
+            }
+
+            if (hit.length > 0) {
+
+              console.log('Found hit');
+              console.log(hit[0]);
+              hit[0].votes.push(newVote);
+              hit[0].save(function () {
+                console.log('Saved vote to playlist');
+              });
+
+            }
+            else {
+
+              console.log('Found no hit');
+              console.log(hit);
+
+              Playlist.create({_song: song._id}, function (err, newPlaylist) {
+
+                newPlaylist.votes.push(newVote);
+                newPlaylist.save(function (err) {
+
+                  if (err) {
+                    return handleError(res, err);
+                  }
+                  console.log('Added %s to playlist.', song.title);
+                  console.log(newPlaylist);
+
+                });
+
+              })
+
+            }
+
+          })
+
+          /*
+          var newPlaylist = new Playlist;
+          newPlaylist._song = song._id;
+          newPlaylist.votes.push(newVote);
+
+          newPlaylist.save(function (err, playlist) {
+
+            console.log('Successfully existing song to the playlist');
+
+          });
+          */
+
+        });
+
+      }
+      else {
+
+        console.log('Song is not in the catalog yet.');
+        console.log(songs);
+
+        var newSong = new Song;
+        newSong.title = req.body.newSong.snippet.title;
+        newSong.artist = req.body.newSong.snippet.title;
+        newSong.source = 'youtube';
+        newSong.length = 300000;
+        newSong.url = 'https://www.youtube.com/watch?v=' + req.body.newSong.id.videoId;
+        newSong.videoId = req.body.newSong.id.videoId;
+        newSong.publishedAt = req.body.newSong.snippet.publishedAt;
+        newSong.channelId = req.body.newSong.snippet.channelId;
+        newSong.description = req.body.newSong.snippet.description;
+        newSong.thumbnailUrlDefault = req.body.newSong.snippet.thumbnails.default.url;
+        newSong.thumbnailUrlMedium = req.body.newSong.snippet.thumbnails.medium.url;
+        newSong.thumbnailUrlHigh = req.body.newSong.snippet.thumbnails.high.url;
+        newSong.channelTitle = req.body.newSong.snippet.channelTitle;
+        newSong.liveBroadcastContent = req.body.newSong.snippet.liveBroadcastContent;
+        newSong.votes.push(newVote);
+        newSong.active = true;
+
+        newSong.save(function (err, song) {
+          if (err) {
+            console.log('There was an error adding the song to the catalog: %s', err);
+          }
+
+          Playlist.find({_song: song}, function (err, hit) {
+
+            if (err) {
+              return handleError(res, err);
+            }
+
+            if (hit.length > 0) {
+
+              console.log('Found hit');
+              console.log(hit[0]);
+              hit[0].votes.push(newVote);
+              hit[0].save(function () {
+                console.log('Saved vote to playlist');
+              });
+
+            }
+            else {
+
+              console.log('Found no hit');
+              console.log(hit);
+
+              Playlist.create({_song: song._id}, function (err, newPlaylist) {
+
+                newPlaylist.votes.push(newVote);
+                newPlaylist.save(function (err) {
+
+                  if (err) {
+                    return handleError(res, err);
+                  }
+                  console.log('Added %s to playlist.', song.title);
+                  console.log(newPlaylist);
+
+                });
+
+              })
+
+            }
+
+          })
+
+        });
+
+      }
+
+    });
+
   });
 
 };
