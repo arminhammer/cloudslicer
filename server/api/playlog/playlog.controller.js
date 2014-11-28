@@ -10,7 +10,7 @@ exports.index = function(req, res) {
     .populate('_song')
     .exec(function (err, playlogs) {
     if(err) { return handleError(res, err); }
-    return res.json(200, playlogs);
+    return res.status(200).json(playlogs);
   });
 };
 
@@ -22,7 +22,7 @@ exports.indexLimited = function(req, res) {
     .populate('_song')
     .exec(function (err, playlogs) {
       if(err) { return handleError(res, err); }
-      return res.json(200, playlogs);
+      return res.status(200).json(playlogs);
     });
 };
 
@@ -40,7 +40,7 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   Playlog.create(req.body, function(err, playlog) {
     if(err) { return handleError(res, err); }
-    return res.json(201, playlog);
+    return res.status(201).json(playlog);
   });
 };
 
@@ -53,7 +53,7 @@ exports.update = function(req, res) {
     var updated = _.merge(playlog, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, playlog);
+      return res.status(200).json(playlog);
     });
   });
 };

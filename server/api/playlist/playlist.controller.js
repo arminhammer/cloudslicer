@@ -18,7 +18,7 @@ exports.index = function(req, res) {
       if(err) {
         return handleError(res, err);
       }
-      return res.json(200, playlists);
+      return res.status(200).json(playlists);
     });
 };
 
@@ -31,7 +31,7 @@ exports.current = function(req, res) {
     .exec(function (err, playlist) {
       if(err) { return handleError(res, err); }
       if(!playlist) { return res.send(404); }
-      return res.json(playlist);
+      return res.status(200).json(playlist);
     });
 };
 
@@ -43,7 +43,7 @@ exports.playLog = function(req, res) {
     .exec(function (err, playlist) {
       if(err) { return handleError(res, err); }
       if(!playlist) { return res.send(404); }
-      return res.json(playlist);
+      return res.status(200).json(playlist);
     });
 };
 
@@ -52,7 +52,7 @@ exports.show = function(req, res) {
   Playlist.findById(req.params.id, function (err, playlist) {
     if(err) { return handleError(res, err); }
     if(!playlist) { return res.send(404); }
-    return res.json(playlist);
+    return res.status(200).json(playlist);
   });
 };
 
@@ -60,7 +60,7 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   Playlist.create(req.body, function(err, playlist) {
     if(err) { return handleError(res, err); }
-    return res.json(201, playlist);
+    return res.status(201).json(playlist);
   });
 };
 
@@ -73,7 +73,7 @@ exports.update = function(req, res) {
     var updated = _.merge(playlist, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, playlist);
+      return res.status(200).json(playlist);
     });
   });
 };

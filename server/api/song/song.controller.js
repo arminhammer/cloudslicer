@@ -8,7 +8,7 @@ var Playlist = require('../playlist/playlist.model');
 exports.index = function(req, res) {
   Song.find({}, function (err, songs) {
     if(err) { return handleError(res, err); }
-    return res.json(200, songs);
+    return res.status(200).json(songs);
   });
 };
 
@@ -25,7 +25,7 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   Song.create(req.body, function(err, song) {
     if(err) { return handleError(res, err); }
-    return res.json(201, song);
+    return res.status(201).json(song);
   });
 };
 
@@ -61,7 +61,7 @@ exports.addVote = function(req, res) {
     }
     song.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, song);
+      return res.status(200).json(song);
     });
   });
 };
@@ -132,7 +132,7 @@ exports.update = function(req, res) {
     var updated = _.merge(song, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, song);
+      return res.status(200).json(song);
     });
   });
 };

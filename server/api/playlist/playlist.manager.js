@@ -42,7 +42,7 @@ var PlaylistManager = function() {
 
           console.log('Found %d songs to add', songs.length);
           for(var i = 0; i < songs.length; i++) {
-            Playlist.create({ _song: songs[i]._id, played:0, votes: 0 }, announceAdd)
+            Playlist.create({ _song: songs[i]._id, played:0 }, announceAdd)
 
           }
 
