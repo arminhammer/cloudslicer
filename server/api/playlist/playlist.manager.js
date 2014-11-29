@@ -10,8 +10,8 @@ var PlaylistManager = function() {
 
   var manager = null;
   var currentSong = null;
-  var votingPeriod = 120000;
-  var countInterval = 1000;
+  var votingPeriod = 180;
+  var countInterval = 1;
   var timer = 0;
   var sockets = {};
 
@@ -81,7 +81,7 @@ var PlaylistManager = function() {
 
     refill(40, function() {
 
-      manager = setInterval(function() { manage(sockets); }, countInterval);
+      manager = setInterval(function() { manage(sockets); }, countInterval*1000);
 
     });
 

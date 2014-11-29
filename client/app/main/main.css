@@ -66,7 +66,19 @@ body {
 .beatschBlock {
   background-color: black;
   filter:alpha(opacity=70);
-  opacity:.8;
+  opacity:.7;
+}
+
+.beatschChatBlock {
+  background-color: black;
+  filter:alpha(opacity=90);
+  opacity:.9;
+  color: white;
+}
+
+.beatschChatBlock li {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #videoPlayer {
@@ -88,6 +100,13 @@ body {
 #playLog{
   /*float: right;
   width: 50%; */
+  color: white;
+  font-family: baronBold;
+}
+
+.beatschPlayLogItem {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #playList {
@@ -107,14 +126,28 @@ h1 {
   font-family: baronBold;
 }
 
+.page-header {
+  border-bottom-width: 0px;
+}
+
+.nav-tabs {
+  border-bottom-width: 0px;
+}
+
+.navbar-static-top {
+  border-bottom-width: 0px;
+}
+
 #beatschNavBar {
   background-color: black;
   filter:alpha(opacity=70);
-  opacity:.9;
+  opacity:.7;
 }
 
 #beatschHeader {
   color: white;
+  font-size: 12pt;
+  font-family: baronBold;
 }
 
 #beatschTimer {
@@ -122,6 +155,30 @@ h1 {
   float: right;
 }
 
-#navbar-nav {
+#navLinks li a {
   color: white;
+}
+
+#navLinks li a:hover {
+  color: #808080;
+}
+
+a {
+  color: white;
+  font-family: baronBold;
+}
+
+input {
+}
+
+button {
+  font-family: baronBold;
+}
+
+a:hover {
+  color: black;
+}
+
+#chatToggleButton {
+ float: right;
 }

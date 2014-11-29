@@ -56,7 +56,7 @@
                 <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
 
                 <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary" ng-click="addSong()">Add New</button>
+                  <button type="submit" class="btn btn-default" ng-click="addSong()">Add New</button>
                 </span>
               </p>
             </form>
@@ -78,7 +78,7 @@
     <div class="col-lg-12 beatschBlock" id="playLog">
       <h1 class="page-header">PLAYLIST</h1>
       <ul class=" beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-        <li ng-repeat="track in playLog | orderBy: 'date'"><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes.length }}, Total Votes: {{ track._song.votes.length }}</a></li>
+        <li class="beatschPlayLogItem" ng-repeat="track in playLog | orderBy: 'date'">{{ track.date }}: <b>{{ track._song.title }}</b> Current Votes: {{ track.votes.length }}, Total Votes: {{ track._song.votes.length }}</li>
       </ul>
     </div>
   </div>
@@ -98,22 +98,21 @@
 
 <footer class="footer navbar-fixed-bottom">
   <div class="container">
-    <div class="beatschBlock" id="chatBlock">
-      <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Chat</button>
+    <div class="beatschChatBlock" id="chatBlock">
+      <button id="chatToggleButton" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">TOGGLE Chat</button>
       <div collapse="isCollapsed">
         <div>
-          <h1 class="page-header">CHATS:</h1>
+          <h1 class="page-header">CHAT</h1>
           <ul class="nav nav-tabs nav-stacked">
-            <li ng-repeat="chat in chats"><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
+            <li class="beatschChatItem" ng-repeat="chat in chats">{{chat.date}}: {{chat.body}}</li>
           </ul>
         </div>
         <div>
           <form class="chat-form">
-            <label>Chat</label>
             <p class="input-group">
               <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
                 <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary" ng-click="addChat()">Submit</button>
+                  <button type="submit" class="btn btn-default" ng-click="addChat()">Submit</button>
                 </span>
             </p>
           </form>
