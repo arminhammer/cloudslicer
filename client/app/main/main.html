@@ -35,12 +35,7 @@
       </div>
       -->
 
-      <div class="beatschBlock" id="playLog">
-        <h1 class="page-header">Play Log</h1>
-        <ul class=" beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-          <li ng-repeat="track in playLog | orderBy: 'date'"><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes.length }}, Total Votes: {{ track._song.votes.length }}</a></li>
-        </ul>
-      </div>
+
 
     </div>
 
@@ -65,7 +60,7 @@
 
       <div class="row">
         <div class="beatschBlock" id="playList">
-          <h1 class="page-header">Playlist</h1>
+          <h1 class="page-header">Voting Queue</h1>
 
           <div>
             {{ timer }}
@@ -79,10 +74,37 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="beatschBlock" id="chatBlock">
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 beatschBlock" id="playLog">
+        <h1 class="page-header">Playlist</h1>
+        <ul class=" beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
+          <li ng-repeat="track in playLog | orderBy: 'date'"><a href="#" tooltip="{{ track._song.title }}">{{ track.date }}: {{ track._song.artist }} - {{ track._song.title }} Current Votes: {{ track.votes.length }}, Total Votes: {{ track._song.votes.length }}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 beatschBlock" id="songCatalog">
+        <h1 class="page-header">Song Catalog</h1>
+        <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
+          <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
+            <li ng-repeat="song in catalog | orderBy: '-votes.length'"><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }}, Votes: {{ song.votes.length }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer navbar-fixed-bottom">
+    <div class="container">
+      <div class="beatschBlock" id="chatBlock">
+        <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Chat</button>
+        <div collapse="isCollapsed">
           <div>
-          <h1 class="page-header">Chats:</h1>
+            <h1 class="page-header">Chats:</h1>
             <ul class="nav nav-tabs nav-stacked">
               <li ng-repeat="chat in chats"><a href="#" tooltip="{{chat.date}}">{{chat.body}}</a></li>
             </ul>
@@ -103,27 +125,10 @@
 
     </div>
 
-  </div>
-
-  <div class="row">
-    <div class="col-lg-12 beatschBlock" id="songCatalog">
-      <h1 class="page-header">Song Catalog</h1>
-      <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-          <li ng-repeat="song in catalog | orderBy: '-votes.length'"><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.artist }} - {{ song.title }}, Votes: {{ song.votes.length }}</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<footer class="footer">
-  <div class="container">
     <!--
     <p>Angular Fullstack v2.0.13 |
       <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
        <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
     -->
-  </div>
+</div>
 </footer>

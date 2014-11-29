@@ -1,8 +1,8 @@
 <div class="navbar navbar-default navbar-static-top" id="beatschNavBar" ng-controller="NavbarCtrl">
   <div class="container">
-    <div>
+    <div id="beatschHeader">
       <img src="../../assets/images/header.png" />
-      {{ currentSong._song.title }}
+      Now Playing: <b>{{ currentSong._song.title }}</b>
     </div>
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">

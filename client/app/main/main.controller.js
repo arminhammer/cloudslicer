@@ -218,6 +218,8 @@ angular.module('beatschApp')
       controls: 1,
       autoplay: 1
     };
+
+    $scope.isCollapsed = true;
     /*
     $scope.vidObj = {
       videoURL: 'http://youtu.be/VuaJAgx0x_4',
