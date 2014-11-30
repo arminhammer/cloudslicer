@@ -5,8 +5,6 @@ angular.module('beatschApp')
 
     $scope.currentSong = null;
 
-    //$rootScope.currentSong = "Test Current Song"
-
     $scope.catalog = [];
 
     $scope.playLog = [];
@@ -207,26 +205,6 @@ angular.module('beatschApp')
     };
 
     $scope.isCollapsed = true;
-    /*
-    $scope.vidObj = {
-      videoURL: 'http://youtu.be/VuaJAgx0x_4',
-      containment: 'body',
-      autoPlay:true,
-      mute:false,
-      startAt: 0,
-      opacity: 1,
-      loop:false,
-      ratio: 16/9,
-      addRaster:true,
-      quality: 'default'
-    };
-    */
 
-  })
-  .directive('beatschPlayer', [function() {
+  });
 
-    return {
-      //template: '<a id="bgndVideo" class="player" data-property="{{ vidObj }}">My video</a>'
-    };
-
-  }]);
