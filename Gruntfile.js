@@ -610,7 +610,7 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'env:all',
         'env:test',
-        'mochaTest',
+        //'mochaTest',
         'mocha_istanbul:coverage'
       ]);
     }

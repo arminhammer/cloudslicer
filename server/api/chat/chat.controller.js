@@ -15,7 +15,7 @@ exports.index = function(req, res) {
 exports.create = function(req, res) {
   Chat.create(req.body, function(err, chat) {
     if(err) { return handleError(res, err); }
-    return res.json(201, chat);
+    return res.status(201).json(chat);
   });
 };
 
@@ -57,5 +57,5 @@ exports.destroy = function(req, res) {
 */
 
 function handleError(res, err) {
-  return res.send(500, err);
+  return res.status(500).send(err);
 }

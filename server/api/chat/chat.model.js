@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 var ChatSchema = new Schema({
   date: { type: Date, default: Date.now() },
-  body: { type: String, default: '' },
+  body: { type: String },
   _user: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 

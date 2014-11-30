@@ -18,3 +18,17 @@ describe('GET /api/chats', function() {
       });
   });
 });
+
+describe('POST /api/chats', function() {
+
+  it('should respond with a 201 status', function(done) {
+    request(app)
+      .post('/api/chats', { date: Date.now(), body: 'This is a test chat!' })
+      .expect(201)
+      .end(function(err, res) {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
