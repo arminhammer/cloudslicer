@@ -23,9 +23,9 @@ var SongSchema = new Schema({
   liveBroadcastContent: String,
   votes: [{ type: Schema.Types.ObjectId, ref: 'Vote' }],
   _submitter: { type: Number, ref: 'User'},
-  active: Boolean,
+  active: {type: Boolean, default: true },
   label: [String],
-  playcount: Number
+  playcount: { type: Number, default: 0 }
 });
 
 module.exports = mongoose.model('Song', SongSchema);
