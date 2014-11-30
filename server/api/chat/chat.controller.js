@@ -11,20 +11,21 @@ exports.index = function(req, res) {
   });
 };
 
+// Creates a new chat in the DB.
+exports.create = function(req, res) {
+  Chat.create(req.body, function(err, chat) {
+    if(err) { return handleError(res, err); }
+    return res.json(201, chat);
+  });
+};
+
+/*
 // Get a single chat
 exports.show = function(req, res) {
   Chat.findById(req.params.id, function (err, chat) {
     if(err) { return handleError(res, err); }
     if(!chat) { return res.send(404); }
     return res.json(chat);
-  });
-};
-
-// Creates a new chat in the DB.
-exports.create = function(req, res) {
-  Chat.create(req.body, function(err, chat) {
-    if(err) { return handleError(res, err); }
-    return res.json(201, chat);
   });
 };
 
@@ -53,6 +54,7 @@ exports.destroy = function(req, res) {
     });
   });
 };
+*/
 
 function handleError(res, err) {
   return res.send(500, err);

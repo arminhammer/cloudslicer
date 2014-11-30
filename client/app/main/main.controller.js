@@ -79,9 +79,11 @@ angular.module('beatschApp')
 
     };
 
+    /*
     $scope.deleteSong = function(song) {
       $http.delete('/api/songs/' + song._id);
     };
+    */
 
     $scope.searchYoutube = function(searchValue) {
       return $http.get('https://www.googleapis.com/youtube/v3/search', {

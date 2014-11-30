@@ -4,17 +4,6 @@ var _ = require('lodash');
 var Playlog = require('./playlog.model');
 
 // Get list of playlogs
-exports.index = function(req, res) {
-  Playlog.find({})
-    .sort('-date')
-    .populate('_song')
-    .exec(function (err, playlogs) {
-    if(err) { return handleError(res, err); }
-    return res.status(200).json(playlogs);
-  });
-};
-
-// Get list of playlogs
 exports.indexLimited = function(req, res) {
   Playlog.find({})
     .sort('-date')
@@ -26,6 +15,17 @@ exports.indexLimited = function(req, res) {
     });
 };
 
+/*
+// Get list of playlogs
+exports.index = function(req, res) {
+  Playlog.find({})
+    .sort('-date')
+    .populate('_song')
+    .exec(function (err, playlogs) {
+      if(err) { return handleError(res, err); }
+      return res.status(200).json(playlogs);
+    });
+};
 
 // Get a single playlog
 exports.show = function(req, res) {
@@ -69,6 +69,7 @@ exports.destroy = function(req, res) {
     });
   });
 };
+*/
 
 function handleError(res, err) {
   return res.send(500, err);

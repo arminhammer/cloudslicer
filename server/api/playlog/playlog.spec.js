@@ -8,7 +8,7 @@ describe('GET /api/playlog', function() {
 
   it('should respond with JSON array', function(done) {
     request(app)
-      .get('/api/playlog')
+      .get('/api/playlog/5')
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {

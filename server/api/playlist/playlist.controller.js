@@ -22,6 +22,7 @@ exports.index = function(req, res) {
     });
 };
 
+/*
 // Get a single playlist
 exports.current = function(req, res) {
   Playlist.find({ played: 1 })
@@ -89,6 +90,7 @@ exports.destroy = function(req, res) {
     });
   });
 };
+*/
 
 function handleError(res, err) {
 

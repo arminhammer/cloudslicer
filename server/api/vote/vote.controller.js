@@ -3,6 +3,7 @@
 var _ = require('lodash');
 var Vote = require('./vote.model');
 
+/*
 // Get list of votes
 exports.index = function(req, res) {
   Vote.find(function (err, votes) {
@@ -53,6 +54,7 @@ exports.destroy = function(req, res) {
     });
   });
 };
+*/
 
 function handleError(res, err) {
   return res.send(500, err);

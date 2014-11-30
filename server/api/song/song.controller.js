@@ -13,6 +13,7 @@ exports.index = function(req, res) {
   });
 };
 
+/*
 // Get a single song
 exports.show = function(req, res) {
   Song.findById(req.params.id, function (err, song) {
@@ -29,6 +30,7 @@ exports.create = function(req, res) {
     return res.status(201).json(song);
   });
 };
+*/
 
 // Updates an existing song in the DB.
 exports.addVote = function(req, res) {
@@ -273,6 +275,7 @@ exports.addSong = function(req, res) {
 
 };
 
+/*
 // Updates an existing song in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
@@ -298,6 +301,7 @@ exports.destroy = function(req, res) {
     });
   });
 };
+*/
 
 function handleError(res, err) {
   return res.status(500).send(err);
