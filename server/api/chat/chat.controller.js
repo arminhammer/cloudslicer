@@ -7,7 +7,7 @@ var Chat = require('./chat.model');
 exports.index = function(req, res) {
   Chat.find(function (err, chats) {
     if(err) { return handleError(res, err); }
-    return res.json(200, chats);
+    return res.status(200).json(chats);
   });
 };
 

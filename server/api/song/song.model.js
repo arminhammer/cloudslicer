@@ -6,7 +6,6 @@ var mongoose = require('mongoose'),
 var SongSchema = new Schema({
 
   title: String,
-  artist: String,
   source: String,
   length: Number,
   url: String,

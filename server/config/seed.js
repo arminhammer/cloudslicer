@@ -15,8 +15,7 @@ var Vote = require('../api/vote/vote.model');
 Song.find({}).remove(function() {
   Song.create(
     {
-      title: 'Summertime Sadness',
-      artist: 'Lana Del Rey',
+      title: 'Lana Del Rey - Summertime Sadness',
       source: 'youtube',
       length: 283000,
       url: 'https://www.youtube.com/watch?v=TdrL3QxjyVw',
@@ -25,8 +24,7 @@ Song.find({}).remove(function() {
       thumbnailUrlHigh: 'https://i.ytimg.com/vi/TdrL3QxjyVw/hqdefault.jpg'
     },
     {
-      title: 'Moondust (Sound Remedy Remix)',
-      artist: 'Jaymes Young',
+      title: 'Jaymes Young - Moondust (Sound Remedy Remix)',
       source: 'youtube',
       length: 360000,
       url: 'https://www.youtube.com/watch?v=liwCcSH9xzw',
@@ -35,8 +33,7 @@ Song.find({}).remove(function() {
       thumbnailUrlHigh: 'https://i.ytimg.com/vi/liwCcSH9xzw/hqdefault.jpg'
     },
     {
-      title: 'Benediction',
-      artist: 'Hot Natured & Ali Love',
+      title: 'Hot Natured & Ali Love - Benediction',
       source: 'youtube',
       length: 393000,
       url: 'https://www.youtube.com/watch?v=PXx1CLAJ-OA',
@@ -45,8 +42,7 @@ Song.find({}).remove(function() {
       thumbnailUrlHigh: 'https://i.ytimg.com/vi/PXx1CLAJ-OA/hqdefault.jpg'
     },
     {
-      title: 'Stonehenge',
-      artist: 'Ylvis',
+      title: 'Ylvis - Stonehenge',
       source: 'youtube',
       length: 235000,
       url: 'https://www.youtube.com/watch?v=mbyzgeee2mg',
@@ -55,8 +51,7 @@ Song.find({}).remove(function() {
       thumbnailUrlHigh: 'https://i.ytimg.com/vi/mbyzgeee2mg/hqdefault.jpg'
     },
     {
-      title: 'Feels Like We Only Go Backwards',
-      artist: 'Tame Impala',
+      title: 'Tame Impala - Feels Like We Only Go Backwards',
       source: 'youtube',
       length: 201000,
       url: 'https://www.youtube.com/watch?v=wycjnCCgUes',
