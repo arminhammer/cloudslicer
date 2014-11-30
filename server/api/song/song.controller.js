@@ -239,7 +239,7 @@ exports.addSong = function(req, res) {
 
         });
 
-        return res.status(201).json(song);
+        return res.status(201);
 
       }
 
