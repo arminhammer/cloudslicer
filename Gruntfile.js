@@ -458,6 +458,46 @@ module.exports = function (grunt) {
       all: localConfig
     },
 
+    mocha_istanbul: {
+      coverage: {
+        src: 'server/api/**/*.js', // a folder works nicely
+        options: {
+          mask: '*.spec.js'
+        },
+        reportFormats: ['html']
+      },
+      coverageSpecial: {
+        src: ['testSpecial/*/*.js', 'testUnique/*/*.js'], // specifying file patterns works as well
+        options: {
+          coverageFolder: 'coverageSpecial',
+          mask: '*.spec.js'
+        }
+      },
+      coveralls: {
+        src: ['test', 'testSpecial', 'testUnique'], // multiple folders also works
+        options: {
+          coverage:true,
+          check: {
+            lines: 75,
+            statements: 75
+          },
+          root: './lib', // define where the cover task should consider the root of libraries that are covered by tests
+          reportFormats: ['cobertura','lcovonly']
+        }
+      }
+    },
+    istanbul_check_coverage: {
+      default: {
+        options: {
+          coverageFolder: 'coverage*', // will check both coverage folders and merge the coverage results
+          check: {
+            lines: 80,
+            statements: 80
+          }
+        }
+      }
+    },
+
     injector: {
       options: {
 
@@ -502,6 +542,16 @@ module.exports = function (grunt) {
       }
     }
   });
+
+  grunt.event.on('coverage', function(lcovFileContents, done){
+    // Check below
+    done();
+  });
+
+  //grunt.loadNpmTasks('grunt-mocha-istanbul');
+
+  //grunt.registerTask('coveralls', ['mocha_istanbul:coveralls']);
+  //grunt.registerTask('coverage', ['mocha_istanbul:coverage']);
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function () {
@@ -560,7 +610,8 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'env:all',
         'env:test',
-        'mochaTest'
+        'mochaTest',
+        'mocha_istanbul:coverage'
       ]);
     }
 

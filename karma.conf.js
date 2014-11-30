@@ -40,7 +40,8 @@ module.exports = function(config) {
     preprocessors: {
       '**/*.jade': 'ng-jade2js',
       '**/*.html': 'html2js',
-      '**/*.coffee': 'coffee'
+      '**/*.coffee': 'coffee',
+      '**/*.js': ['coverage']
     },
 
     ngHtml2JsPreprocessor: {
@@ -65,6 +66,7 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
 
+    reporters: ['progress', 'coverage'],
 
     // Start these browsers, currently available:
     // - Chrome
