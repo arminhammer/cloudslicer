@@ -102,19 +102,30 @@ var PlaylistManager = function() {
       .populate('_song')
       .exec(function (err, nextSong) {
 
-        Playlog.create({date: Date.now(), _song: nextSong[0]._song._id, votes: nextSong[0].votes}, function (err, newLog) {
+        if(err) {
+          console.log('There was an error: %s', err);
+          return;
+        }
 
-          if (err) {
+        if(nextSong.length > 1) {
 
-            console.log('There was an error: %s', err);
+          Playlog.create({
+            date: Date.now(),
+            _song: nextSong[0]._song._id,
+            votes: nextSong[0].votes
+          }, function (err, newLog) {
 
-          }
+            if (err) {
 
-          nextSong[0].remove();
+              console.log('There was an error: %s', err);
+
+            }
+
+            nextSong[0].remove();
 
 
-        });
-
+          });
+        }
 
       });
 
@@ -148,7 +159,7 @@ var PlaylistManager = function() {
       Playlist.count(function(err, count) {
         console.log(count);
         if(count < 2) {
-          refill(40, function() {
+          refill(5, function() {
             console.log('Refilled.');
             switchTrack();
           });
