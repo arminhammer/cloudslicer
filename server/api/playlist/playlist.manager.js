@@ -79,11 +79,13 @@ var PlaylistManager = function() {
     //console.log('Found socket: %s', socket);
     //socket.emit('playlist:timer', timer);
 
-    refill(40, function() {
+    manager = setInterval(function() { manage(sockets); }, countInterval*1000);
 
-      manager = setInterval(function() { manage(sockets); }, countInterval*1000);
+    /*
+    refill(5, function() {
 
     });
+    */
 
   };
 
