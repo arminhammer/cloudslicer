@@ -13,6 +13,8 @@ angular.module('beatschApp')
 
     $scope.timer = 0;
 
+    $scope.lastVoteTime = Date.now();
+
     socket.socket.on('timer', function(timer) {
       $scope.timer = timer;
     });
@@ -29,7 +31,7 @@ angular.module('beatschApp')
       socket.syncUpdates('song', $scope.catalog);
     });
 
-    $http.get('/api/playlog/3').success(function(playLog) {
+    $http.get('/api/playlog/2').success(function(playLog) {
 
       $scope.playLog = playLog;
 
@@ -43,30 +45,40 @@ angular.module('beatschApp')
       socket.syncUpdates('playlog', $scope.playLog);
 
 
-       jQuery('#my-thumbs-list').mThumbnailScroller({
+      jQuery('#my-thumbs-list').mThumbnailScroller({
         axis:'y'
       });
 
     });
 
     $scope.voteFor = function(song) {
-      console.log('Voting as ');
-      console.log(Auth.getCurrentUser());
-      if(Auth.getCurrentUser()) {
-        console.log('User is not null');
-        if(Auth.getCurrentUser()._id) {
-          console.log('Id is not null!');
+
+      var now = Date.now();
+
+      console.log('lastVote is %d, now is %d, difference is', $scope.lastVoteTime, now, now - $scope.lastVoteTime);
+
+      if((now - $scope.lastVoteTime) > 5000) {
+        console.log('Voting as ');
+        console.log(Auth.getCurrentUser());
+        if(Auth.getCurrentUser()) {
+          console.log('User is not null');
+          if(Auth.getCurrentUser()._id) {
+            console.log('Id is not null!');
+          }
+          else {
+            console.log('Id is null.');
+          }
         }
         else {
-          console.log('Id is null.');
+          console.log('User is null!');
         }
+        $http.post('/api/songs/vote', { song: song, user: Auth.getCurrentUser() });
+        //socket.syncUpdates('song', $scope.playList);
+        //socket.syncUpdates('song', $scope.songList.list);
+
+        $scope.lastVoteTime = now;
       }
-      else {
-        console.log('User is null!');
-      }
-      $http.post('/api/songs/vote', { song: song, user: Auth.getCurrentUser() });
-      //socket.syncUpdates('song', $scope.playList);
-      //socket.syncUpdates('song', $scope.songList.list);
+
     };
 
     $scope.addSong = function() {
@@ -84,10 +96,10 @@ angular.module('beatschApp')
     };
 
     /*
-    $scope.deleteSong = function(song) {
-      $http.delete('/api/songs/' + song._id);
-    };
-    */
+     $scope.deleteSong = function(song) {
+     $http.delete('/api/songs/' + song._id);
+     };
+     */
 
     $scope.searchYoutube = function(searchValue) {
       return $http.get('https://www.googleapis.com/youtube/v3/search', {
