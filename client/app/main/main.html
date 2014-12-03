@@ -50,7 +50,8 @@
     <div class="col-lg-12 beatschBlock" id="playLog">
       <h1 class="page-header">PLAYLIST</h1>
       <ul class=" beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-        <li class="beatschPlayLogItem" ng-repeat="track in playLog | orderBy: 'date'">{{ track.date }}: <b>{{ track._song.title }}</b> Current Votes: {{ track.votes.length }}, Total Votes: {{ track._song.votes.length }}</li>
+        <li class="beatschCurrentPlayLogItem">{{ currentSong.date }}: <b>{{ currentSong._song.title }}</b> Total Votes: {{ currentSong._song.votes.length }}</li>
+        <li class="beatschPlayLogItem" ng-repeat="track in playLog.slice(1, playLog.length) | orderBy: 'date'">{{ track.date }}: <b>{{ track._song.title }}</b> Total Votes: {{ track._song.votes.length }}</li>
       </ul>
     </div>
   </div>
