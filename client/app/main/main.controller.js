@@ -15,6 +15,9 @@ angular.module('beatschApp')
 
     $scope.lastVoteTime = Date.now();
 
+    // Restrict allowing adding new songs to only users logged in.
+    $scope.isLoggedIn = Auth.isLoggedIn;
+
     socket.socket.on('timer', function(timer) {
       $scope.timer = timer;
     });

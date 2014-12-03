@@ -193,3 +193,7 @@ a:hover {
 #chatToggleButton {
  float: right;
 }
+
+#beatschNowPlaying {
+  padding-left: 40px;
+}
