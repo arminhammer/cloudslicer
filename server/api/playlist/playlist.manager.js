@@ -49,7 +49,7 @@ var PlaylistManager = function() {
             var notFound = true;
             while(x < tracks.length) {
 
-              if(tracks[x]._song._id = songs[i]._id) {
+              if(tracks[x]._song._id === songs[i]._id) {
                 notFound = false;
                 break;
               }
