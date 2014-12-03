@@ -29,11 +29,15 @@ angular.module('beatschApp')
       socket.syncUpdates('song', $scope.catalog);
     });
 
-    $http.get('/api/playlog/5').success(function(playLog) {
+    $http.get('/api/playlog/3').success(function(playLog) {
 
       $scope.playLog = playLog;
 
-      $scope.currentSong = playLog[playLog.length-1];
+      //console.log('Playlog:');
+      //console.log($scope.playLog);
+      //console.log('Position: %d', $scope.playLog.length-1)
+
+      $scope.currentSong = $scope.playLog[0];
 
       //socket.syncUpdates('playlog', $scope.currentSong);
       socket.syncUpdates('playlog', $scope.playLog);
@@ -178,11 +182,17 @@ angular.module('beatschApp')
     $scope.$on('youtube.player.ended', function ($event, player) {
 
       console.log('youtube.player.ended');
-      var nextVid = getNextSongInPlaylist();
-      console.log('nextVid: %s', nextVid);
-      player.loadVideoById(nextVid._song.videoId);
+      console.log($scope.playLog);
+      getNextSongInPlaylist();
+      console.log('nextVid: %s', $scope.currentSong._song.title);
+      player.loadVideoById($scope.currentSong._song.videoId);
       player.playVideo();
       switchBackground($scope.currentSong._song.thumbnailUrlHigh);
+      if($scope.playLog.length > 1) {
+        console.log('Deleting');
+        console.log($scope.playLog[0]);
+        $scope.playLog.shift();
+      }
 
     });
 

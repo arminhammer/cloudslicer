@@ -19,7 +19,7 @@ var PlaylistManager = function() {
 
     console.log('Refilling playlist');
 
-    Playlist.find({ played: 0 }, function(err, tracks) {
+    Playlist.find({}, function(err, tracks) {
       console.log('Found %d tracks', tracks.length);
 
       console.log('Playlist is empty.');
@@ -41,8 +41,28 @@ var PlaylistManager = function() {
           }
 
           console.log('Found %d songs to add', songs.length);
+
+          // Add songs to the playlist unless they are already on it.
           for(var i = 0; i < songs.length; i++) {
-            Playlist.create({ _song: songs[i]._id, played:0 }, announceAdd)
+
+            var x = 0;
+            var notFound = true;
+            while(x < tracks.length) {
+
+              if(tracks[x]._song._id = songs[i]._id) {
+                notFound = false;
+                break;
+              }
+
+              x++;
+
+            }
+
+            if(notFound) {
+
+              Playlist.create({ _song: songs[i]._id, played:0 }, announceAdd)
+
+            }
 
           }
 
@@ -79,13 +99,12 @@ var PlaylistManager = function() {
     //console.log('Found socket: %s', socket);
     //socket.emit('playlist:timer', timer);
 
-    manager = setInterval(function() { manage(sockets); }, countInterval*1000);
-
-    /*
     refill(5, function() {
 
+      manager = setInterval(function() { manage(sockets); }, countInterval*1000);
+
     });
-    */
+
 
   };
 
@@ -109,8 +128,9 @@ var PlaylistManager = function() {
           return;
         }
 
-        if(nextSong.length > 1) {
+        if(nextSong.length > 0) {
 
+          console.log('Adding %s to playlog', nextSong[0]);
           Playlog.create({
             date: Date.now(),
             _song: nextSong[0]._song._id,
@@ -127,6 +147,12 @@ var PlaylistManager = function() {
 
 
           });
+        }
+        else {
+
+          console.log('Could not find any songs in the playlist queue.');
+          console.log(nextSong);
+
         }
 
       });

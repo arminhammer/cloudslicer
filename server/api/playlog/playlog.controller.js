@@ -6,7 +6,7 @@ var Playlog = require('./playlog.model');
 // Get list of playlogs
 exports.indexLimited = function(req, res) {
   Playlog.find({})
-    .sort('-date')
+    .sort('date')
     .limit(req.params.limit)
     .populate('_song')
     .exec(function (err, playlogs) {
