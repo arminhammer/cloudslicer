@@ -4,21 +4,21 @@
 
 'use strict';
 
-var Vote = require('./vote.model');
+var thing = require('./thing.model');
 
 exports.register = function(socket) {
-  Vote.schema.post('save', function (doc) {
+  thing.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  Vote.schema.post('remove', function (doc) {
+  thing.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('vote:save', doc);
+  socket.emit('thing:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('vote:remove', doc);
+  socket.emit('thing:remove', doc);
 }

@@ -1,100 +1,38 @@
-
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-
-  <div class="row">
-    <div class="col-lg-12 beatschBlock">
-
-      <div class="col-lg-6">
-
-        <div id="videoPlayer">
-          <youtube-video player-width="'550'" player-height="'400'" video-id="currentSong._song.videoId" player-vars="playerVars"></youtube-video>
-        </div>
-
-      </div>
-
-      <div class="col-lg-6">
-
-        <div class="beatschBlock" id="playList">
-          <h1 class="page-header">REMAINING TIME TO VOTE<span id="beatschTimer">{{ timer }}</span></h1>
-
-          <!--<div id="addVideoForm" ng-hide="!isLoggedIn()">-->
-          <div id="addVideoForm">
-            <form class="thing-form" >
-              <p class="input-group">
-
-                <input type="text" ng-model="newSong" placeholder="Add a new song from Youtube here." typeahead="video as video.snippet.title for video in searchYoutube($viewValue) | filter: $viewValue" typeahead-loading="loadingLocations" typeahead-wait-ms="0" class="form-control">
-
-                <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-
-                <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" ng-click="addSong()">Add New</button>
-                </span>
-              </p>
-            </form>
-          </div>
-
-          <div>
-            <ul class="beatschBlock nav nav-tabs nav-stacked">
-              <li ng-repeat="track in playList | orderBy: '-votes.length'"><a href="#" tooltip="{{ track._song.title }}" ng-click="voteFor(track._song)">{{ track._song.title }} Current Votes: {{ track.votes.length }}, Total votes: {{ track._song.votes.length }}</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
   </div>
+</header>
 
-  <div class="row beatschBlock">
-    <div class="col-lg-12 beatschBlock" id="playLog">
-      <h1 class="page-header">PLAYLIST</h1>
-      <ul class=" beatschBlock nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-        <li class="beatschCurrentPlayLogItem">{{ currentSong.date }}: <b>{{ currentSong._song.title }}</b> Total Votes: {{ currentSong._song.votes.length }}</li>
-        <li class="beatschPlayLogItem" ng-repeat="track in playLog.slice(1, playLog.length) | orderBy: 'date'">{{ track.date }}: <b>{{ track._song.title }}</b> Total Votes: {{ track._song.votes.length }}</li>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Features:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
       </ul>
     </div>
   </div>
 
-  <div class="row beatschBlock">
-    <div class="col-lg-12 beatschBlock" id="songCatalog">
-      <h1 class="page-header">SONG CATALOG</h1>
-      <div infinite-scroll='songList.loadMore()' infinite-scroll-distance='1'>
-        <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12">
-          <li ng-repeat="song in catalog | orderBy: '-votes.length'"><a href="#" tooltip="{{song.title}}" ng-click="voteFor(song)">{{ song.title }}, Votes: {{ song.votes.length }}</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
+  <form class="thing-form">
+    <label>Syncs in realtime across clients</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+      </span>
+    </p>
+  </form>
 </div>
 
-<footer class="footer navbar-fixed-bottom">
+<footer class="footer">
   <div class="container">
-    <div class="beatschChatBlock" id="chatBlock">
-      <button id="chatToggleButton" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">TOGGLE Chat</button>
-      <div collapse="isCollapsed">
-        <div>
-          <h1 class="page-header">CHAT</h1>
-          <ul class="nav nav-tabs nav-stacked">
-            <li class="beatschChatItem" ng-repeat="chat in chats">{{chat.date}}: {{chat.body}}</li>
-          </ul>
-        </div>
-        <div>
-          <form class="chat-form">
-            <p class="input-group">
-              <input type="text" class="form-control" placeholder="Chat here" ng-model="newChat">
-                <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" ng-click="addChat()">Submit</button>
-                </span>
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
   </div>
 </footer>

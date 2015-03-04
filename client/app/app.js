@@ -6,9 +6,7 @@ angular.module('beatschApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap',
-  'youtube-embed',
-  'infinite-scroll'
+  'ui.bootstrap'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

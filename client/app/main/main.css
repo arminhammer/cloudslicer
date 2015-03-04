@@ -1,199 +1,30 @@
 .thing-form {
-  margin: 20px 0;
-}
-
-@font-face {
-  font-family: baronBold;
-  src: url('../../assets/fonts/baronNeueBold.otf');
+    margin: 20px 0;
 }
 
 #banner {
-  border-bottom: none;
-  margin-top: -20px;
+    border-bottom: none;
+    margin-top: -20px;
 }
 
 #banner h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
 }
 
 .hero-unit {
-  position: relative;
-  padding: 30px 15px;
-  color: #F5F5F5;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+    position: relative;
+    padding: 30px 15px;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: #4393B9;
 }
 
 .footer {
-  /*
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #f5f5f5;
-
-border-top: 1px solid #E5E5E5;
-  text-align: center;
-  padding: 30px 0;
-
-
-  */
-
-
-
-  margin-top: 70px;
-
-
-}
-
-body {
-  background: no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#my-thumbs-list{
-  overflow: auto;
-  width: 300px;
-  height: 240px;
-}
-
-.beatschBlock {
-  background-color: black;
-  filter:alpha(opacity=90);
-  opacity:.9;
-}
-
-.beatschChatBlock {
-  background-color: black;
-  filter:alpha(opacity=90);
-  opacity:.9;
-  color: white;
-}
-
-.beatschChatBlock li {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-#videoPlayer {
-  /*
-  background-color: black;
-  filter:alpha(opacity=100);
-  opacity:1.0;
-  */
-}
-
-#thumbList {
-
-}
-
-#addVideoForm {
-
-}
-
-#currentlyPlaying {
-
-}
-
-#playLog{
-  /*float: right;
-  width: 50%; */
-  color: white;
-  font-family: baronBold;
-}
-
-.beatschPlayLogItem {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.beatschCurrentPlayLogItem {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #ffc520;
-  font-size: 16px;
-}
-
-#playList {
-
-}
-
-#songCatalog {
-
-}
-
-#chatBlock {
-
-}
-
-h1 {
-  color: white;
-  font-family: baronBold;
-}
-
-.page-header {
-  border-bottom-width: 0px;
-}
-
-.nav-tabs {
-  border-bottom-width: 0px;
-}
-
-.navbar-static-top {
-  border-bottom-width: 0px;
-}
-
-#beatschNavBar {
-  background-color: black;
-  filter:alpha(opacity=90);
-  opacity:.9;
-}
-
-#beatschHeader {
-  color: white;
-  font-size: 12pt;
-  font-family: baronBold;
-}
-
-#beatschTimer {
-  color: white;
-  float: right;
-}
-
-#navLinks li a {
-  color: white;
-}
-
-#navLinks li a:hover {
-  color: #808080;
-}
-
-a {
-  color: white;
-  font-family: baronBold;
-}
-
-input {
-}
-
-button {
-  font-family: baronBold;
-}
-
-a:hover {
-  color: black;
-}
-
-#chatToggleButton {
- float: right;
-}
-
-#beatschNowPlaying {
-  padding-left: 40px;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
 }

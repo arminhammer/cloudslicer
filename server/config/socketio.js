@@ -8,8 +8,6 @@ var config = require('./environment');
 
 // When the user disconnects.. perform this
 function onDisconnect(socket) {
-  console.log('Socket %s disconnected.', socket);
-  require('../api/playlist/playlist.socket').unregister(socket);
 }
 
 // When the user connects.. perform this
@@ -20,13 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/vote/vote.socket').register(socket);
-  require('../api/chat/chat.socket').register(socket);
-  require('../api/playlog/playlog.socket').register(socket);
-  require('../api/playlist/playlist.socket').register(socket);
-  //require('../api/playlist/playlist.manager').register(socket);
-  require('../api/song/song.socket').register(socket);
-
+  require('../api/thing/thing.socket').register(socket);
 }
 
 module.exports = function (socketio) {

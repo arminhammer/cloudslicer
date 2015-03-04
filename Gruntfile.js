@@ -1,4 +1,4 @@
-// Generated on 2014-11-07 using generator-angular-fullstack 2.0.13
+// Generated on 2015-03-04 using generator-angular-fullstack 2.0.13
 'use strict';
 
 module.exports = function (grunt) {
@@ -51,8 +51,7 @@ module.exports = function (grunt) {
     },
     open: {
       server: {
-        url: 'http://localhost:<%= express.options.port %>',
-        app: 'firefox'
+        url: 'http://localhost:<%= express.options.port %>'
       }
     },
     watch: {
@@ -378,12 +377,6 @@ module.exports = function (grunt) {
         connectCommits: false,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
       },
-      pages: {
-        options: {
-          remote: 'git@github.com:arminhammer/beatsch.git',
-          branch: 'gh-pages'
-        }
-      },
       heroku: {
         options: {
           remote: 'heroku',
@@ -423,8 +416,7 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
-        singleRun: true,
-        logLevel: 'DEBUG'
+        singleRun: true
       }
     },
 
@@ -456,46 +448,6 @@ module.exports = function (grunt) {
         NODE_ENV: 'production'
       },
       all: localConfig
-    },
-
-    mocha_istanbul: {
-      coverage: {
-        src: 'server/api/**/*.js', // a folder works nicely
-        options: {
-          mask: '*.spec.js'
-        },
-        reportFormats: ['html']
-      },
-      coverageSpecial: {
-        src: ['testSpecial/*/*.js', 'testUnique/*/*.js'], // specifying file patterns works as well
-        options: {
-          coverageFolder: 'coverageSpecial',
-          mask: '*.spec.js'
-        }
-      },
-      coveralls: {
-        src: ['test', 'testSpecial', 'testUnique'], // multiple folders also works
-        options: {
-          coverage:true,
-          check: {
-            lines: 75,
-            statements: 75
-          },
-          root: './lib', // define where the cover task should consider the root of libraries that are covered by tests
-          reportFormats: ['cobertura','lcovonly']
-        }
-      }
-    },
-    istanbul_check_coverage: {
-      default: {
-        options: {
-          coverageFolder: 'coverage*', // will check both coverage folders and merge the coverage results
-          check: {
-            lines: 80,
-            statements: 80
-          }
-        }
-      }
     },
 
     injector: {
@@ -540,18 +492,8 @@ module.exports = function (grunt) {
           ]
         }
       }
-    }
+    },
   });
-
-  grunt.event.on('coverage', function(lcovFileContents, done){
-    // Check below
-    done();
-  });
-
-  //grunt.loadNpmTasks('grunt-mocha-istanbul');
-
-  //grunt.registerTask('coveralls', ['mocha_istanbul:coveralls']);
-  //grunt.registerTask('coverage', ['mocha_istanbul:coverage']);
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function () {
@@ -610,8 +552,7 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'env:all',
         'env:test',
-        //'mochaTest',
-        'mocha_istanbul:coverage'
+        'mochaTest'
       ]);
     }
 

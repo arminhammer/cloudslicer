@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('beatschApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
+  .controller('LoginCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -23,7 +23,4 @@ angular.module('beatschApp')
       }
     };
 
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
-    };
   });
