@@ -15,8 +15,11 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Songs:</h1>
-      <div ng-repeat="video in videos">
-        <a href="#" tooltip="{{video.title}}">{{video.title}}</a>
+      <div ng-repeat="video in videos | orderBy : '-score'">
+        <div ng-click="voteFor(video)"><b>{{ video.title }}</b></div>
+        <div>Score: {{ video.score }}</div>
+        <div>Votes: {{ video.votes.length }}</div>
+      </div>
       </div>
     </div>
   </div>

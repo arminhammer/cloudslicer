@@ -28,6 +28,26 @@ exports.create = function(req, res) {
   });
 };
 
+// Creates a new video in the DB.
+exports.vote = function(req, res) {
+  //console.log('Voting...');
+  //console.log(req.body);
+  if(req.body._id) { delete req.body._id; }
+  Video.findById(req.body.id, function (err, video) {
+    if (err) { return handleError(res, err); }
+    if(!video) { return res.send(404); }
+    //var updated = _.merge(video, req.body);
+    var now = Date.now();
+    console.log(now);
+    video.votes.push({ date: now });
+    video.score += video.votes.length * now;
+    video.save(function (err) {
+      if (err) { return handleError(res, err); }
+      return res.json(200, video);
+    });
+  });
+};
+
 // Updates an existing video in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }

@@ -1,14 +1,24 @@
 'use strict';
 
 angular.module('beatschApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', ['$scope', '$http', 'socket', '$log', function ($scope, $http, socket, $log) {
 
     $scope.videos = [];
 
-    $http.get('/api/videos').success(function(videos) {
+    $http.get('/api/video').success(function(videos) {
+
+      $log.debug(videos);
       $scope.videos = videos;
       socket.syncUpdates('video', $scope.videos);
+
     });
+
+    $scope.voteFor = function(video) {
+
+      $log.debug('Voting for ' + video._id);
+      $http.post('/api/video/vote', { id: video._id });
+
+    };
 
     $scope.awesomeThings = [];
 
@@ -32,4 +42,4 @@ angular.module('beatschApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
-  });
+  }]);
