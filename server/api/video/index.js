@@ -5,10 +5,11 @@ var controller = require('./video.controller');
 
 var router = express.Router();
 
+router.post('/add', controller.addSong);
+router.post('/vote', controller.vote);
 router.get('/', controller.index);
 router.get('/:id', controller.show);
 router.post('/', controller.create);
-router.post('/vote', controller.vote);
 router.put('/:id', controller.update);
 router.patch('/:id', controller.update);
 router.delete('/:id', controller.destroy);

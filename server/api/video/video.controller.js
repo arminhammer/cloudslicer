@@ -37,15 +37,61 @@ exports.vote = function(req, res) {
     if (err) { return handleError(res, err); }
     if(!video) { return res.send(404); }
     //var updated = _.merge(video, req.body);
-    var now = Date.now();
-    console.log(now);
-    video.votes.push({ date: now });
-    video.score += video.votes.length * now;
+
+    video.addVote();
+    //video.votes.push({ date: now });
+    //video.score += video.votes.length * now;
     video.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, video);
     });
   });
+};
+
+// Creates a new video in the DB.
+exports.addSong = function(req, res) {
+
+  console.log('ID: ' + req.body.newSong.id.videoId);
+
+  Video.findOne({ videoId: req.body.newSong.id.videoId }, function(err, video) {
+
+    if(err) {
+      console.log('There was an error finding the video...' + video);
+      return;
+    }
+
+    if(video) {
+
+      console.log('Video ' + video + ' found.');
+      video.addVote();
+      video.save();
+
+    }
+    else {
+
+      console.log('Video ' + video + ' not found, adding...');
+
+      Video.create({
+
+        videoId: req.body.newSong.id.videoId,
+        title: req.body.newSong.snippet.title
+
+      }, function(err, video) {
+        if(err) { return handleError(res, err); }
+        return res.json(201, video);
+      });
+
+    }
+
+  });
+
+  /*
+  Video.create(req.body, function(err, video) {
+    if(err) { return handleError(res, err); }
+    return res.json(201, video);
+  });
+  */
+
 };
 
 // Updates an existing video in the DB.

@@ -10,10 +10,27 @@ var VideoSchema = new Schema({
   active: Boolean,
   title: String,
   description: String,
-  url: String,
+  videoId: String,
   score: { type: Number, default: 0 },
   votes: [{ date: Date }]
 
 });
+
+/**
+ * Methods
+ */
+VideoSchema.methods = {
+
+  addVote: function() {
+
+    var now = Date.now();
+    console.log(now);
+
+    this.votes.push({ date: now });
+    this.score += this.votes.length * now;
+
+  }
+
+};
 
 module.exports = mongoose.model('Video', VideoSchema);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('beatschApp')
-  .controller('MainCtrl', ['$scope', '$http', 'socket', '$log', function ($scope, $http, socket, $log) {
+  .controller('MainCtrl', ['$scope', '$http', 'socket', '$log', 'Auth', function ($scope, $http, socket, $log, Auth) {
 
     $scope.videos = [];
 
@@ -42,4 +42,38 @@ angular.module('beatschApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    $scope.addSong = function() {
+
+      if($scope.newSong === '') {
+        return;
+      }
+
+      console.log('Adding new song');
+      console.log($scope.newSong);
+
+      $http.post('/api/video/add', { newSong: $scope.newSong, user: Auth.getCurrentUser() });
+      $scope.newSong = '';
+
+    };
+
+    $scope.searchYoutube = function(searchValue) {
+      return $http.get('https://www.googleapis.com/youtube/v3/search', {
+        params: {
+          part: 'snippet',
+          q: searchValue,
+          order: 'viewCount',
+          //videoDefinition: 'high',
+          videoEmbeddable: 'true',
+          type: 'video',
+          //videoCaption: 'closedCaption',
+          key: 'AIzaSyCNYKLmc5xIjQ7-M1gGZMn3OK8vLJ-qFzM'
+        }
+      }).then(function(response){
+        return response.data.items.map(function(video){
+          return video;
+        });
+      });
+    };
+
   }]);
