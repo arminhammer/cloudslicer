@@ -7,7 +7,13 @@ angular.module('beatschApp', [
   'ngAnimate',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'com.2fdevs.videogular',
+  'com.2fdevs.videogular.plugins.controls',
+  'com.2fdevs.videogular.plugins.overlayplay',
+  'com.2fdevs.videogular.plugins.buffering',
+  'com.2fdevs.videogular.plugins.poster',
+  'info.vietnamcode.nampnq.videogular.plugins.youtube'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
