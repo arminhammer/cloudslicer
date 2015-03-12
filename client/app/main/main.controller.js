@@ -75,6 +75,7 @@ angular.module('beatschApp')
         });
       });
     };
+
     $scope.currentTime = 0;
     $scope.totalTime = 0;
     $scope.state = null;
@@ -83,20 +84,25 @@ angular.module('beatschApp')
     $scope.API = null;
 
     $scope.onPlayerReady = function (API) {
+      console.log('API');
+      console.log(API);
       $scope.API = API;
     };
 
     $scope.onCompleteVideo = function () {
       $scope.isCompleted = true;
+      console.log('Completed video');
     };
 
     $scope.onUpdateState = function (state) {
       $scope.state = state;
+      console.log('Updated state');
     };
 
     $scope.onUpdateTime = function (currentTime, totalTime) {
       $scope.currentTime = currentTime;
       $scope.totalTime = totalTime;
+      console.log('Updated time')
     };
 
     $scope.onUpdateVolume = function (newVol) {
@@ -133,12 +139,12 @@ angular.module('beatschApp')
     $scope.config = {
       autoHide: false,
       autoHideTime: 3000,
-      autoPlay: false,
+      autoPlay: true,
       sources: $scope.videos[0].sources,
-      tracks: $scope.videos[0].tracks,
-      loop: false,
+      //tracks: $scope.videos[0].tracks,
+      //loop: false,
       preload: "auto",
-      transclude: true,
+      //transclude: true,
       controls: undefined,
       theme: {
         url: "styles/themes/default/videogular.css"
@@ -146,14 +152,6 @@ angular.module('beatschApp')
       plugins: {
         poster: {
           url: "assets/images/videogular.png"
-        },
-        ads: {
-          companion: "companionAd",
-          companionSize: [728, 90],
-          network: "6062",
-          unitPath: "iab_vast_samples",
-          adTagUrl: "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=%2F3510761%2FadRulesSampleTags&ciu_szs=160x600%2C300x250%2C728x90&cust_params=adrule%3Dpremidpostpodandbumpers&impl=s&gdfp_req=1&env=vp&ad_rule=1&vid=47570401&cmsid=481&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]",
-          skipButton: "<div class='skipButton'>skip ad</div>"
         }
       }
     };
