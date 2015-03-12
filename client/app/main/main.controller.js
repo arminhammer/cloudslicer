@@ -75,7 +75,6 @@ angular.module('beatschApp')
         });
       });
     };
-
     $scope.currentTime = 0;
     $scope.totalTime = 0;
     $scope.state = null;
@@ -104,10 +103,12 @@ angular.module('beatschApp')
       $scope.volume = newVol;
     };
 
-    $scope.videos1 = [
+    $scope.videos = [
       {
         sources: [
-          {src: "https://www.youtube.com/watch?v=gi-wl43o3gc"}
+          {src: "https://www.youtube.com/watch?v=nVjsGKrE6E8"},
+          {src: "https://www.youtube.com/watch?v=rEaPDNgUPLE"},
+          {src: "https://www.youtube.com/watch?v=nay31hvEvrY"}
         ]
         // Tracks are inside .mpd file and added by Dash.js
       },
@@ -129,13 +130,12 @@ angular.module('beatschApp')
       }
     ];
 
-    /*
     $scope.config = {
       autoHide: false,
       autoHideTime: 3000,
       autoPlay: false,
-      sources: $scope.videos1[0].sources,
-      tracks: $scope.videos1[0].tracks,
+      sources: $scope.videos[0].sources,
+      tracks: $scope.videos[0].tracks,
       loop: false,
       preload: "auto",
       transclude: true,
@@ -157,17 +157,9 @@ angular.module('beatschApp')
         }
       }
     };
-    */
-
-    $scope.config = {
-      preload: "none",
-      sources: [
-        { src: "https://www.youtube.com/watch?v=nVjsGKrE6E8" }
-      ]
-    };
 
     $scope.changeSource = function () {
-      $scope.config.sources = $scope.videos1[1].sources;
+      $scope.config.sources = $scope.videos[1].sources;
       $scope.config.tracks = undefined;
       $scope.config.loop = false;
       $scope.config.preload = true;

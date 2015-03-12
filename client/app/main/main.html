@@ -43,18 +43,40 @@
           <vg-overlay-play vg-play-icon="config.theme.playIcon"></vg-overlay-play>
         </videogular>-->
 
-        <videogular vg-theme="config.theme.url">
+        <videogular vg-player-ready="onPlayerReady" vg-theme="config.theme.url" vg-autoplay="config.autoPlay">
+
           <vg-media vg-src="config.sources"
                     vg-tracks="config.tracks"
-                    vg-native-controls="true"
+                    vg-native-controls="false"
                     vg-youtube="rel=1;showinfo=1">
           </vg-media>
+
+          <vg-controls>
+            <vg-play-pause-button></vg-play-pause-button>
+            <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+            <vg-scrub-bar>
+              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+            <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+            <vg-volume>
+              <vg-mute-button></vg-mute-button>
+              <vg-volume-bar></vg-volume-bar>
+            </vg-volume>
+            <vg-fullscreen-button></vg-fullscreen-button>
+          </vg-controls>
+
+          <vg-poster-image vg-url='config.plugins.poster.url'></vg-poster-image>
+          <vg-buffering></vg-buffering>
+          <!--
+          <vg-overlay-play vg-play-icon="config.theme.playIcon"></vg-overlay-play>
+          -->
         </videogular>
 
       </div>
     </div>
   </div>
 
+  <!--
   <div class="row">
     <div class="col-12">
       <h2>Video player properties</h2>
@@ -105,6 +127,7 @@
       <button ng-click="API.seekTime(50, true)">Move to 50%</button>
     </div>
   </div>
+  -->
 
   <div class="row">
     <div class="col-lg-12">
