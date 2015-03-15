@@ -3,13 +3,14 @@
 angular.module('beatschApp')
   .controller('MainCtrl', ['$scope', '$http', 'socket', '$log', 'Auth', '$sce', '$timeout', function ($scope, $http, socket, $log, Auth, $sce, $timeout) {
 
-    $scope.videos1 = [];
+    $scope.videos = [];
 
     $http.get('/api/video').success(function(videos) {
 
+      console.log('GET videos:');
       $log.debug(videos);
-      $scope.videos1 = videos;
-      socket.syncUpdates('video', $scope.videos1);
+      $scope.videos = videos;
+      socket.syncUpdates('video', $scope.videos);
 
     });
 
@@ -94,7 +95,7 @@ angular.module('beatschApp')
     $scope.setVideo = function(index) {
       $scope.API.stop();
       $scope.currentVideo = index;
-      $scope.config.sources = $scope.videos[index].sources;
+      $scope.config.sources = $scope.videos1[index].sources;
       $timeout($scope.API.play.bind($scope.API), 100);
     };
 
@@ -106,7 +107,7 @@ angular.module('beatschApp')
 
       $scope.currentVideo++;
 
-      if ($scope.currentVideo >= $scope.videos.length) {
+      if ($scope.currentVideo >= $scope.videos1.length) {
 
         $scope.currentVideo = 0;
 
@@ -133,32 +134,35 @@ angular.module('beatschApp')
       $scope.volume = newVol;
     };
 
-    $scope.videos = [
+    $scope.videos1 = [
       {
         sources: [
           {src: "https://www.youtube.com/watch?v=nVjsGKrE6E8"}
         ]
-        // Tracks are inside .mpd file and added by Dash.js
       },
       {
         sources: [
           {src: "https://www.youtube.com/watch?v=rEaPDNgUPLE"}
         ]
-        // Tracks are inside .mpd file and added by Dash.js
       },
       {
         sources: [
           {src: "https://www.youtube.com/watch?v=nay31hvEvrY"}
         ]
-        // Tracks are inside .mpd file and added by Dash.js
       }
     ];
+
+    console.log('Videos:');
+    console.log($scope.videos);
+    console.log('Videos1:');
+    console.log($scope.videos1);
+
 
     $scope.config = {
       autoHide: false,
       autoHideTime: 3000,
       autoPlay: true,
-      sources: $scope.videos[0].sources,
+      sources: $scope.videos1[0].sources,
       //tracks: $scope.videos[0].tracks,
       //loop: false,
       preload: "auto",
@@ -175,7 +179,7 @@ angular.module('beatschApp')
     };
 
     $scope.changeSource = function () {
-      $scope.config.sources = $scope.videos[1].sources;
+      $scope.config.sources = $scope.videos1[1].sources;
       $scope.config.tracks = undefined;
       $scope.config.loop = false;
       $scope.config.preload = true;

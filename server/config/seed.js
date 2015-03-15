@@ -10,14 +10,14 @@ var User = require('../api/user/user.model');
 
 Video.find({}).remove(function() {
   Video.create({
-    title : 'Summertime Sadness',
-    videoId: 'nVjsGKrE6E8'
+    title : 'Jesus Christ Superstar (1973) Gethsemane (14HQ) [WS] {HQ} (((Stereo)))',
+    videoId: 'I3mFBh2z9sc'
   }, {
-    title : 'Party and Bullshit',
-    videoId: 'rEaPDNgUPLE'
+    title : 'Jaymes Young - Moondust (Sound Remedy Remix)',
+    videoId: 'liwCcSH9xzw'
   }, {
-    title : 'Changes',
-    videoId: 'nay31hvEvrY'
+    title : 'Syndicate - Nero Remix',
+    videoId: 'cSFDAB1ItpU'
   });
 });
 

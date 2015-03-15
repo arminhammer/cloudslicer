@@ -17,6 +17,15 @@ var VideoSchema = new Schema({
 });
 
 /**
+ * Virtuals
+ */
+VideoSchema
+.virtual('sources')
+.get(function() {
+return 'Fun!';
+  });
+
+/**
  * Methods
  */
 VideoSchema.methods = {
