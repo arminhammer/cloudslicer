@@ -11,13 +11,22 @@ var User = require('../api/user/user.model');
 Video.find({}).remove(function() {
   Video.create({
     title : 'Jesus Christ Superstar (1973) Gethsemane (14HQ) [WS] {HQ} (((Stereo)))',
-    videoId: 'I3mFBh2z9sc'
+    videoId: 'I3mFBh2z9sc',
+    sources: [
+      {src: 'https://www.youtube.com/watch?v=I3mFBh2z9sc'}
+    ]
   }, {
     title : 'Jaymes Young - Moondust (Sound Remedy Remix)',
-    videoId: 'liwCcSH9xzw'
+    videoId: 'liwCcSH9xzw',
+    sources: [
+      {src: 'https://www.youtube.com/watch?v=liwCcSH9xzw'}
+    ]
   }, {
     title : 'Syndicate - Nero Remix',
-    videoId: 'cSFDAB1ItpU'
+    videoId: 'cSFDAB1ItpU',
+    sources: [
+      {src: 'https://www.youtube.com/watch?v=cSFDAB1ItpU'}
+    ]
   });
 });
 

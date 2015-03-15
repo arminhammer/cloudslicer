@@ -12,18 +12,19 @@ var VideoSchema = new Schema({
   description: String,
   videoId: String,
   score: { type: Number, default: 0 },
-  votes: [{ date: Date }]
+  votes: [{ date: Date }],
+  sources: [{ src: String }]
 
 });
 
 /**
  * Virtuals
  */
-VideoSchema
-.virtual('sources')
-.get(function() {
-return 'Fun!';
-  });
+//VideoSchema
+//.virtual('sources')
+//.get(function() {
+//return 'Fun!';
+//  });
 
 /**
  * Methods

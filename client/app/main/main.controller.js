@@ -5,12 +5,43 @@ angular.module('beatschApp')
 
     $scope.videos = [];
 
+    $scope.currentTime = 0;
+    $scope.totalTime = 0;
+    $scope.state = null;
+    $scope.volume = 1;
+    $scope.isCompleted = false;
+    $scope.API = null;
+
+    $scope.currentVideo = 0;
+
+    $scope.config = {
+      autoHide: false,
+      autoHideTime: 3000,
+      autoPlay: true,
+      //sources: $scope.videos[0].sources,
+      //tracks: $scope.videos[0].tracks,
+      //loop: false,
+      preload: "auto",
+      //transclude: true,
+      controls: undefined,
+      theme: {
+        url: "styles/themes/default/videogular.css"
+      },
+      plugins: {
+        poster: {
+          url: "assets/images/videogular.png"
+        }
+      }
+    };
+
     $http.get('/api/video').success(function(videos) {
 
       console.log('GET videos:');
       $log.debug(videos);
       $scope.videos = videos;
       socket.syncUpdates('video', $scope.videos);
+
+      $scope.config.sources = $scope.videos[0].sources;
 
     });
 
@@ -20,29 +51,6 @@ angular.module('beatschApp')
       $http.post('/api/video/vote', { id: video._id });
 
     };
-
-    $scope.awesomeThings = [];
-
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
-    });
 
     $scope.addSong = function() {
 
@@ -77,17 +85,10 @@ angular.module('beatschApp')
       });
     };
 
-    $scope.currentTime = 0;
-    $scope.totalTime = 0;
-    $scope.state = null;
-    $scope.volume = 1;
-    $scope.isCompleted = false;
-    $scope.API = null;
 
-    $scope.currentVideo = 0;
 
-    $scope.onPlayerReady = function (API) {
-      console.log('API');
+    $scope.onPlayerReady = function(API) {
+      console.log('Setting API');
       console.log(API);
       $scope.API = API;
     };
@@ -95,7 +96,7 @@ angular.module('beatschApp')
     $scope.setVideo = function(index) {
       $scope.API.stop();
       $scope.currentVideo = index;
-      $scope.config.sources = $scope.videos1[index].sources;
+      $scope.config.sources = $scope.videos[index].sources;
       $timeout($scope.API.play.bind($scope.API), 100);
     };
 
@@ -107,7 +108,7 @@ angular.module('beatschApp')
 
       $scope.currentVideo++;
 
-      if ($scope.currentVideo >= $scope.videos1.length) {
+      if ($scope.currentVideo >= $scope.videos.length) {
 
         $scope.currentVideo = 0;
 
@@ -157,12 +158,12 @@ angular.module('beatschApp')
     console.log('Videos1:');
     console.log($scope.videos1);
 
-
+    /*
     $scope.config = {
       autoHide: false,
       autoHideTime: 3000,
       autoPlay: true,
-      sources: $scope.videos1[0].sources,
+      sources: $scope.videos[0].sources,
       //tracks: $scope.videos[0].tracks,
       //loop: false,
       preload: "auto",
@@ -177,6 +178,7 @@ angular.module('beatschApp')
         }
       }
     };
+    */
 
     $scope.changeSource = function () {
       $scope.config.sources = $scope.videos1[1].sources;
@@ -184,5 +186,28 @@ angular.module('beatschApp')
       $scope.config.loop = false;
       $scope.config.preload = true;
     };
+
+    $scope.awesomeThings = [];
+
+    $http.get('/api/things').success(function(awesomeThings) {
+      $scope.awesomeThings = awesomeThings;
+      socket.syncUpdates('thing', $scope.awesomeThings);
+    });
+
+    $scope.addThing = function() {
+      if($scope.newThing === '') {
+        return;
+      }
+      $http.post('/api/things', { name: $scope.newThing });
+      $scope.newThing = '';
+    };
+
+    $scope.deleteThing = function(thing) {
+      $http.delete('/api/things/' + thing._id);
+    };
+
+    $scope.$on('$destroy', function () {
+      socket.unsyncUpdates('thing');
+    });
 
   }]);
