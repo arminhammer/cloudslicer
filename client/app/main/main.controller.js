@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('beatschApp')
-  .controller('MainCtrl', ['$scope', '$http', 'socket', '$log', 'Auth', '$sce', function ($scope, $http, socket, $log, Auth, $sce) {
+  .controller('MainCtrl', ['$scope', '$http', 'socket', '$log', 'Auth', '$sce', '$timeout', function ($scope, $http, socket, $log, Auth, $sce, $timeout) {
 
-    $scope.videos = [];
+    $scope.videos1 = [];
 
     $http.get('/api/video').success(function(videos) {
 
       $log.debug(videos);
-      $scope.videos = videos;
-      socket.syncUpdates('video', $scope.videos);
+      $scope.videos1 = videos;
+      socket.syncUpdates('video', $scope.videos1);
 
     });
 
@@ -83,15 +83,39 @@ angular.module('beatschApp')
     $scope.isCompleted = false;
     $scope.API = null;
 
+    $scope.currentVideo = 0;
+
     $scope.onPlayerReady = function (API) {
       console.log('API');
       console.log(API);
       $scope.API = API;
     };
 
+    $scope.setVideo = function(index) {
+      $scope.API.stop();
+      $scope.currentVideo = index;
+      $scope.config.sources = $scope.videos[index].sources;
+      $timeout($scope.API.play.bind($scope.API), 100);
+    };
+
     $scope.onCompleteVideo = function () {
       $scope.isCompleted = true;
       console.log('Completed video');
+
+      console.log('Current old: ' + $scope.currentVideo);
+
+      $scope.currentVideo++;
+
+      if ($scope.currentVideo >= $scope.videos.length) {
+
+        $scope.currentVideo = 0;
+
+      }
+
+      console.log('Current new: ' + $scope.currentVideo);
+      $scope.setVideo($scope.currentVideo);
+
+
     };
 
     $scope.onUpdateState = function (state) {
@@ -112,27 +136,21 @@ angular.module('beatschApp')
     $scope.videos = [
       {
         sources: [
-          {src: "https://www.youtube.com/watch?v=nVjsGKrE6E8"},
-          {src: "https://www.youtube.com/watch?v=rEaPDNgUPLE"},
-          {src: "https://www.youtube.com/watch?v=nay31hvEvrY"}
+          {src: "https://www.youtube.com/watch?v=nVjsGKrE6E8"}
         ]
         // Tracks are inside .mpd file and added by Dash.js
       },
       {
         sources: [
-          {src: $sce.trustAsResourceUrl("https://dl.dropboxusercontent.com/u/7359898/video/videogular.mp4"), type: "video/mp4"},
-          {src: $sce.trustAsResourceUrl("https://dl.dropboxusercontent.com/u/7359898/video/videogular.webm"), type: "video/webm"},
-          {src: $sce.trustAsResourceUrl("https://dl.dropboxusercontent.com/u/7359898/video/videogular.ogg"), type: "video/ogg"}
-        ],
-        tracks: [
-          {
-            src: "assets/subs/pale-blue-dot.vtt",
-            kind: "subtitles",
-            srclang: "en",
-            label: "English",
-            default: ""
-          }
+          {src: "https://www.youtube.com/watch?v=rEaPDNgUPLE"}
         ]
+        // Tracks are inside .mpd file and added by Dash.js
+      },
+      {
+        sources: [
+          {src: "https://www.youtube.com/watch?v=nay31hvEvrY"}
+        ]
+        // Tracks are inside .mpd file and added by Dash.js
       }
     ];
 
