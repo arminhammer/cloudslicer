@@ -1,7 +1,15 @@
 'use strict';
 
 angular.module('beatschApp')
-  .controller('MainCtrl', ['$scope', '$http', 'socket', '$log', 'Auth', '$sce', '$timeout', function ($scope, $http, socket, $log, Auth, $sce, $timeout) {
+  .controller('MainCtrl', ['$scope',
+    '$http',
+    'socket',
+    '$log',
+    'Auth',
+    '$sce',
+    '$timeout',
+    '$filter',
+    function ($scope, $http, socket, $log, Auth, $sce, $timeout, $filter) {
 
     $scope.videos = [];
 
@@ -34,14 +42,38 @@ angular.module('beatschApp')
       }
     };
 
+    function sortVideos(array) {
+      console.log('Sorting!');
+      console.log('Before:');
+      console.log(array);
+
+      var unsorted = true;
+
+      //while(unsorted) {
+
+        //for(var i=0; i< array.length; i++) {
+
+        //}
+
+      //}
+      array = $filter('orderBy')(array, '-score');
+      console.log('After:');
+      console.log(array);
+
+      return array;
+
+    }
+
     $http.get('/api/video').success(function(videos) {
 
       console.log('GET videos:');
       $log.debug(videos);
-      $scope.videos = videos;
+      $scope.videos = sortVideos(videos);
       socket.syncUpdates('video', $scope.videos);
 
       $scope.config.sources = $scope.videos[0].sources;
+
+      //sort($scope.videos);
 
     });
 
@@ -96,6 +128,7 @@ angular.module('beatschApp')
     $scope.setVideo = function(index) {
       $scope.API.stop();
       $scope.currentVideo = index;
+      $scope.videos = sortVideos($scope.videos);
       $scope.config.sources = $scope.videos[index].sources;
       $timeout($scope.API.play.bind($scope.API), 100);
     };
@@ -116,7 +149,6 @@ angular.module('beatschApp')
 
       console.log('Current new: ' + $scope.currentVideo);
       $scope.setVideo($scope.currentVideo);
-
 
     };
 
