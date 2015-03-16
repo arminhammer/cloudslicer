@@ -170,51 +170,6 @@ angular.module('beatschApp')
       $scope.volume = newVol;
     };
 
-    $scope.videos1 = [
-      {
-        sources: [
-          {src: "https://www.youtube.com/watch?v=nVjsGKrE6E8"}
-        ]
-      },
-      {
-        sources: [
-          {src: "https://www.youtube.com/watch?v=rEaPDNgUPLE"}
-        ]
-      },
-      {
-        sources: [
-          {src: "https://www.youtube.com/watch?v=nay31hvEvrY"}
-        ]
-      }
-    ];
-
-    console.log('Videos:');
-    console.log($scope.videos);
-    console.log('Videos1:');
-    console.log($scope.videos1);
-
-    /*
-    $scope.config = {
-      autoHide: false,
-      autoHideTime: 3000,
-      autoPlay: true,
-      sources: $scope.videos[0].sources,
-      //tracks: $scope.videos[0].tracks,
-      //loop: false,
-      preload: "auto",
-      //transclude: true,
-      controls: undefined,
-      theme: {
-        url: "styles/themes/default/videogular.css"
-      },
-      plugins: {
-        poster: {
-          url: "assets/images/videogular.png"
-        }
-      }
-    };
-    */
-
     $scope.changeSource = function () {
       $scope.config.sources = $scope.videos1[1].sources;
       $scope.config.tracks = undefined;
