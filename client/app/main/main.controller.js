@@ -20,7 +20,7 @@ angular.module('beatschApp')
     $scope.isCompleted = false;
     $scope.API = null;
 
-    $scope.currentVideo = 0;
+    $scope.currentVideo = { index: 0 };
 
     $scope.config = {
       autoHide: false,
@@ -72,8 +72,8 @@ angular.module('beatschApp')
       socket.syncUpdates('video', $scope.videos);
 
       $scope.config.sources = $scope.videos[0].sources;
-
-      //sort($scope.videos);
+      $scope.currentVideo = $scope.videos[0];
+      $scope.currentVideo.index = 0;
 
     });
 
@@ -117,8 +117,6 @@ angular.module('beatschApp')
       });
     };
 
-
-
     $scope.onPlayerReady = function(API) {
       console.log('Setting API');
       console.log(API);
@@ -127,7 +125,8 @@ angular.module('beatschApp')
 
     $scope.setVideo = function(index) {
       $scope.API.stop();
-      $scope.currentVideo = index;
+      $scope.currentVideo = $scope.videos[index];
+      $scope.currentVideo.index = index;
       $scope.videos = sortVideos($scope.videos);
       $scope.config.sources = $scope.videos[index].sources;
       $timeout($scope.API.play.bind($scope.API), 100);
@@ -137,18 +136,18 @@ angular.module('beatschApp')
       $scope.isCompleted = true;
       console.log('Completed video');
 
-      console.log('Current old: ' + $scope.currentVideo);
+      console.log('Current old: ' + $scope.currentVideo.index);
 
-      $scope.currentVideo++;
+      $scope.currentVideo.index++;
 
-      if ($scope.currentVideo >= $scope.videos.length) {
+      if ($scope.currentVideo.index >= $scope.videos.length) {
 
-        $scope.currentVideo = 0;
+        $scope.currentVideo.index = 0;
 
       }
 
-      console.log('Current new: ' + $scope.currentVideo);
-      $scope.setVideo($scope.currentVideo);
+      console.log('Current new: ' + $scope.currentVideo.index);
+      $scope.setVideo($scope.currentVideo.index);
 
     };
 

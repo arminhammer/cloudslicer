@@ -111,3 +111,14 @@
   }
 }
 
+.playList {
+  background-color: white;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#mainContainer {
+  background-color: darkorange;
+}

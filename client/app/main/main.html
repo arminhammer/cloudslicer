@@ -66,13 +66,19 @@
           </vg-controls>
 
           <vg-poster-image vg-url='config.plugins.poster.url'></vg-poster-image>
-          <vg-buffering></vg-buffering>
           <!--
+          <vg-buffering></vg-buffering>
           <vg-overlay-play vg-play-icon="config.theme.playIcon"></vg-overlay-play>
           -->
         </videogular>
 
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      Now Playing: {{ currentVideo.title }}</h2>
     </div>
   </div>
 
@@ -152,12 +158,14 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Songs:</h1>
+      <h1 class="page-header">Playlist:</h1>
       <div ng-repeat="video in videos | orderBy : '-score'" ng-animate="{enter: 'example-repeat-enter', leave: 'example-repeat-leave', move: 'example-repeat-move'}">
-        <div ng-click="voteFor(video)"><b>{{ $index }}: {{ video.title }}</b></div>
-        <div>Id: {{ video.videoId }}</div>
-        <div>Score: {{ video.score }}</div>
-        <div>Votes: {{ video.votes.length }}</div>
+        <div class="playList" ng-click="voteFor(video)">
+          <b>{{ $index }}: {{ video.title }}</b>
+          Score: {{ video.score }}
+          Votes: {{ video.votes.length }}
+          <button class="btn btn-default" type="submit">Vote</button>
+        </div>
       </div>
     </div>
   </div>
