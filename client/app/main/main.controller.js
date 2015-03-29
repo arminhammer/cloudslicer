@@ -128,6 +128,7 @@ angular.module('beatschApp')
     };
 
     $scope.setVideo = function(index) {
+      console.log('setVideo');
       $scope.API.stop();
       $scope.currentVideo = $scope.videos[index];
       $scope.currentVideo.index = index;

@@ -92,8 +92,8 @@
 
 @media (min-width: 1200px) {
   .videogular-container {
-    width: 940px;
-    height: 528.75px;
+    width: 1130px;
+    height: 635.625px;
   }
 }
 
@@ -113,8 +113,8 @@
 
 .playList {
   background-color: white;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   padding: 10px;
   margin: 10px;
 }

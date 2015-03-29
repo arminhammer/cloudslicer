@@ -28,6 +28,23 @@
 }
 
 /**
+ *Font Lovelo Bold
+ */
+
+@font-face {
+  font-family: 'LoveloBold';
+  src: url('../assets/fonts/Lovelo%20Line%20Bold.otf');
+}
+
+.navbar {
+  background-color: darkorange;
+}
+
+.navbar-font {
+  font-family: LoveloBold;
+}
+
+/**
  * App-wide Styles
  */
 
