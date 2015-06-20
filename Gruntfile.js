@@ -17,7 +17,8 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn',
     protractor: 'grunt-protractor-runner',
     injector: 'grunt-asset-injector',
-    buildcontrol: 'grunt-build-control'
+    buildcontrol: 'grunt-build-control',
+    browserify: 'grunt-browserify'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -32,6 +33,12 @@ module.exports = function (grunt) {
       // configurable paths
       client: require('./bower.json').appPath || 'client',
       dist: 'dist'
+    },
+    browserify: {
+      js: {
+        src: '<%= yeoman.client %>/{app,components}/**/*.js',
+        dest: '<%= yeoman.client %>/app/browserify/main.js'
+      }
     },
     express: {
       options: {
@@ -467,11 +474,11 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/index.html': [
-              ['{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
-               '!{.tmp,<%= yeoman.client %>}/app/app.js',
-               '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
-               '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js']
-            ]
+            ['{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
+              '!{.tmp,<%= yeoman.client %>}/app/app.js',
+              '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
+              '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js']
+          ]
         }
       },
 
@@ -522,6 +529,7 @@ module.exports = function (grunt) {
         'env:all',
         'concurrent:server',
         'injector',
+        'browserify',
         'wiredep',
         'autoprefixer',
         'concurrent:debug'
@@ -533,6 +541,7 @@ module.exports = function (grunt) {
       'env:all',
       'concurrent:server',
       'injector',
+      'browserify',
       'wiredep',
       'autoprefixer',
       'express:dev',
@@ -562,6 +571,7 @@ module.exports = function (grunt) {
         'env:all',
         'concurrent:test',
         'injector',
+        'browserify',
         'autoprefixer',
         'karma'
       ]);
@@ -582,15 +592,16 @@ module.exports = function (grunt) {
     }
 
     else grunt.task.run([
-      'test:server',
-      'test:client'
-    ]);
+        'test:server',
+        'test:client'
+      ]);
   });
 
   grunt.registerTask('build', [
     'clean:dist',
     'concurrent:dist',
     'injector',
+    'browserify',
     'wiredep',
     'useminPrepare',
     'autoprefixer',

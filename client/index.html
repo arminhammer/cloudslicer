@@ -1,103 +1,168 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <!--
-    <script src="bower_components/video.js/dist/video-js/video.js"></script>
-    <script src="bower_components/videojs-youtube/src/youtube.js"></script>
-    -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <base href="/">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(client) app/vendor.css -->
-      <!-- bower:css -->
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-      <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-      <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
-      <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
-      <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css({.tmp,client}) app/app.css -->
-    <link rel="stylesheet" href="app/app.css">
-      <!-- injector:css -->
-      <link rel="stylesheet" href="app/account/login/login.css">
-      <link rel="stylesheet" href="app/admin/admin.css">
-      <link rel="stylesheet" href="app/app.css">
-      <link rel="stylesheet" href="app/main/main.css">
-      <link rel="stylesheet" href="components/modal/modal.css">
-      <!-- endinjector -->
-    <!-- endbuild -->
-  </head>
-  <body ng-app="beatschApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div ui-view="" id="mainContainer"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Skeleton: Responsive CSS Boilerplate</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-      ga('create', 'UA-XXXXX-X');
-      ga('send', 'pageview');
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(client_old) app/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,client_old}) app/app.css -->
+  <!-- injector:css -->
+  <link rel="stylesheet" href="app/assets/styles/main.css">
+  <link rel="stylesheet" href="app/assets/styles/normalize.css">
+  <link rel="stylesheet" href="app/assets/styles/skeleton.css">
+  <!-- endinjector -->
+  <!-- endbuild -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!--
+  <link rel="stylesheet" href="client/assets/styles/normalize.css">
+  <link rel="stylesheet" href="client/assets/styles/skeleton.css">
+  <link rel="stylesheet" href="client/assets/styles/main.css">
+  -->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <div class="section hero">
+    <div class="container">
+      <div class="row">
+        <div class="one-half column">
+          <h4 class="hero-heading">Mithril</h4>
+          <p class="section-description">
+          <a href="http://lhorie.github.io/mithril/">Mithril</a>
+          is a client-side MVC framework - a tool to organize code in a way that is easy to think about and to maintain.
+          </p>
+
+        </div>
+        <div class="one-half column phones">
+
+          <!-- mitrhil app -->
+          <div id="page-app" class="col-md-8 text">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section categories">
+    <div class="container">
+      <h3 class="section-heading">CSS Skeleton</h3>
+      <img class="u-max-full-width" src="app/assets/images/skeleton.png">
+
+      <p class="section-description">Skeleton is a simple, responsive boilerplate to kickstart any responsive project.</p>
+      <a class="button button-primary" href="http://getskeleton.com">View Skeleton Docs</a>
+    </div>
+  </div>
+
+
+  <div class="section categories">
+    <div class="container">
+      <h3 class="section-heading">Gulp</h3>
+      <img class="u-max-full-width" src="app/assets/images/gulp.png">
+
+      <p class="section-description">Speed. Efficiency. Simplicity. Gulp's use of streams and code-over-configuration makes for a simpler and more intuitive build.</p>
+      <a class="button button-primary" href="http://gulpjs.com/">View Gulp Docs</a>
+    </div>
+  </div>
+
+  <div class="section categories">
+    <div class="container">
+      <h3 class="section-heading">jQuery</h3>
+      <img class="u-max-full-width" src="app/assets/images/jquery.png">
+
+      <p class="section-description">The Write Less, Do More, JavaScript Library.</p>
+      <a class="button button-primary" href="http://jquery.com/">View jQuery Docs</a>
+    </div>
+  </div>
+
+  <div class="section categories">
+    <div class="container">
+      <h3 class="section-heading">Browserify</h3>
+      <img class="u-max-full-width" src="app/assets/images/browserify.png">
+
+      <p class="section-description">Browserify lets you require('modules') in the browser by bundling up all of your dependencies.</p>
+      <a class="button button-primary" href="http://browserify.org/">View browserify Docs</a>
+    </div>
+  </div>
+
+
+
+
+  <div class="section categories">
+    <div class="container">
+      <h3 class="section-heading">Less</h3>
+      <img class="u-max-full-width" src="app/assets/images/less.png">
+
+      <p class="section-description">Less is a CSS pre-processor, which allows you to make CSS that is more maintainable, themable and extendable.</p>
+      <a class="button button-primary" href="http://lesscss.org/">View Sass Docs</a>
+    </div>
+  </div>
+
+
+<div class="footer">
+          <p>♥ from Steven Iseki and the Yeoman team</p>
+</div>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <!--
+  <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+-->
+  <!-- Scripts
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-    <!-- build:js({client,node_modules}) app/vendor.js -->
-      <!-- bower:js -->
-      <script src="bower_components/jquery/dist/jquery.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-resource/angular-resource.js"></script>
-      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-      <script src="bower_components/angular-socket-io/socket.js"></script>
-      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="bower_components/angular-animate/angular-animate.js"></script>
-      <script src="bower_components/videogular/videogular.js"></script>
-      <script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
-      <script src="bower_components/videogular-youtube/youtube.js"></script>
-      <script src="bower_components/videogular-buffering/vg-buffering.js"></script>
-      <script src="bower_components/videogular-controls/vg-controls.js"></script>
-      <script src="bower_components/videogular-poster/vg-poster.js"></script>
-      <!-- endbower -->
-      <script src="socket.io-client/socket.io.js"></script>
-    <!-- endbuild -->
+  <!-- build:js({client_old,node_modules}) app/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/mithril/mithril.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
-        <!-- build:js({.tmp,client}) app/app.js -->
-        <script src="app/app.js"></script>
-          <!-- injector:js -->
-          <script src="app/account/account.js"></script>
-          <script src="app/account/login/login.controller.js"></script>
-          <script src="app/account/settings/settings.controller.js"></script>
-          <script src="app/account/signup/signup.controller.js"></script>
-          <script src="app/admin/admin.controller.js"></script>
-          <script src="app/admin/admin.js"></script>
-          <script src="app/main/main.controller.js"></script>
-          <script src="app/main/main.js"></script>
-          <script src="app/main/video.service.js"></script>
-          <script src="components/auth/auth.service.js"></script>
-          <script src="components/auth/user.service.js"></script>
-          <script src="components/modal/modal.service.js"></script>
-          <script src="components/mongoose-error/mongoose-error.directive.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
-          <script src="components/socket/socket.service.js"></script>
-          <!-- endinjector -->
-        <!-- endbuild -->
+  <script src="app/browserify/main.js"></script>
+
+  <!--
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/mithril.min.js"></script>
+    <script src="scripts/browserify/main.js"></script>
+  -->
 </body>
 </html>
+
+
