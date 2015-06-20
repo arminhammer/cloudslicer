@@ -37,7 +37,7 @@ module.exports = function (grunt) {
     browserify: {
       js: {
         src: '<%= yeoman.client %>/{app,components}/**/*.js',
-        dest: '<%= yeoman.client %>/app/browserify/main.js'
+        dest: '<%= yeoman.client %>/browserify/main.js'
       }
     },
     express: {
