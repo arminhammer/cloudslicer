@@ -1,7 +1,7 @@
 // video view
 
 var vm = require('../viewModels/videoViewModel');
-vm.init()
+vm.init();
 
 var videoView = function() {
     return m("html", [

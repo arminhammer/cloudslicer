@@ -5,7 +5,7 @@ var Video = require('../models/Video');
 // the view-model tracks a running list of videos, and allows for videos to be added to the list.
 
 var videoViewModel = (function() {
-    var vm = {}
+    var vm = {};
     vm.init = function() {
         //a running list of videos
         vm.list = [];
@@ -18,8 +18,8 @@ var videoViewModel = (function() {
                 vm.description("");
             }
         };
-    }
+    };
     return vm
-}())
+}());
 
 module.exports = videoViewModel;

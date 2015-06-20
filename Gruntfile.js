@@ -99,6 +99,7 @@ module.exports = function (grunt) {
           '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
+        tasks: ['browserify'],
         options: {
           livereload: true
         }
