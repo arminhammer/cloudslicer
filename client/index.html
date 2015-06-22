@@ -3,24 +3,22 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>Beatsch</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(client_old) app/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/video.js/dist/video-js/video-js.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css({.tmp,client_old}) app/app.css -->
@@ -31,24 +29,15 @@
   <!-- endinjector -->
   <!-- endbuild -->
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- CSS  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <!--
-  <link rel="stylesheet" href="client/assets/styles/normalize.css">
-  <link rel="stylesheet" href="client/assets/styles/skeleton.css">
-  <link rel="stylesheet" href="client/assets/styles/main.css">
-  -->
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="favicon.png">
 
 </head>
 <body>
 
-<!-- Primary Page Layout
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <div class="section hero">
   <div class="container">
@@ -59,11 +48,10 @@
           <a href="http://www.beatsch.com">Beatsch</a>
           is a democratic music player.
         </p>
-
       </div>
       <div class="one-half column phones">
 
-        <!-- mitrhil app -->
+        <!-- mithril app -->
         <div id="page-app" class="col-md-8 text">
         </div>
 
@@ -84,14 +72,11 @@
 </div>
 -->
 
-
 <div class="footer">
   <p>Beatsch</p>
 </div>
 
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- End Document –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <!--
@@ -110,6 +95,8 @@
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/mithril/mithril.min.js"></script>
+<script src="bower_components/video.js/dist/video-js/video.js"></script>
+<script src="bower_components/videojs-youtube/dist/vjs.youtube.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
