@@ -15,6 +15,17 @@ var videoViewModel = (function() {
     });
   };
 
+  vm.initVideoJsPlayer = function() {
+
+    videojs('vid1', { "techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=QcIy9NiNbmo" }).ready(function() {
+      this.one('ended', function() {
+        this.src('http://www.youtube.com/watch?v=g_uoH6hJilc');
+        this.play();
+      });
+    });
+
+  };
+
   vm.init = function() {
     //a running list of videos
     //vm.list = [];
@@ -44,7 +55,9 @@ var videoViewModel = (function() {
       }
     };
   };
+
   return vm
+
 }());
 
 module.exports = videoViewModel;

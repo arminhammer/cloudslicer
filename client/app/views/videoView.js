@@ -1,7 +1,9 @@
 // video view
 
 var vm = require('../viewModels/videoViewModel');
+
 vm.init();
+vm.initVideoJsPlayer();
 
 var videoView = function() {
   return m("div", [
@@ -19,20 +21,24 @@ var videoView = function() {
           //m("td", {style: {textDecoration: task.done() ? "line-through" : "none"}}, task.description()),
         ])
       })
-    ]),
-  ]),
-    m("table", [
-      m("video[controls]", {
-        id: "vid1",
-        //src: ""
-        class: "video-js vjs-default-skin",
-        preload:"auto",
-        width: "640",
-        height: "360"
-        //"data-setup": '{"techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=QcIy9NiNbmo"}'
-      })
     ])
+  ])
 };
+
+/*
+ m("table", [
+ m("video[controls]", {
+ id: "vid1",
+ //src: ""
+ class: "video-js vjs-default-skin",
+ preload:"auto",
+ width: "640",
+ height: "360"
+ //"data-setup": '{"techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=QcIy9NiNbmo"}'
+ })
+ ]),
+ */
+
 
 module.exports = videoView;
 
