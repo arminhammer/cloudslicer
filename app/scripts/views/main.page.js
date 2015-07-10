@@ -5,6 +5,7 @@
 'use strict';
 
 var VideoList = require('../components/video.list');
+var VideoPlayer = require('../components/video.player');
 
 var MainPage = {
 
@@ -14,9 +15,13 @@ var MainPage = {
 
     var list = options.list;
 
+    ctrl.playerController = new VideoPlayer.controller({
+      list: list
+    });
+
     ctrl.listController = new VideoList.controller({
       list: list
-    })
+    });
 
   },
 
@@ -31,12 +36,12 @@ var MainPage = {
           ]),
           m("h3.text-muted", "Beatsch")
         ]),
-        m(".jumbotron", [
-          m("h1", "'Allo1, 'Allo1!"),
-          m("p.lead", "Always a pleasure scaffolding your apps."),
-          m("p", [m("a.btn.btn-lg.btn-success[href='#']", "Splendid!")])
+        m('.row', [
+          m(".col-lg-6", [
+            VideoPlayer.view(controller.playerController)
+          ])
         ]),
-        m(".row.marketing", [
+        m(".row", [
           m(".col-lg-6", [
             VideoList.view(controller.listController)
           ])

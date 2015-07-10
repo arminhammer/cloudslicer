@@ -4,7 +4,8 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
-    "mithril": "~0.2.0"
+    "mithril": "~0.2.0",
+    "videojs-youtube": "~1.2.12"
   },
   "overrides": {
     "bootstrap-sass": {
