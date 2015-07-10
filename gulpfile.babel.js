@@ -4,9 +4,39 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
+import source from 'vinyl-source-stream';
+import browserify from 'browserify';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+/* browserify */
+gulp.task('browserify', function() {
+  var sourceFile = './app/scripts/main.js',
+    destFolder = './app/scripts/browserify/',
+    destFile = 'main.js';
+
+  var bundler = browserify({
+    entries: sourceFile,
+    cache: {}, packageCache: {}, fullPaths: true, debug: true
+  });
+
+  var bundle = function() {
+    return bundler
+      .bundle()
+      .on('error', function (err) {
+        console.log(err);
+      })
+      .pipe(source(destFile))
+      .pipe(gulp.dest(destFolder));
+  };
+
+  if(global.isWatching) {
+    bundler = watchify(bundler);
+    bundler.on('update', bundle);
+  }
+  return bundle();
+});
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -89,7 +119,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'fonts'], () => {
+gulp.task('serve', ['styles', 'fonts', 'browserify'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -113,7 +143,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
-gulp.task('serve:dist', () => {
+gulp.task('serve:dist', ['browserify'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -123,7 +153,7 @@ gulp.task('serve:dist', () => {
   });
 });
 
-gulp.task('serve:test', () => {
+gulp.task('serve:test', ['browserify'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -156,10 +186,10 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'browserify', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('default', ['clean'], () => {
+gulp.task('default', ['clean', 'browserify'], () => {
   gulp.start('build');
 });

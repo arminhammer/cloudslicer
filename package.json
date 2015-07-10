@@ -37,5 +37,9 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "browserify": "^10.2.6",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
