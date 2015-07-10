@@ -4,6 +4,7 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "mithril": "*",
-    "videojs-youtube": "~1.2.12"
+    "videojs-youtube": "~1.2.12",
+    "bootstrap": "~3.3.5"
   }
 }
