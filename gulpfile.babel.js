@@ -136,7 +136,10 @@ gulp.task('serve', ['styles', 'fonts', 'browserify'], () => {
     'app/scripts/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
-  ]).on('change', reload);
+  ]).on('change', function() {
+    gulp.start('browserify');
+    reload
+  });
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/fonts/**/*', ['fonts']);
