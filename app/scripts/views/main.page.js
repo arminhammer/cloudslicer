@@ -4,8 +4,8 @@
 
 'use strict';
 
-var VideoList = require('../components/video.list');
-var VideoPlayer = require('../components/video.player');
+//var VideoList = require('../components/video.list');
+//var VideoPlayer = require('../components/video.player');
 
 var MainPage = {
 
@@ -13,8 +13,14 @@ var MainPage = {
 
     var ctrl = this;
 
-    var list = options.list;
+    //var list = options.list;
 
+    ctrl.template = options.template;
+    console.log('From Controller:');
+    console.log(options.template);
+    //var template = JSON.parse(testData);
+
+    /*
     ctrl.playerController = new VideoPlayer.controller({
       list: list
     });
@@ -22,10 +28,13 @@ var MainPage = {
     ctrl.listController = new VideoList.controller({
       list: list
     });
+    */
 
   },
 
   view: function(controller) {
+    console.log('From the view:');
+    console.log(controller.template);
     return [
       [m(".container", [
         m(".header", [
@@ -34,16 +43,20 @@ var MainPage = {
             m("li", [m("a[href='#']", "About")]),
             m("li", [m("a[href='#']", "Contact")])
           ]),
-          m("h3.text-muted", "Beatsch")
+          m("h3.text-muted", "Cloudslicer")
         ]),
         m('.row', [
-          m(".col-lg-6", [
-            VideoPlayer.view(controller.playerController)
-          ])
-        ]),
-        m(".row", [
-          m(".col-lg-6", [
-            VideoList.view(controller.listController)
+          m(".col-md-6", [
+            m('div', 'Source'),
+            m('div', [
+              _.map(controller.template.Resources, function(value, key) {
+                return m('div', value.Type)
+              })
+            ])
+          ]),
+          m(".col-md-6", [
+            m('div', 'Visual')
+            //VideoPlayer.view(controller.playerController)
           ])
         ]),
         m(".footer", [
