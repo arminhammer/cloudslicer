@@ -4,8 +4,8 @@
 
 'use strict';
 
-//var VideoList = require('../components/video.list');
-//var VideoPlayer = require('../components/video.player');
+var SourceEditor = require('../components/source.editor');
+var GuiEditor = require('../components/gui.editor');
 
 var MainPage = {
 
@@ -20,15 +20,13 @@ var MainPage = {
     console.log(options.template);
     //var template = JSON.parse(testData);
 
-    /*
-    ctrl.playerController = new VideoPlayer.controller({
-      list: list
+    ctrl.sourceEditorController = new SourceEditor.controller({
+      template: options.template
     });
 
-    ctrl.listController = new VideoList.controller({
-      list: list
+    ctrl.guiEditorController = new GuiEditor.controller({
+
     });
-    */
 
   },
 
@@ -48,15 +46,11 @@ var MainPage = {
         m('.row', [
           m(".col-md-6", [
             m('div', 'Source'),
-            m('div', [
-              _.map(controller.template.Resources, function(value, key) {
-                return m('div', value.Type)
-              })
-            ])
+            SourceEditor.view(controller.sourceEditorController),
           ]),
           m(".col-md-6", [
-            m('div', 'Visual')
-            //VideoPlayer.view(controller.playerController)
+            m('div', 'Visual'),
+            GuiEditor.view(controller.playerController)
           ])
         ]),
         m(".footer", [

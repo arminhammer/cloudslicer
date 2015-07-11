@@ -6,9 +6,10 @@
 
 //var VideoModel = require('../models/video.model');
 
-var VideoPlayer = {
+var GuiEditor = {
   controller: function(options) {
     return {
+      /*
       list: options.list,
       initPlayer: function (element, isInitialized, context) {
 
@@ -27,12 +28,13 @@ var VideoPlayer = {
         });
 
       }
+      */
     }
   },
   view: function(controller) {
-    console.log('Viewing...');
-    console.log(controller.list.length);
     return [
+
+      /*
       m('div', [
         m('h1', 'Video')
       ]),
@@ -46,8 +48,9 @@ var VideoPlayer = {
         height:'360',
         config: controller.initPlayer
       })
+      */
     ]
   }
 };
 
-module.exports = VideoPlayer;
+module.exports = GuiEditor;

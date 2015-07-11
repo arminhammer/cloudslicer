@@ -5,7 +5,8 @@
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
     "mithril": "~0.2.0",
-    "lodash": "~3.10.0"
+    "lodash": "~3.10.0",
+    "codemirror": "~5.4.0"
   },
   "overrides": {
     "bootstrap-sass": {
