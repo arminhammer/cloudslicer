@@ -20,7 +20,13 @@ var SourceEditor = {
         var editor = CodeMirror(element, {
           value: options.template(),
           lineNumbers: true,
-          mode: 'json'
+          mode: 'application/json',
+          gutters: ['CodeMirror-lint-markers'],
+          lint: true,
+          styleActiveLine: true,
+          autoCloseBrackets: true,
+          matchBrackets: true,
+          theme: 'zenburn'
         });
 
         editor.on('change', function(editor) {

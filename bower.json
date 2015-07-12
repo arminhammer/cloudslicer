@@ -6,7 +6,8 @@
     "modernizr": "~2.8.1",
     "mithril": "~0.2.0",
     "lodash": "~3.10.0",
-    "codemirror": "~5.4.0"
+    "codemirror": "~5.4.0",
+    "jsonlint": "~1.6.0"
   },
   "overrides": {
     "bootstrap-sass": {

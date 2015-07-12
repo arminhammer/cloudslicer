@@ -34,7 +34,6 @@ var MainPage = {
     console.log('From the view:');
     console.log(controller.template);
     return [
-      [m(".container", [
         m(".header", [
           m("ul.nav.nav-pills.pull-right", [
             m("li.active", [m("a[href='#']", "Home")]),
@@ -43,6 +42,7 @@ var MainPage = {
           ]),
           m("h3.text-muted", "Cloudslicer")
         ]),
+      //[m(".container-fluid", [
         m('.row', [
           m(".col-md-6", [
             m('div', 'Source'),
@@ -56,7 +56,7 @@ var MainPage = {
         m(".footer", [
           m("p", "By Armin Graf")
         ])
-      ])]
+      //])]
     ]
   }
 
