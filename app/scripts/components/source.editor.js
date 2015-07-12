@@ -4,6 +4,8 @@
 
 'use strict';
 
+//var jsonlint = require('jsonlint');
+
 var SourceEditor = {
   controller: function(options) {
 
@@ -31,18 +33,33 @@ var SourceEditor = {
     };
   },
   view: function(controller) {
-    return [
-      m('#sourceEditor', { config: controller.drawEditor }),
-      m('div', [
-        _.map(JSON.parse(controller.template()).Resources, function(value, key) {
+    var parsed = null;
+    var resourcesBlock = null;
+
+    try {
+      parsed = JSON.parse(controller.template());
+      resourcesBlock =   m('div', [
+        _.map(parsed.Resources, function (value, key) {
           return m('div', value.Type)
         })
-      ]),
+      ])
+    }
+    catch(e) {
+      console.log('Parse error: ' + e);
+      //var specError = jsonlint.parse(controller.template());
+      //console.log(specError);
+      resourcesBlock =   m('div', {}, e + ' at ' + e.lineNumber)
+    }
+    return [
+      m('#sourceEditor', { config: controller.drawEditor }),
+      resourcesBlock
+      /*
       m('div', [
         JSON.parse(controller.template()).Parameters.InstanceType.AllowedValues.map(function(value) {
           return m('div', value)
         })
       ])
+      */
     ]
   }
 };
