@@ -18,14 +18,13 @@ var MainPage = {
     ctrl.template = options.template;
     console.log('From Controller:');
     console.log(options.template);
-    //var template = JSON.parse(testData);
 
     ctrl.sourceEditorController = new SourceEditor.controller({
       template: options.template
     });
 
     ctrl.guiEditorController = new GuiEditor.controller({
-
+      template: options.template
     });
 
   },
@@ -50,7 +49,7 @@ var MainPage = {
           ]),
           m(".col-md-6", [
             m('div', 'Visual'),
-            GuiEditor.view(controller.playerController)
+            GuiEditor.view(controller.guiEditorController)
           ])
         ]),
         m(".footer", [
