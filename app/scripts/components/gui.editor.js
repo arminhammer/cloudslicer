@@ -9,27 +9,45 @@
 var GuiEditor = {
   controller: function(options) {
     return {
-      template: options.template
-      /*
-       list: options.list,
-       initPlayer: function (element, isInitialized, context) {
+      template: options.template,
 
-       if (isInitialized) {
-       return;
-       }
+      drawEditor: function (element, isInitialized, context) {
 
-       videojs(element, {
-       "techOrder": ["youtube"],
-       "src": "http://www.youtube.com/watch?v=QcIy9NiNbmo"
-       }).ready(function () {
-       this.one('ended', function () {
-       this.src('http://www.youtube.com/watch?v=g_uoH6hJilc');
-       this.play();
-       });
-       });
+        if (isInitialized) {
+          return;
+        }
 
-       }
-       */
+        var s = Snap(element);
+
+        var bigCircle = s.circle(150, 150, 100);
+
+        bigCircle.attr({
+          fill: "#bada55",
+          stroke: "#000",
+          strokeWidth: 5
+        });
+
+        /*
+         var editor = CodeMirror(element, {
+         value: options.template(),
+         lineNumbers: true,
+         mode: 'application/json',
+         gutters: ['CodeMirror-lint-markers'],
+         lint: true,
+         styleActiveLine: true,
+         autoCloseBrackets: true,
+         matchBrackets: true,
+         theme: 'zenburn'
+         });
+
+         editor.on('change', function(editor) {
+         m.startComputation();
+         options.template(editor.getValue());
+         m.endComputation();
+         });
+         */
+      }
+
     }
   },
   view: function(controller) {
@@ -55,8 +73,27 @@ var GuiEditor = {
       console.log('Parse error: ' + e);
       sourceBlock =   m('div', {}, e)
     }
+
+    /*
+     var drawGUI = function() {
+     var s = Snap('');
+
+     var bigCircle = s.circle(150, 150, 100);
+
+     bigCircle.attr({
+     fill: "#bada55",
+     stroke: "#000",
+     strokeWidth: 5
+     });
+
+     return m('svg',s);
+     };
+     */
+
     return [
-      sourceBlock
+      m('#guiContainer', [
+        m('svg#guiEditor', { config: controller.drawEditor })
+      ])
       /*
        */
 

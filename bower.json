@@ -7,7 +7,8 @@
     "mithril": "~0.2.0",
     "lodash": "~3.10.0",
     "codemirror": "~5.4.0",
-    "jsonlint": "~1.6.0"
+    "jsonlint": "~1.6.0",
+    "snap.svg": "~0.4.1"
   },
   "overrides": {
     "bootstrap-sass": {

@@ -10,7 +10,7 @@ var SourceEditor = {
   controller: function(options) {
 
     return {
-      //template: options.template,
+
       drawEditor: function (element, isInitialized, context) {
 
         if (isInitialized) {
