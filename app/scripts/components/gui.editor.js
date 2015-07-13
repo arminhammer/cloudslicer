@@ -9,6 +9,8 @@
 //var svgPath = '/resources/AWS_Simple_Icons_svg_eps';
 //var ec2Instance = svgPath + '/Compute & Networking/SVG/Compute & Networking_Amazon EC2 Instance.svg';
 
+var ec2icon = require('../../resources/AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking_Amazon EC2--.svg');
+
 var GuiEditor = {
   controller: function(options) {
     return {
@@ -22,57 +24,62 @@ var GuiEditor = {
 
         console.log('Drawing...');
 
-        var parsed;
+        var parsed, paper;
 
         try {
           parsed = JSON.parse(options.template());
-
-          var s = Snap(element);
-
-          /*
-          var bigCircle = s.circle(100, 100, 10);
-
-          bigCircle.attr({
-            fill: "#bada55",
-            stroke: "#000",
-            strokeWidth: 5
-          });
-          */
-
-          var ec2icon = require('../../resources/AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking_Amazon EC2--.svg');
-
-          var instanceFragment1 = Snap.parse(ec2icon);
-          var instanceEl1 = instanceFragment1.select('svg');
-          instanceEl1.attr({
-            x:200,
-            y:200
-          });
-
-          var instanceFragment2 = Snap.parse(ec2icon);
-          var instanceEl2 = instanceFragment2.select('svg');
-          instanceEl2.attr({
-            x:300,
-            y:200
-          });
-
-          s.append(instanceEl1);
-          s.append(instanceEl2);
-          instanceEl1.drag();
-
         }
         catch(e) {
           console.log('Parse error: ' + e);
+          paper = Snap(element);
+          if(paper) {
+            console.log('Clearing bc of error...');
+            paper.clear();
+          }
         }
 
         console.log('parsed is ' + parsed);
 
-        /*
         if(parsed) {
 
+          paper = Snap(element);
+          paper.clear();
+
+          console.log(parsed.Resources);
+
+          var ec2instances = _.filter(parsed.Resources, function(resource) {
+            return resource.Type === 'AWS::EC2::Instance'
+          });
+
+          console.log(ec2instances);
+
+          ec2instances.forEach(function(ec2, key) {
+
+            var fragment = Snap.parse(ec2icon);
+            var element = fragment.select('svg');
+            var xVal = (key + 1) * 100;
+            element.attr({
+              x: xVal,
+              y:200
+            });
+
+            paper.append(element);
+            element.drag();
+
+          });
+
+          /*
+           var bigCircle = s.circle(100, 100, 10);
+
+           bigCircle.attr({
+           fill: "#bada55",
+           stroke: "#000",
+           strokeWidth: 5
+           });
+           */
 
 
         }
-        */
 
         //var g = svg1.select('g[id=Layer_1]');
         //g.drag();
