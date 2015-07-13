@@ -6,6 +6,9 @@
 
 //var VideoModel = require('../models/video.model');
 
+//var svgPath = '/resources/AWS_Simple_Icons_svg_eps';
+//var ec2Instance = svgPath + '/Compute & Networking/SVG/Compute & Networking_Amazon EC2 Instance.svg';
+
 var GuiEditor = {
   controller: function(options) {
     return {
@@ -13,39 +16,85 @@ var GuiEditor = {
 
       drawEditor: function (element, isInitialized, context) {
 
-        if (isInitialized) {
-          return;
+        //if (isInitialized) {
+        //  return;
+        //}
+
+        console.log('Drawing...');
+
+        var parsed;
+
+        try {
+          parsed = JSON.parse(options.template());
+
+          var s = Snap(element);
+
+          /*
+          var bigCircle = s.circle(100, 100, 10);
+
+          bigCircle.attr({
+            fill: "#bada55",
+            stroke: "#000",
+            strokeWidth: 5
+          });
+          */
+
+          var ec2icon = require('../../resources/AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking_Amazon EC2--.svg');
+
+          var instanceFragment1 = Snap.parse(ec2icon);
+          var instanceEl1 = instanceFragment1.select('svg');
+          instanceEl1.attr({
+            x:200,
+            y:200
+          });
+
+          var instanceFragment2 = Snap.parse(ec2icon);
+          var instanceEl2 = instanceFragment2.select('svg');
+          instanceEl2.attr({
+            x:300,
+            y:200
+          });
+
+          s.append(instanceEl1);
+          s.append(instanceEl2);
+          instanceEl1.drag();
+
+        }
+        catch(e) {
+          console.log('Parse error: ' + e);
         }
 
-        var s = Snap(element);
-
-        var bigCircle = s.circle(150, 150, 100);
-
-        bigCircle.attr({
-          fill: "#bada55",
-          stroke: "#000",
-          strokeWidth: 5
-        });
+        console.log('parsed is ' + parsed);
 
         /*
-         var editor = CodeMirror(element, {
-         value: options.template(),
-         lineNumbers: true,
-         mode: 'application/json',
-         gutters: ['CodeMirror-lint-markers'],
-         lint: true,
-         styleActiveLine: true,
-         autoCloseBrackets: true,
-         matchBrackets: true,
-         theme: 'zenburn'
-         });
+        if(parsed) {
 
-         editor.on('change', function(editor) {
-         m.startComputation();
-         options.template(editor.getValue());
-         m.endComputation();
-         });
-         */
+
+
+        }
+        */
+
+        //var g = svg1.select('g[id=Layer_1]');
+        //g.drag();
+        //s.append(svg2);
+        //Snap.load(ec2icon, function(f) {
+        //  s.append(f);
+        //})
+        //console.log('Icon: ' + ec2icon);
+
+        //Snap.load(ec2Instance, function(svg) {
+          //f.select("polygon[fill='#09B39C']").attr({fill: "#bada55"});
+
+          //var instance = svg;
+          //var g = instance.selectAll('path');
+          //s.append(instance);
+          //g.drag();
+
+          //s.append(f);
+          //s.append(f);
+
+        //});
+
       }
 
     }
@@ -74,28 +123,10 @@ var GuiEditor = {
       sourceBlock =   m('div', {}, e)
     }
 
-    /*
-     var drawGUI = function() {
-     var s = Snap('');
-
-     var bigCircle = s.circle(150, 150, 100);
-
-     bigCircle.attr({
-     fill: "#bada55",
-     stroke: "#000",
-     strokeWidth: 5
-     });
-
-     return m('svg',s);
-     };
-     */
-
     return [
       m('#guiContainer', [
         m('svg#guiEditor', { config: controller.drawEditor })
       ])
-      /*
-       */
 
       /*
        m('div', [

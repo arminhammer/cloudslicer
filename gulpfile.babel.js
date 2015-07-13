@@ -7,6 +7,8 @@ import {stream as wiredep} from 'wiredep';
 import source from 'vinyl-source-stream';
 import browserify from 'browserify';
 
+import svg from 'svg-browserify';
+
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
@@ -18,7 +20,11 @@ gulp.task('browserify', function() {
 
   var bundler = browserify({
     entries: sourceFile,
-    cache: {}, packageCache: {}, fullPaths: true, debug: true
+    cache: {},
+    packageCache: {},
+    fullPaths: true,
+    debug: true,
+    transform: svg
   });
 
   var bundle = function() {
