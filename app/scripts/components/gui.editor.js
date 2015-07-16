@@ -16,12 +16,12 @@ function resizeGuiContainer() {
   var browserWidth = $('html').width();
 
   console.log('Resizing...');
-  console.log(browserHeight);
+  console.log(browserWidth);
 
   $('#guiContainer').height(browserHeight - 50);
   $('#guiContainer').width(browserWidth/2);
 
-  console.log('Resizing gui container...');
+  //console.log('Resizing gui container...');
 
 }
 
@@ -41,6 +41,8 @@ function drawSVG(paper, parsed, element, options) {
 
   console.log('parsed is ' + parsed);
 
+  console.log($(element));
+
   if (parsed) {
 
     paper = Snap(element);
@@ -53,6 +55,14 @@ function drawSVG(paper, parsed, element, options) {
     });
 
     console.log(ec2instances);
+
+    var paperCoordinates = {
+      x: $(element).width(),
+      y: $(element).height()
+    };
+
+    console.log('Coordinates:');
+    console.log(paperCoordinates);
 
     ec2instances.forEach(function (ec2, key) {
 
@@ -83,6 +93,7 @@ var GuiEditor = {
         var paper = null;
 
         if (isInitialized) {
+          resizeGuiContainer();
           drawSVG(paper, parsed, element, options);
           return;
         }
