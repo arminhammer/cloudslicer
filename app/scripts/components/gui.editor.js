@@ -66,15 +66,18 @@ function drawSVG(paper, parsed, element, options) {
     console.log('Coordinates:');
     console.log(paperCoordinates);
 
-    ec2instances.forEach(function (ec2, key) {
+    ec2instances.forEach(function (ec2, key, index) {
+
+      console.log('Index:');
+      console.log(index);
 
       var fragment = Snap.parse(ec2icon);
       var element = fragment.select('svg');
       var xVal = (key + 1) * 100;
 
       element.attr({
-        x: paperCoordinates.x/2 - parseInt(element.attr('width'))/2,
-        y: (paperCoordinates.y)/2 - parseInt(element.attr('height'))/2
+        x: (paperCoordinates.x/(key+2)) - (parseInt(element.attr('width'))/2),
+        y: ((paperCoordinates.y/(2)) - (parseInt(element.attr('height'))/2)) - 50
       });
 
       paper.append(element);
