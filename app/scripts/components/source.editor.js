@@ -16,16 +16,19 @@ function resizeEditor(editor) {
 }
 
 var SourceEditor = {
+
   controller: function(options) {
 
     return {
 
       drawEditor: function (element, isInitialized, context) {
 
-        var editor;
+        var editor = null;
 
         if (isInitialized) {
-          editor.refresh();
+          if(editor) {
+            editor.refresh();
+          }
           return;
         }
 

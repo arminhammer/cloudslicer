@@ -27,6 +27,17 @@ var MainPage = {
       template: options.template
     });
 
+    ctrl.handleSplitter = function(element, isInitialized, context) {
+
+      if (isInitialized) {
+        return;
+      }
+
+      console.log('Initializing splitter...');
+      $(element).splitter();
+
+    }
+
   },
 
   view: function(controller) {
@@ -71,7 +82,8 @@ var MainPage = {
             ])
           ])
         ]),
-        m('.container-fluid#editorContainer', [
+        //m('.container-fluid#editorContainer', { config: controller.handleSplitter }, [
+          m('.container-fluid#editorContainer', [
           m('.row', [
             m(".col-md-6", [
               //m('div', 'Source'),

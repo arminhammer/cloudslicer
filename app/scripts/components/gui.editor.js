@@ -11,6 +11,67 @@
 
 var ec2icon = require('../../resources/AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking_Amazon EC2--.svg');
 
+function resizeGuiContainer() {
+  var browserHeight = $('html').height();
+  var browserWidth = $('html').width();
+
+  console.log('Resizing...');
+  console.log(browserHeight);
+
+  $('#guiContainer').height(browserHeight - 50);
+  $('#guiContainer').width(browserWidth/2);
+
+  console.log('Resizing gui container...');
+
+}
+
+function drawSVG(paper, parsed, element, options) {
+
+  try {
+    parsed = JSON.parse(options.template());
+  }
+  catch (e) {
+    console.log('Parse error: ' + e);
+    paper = Snap(element);
+    if (paper) {
+      console.log('Clearing bc of error...');
+      paper.clear();
+    }
+  }
+
+  console.log('parsed is ' + parsed);
+
+  if (parsed) {
+
+    paper = Snap(element);
+    paper.clear();
+
+    console.log(parsed.Resources);
+
+    var ec2instances = _.filter(parsed.Resources, function (resource) {
+      return resource.Type === 'AWS::EC2::Instance'
+    });
+
+    console.log(ec2instances);
+
+    ec2instances.forEach(function (ec2, key) {
+
+      var fragment = Snap.parse(ec2icon);
+      var element = fragment.select('svg');
+      var xVal = (key + 1) * 100;
+      element.attr({
+        x: xVal,
+        y: 200
+      });
+
+      paper.append(element);
+      element.drag();
+
+    });
+
+  }
+}
+
 var GuiEditor = {
   controller: function(options) {
     return {
@@ -18,93 +79,28 @@ var GuiEditor = {
 
       drawEditor: function (element, isInitialized, context) {
 
-        //if (isInitialized) {
-        //  return;
-        //}
+        var parsed = null;
+        var paper = null;
+
+        if (isInitialized) {
+          drawSVG(paper, parsed, element, options);
+          return;
+        }
 
         console.log('Drawing...');
 
-        var parsed, paper;
+        resizeGuiContainer();
 
-        try {
-          parsed = JSON.parse(options.template());
-        }
-        catch(e) {
-          console.log('Parse error: ' + e);
-          paper = Snap(element);
-          if(paper) {
-            console.log('Clearing bc of error...');
-            paper.clear();
-          }
-        }
+        $(window).resize(function() {
+          resizeGuiContainer();
+        });
 
-        console.log('parsed is ' + parsed);
-
-        if(parsed) {
-
-          paper = Snap(element);
-          paper.clear();
-
-          console.log(parsed.Resources);
-
-          var ec2instances = _.filter(parsed.Resources, function(resource) {
-            return resource.Type === 'AWS::EC2::Instance'
-          });
-
-          console.log(ec2instances);
-
-          ec2instances.forEach(function(ec2, key) {
-
-            var fragment = Snap.parse(ec2icon);
-            var element = fragment.select('svg');
-            var xVal = (key + 1) * 100;
-            element.attr({
-              x: xVal,
-              y:200
-            });
-
-            paper.append(element);
-            element.drag();
-
-          });
-
-          /*
-           var bigCircle = s.circle(100, 100, 10);
-
-           bigCircle.attr({
-           fill: "#bada55",
-           stroke: "#000",
-           strokeWidth: 5
-           });
-           */
-
-
-        }
-
-        //var g = svg1.select('g[id=Layer_1]');
-        //g.drag();
-        //s.append(svg2);
-        //Snap.load(ec2icon, function(f) {
-        //  s.append(f);
-        //})
-        //console.log('Icon: ' + ec2icon);
-
-        //Snap.load(ec2Instance, function(svg) {
-          //f.select("polygon[fill='#09B39C']").attr({fill: "#bada55"});
-
-          //var instance = svg;
-          //var g = instance.selectAll('path');
-          //s.append(instance);
-          //g.drag();
-
-          //s.append(f);
-          //s.append(f);
-
-        //});
+        drawSVG(paper, parsed, element, options);
 
       }
 
     }
+
   },
   view: function(controller) {
     var parsed = null;
