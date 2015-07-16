@@ -6,6 +6,15 @@
 
 //var jsonlint = require('jsonlint');
 
+function resizeEditor(editor) {
+  var browserHeight = $('html').height();
+
+  console.log('Resizing...');
+  console.log(browserHeight);
+
+  editor.setSize(null, browserHeight - 50);
+}
+
 var SourceEditor = {
   controller: function(options) {
 
@@ -13,11 +22,14 @@ var SourceEditor = {
 
       drawEditor: function (element, isInitialized, context) {
 
+        var editor;
+
         if (isInitialized) {
+          editor.refresh();
           return;
         }
 
-        var editor = CodeMirror(element, {
+        editor = CodeMirror(element, {
           value: options.template(),
           lineNumbers: true,
           mode: 'application/json',
@@ -27,6 +39,12 @@ var SourceEditor = {
           autoCloseBrackets: true,
           matchBrackets: true,
           theme: 'zenburn'
+        });
+
+        resizeEditor(editor);
+
+        $(window).resize(function() {
+          resizeEditor(editor);
         });
 
         editor.on('change', function(editor) {
