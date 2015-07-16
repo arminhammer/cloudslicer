@@ -27,6 +27,8 @@ function resizeGuiContainer() {
 
 function drawSVG(paper, parsed, element, options) {
 
+  console.log('Drawing...');
+
   try {
     parsed = JSON.parse(options.template());
   }
@@ -69,9 +71,10 @@ function drawSVG(paper, parsed, element, options) {
       var fragment = Snap.parse(ec2icon);
       var element = fragment.select('svg');
       var xVal = (key + 1) * 100;
+
       element.attr({
-        x: xVal,
-        y: 200
+        x: paperCoordinates.x/2 - parseInt(element.attr('width'))/2,
+        y: (paperCoordinates.y)/2 - parseInt(element.attr('height'))/2
       });
 
       paper.append(element);
@@ -98,12 +101,11 @@ var GuiEditor = {
           return;
         }
 
-        console.log('Drawing...');
-
         resizeGuiContainer();
 
         $(window).resize(function() {
           resizeGuiContainer();
+          drawSVG(paper, parsed, element, options);
         });
 
         drawSVG(paper, parsed, element, options);
