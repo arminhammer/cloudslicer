@@ -153,9 +153,11 @@ var GuiEditor = {
           .attr("width", width)
           .attr("height", height);
 
-        //console.log(ec2icon);
         d3.xml('../../resources/AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking_Amazon EC2--.svg', "image/svg+xml", function(xml) {
-          svg.node().appendChild(xml.documentElement);
+          console.log('xml');
+          console.log(xml.documentElement);
+          var ec2 = svg.node().appendChild(xml.documentElement);
+          d3.select(ec2).attr('class', 'tooltip111');
         });
 
         $(window).resize(function() {

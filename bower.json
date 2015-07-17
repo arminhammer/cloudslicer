@@ -10,7 +10,8 @@
     "jsonlint": "~1.6.0",
     "snap.svg": "~0.4.1",
     "opentip": "~2.4.6",
-    "d3": "~3.5.6"
+    "d3": "~3.5.6",
+    "d3-tip": "~0.6.7"
   },
   "overrides": {
     "bootstrap-sass": {
