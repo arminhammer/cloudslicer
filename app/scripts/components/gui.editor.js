@@ -66,20 +66,29 @@ function drawSVG(paper, parsed, element, options) {
     console.log('Coordinates:');
     console.log(paperCoordinates);
 
+    var rowCount = 0;
+
     ec2instances.forEach(function (ec2, key, index) {
 
+      var xCount = key % 2;
+      if(xCount === 0) {
+        rowCount++;
+      }
+
       console.log('Index:');
-      console.log(index);
+      console.log('xCount=' + xCount + ' and rowCount=' + rowCount);
+      //console.log(paperCoordinates.x/(index.length+1));
 
       var fragment = Snap.parse(ec2icon);
       var element = fragment.select('svg');
       var xVal = (key + 1) * 100;
 
       element.attr({
-        x: (paperCoordinates.x/(key+2)) - (parseInt(element.attr('width'))/2),
-        y: ((paperCoordinates.y/(2)) - (parseInt(element.attr('height'))/2)) - 50
+        x: ((paperCoordinates.x/(index.length+1)) * (xCount + 1)) - (parseInt(element.attr('width'))/2),
+        y: (((paperCoordinates.y/(index.length+1)) * rowCount) - (parseInt(element.attr('height'))/2)) - 50
       });
 
+      console.log('Drawing at x: ' + element.attr('x') + ', y: ' + element.attr('y'));
       paper.append(element);
       element.drag();
 
