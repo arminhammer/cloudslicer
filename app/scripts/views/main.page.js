@@ -83,7 +83,7 @@ var MainPage = {
           ])
         ]),
         //m('.container-fluid#editorContainer', { config: controller.handleSplitter }, [
-          m('.container-fluid#editorContainer', [
+        m('.container-fluid#editorContainer', [
           m('.row', [
             m(".col-md-6", [
               //m('div', 'Source'),
@@ -91,7 +91,7 @@ var MainPage = {
             ]),
             m(".col-md-6", [
               //m('div', 'Visual'),
-              GuiEditor.view(controller.guiEditorController)
+                GuiEditor.view(controller.guiEditorController)
             ])
           ])
         ])

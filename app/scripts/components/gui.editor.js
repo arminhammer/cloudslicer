@@ -25,6 +25,10 @@ function resizeGuiContainer() {
 
 }
 
+var svgCache = {
+  ec2instances: {}
+};
+
 function drawSVG(paper, parsed, element, options) {
 
   console.log('Drawing...');
@@ -80,17 +84,30 @@ function drawSVG(paper, parsed, element, options) {
       //console.log(paperCoordinates.x/(index.length+1));
 
       var fragment = Snap.parse(ec2icon);
-      var element = fragment.select('svg');
+      svgCache.ec2instances[key] = fragment.select('svg');
       var xVal = (key + 1) * 100;
 
-      element.attr({
-        x: ((paperCoordinates.x/(index.length+1)) * (xCount + 1)) - (parseInt(element.attr('width'))/2),
-        y: (((paperCoordinates.y/(index.length+1)) * rowCount) - (parseInt(element.attr('height'))/2)) - 50
+      svgCache.ec2instances[key].attr({
+        x: ((paperCoordinates.x/(index.length+1)) * (xCount + 1)) - (parseInt(svgCache.ec2instances[key].attr('width'))/2),
+        y: (((paperCoordinates.y/(index.length+1)) * rowCount) - (parseInt(svgCache.ec2instances[key].attr('height'))/2)) - 50
       });
 
-      console.log('Drawing at x: ' + element.attr('x') + ', y: ' + element.attr('y'));
-      paper.append(element);
-      element.drag();
+      //animation
+      function animateSVG(){
+        svgCache.ec2instances[key].animate({cy: 300}, 5000,mina.bounce);
+        svgCache.ec2instances[key].animate({fill:"red"},200);
+      }
+
+    //reset function?
+      function resetSVG(){
+        // something here to reset SVG??
+      }
+
+      svgCache.ec2instances[key].mouseover(animateSVG,resetSVG);
+
+      console.log('Drawing at x: ' + svgCache.ec2instances[key].attr('x') + ', y: ' + svgCache.ec2instances[key].attr('y'));
+      paper.append(svgCache.ec2instances[key]);
+      svgCache.ec2instances[key].drag();
 
     });
 
@@ -122,55 +139,69 @@ var GuiEditor = {
 
         drawSVG(paper, parsed, element, options);
 
+      },
+
+      drawD3Editor: function (element, isInitialized, context) {
+
+        var browserHeight = $('html').height();
+        var browserWidth = $('html').width();
+
+        var width = browserWidth/2;
+        var height = browserHeight - 50;
+
+        var svg = d3.select(element).append("svg")
+          .attr("width", width)
+          .attr("height", height);
+
+        //console.log(ec2icon);
+        d3.xml('../../resources/AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking_Amazon EC2--.svg', "image/svg+xml", function(xml) {
+          svg.node().appendChild(xml.documentElement);
+        });
+
+        $(window).resize(function() {
+
+          var browserHeight = $('html').height();
+          var browserWidth = $('html').width();
+
+          var width = browserWidth/2;
+          var height = browserHeight - 50;
+
+          svg.attr("width", width);
+          svg.attr("height", height);
+
+        });
+
+        /*
+        var parsed = null;
+        var paper = null;
+
+        if (isInitialized) {
+          resizeGuiContainer();
+          drawSVG(paper, parsed, element, options);
+          return;
+        }
+
+        resizeGuiContainer();
+
+        $(window).resize(function() {
+          resizeGuiContainer();
+          drawSVG(paper, parsed, element, options);
+        });
+
+        drawSVG(paper, parsed, element, options);
+        */
+
       }
 
     }
 
   },
   view: function(controller) {
-    var parsed = null;
-    var sourceBlock = null;
-
-    try {
-      parsed = JSON.parse(controller.template());
-      sourceBlock =   [
-        m('div', [
-          _.map(parsed.Resources, function (value, key) {
-            return m('div', value.Type)
-          })
-        ]),
-        m('div', [
-          parsed.Parameters.InstanceType.AllowedValues.map(function(value) {
-            return m('div', value)
-          })
-        ])
-      ]
-    }
-    catch(e) {
-      console.log('Parse error: ' + e);
-      sourceBlock =   m('div', {}, e)
-    }
 
     return [
       m('#guiContainer', [
-        m('svg#guiEditor', { config: controller.drawEditor })
+        m('#guiEditor', { config: controller.drawD3Editor })
       ])
-
-      /*
-       m('div', [
-       m('h1', 'Video')
-       ]),
-       m('video#videoPlayer[controls]', {
-       src:'',
-       class:'video-js vjs-default-skin',
-       muted:'muted',
-       //autoplay:'autoplay',
-       preload:'auto',
-       width:'640',
-       height:'360',
-       config: controller.initPlayer
-       })
-       */
     ]
   }
 };

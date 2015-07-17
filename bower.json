@@ -8,7 +8,9 @@
     "lodash": "~3.10.0",
     "codemirror": "~5.4.0",
     "jsonlint": "~1.6.0",
-    "snap.svg": "~0.4.1"
+    "snap.svg": "~0.4.1",
+    "opentip": "~2.4.6",
+    "d3": "~3.5.6"
   },
   "overrides": {
     "bootstrap-sass": {
