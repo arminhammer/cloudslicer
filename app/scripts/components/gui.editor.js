@@ -149,6 +149,30 @@ var GuiEditor = {
         var width = browserWidth/2;
         var height = browserHeight - 50;
 
+        function move(d) {
+          //console.log('moving...');
+          //console.log(d3.event.dx);
+          var select = d3.select(this);
+          var oldX = parseInt(select.attr('x'));
+          var oldY = parseInt(select.attr('y'));
+          //console.log('x:' + oldX);
+          select.attr('x', oldX + d3.event.dx);
+          select.attr('y', oldY + d3.event.dy);
+            //.attr('y', d3.event.dy)
+        }
+
+        var drag = d3.behavior.drag()
+          //.origin(function(d) { return d; })
+          //.on("dragstart", function(){
+            //do some drag start stuff...
+            //console.log('dragstart event');
+          //})
+          .on("drag", move);
+          //.on("dragend", function(){
+            //we're done, end some stuff
+            //console.log('dragend event');
+          //});
+
         var svg = d3.select(element).append("svg")
           .attr("width", width)
           .attr("height", height);
@@ -157,7 +181,9 @@ var GuiEditor = {
           console.log('xml');
           console.log(xml.documentElement);
           var ec2 = svg.node().appendChild(xml.documentElement);
-          d3.select(ec2).attr('class', 'tooltip111');
+          var ec2Sel = d3.select(ec2)
+          ec2Sel.classed({'tooltip111': true, 'draggable' : true});
+          d3.selectAll('.draggable').call(drag);
         });
 
         $(window).resize(function() {
