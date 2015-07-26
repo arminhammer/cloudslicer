@@ -85,13 +85,14 @@ var MainPage = {
         //m('.container-fluid#editorContainer', { config: controller.handleSplitter }, [
         m('.container-fluid#editorContainer', [
           m('.row', [
-            m(".col-md-6", [
-              //m('div', 'Source'),
-              SourceEditor.view(controller.sourceEditorController),
-            ]),
-            m(".col-md-6", [
-              //m('div', 'Visual'),
-                GuiEditor.view(controller.guiEditorController)
+            //m(".col-md-6", [
+              //SourceEditor.view(controller.sourceEditorController),
+            //]),
+            //m(".col-md-6", [
+            //    GuiEditor.view(controller.guiEditorController)
+            //])
+            m(".col-md-12", [
+              GuiEditor.view(controller.guiEditorController)
             ])
           ])
         ])

@@ -39,6 +39,23 @@ html {
   width: 100%;
 }
 
+#cloudGrid {
+  //width:20em;
+  //height:20em;
+  margin:0 auto;
+  position:relative;
+  box-shadow:.25em .25em 1em rgba(0,0,0,.2);
+  transform:rotatex(60deg) rotateZ(45deg) translateZ(-1em);
+  transform-style: preserve-3d;
+}
+
+#cloudGrid .item {
+  width:10em;
+  height:10em;
+  background:grey;
+  float: left;
+}
+
 #sourceEditor {
   height: 100%;
   //width: 600px;

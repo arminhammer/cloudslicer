@@ -98,7 +98,7 @@ function drawSVG(paper, parsed, element, options) {
         svgCache.ec2instances[key].animate({fill:"red"},200);
       }
 
-    //reset function?
+      //reset function?
       function resetSVG(){
         // something here to reset SVG??
       }
@@ -116,10 +116,18 @@ function drawSVG(paper, parsed, element, options) {
 
 var GuiEditor = {
   controller: function(options) {
+
+    var grid = [
+      [{},{},{},{}],
+      [{},{},{},{}],
+      [{},{},{},{}],
+      [{},{},{},{}]
+    ];
+
     return {
       template: options.template,
 
-      drawEditor: function (element, isInitialized, context) {
+      drawSVGEditor: function (element, isInitialized, context) {
 
         var parsed = null;
         var paper = null;
@@ -158,20 +166,20 @@ var GuiEditor = {
           //console.log('x:' + oldX);
           select.attr('x', oldX + d3.event.dx);
           select.attr('y', oldY + d3.event.dy);
-            //.attr('y', d3.event.dy)
+          //.attr('y', d3.event.dy)
         }
 
         var drag = d3.behavior.drag()
           //.origin(function(d) { return d; })
           //.on("dragstart", function(){
-            //do some drag start stuff...
-            //console.log('dragstart event');
+          //do some drag start stuff...
+          //console.log('dragstart event');
           //})
           .on("drag", move);
-          //.on("dragend", function(){
-            //we're done, end some stuff
-            //console.log('dragend event');
-          //});
+        //.on("dragend", function(){
+        //we're done, end some stuff
+        //console.log('dragend event');
+        //});
 
         var svg = d3.select(element).append("svg")
           .attr("width", width)
@@ -200,35 +208,59 @@ var GuiEditor = {
         });
 
         /*
-        var parsed = null;
-        var paper = null;
+         var parsed = null;
+         var paper = null;
 
-        if (isInitialized) {
-          resizeGuiContainer();
-          drawSVG(paper, parsed, element, options);
-          return;
-        }
+         if (isInitialized) {
+         resizeGuiContainer();
+         drawSVG(paper, parsed, element, options);
+         return;
+         }
 
-        resizeGuiContainer();
+         resizeGuiContainer();
 
-        $(window).resize(function() {
-          resizeGuiContainer();
-          drawSVG(paper, parsed, element, options);
-        });
+         $(window).resize(function() {
+         resizeGuiContainer();
+         drawSVG(paper, parsed, element, options);
+         });
 
-        drawSVG(paper, parsed, element, options);
-        */
+         drawSVG(paper, parsed, element, options);
+         */
 
-      }
+      },
+
+      //drawHTMLEditor: function(element, is)
+
+      grid: grid
 
     }
 
   },
   view: function(controller) {
 
+    var width = controller.grid[0].length;
+    var height = controller.grid.length;
+
+    console.log('grid: ' + width + ':' + height);
+
     return [
       m('#guiContainer', [
-        m('#guiEditor', { config: controller.drawD3Editor })
+        //m('#guiEditor', { config: controller.drawD3Editor })
+        m('#cloudGrid', { style: { width: (width*10)+'em', height: (height*10)+'em' }}, [
+        //m('#cloudGrid', [
+
+
+          controller.grid.map(function(x, xkey) {
+            console.log('x: ' + x);
+            return m('div', [
+              x.map(function(y, ykey) {
+                console.log('y: ' + y);
+                return m('.item', xkey + ':' + ykey);
+              })
+            ])
+          })
+
+        ])
       ])
     ]
   }
