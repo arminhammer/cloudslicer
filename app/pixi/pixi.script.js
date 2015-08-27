@@ -12,26 +12,55 @@ var stage = new PIXI.Container();
 
 stage.interactive = true;
 
-var graphics = new PIXI.Graphics();
-
 function drawGrid() {
+  var grid = new PIXI.Graphics();
   var interval = 25;
   var count = interval;
-  graphics.lineStyle(1, 0xE5E5E5, 1);
+  grid.lineStyle(1, 0xE5E5E5, 1);
   while (count < width) {
-    graphics.moveTo(count, 0);
-    graphics.lineTo(count, height);
+    grid.moveTo(count, 0);
+    grid.lineTo(count, height);
     count = count + interval;
   }
   var count = interval;
   while(count < height) {
-    graphics.moveTo(0, count);
-    graphics.lineTo(width, count);
+    grid.moveTo(0, count);
+    grid.lineTo(width, count);
     count = count + interval;
   }
+  return grid;
 }
 
-drawGrid();
+var grid = drawGrid();
+stage.addChild(grid);
+
+var Element = function() {
+  PIXI.Graphics.call(this);
+};
+Element.prototype = Object.create(PIXI.Graphics.prototype);
+Element.prototype.constructor = Element;
+
+function createElement(name, x, y) {
+  var e = new Element();
+  //var e = new PIXI.Graphics());
+  e.name = name;
+  e.lineStyle(2, 0x0000FF, 1);
+  e.beginFill(0xFF700B, 1);
+  e.drawRect(x, y, 120, 120);
+  return e;
+}
+
+var elements = [];
+var el1 = createElement('el1', 900, 400);
+var el2 = createElement('el2', 700, 600);
+elements.push(el1);
+elements.push(el2);
+
+elements.forEach(function(element) {
+  console.log(element.name);
+  stage.addChild(element);
+});
+
 /*
 graphics.lineStyle(4, 0x000000, 1);
 graphics.moveTo(250,0);
@@ -41,6 +70,9 @@ graphics.lineStyle(1, 0x000000, 1);
 graphics.moveTo(270,0);
 graphics.lineTo(270,height);
 */
+
+var graphics = new PIXI.Graphics();
+
 
 // set a fill and line style
 graphics.beginFill(0xFF3300);
