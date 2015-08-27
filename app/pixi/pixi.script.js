@@ -44,20 +44,79 @@ function createElement(name, x, y) {
   var e = new Element();
   //var e = new PIXI.Graphics());
   e.name = name;
+  e.interactive = true;
+  e.buttonMode = true;
+  // center the bunny's anchor point
+  //e.anchor.set(0.5);
+
+  // make it a bit bigger, so it's easier to grab
+  //e.scale.set(3);
+
+  // setup events
+  e
+    // events for drag start
+    .on('mousedown', onDragStart)
+    .on('touchstart', onDragStart)
+    // events for drag end
+    .on('mouseup', onDragEnd)
+    .on('mouseupoutside', onDragEnd)
+    .on('touchend', onDragEnd)
+    .on('touchendoutside', onDragEnd)
+    // events for drag move
+    .on('mousemove', onDragMove)
+    .on('touchmove', onDragMove);
+  e.position.x = x;
+  e.position.y = y;
+
   e.lineStyle(2, 0x0000FF, 1);
   e.beginFill(0xFF700B, 1);
   e.drawRect(x, y, 120, 120);
+
   return e;
+}
+
+function onDragStart(event)
+{
+  // store a reference to the data
+  // the reason for this is because of multitouch
+  // we want to track the movement of this particular touch
+  this.data = event.data;
+  this.alpha = 0.5;
+  this.dragging = true;
+}
+
+function onDragEnd()
+{
+  this.alpha = 1;
+
+  this.dragging = false;
+
+  // set the interaction data to null
+  this.data = null;
+}
+
+function onDragMove()
+{
+  if (this.dragging)
+  {
+    var newPosition = this.data.getLocalPosition(this.parent);
+    this.position.x = newPosition.x;
+    this.position.y = newPosition.y;
+    //this.moveTo(newPosition.x, newPosition.y);
+  }
 }
 
 var elements = [];
 var el1 = createElement('el1', 900, 400);
 var el2 = createElement('el2', 700, 600);
+var el3 = createElement('el1', 300, 300);
 elements.push(el1);
 elements.push(el2);
+elements.push(el3);
 
 elements.forEach(function(element) {
   console.log(element.name);
+  console.log(element.position);
   stage.addChild(element);
 });
 
@@ -69,7 +128,6 @@ graphics.lineTo(250,height);
 graphics.lineStyle(1, 0x000000, 1);
 graphics.moveTo(270,0);
 graphics.lineTo(270,height);
-*/
 
 var graphics = new PIXI.Graphics();
 
@@ -103,6 +161,8 @@ graphics.drawCircle(470, 90,60);
 graphics.endFill();
 
 stage.addChild(graphics);
+
+ */
 
 // start animating
 animate();
