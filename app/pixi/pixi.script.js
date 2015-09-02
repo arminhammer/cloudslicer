@@ -65,12 +65,20 @@ function createElement(name, x, y) {
     // events for drag move
     .on('mousemove', onDragMove)
     .on('touchmove', onDragMove);
+
+  //e.moveTo(x,y);
   e.position.x = x;
   e.position.y = y;
-
-  e.lineStyle(2, 0x0000FF, 1);
+  e.lineStyle(1, 0x0000FF, 1);
   e.beginFill(0xFF700B, 1);
-  e.drawRect(x, y, 120, 120);
+  e.drawRect(0, 0, 100, 100);
+  e.endFill();
+  //e.x = x;
+  //e.y = y;
+
+  //console.log('Square is at ' + square.position.x + ','+ square.position.y);
+  console.log('El is at ' + e.position.x + ','+ e.position.y);
+
 
   return e;
 }
@@ -99,7 +107,15 @@ function onDragMove()
 {
   if (this.dragging)
   {
+    var global = this.toGlobal(this.parent);
+    var local = this.toLocal(this.parent);
+    console.log('x: ' + this.x + ' y: ' + this.y);
+    console.log('this: ' + this.x+":"+this.y + ", global: " + global.x + ":" + global.y + ", local: " + local.x + ":" + local.y);
+    //console.log('width: ' + this.width + ' height: ' + this.height);
     var newPosition = this.data.getLocalPosition(this.parent);
+    console.log('NEW x: ' + newPosition.x + ' new y: ' + newPosition.y);
+    var local = this.toLocal(this.data);
+    console.log('LOCAL: ' + local.x + ':' + local.y);
     this.position.x = newPosition.x;
     this.position.y = newPosition.y;
     //this.moveTo(newPosition.x, newPosition.y);
@@ -107,9 +123,9 @@ function onDragMove()
 }
 
 var elements = [];
-var el1 = createElement('el1', 900, 400);
-var el2 = createElement('el2', 700, 600);
-var el3 = createElement('el1', 300, 300);
+var el1 = createElement('el1', 100, 100);
+var el2 = createElement('el2', 200, 200);
+var el3 = createElement('el3', 300, 300);
 elements.push(el1);
 elements.push(el2);
 elements.push(el3);
@@ -117,6 +133,7 @@ elements.push(el3);
 elements.forEach(function(element) {
   console.log(element.name);
   console.log(element.position);
+  console.log(element.height + ':' + element.width);
   stage.addChild(element);
 });
 
