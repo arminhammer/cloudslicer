@@ -127,23 +127,84 @@ function onDragMove()
 }
 
 function onMouseOver() {
+  var self = this;
+  var iconSize = 25;
+
   console.log('Mouse over');
-  var global = this.toGlobal(this.parent);
+  var global = self.toGlobal(self.parent);
   console.log('GLOBAL: ' + global.x + ':' + global.y);
-  var moveIcon = new PIXI.Graphics();
-  moveIcon.lineStyle(1, 0x0000FF, 1);
-  moveIcon.beginFill(0x000000, 1);
-  moveIcon.drawRect(-5, -5, 10, 10);
-  moveIcon.drawRect(elementSize-5, -5, 10, 10);
-  moveIcon.drawRect(-5, elementSize-5, 10, 10);
-  moveIcon.drawRect(elementSize-5, elementSize-5, 10, 10);
-  moveIcon.endFill();
-  this.addChildAt(moveIcon,0);
+
+  var scaleLocations = [
+    {x: -10, y: -10, size: iconSize},
+    {x: elementSize-10, y: -10, size: iconSize},
+    {x: -10, y: elementSize-10, size: iconSize},
+    {x: elementSize-10, y: elementSize-10, size: iconSize}
+  ];
+
+  //moveIcon.drawRect(elementSize-5, -5, 10, 10);
+  //moveIcon.drawRect(-5, elementSize-5, 10, 10);
+  //moveIcon.drawRect(elementSize-5, elementSize-5, 10, 10);
+
+  self.scaleIcons = [];
+
+  scaleLocations.forEach(function(loc) {
+    var icon = new PIXI.Graphics();
+    icon.interactive = true;
+    icon.buttonMode = true;
+    icon.lineStyle(1, 0x0000FF, 1);
+    icon.beginFill(0x000000, 1);
+    icon.drawRect(loc.x, loc.y, loc.size, loc.size);
+    icon.endFill();
+
+    icon
+      // events for drag start
+      .on('mousedown', onScaleIconDragStart)
+      .on('touchstart', onScaleIconDragStart);
+    // events for drag end
+    //.on('mouseup', onDragEnd)
+    //.on('mouseupoutside', onDragEnd)
+    //.on('touchend', onDragEnd)
+    //.on('touchendoutside', onDragEnd)
+    // events for drag move
+    //.on('mousemove', onDragMove)
+    //.on('touchmove', onDragMove)
+
+    self.scaleIcons.push(icon);
+
+  });
+
+  //moveIcon.endFill();
+
+  //stage.removeChild(self);
+  //stage.addChild(icon);
+  self.scaleIcons.forEach(function(s) {
+    self.addChild(s);
+  });
+  //this.addChild(this.scaleIcons[0])
+  //stage.addChild(this);
+
 }
 
 function onMouseOut() {
+  var self = this;
   console.log('Mouse out');
-  this.removeChildAt(0);
+  this.scaleIcons.forEach(function(s) {
+    self.removeChild(s);
+  });
+  console.log('Size: ');
+  console.log(this.getBounds());
+
+}
+
+function onScaleIconDragStart(event)
+{
+  // store a reference to the data
+  // the reason for this is because of multitouch
+  // we want to track the movement of this particular touch
+  this.data = event.data;
+  this.alpha = 0.5;
+  this.dragging = true;
+  console.log('Resizing!');
 }
 
 var elements = [];
