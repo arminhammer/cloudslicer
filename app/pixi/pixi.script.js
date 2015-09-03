@@ -7,6 +7,8 @@ var height = window.innerHeight;
 var renderer = PIXI.autoDetectRenderer(width, height,{backgroundColor : 0xffffff});
 document.body.appendChild(renderer.view);
 
+var elementSize = 100;
+
 // create the root of the scene graph
 var stage = new PIXI.Container();
 
@@ -64,21 +66,23 @@ function createElement(name, x, y) {
     .on('touchendoutside', onDragEnd)
     // events for drag move
     .on('mousemove', onDragMove)
-    .on('touchmove', onDragMove);
+    .on('touchmove', onDragMove)
+    // events for mouse over
+    .on('mouseover', onMouseOver)
+    .on('mouseout', onMouseOut);
 
   //e.moveTo(x,y);
   e.position.x = x;
   e.position.y = y;
   e.lineStyle(1, 0x0000FF, 1);
   e.beginFill(0xFF700B, 1);
-  e.drawRect(0, 0, 100, 100);
+  e.drawRect(0, 0, elementSize, elementSize);
   e.endFill();
   //e.x = x;
   //e.y = y;
 
   //console.log('Square is at ' + square.position.x + ','+ square.position.y);
   console.log('El is at ' + e.position.x + ','+ e.position.y);
-
 
   return e;
 }
@@ -113,13 +117,33 @@ function onDragMove()
     console.log('this: ' + this.x+":"+this.y + ", global: " + global.x + ":" + global.y + ", local: " + local.x + ":" + local.y);
     //console.log('width: ' + this.width + ' height: ' + this.height);
     var newPosition = this.data.getLocalPosition(this.parent);
-    console.log('NEW x: ' + newPosition.x + ' new y: ' + newPosition.y);
+    console.log('NEW: ' + newPosition.x + ':' + newPosition.y);
     var local = this.toLocal(this.data);
     console.log('LOCAL: ' + local.x + ':' + local.y);
     this.position.x = newPosition.x;
     this.position.y = newPosition.y;
     //this.moveTo(newPosition.x, newPosition.y);
   }
+}
+
+function onMouseOver() {
+  console.log('Mouse over');
+  var global = this.toGlobal(this.parent);
+  console.log('GLOBAL: ' + global.x + ':' + global.y);
+  var moveIcon = new PIXI.Graphics();
+  moveIcon.lineStyle(1, 0x0000FF, 1);
+  moveIcon.beginFill(0x000000, 1);
+  moveIcon.drawRect(-5, -5, 10, 10);
+  moveIcon.drawRect(elementSize-5, -5, 10, 10);
+  moveIcon.drawRect(-5, elementSize-5, 10, 10);
+  moveIcon.drawRect(elementSize-5, elementSize-5, 10, 10);
+  moveIcon.endFill();
+  this.addChildAt(moveIcon,0);
+}
+
+function onMouseOut() {
+  console.log('Mouse out');
+  this.removeChildAt(0);
 }
 
 var elements = [];
