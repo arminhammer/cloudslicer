@@ -13,6 +13,7 @@ var elementSize = 100;
 var stage = new PIXI.Container();
 
 stage.interactive = true;
+var meter = new FPSMeter();
 
 function drawGrid() {
   var grid = new PIXI.Graphics();
@@ -128,17 +129,17 @@ function onDragMove()
 
 function onMouseOver() {
   var self = this;
-  var iconSize = 25;
+  var iconSize = 10;
 
   console.log('Mouse over');
   var global = self.toGlobal(self.parent);
   console.log('GLOBAL: ' + global.x + ':' + global.y);
 
   var scaleLocations = [
-    {x: -10, y: -10, size: iconSize},
-    {x: elementSize-10, y: -10, size: iconSize},
-    {x: -10, y: elementSize-10, size: iconSize},
-    {x: elementSize-10, y: elementSize-10, size: iconSize}
+    {x: -5, y: -5, size: iconSize},
+    {x: elementSize-5, y: -5, size: iconSize},
+    {x: -5, y: elementSize-5, size: iconSize},
+    {x: elementSize-5, y: elementSize-5, size: iconSize}
   ];
 
   //moveIcon.drawRect(elementSize-5, -5, 10, 10);
@@ -266,11 +267,13 @@ stage.addChild(graphics);
 
  */
 
+
 // start animating
 animate();
 
 function animate() {
   renderer.render(stage);
+  meter.tick();
   requestAnimationFrame(animate);
 }
 

@@ -3,16 +3,17 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
-    "modernizr": "~2.8.1",
-    "mithril": "~0.2.0",
-    "lodash": "~3.10.0",
     "codemirror": "~5.4.0",
-    "jsonlint": "~1.6.0",
-    "snap.svg": "~0.4.1",
-    "opentip": "~2.4.6",
     "d3": "~3.5.6",
     "d3-tip": "~0.6.7",
-    "pixi.js": "~3.0.7"
+    "fpsmeter": "~0.3.1",
+    "jsonlint": "~1.6.0",
+    "lodash": "~3.10.0",
+    "mithril": "~0.2.0",
+    "modernizr": "~2.8.1",
+    "opentip": "~2.4.6",
+    "pixi.js": "~3.0.7",
+    "snap.svg": "~0.4.1"
   },
   "overrides": {
     "bootstrap-sass": {
