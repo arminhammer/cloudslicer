@@ -268,7 +268,7 @@ stage.addChild(graphics);
  */
 
 
-// start animating
+// start  animating
 animate();
 
 function animate() {
