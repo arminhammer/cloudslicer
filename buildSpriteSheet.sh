@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script requires rename, glue, and imagemagick to be installed.
+
 targetDir="app/resources/icons"
 spriteDir="app/resources/sprites"
 sourceDir="app/resources/AWS_Simple_Icons_svg_eps"
