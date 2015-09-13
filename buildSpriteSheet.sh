@@ -18,4 +18,4 @@ find $targetDir -type f -name '*.png' -print0 | xargs -0 -I file rename 's/.svg.
 echo "Removing SVG files"
 find $targetDir -type f -name '*.svg' -print0 | xargs -0 -I file rm file
 echo "Building spritesheet"
-glue $targetDir $spriteDir
+glue $targetDir $spriteDir --json --json-format=hash
