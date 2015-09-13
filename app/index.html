@@ -22,7 +22,10 @@
 
     <link rel="stylesheet" href="/bower_components/codemirror/addon/lint/lint.css" />
     <link rel="stylesheet" href="/bower_components/codemirror/theme/zenburn.css" />
-    <link rel="stylesheet" href="/app/styles/tooltip-box.css" />
+    <link rel="stylesheet" href="styles/tooltip-box.css" />
+
+    <link rel="stylesheet" href="styles/default.css" />
+    <link rel="stylesheet" href="styles/component.css" />
 
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
@@ -33,17 +36,45 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- mitrhil app -->
-    <div id="cloudslicer-app"></div>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+      <div id="code-bar"></div>
+      <!--<h3>Menu</h3>
+      <a href="#">Celery seakale</a>
+      <a href="#">Dulse daikon</a>
+      <a href="#">Zucchini garlic</a>
+      <a href="#">Catsear azuki bean</a>
+      <a href="#">Dandelion bunya</a>
+      <a href="#">Rutabaga</a>-->
+    </nav>
+    <div class="container">
+      <header class="clearfix">
+        <nav><button id="showLeft">Show/Hide Left Slide Menu</button></nav>
+      </header>
+      <div class="main" id="main">
+        <!--<div id="cloudslicer-app"></div>-->
+      </div>
+    </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- mitrhil app -->
+    <!--<div id="cloudslicer-app"></div>-->
+
+    <script src="/bower_components/classie/classie.js"></script>
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+      var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+        showLeft = document.getElementById( 'showLeft' ),
+        body = document.body;
+
+      showLeft.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeft' );
+      };
+
+      function disableOther( button ) {
+        if( button !== 'showLeft' ) {
+          classie.toggle( showLeft, 'disabled' );
+        }
+      }
     </script>
 
     <!-- build:js scripts/vendor.js -->
