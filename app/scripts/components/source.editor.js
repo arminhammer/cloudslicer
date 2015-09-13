@@ -13,7 +13,7 @@ function resizeEditor(editor) {
   //console.log('Resizing...');
   //console.log(browserHeight);
 
-  editor.setSize(null, browserHeight - 50);
+  editor.setSize(null, browserHeight);
 
 }
 

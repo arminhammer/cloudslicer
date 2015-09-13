@@ -117,13 +117,6 @@ function drawSVG(paper, parsed, element, options) {
 var GuiEditor = {
   controller: function(options) {
 
-    var grid = [
-      [{},{},{},{}],
-      [{},{},{},{}],
-      [{},{},{},{}],
-      [{},{},{},{}]
-    ];
-
     return {
       template: options.template,
 
