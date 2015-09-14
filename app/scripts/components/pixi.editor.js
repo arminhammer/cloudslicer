@@ -4,20 +4,24 @@
 
 'use strict';
 
+function getWindowDimension() {
+  return { x: window.innerWidth, y: window.innerHeight };
+}
+
 function resizeGuiContainer(renderer) {
-  var browserHeight = $('html').height();
-  var browserWidth = $('html').width();
+
+  var dim = getWindowDimension();
 
   console.log('Resizing...');
-  console.log(browserWidth);
+  console.log(dim);
 
-  $('#guiContainer').height(browserHeight);
-  $('#guiContainer').width(browserWidth);
+  $('#guiContainer').height(dim.y);
+  $('#guiContainer').width(dim.x);
 
-  /*if(renderer) {
-    renderer.view.style.width = browserWidth+'px';
-    renderer.view.style.height = browserHeight+'px';
-  }*/
+  if(renderer) {
+    renderer.view.style.width = dim.x+'px';
+    renderer.view.style.height = dim.y+'px';
+  }
 
   console.log('Resizing gui container...');
 
@@ -119,7 +123,7 @@ function drawGrid(width, height) {
     grid.lineTo(count, height);
     count = count + interval;
   }
-  var count = interval;
+  count = interval;
   while(count < height) {
     grid.moveTo(0, count);
     grid.lineTo(width, count);
@@ -268,21 +272,11 @@ function draw() {
 var PixiEditor = {
   controller: function(options) {
 
-    var width = window.innerWidth;
-    var height = window.innerHeight;
+    var winDimension = getWindowDimension();
 
-    var elementSize = 100;
-
-    var renderer = PIXI.autoDetectRenderer(width, height,{backgroundColor : 0xFFFFFF});
-
-    // create the root of the scene graph
+    var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y,{backgroundColor : 0xFFFFFF});
     var stage = new PIXI.Container();
-
-    stage.interactive = true;
     var meter = new FPSMeter();
-
-    var grid = drawGrid(width, height);
-    stage.addChild(grid);
 
     function animate() {
       renderer.render(stage);
@@ -300,8 +294,24 @@ var PixiEditor = {
           return;
         }
 
+        //var width = window.innerWidth;
+        //var height = window.innerHeight;
+
+        var elementSize = 100;
+
+        stage.interactive = true;
+        //console.log(stage);
+        var grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
+        //console.log(stage);
+
         $(window).resize(function() {
           resizeGuiContainer(renderer);
+          winDimension = getWindowDimension();
+          //console.log(newDim);
+          console.log(stage);
+          stage.removeChild(grid);
+          grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
+
           //drawSVG(paper, parsed, element, options);
 
         });
