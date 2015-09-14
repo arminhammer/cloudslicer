@@ -1,0 +1,3499 @@
+{
+    "frames": {
+        "WorkDocs.png": {
+            "frame": {
+                "y": 0, 
+                "x": 0, 
+                "w": 700, 
+                "h": 799
+            }, 
+            "rotated": false, 
+            "filename": "WorkDocs.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 799, 
+                "w": 700
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": 0, 
+                "w": 700, 
+                "h": 799
+            }
+        }, 
+        "App_Services_copy_Amazon_SNS_HTTP_Notification.png": {
+            "frame": {
+                "y": 0, 
+                "x": -700, 
+                "w": 502, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SNS_HTTP_Notification.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 502
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -700, 
+                "w": 502, 
+                "h": 314
+            }
+        }, 
+        "App_Services_copy_Amazon_SNS_Email_Notification.png": {
+            "frame": {
+                "y": -314, 
+                "x": -700, 
+                "w": 500, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SNS_Email_Notification.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 500
+            }, 
+            "spriteSourceSize": {
+                "y": -314, 
+                "x": -700, 
+                "w": 500, 
+                "h": 312
+            }
+        }, 
+        "App_Services_copy_Amazon_SNS_Topic.png": {
+            "frame": {
+                "y": -799, 
+                "x": 0, 
+                "w": 496, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SNS_Topic.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 496
+            }, 
+            "spriteSourceSize": {
+                "y": -799, 
+                "x": 0, 
+                "w": 496, 
+                "h": 314
+            }
+        }, 
+        "SDKs_copy_nodeJS.png": {
+            "frame": {
+                "y": 0, 
+                "x": -1202, 
+                "w": 364, 
+                "h": 486
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_nodeJS.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 486, 
+                "w": 364
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -1202, 
+                "w": 364, 
+                "h": 486
+            }
+        }, 
+        "SDKs_copy_Ruby.png": {
+            "frame": {
+                "y": -486, 
+                "x": -1202, 
+                "w": 360, 
+                "h": 486
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_Ruby.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 486, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": -486, 
+                "x": -1202, 
+                "w": 360, 
+                "h": 486
+            }
+        }, 
+        "Final_Style_Amazon_WorkSpaces.png": {
+            "frame": {
+                "y": 0, 
+                "x": -1566, 
+                "w": 412, 
+                "h": 473
+            }, 
+            "rotated": false, 
+            "filename": "Final_Style_Amazon_WorkSpaces.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 473, 
+                "w": 412
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -1566, 
+                "w": 412, 
+                "h": 473
+            }
+        }, 
+        "Deployment_&_Management_IAM_Roles.png": {
+            "frame": {
+                "y": -1113, 
+                "x": 0, 
+                "w": 458, 
+                "h": 391
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Roles.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 391, 
+                "w": 458
+            }, 
+            "spriteSourceSize": {
+                "y": -1113, 
+                "x": 0, 
+                "w": 458, 
+                "h": 391
+            }
+        }, 
+        "Non-Service_Specific_copy_Forums.png": {
+            "frame": {
+                "y": -1504, 
+                "x": 0, 
+                "w": 426, 
+                "h": 410
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Forums.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 410, 
+                "w": 426
+            }, 
+            "spriteSourceSize": {
+                "y": -1504, 
+                "x": 0, 
+                "w": 426, 
+                "h": 410
+            }
+        }, 
+        "SDKs_copy_iOS.png": {
+            "frame": {
+                "y": -473, 
+                "x": -1566, 
+                "w": 360, 
+                "h": 416
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_iOS.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 416, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": -473, 
+                "x": -1566, 
+                "w": 360, 
+                "h": 416
+            }
+        }, 
+        "SDKs_copy_Python.png": {
+            "frame": {
+                "y": 0, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_Python.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 416, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }
+        }, 
+        "SDKs_copy_PHP.png": {
+            "frame": {
+                "y": -416, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_PHP.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 416, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": -416, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }
+        }, 
+        "SDKs_copy_Net.png": {
+            "frame": {
+                "y": -832, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_Net.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 416, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": -832, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }
+        }, 
+        "SDKs_copy_Java.png": {
+            "frame": {
+                "y": -1248, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_Java.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 416, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": -1248, 
+                "x": -1978, 
+                "w": 360, 
+                "h": 416
+            }
+        }, 
+        "SDKs_copy_Android.png": {
+            "frame": {
+                "y": -1914, 
+                "x": 0, 
+                "w": 360, 
+                "h": 416
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_Android.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 416, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": -1914, 
+                "x": 0, 
+                "w": 360, 
+                "h": 416
+            }
+        }, 
+        "SDKs_Javascript.png": {
+            "frame": {
+                "y": -1914, 
+                "x": -360, 
+                "w": 361, 
+                "h": 415
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_Javascript.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 415, 
+                "w": 361
+            }, 
+            "spriteSourceSize": {
+                "y": -1914, 
+                "x": -360, 
+                "w": 361, 
+                "h": 415
+            }
+        }, 
+        "Compute_&_Networking_EMR_Engine.png": {
+            "frame": {
+                "y": -1113, 
+                "x": -458, 
+                "w": 413, 
+                "h": 355
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_EMR_Engine.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 355, 
+                "w": 413
+            }, 
+            "spriteSourceSize": {
+                "y": -1113, 
+                "x": -458, 
+                "w": 413, 
+                "h": 355
+            }
+        }, 
+        "Compute_&_Networking_EMR_MapR_M7_Engine.png": {
+            "frame": {
+                "y": -799, 
+                "x": -496, 
+                "w": 412, 
+                "h": 295
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_EMR_MapR_M7_Engine.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 295, 
+                "w": 412
+            }, 
+            "spriteSourceSize": {
+                "y": -799, 
+                "x": -496, 
+                "w": 412, 
+                "h": 295
+            }
+        }, 
+        "Compute_&_Networking_EMR_MapR_M5_Engine.png": {
+            "frame": {
+                "y": -1113, 
+                "x": -871, 
+                "w": 412, 
+                "h": 296
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_EMR_MapR_M5_Engine.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 296, 
+                "w": 412
+            }, 
+            "spriteSourceSize": {
+                "y": -1113, 
+                "x": -871, 
+                "w": 412, 
+                "h": 296
+            }
+        }, 
+        "Compute_&_Networking_EMR_MapR_M3_Engine.png": {
+            "frame": {
+                "y": -1113, 
+                "x": -1283, 
+                "w": 412, 
+                "h": 296
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_EMR_MapR_M3_Engine.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 296, 
+                "w": 412
+            }, 
+            "spriteSourceSize": {
+                "y": -1113, 
+                "x": -1283, 
+                "w": 412, 
+                "h": 296
+            }
+        }, 
+        "SDKs_copy_CLI.png": {
+            "frame": {
+                "y": -1504, 
+                "x": -426, 
+                "w": 358, 
+                "h": 410
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_CLI.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 410, 
+                "w": 358
+            }, 
+            "spriteSourceSize": {
+                "y": -1504, 
+                "x": -426, 
+                "w": 358, 
+                "h": 410
+            }
+        }, 
+        "Trusted_Advisor.png": {
+            "frame": {
+                "y": -1504, 
+                "x": -784, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Trusted_Advisor.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -1504, 
+                "x": -784, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_S3.png": {
+            "frame": {
+                "y": -1504, 
+                "x": -1116, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_S3.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -1504, 
+                "x": -1116, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_CloudFront.png": {
+            "frame": {
+                "y": -1504, 
+                "x": -1448, 
+                "w": 334, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_CloudFront.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 334
+            }, 
+            "spriteSourceSize": {
+                "y": -1504, 
+                "x": -1448, 
+                "w": 334, 
+                "h": 402
+            }
+        }, 
+        "On-Demand_Workforce_copy_Amazon_Mechanical_Turk.png": {
+            "frame": {
+                "y": -1914, 
+                "x": -721, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "On-Demand_Workforce_copy_Amazon_Mechanical_Turk.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -1914, 
+                "x": -721, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Mobile_Analytics.png": {
+            "frame": {
+                "y": -1914, 
+                "x": -1053, 
+                "w": 392, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Mobile_Analytics.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 392
+            }, 
+            "spriteSourceSize": {
+                "y": -1914, 
+                "x": -1053, 
+                "w": 392, 
+                "h": 402
+            }
+        }, 
+        "Lambda.png": {
+            "frame": {
+                "y": -1914, 
+                "x": -1445, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Lambda.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -1914, 
+                "x": -1445, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Kinesis.png": {
+            "frame": {
+                "y": -1914, 
+                "x": -1777, 
+                "w": 334, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Kinesis.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 334
+            }, 
+            "spriteSourceSize": {
+                "y": -1914, 
+                "x": -1777, 
+                "w": 334, 
+                "h": 402
+            }
+        }, 
+        "Directory_Service.png": {
+            "frame": {
+                "y": 0, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Directory_Service.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Layers.png": {
+            "frame": {
+                "y": 0, 
+                "x": -2670, 
+                "w": 401, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Layers.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 401
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -2670, 
+                "w": 401, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Instances.png": {
+            "frame": {
+                "y": -2330, 
+                "x": 0, 
+                "w": 402, 
+                "h": 401
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Instances.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 401, 
+                "w": 402
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": 0, 
+                "w": 402, 
+                "h": 401
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Apps.png": {
+            "frame": {
+                "y": 0, 
+                "x": -3071, 
+                "w": 402, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Apps.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 402
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -3071, 
+                "w": 402, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks.png": {
+            "frame": {
+                "y": -402, 
+                "x": -3071, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -402, 
+                "x": -3071, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_IAM.png": {
+            "frame": {
+                "y": -804, 
+                "x": -3071, 
+                "w": 210, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 210
+            }, 
+            "spriteSourceSize": {
+                "y": -804, 
+                "x": -3071, 
+                "w": 210, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_Elastic_Beanstalk.png": {
+            "frame": {
+                "y": -1206, 
+                "x": -3071, 
+                "w": 290, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_Elastic_Beanstalk.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 290
+            }, 
+            "spriteSourceSize": {
+                "y": -1206, 
+                "x": -3071, 
+                "w": 290, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_CloudWatch.png": {
+            "frame": {
+                "y": -1608, 
+                "x": -3071, 
+                "w": 354, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_CloudWatch.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 354
+            }, 
+            "spriteSourceSize": {
+                "y": -1608, 
+                "x": -3071, 
+                "w": 354, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_AWS_Data_Pipeline.png": {
+            "frame": {
+                "y": -2010, 
+                "x": -3071, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_AWS_Data_Pipeline.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2010, 
+                "x": -3071, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Deployment_&_Management_AWS_CloudFormation.png": {
+            "frame": {
+                "y": -402, 
+                "x": -2670, 
+                "w": 330, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_AWS_CloudFormation.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 330
+            }, 
+            "spriteSourceSize": {
+                "y": -402, 
+                "x": -2670, 
+                "w": 330, 
+                "h": 402
+            }
+        }, 
+        "Database_DynamoDB.png": {
+            "frame": {
+                "y": -804, 
+                "x": -2670, 
+                "w": 356, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Database_DynamoDB.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 356
+            }, 
+            "spriteSourceSize": {
+                "y": -804, 
+                "x": -2670, 
+                "w": 356, 
+                "h": 402
+            }
+        }, 
+        "Database_Amazon_SimpleDB.png": {
+            "frame": {
+                "y": -1206, 
+                "x": -2670, 
+                "w": 220, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_SimpleDB.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 220
+            }, 
+            "spriteSourceSize": {
+                "y": -1206, 
+                "x": -2670, 
+                "w": 220, 
+                "h": 402
+            }
+        }, 
+        "Database_Amazon_RDS.png": {
+            "frame": {
+                "y": -1608, 
+                "x": -2670, 
+                "w": 356, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 356
+            }, 
+            "spriteSourceSize": {
+                "y": -1608, 
+                "x": -2670, 
+                "w": 356, 
+                "h": 402
+            }
+        }, 
+        "Database_Amazon_ElasticCache.png": {
+            "frame": {
+                "y": -402, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_ElasticCache.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -402, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Config.png": {
+            "frame": {
+                "y": -804, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Config.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -804, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Compute_&_Networking_Amazon_VPC.png": {
+            "frame": {
+                "y": -1206, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_VPC.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -1206, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EMR--.png": {
+            "frame": {
+                "y": -1608, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EMR--.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -1608, 
+                "x": -2338, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EC2--.png": {
+            "frame": {
+                "y": -2731, 
+                "x": 0, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EC2--.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": 0, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Compute_&_Networking_AWS_Direct_Connect.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -332, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_AWS_Direct_Connect.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -332, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Cognito.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -664, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "Cognito.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -664, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "CodeDeploy.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -996, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "CodeDeploy.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -996, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "App_Services_copy_Amazon_SWF.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -1328, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SWF.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -1328, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "App_Services_copy_Amazon_SQS.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -1660, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SQS.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -1660, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "App_Services_copy_Amazon_SES.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -1992, 
+                "w": 344, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SES.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 344
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -1992, 
+                "w": 344, 
+                "h": 402
+            }
+        }, 
+        "App_Services_copy_Amazon_Email.png": {
+            "frame": {
+                "y": -2412, 
+                "x": -3071, 
+                "w": 402, 
+                "h": 302
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_Email.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 302, 
+                "w": 402
+            }, 
+            "spriteSourceSize": {
+                "y": -2412, 
+                "x": -3071, 
+                "w": 402, 
+                "h": 302
+            }
+        }, 
+        "App_Services_copy_Amazon_Elastic_Transcoder.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -2336, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_Elastic_Transcoder.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -2336, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "App_Services_copy_Amazon_CloudSearch.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -2668, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_CloudSearch.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -2668, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "AppStream.png": {
+            "frame": {
+                "y": -2731, 
+                "x": -3000, 
+                "w": 332, 
+                "h": 402
+            }, 
+            "rotated": false, 
+            "filename": "AppStream.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 402, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2731, 
+                "x": -3000, 
+                "w": 332, 
+                "h": 402
+            }
+        }, 
+        "Storage_&_Content_Delivery_AWS_Storage_Gateway.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -402, 
+                "w": 333, 
+                "h": 401
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_AWS_Storage_Gateway.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 401, 
+                "w": 333
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -402, 
+                "w": 333, 
+                "h": 401
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Stack.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -735, 
+                "w": 390, 
+                "h": 401
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Stack.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 401, 
+                "w": 390
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -735, 
+                "w": 390, 
+                "h": 401
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Permissions.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -1125, 
+                "w": 332, 
+                "h": 401
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Permissions.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 401, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -1125, 
+                "w": 332, 
+                "h": 401
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Monitoring.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -1457, 
+                "w": 401, 
+                "h": 336
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Monitoring.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 336, 
+                "w": 401
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -1457, 
+                "w": 401, 
+                "h": 336
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Deployments.png": {
+            "frame": {
+                "y": 0, 
+                "x": -3473, 
+                "w": 401, 
+                "h": 379
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Deployments.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 379, 
+                "w": 401
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -3473, 
+                "w": 401, 
+                "h": 379
+            }
+        }, 
+        "Deployment_&_Management_CloudTrail.png": {
+            "frame": {
+                "y": -379, 
+                "x": -3473, 
+                "w": 332, 
+                "h": 401
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_CloudTrail.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 401, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -379, 
+                "x": -3473, 
+                "w": 332, 
+                "h": 401
+            }
+        }, 
+        "Compute_&_Networking_Amazon_Route_53.png": {
+            "frame": {
+                "y": -780, 
+                "x": -3473, 
+                "w": 333, 
+                "h": 401
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_Route_53.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 401, 
+                "w": 333
+            }, 
+            "spriteSourceSize": {
+                "y": -780, 
+                "x": -3473, 
+                "w": 333, 
+                "h": 401
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_Glacier.png": {
+            "frame": {
+                "y": -1181, 
+                "x": -3473, 
+                "w": 332, 
+                "h": 400
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_Glacier.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 400, 
+                "w": 332
+            }, 
+            "spriteSourceSize": {
+                "y": -1181, 
+                "x": -3473, 
+                "w": 332, 
+                "h": 400
+            }
+        }, 
+        "Deployment_&_Management_OpsWorks_Resources.png": {
+            "frame": {
+                "y": -1581, 
+                "x": -3473, 
+                "w": 338, 
+                "h": 395
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_OpsWorks_Resources.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 395, 
+                "w": 338
+            }, 
+            "spriteSourceSize": {
+                "y": -1581, 
+                "x": -3473, 
+                "w": 338, 
+                "h": 395
+            }
+        }, 
+        "Non-Service_Specific_copy__AWS_Cloud.png": {
+            "frame": {
+                "y": -1976, 
+                "x": -3473, 
+                "w": 392, 
+                "h": 258
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy__AWS_Cloud.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 258, 
+                "w": 392
+            }, 
+            "spriteSourceSize": {
+                "y": -1976, 
+                "x": -3473, 
+                "w": 392, 
+                "h": 258
+            }
+        }, 
+        "Non-Service_Specific_copy_Virtual_Private_CLoud_.png": {
+            "frame": {
+                "y": -2234, 
+                "x": -3473, 
+                "w": 392, 
+                "h": 258
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Virtual_Private_CLoud_.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 258, 
+                "w": 392
+            }, 
+            "spriteSourceSize": {
+                "y": -2234, 
+                "x": -3473, 
+                "w": 392, 
+                "h": 258
+            }
+        }, 
+        "Non-Service_Specific_copy_Internet.png": {
+            "frame": {
+                "y": -2492, 
+                "x": -3473, 
+                "w": 392, 
+                "h": 258
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Internet.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 258, 
+                "w": 392
+            }, 
+            "spriteSourceSize": {
+                "y": -2492, 
+                "x": -3473, 
+                "w": 392, 
+                "h": 258
+            }
+        }, 
+        "SDKs_copy_Tools_for_Windows_PowerShell.png": {
+            "frame": {
+                "y": -3133, 
+                "x": 0, 
+                "w": 347, 
+                "h": 388
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_Tools_for_Windows_PowerShell.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 388, 
+                "w": 347
+            }, 
+            "spriteSourceSize": {
+                "y": -3133, 
+                "x": 0, 
+                "w": 347, 
+                "h": 388
+            }
+        }, 
+        "SDKs_copy_AWS_Toolkit_for_Visual_Studio.png": {
+            "frame": {
+                "y": -3133, 
+                "x": -347, 
+                "w": 347, 
+                "h": 388
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_AWS_Toolkit_for_Visual_Studio.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 388, 
+                "w": 347
+            }, 
+            "spriteSourceSize": {
+                "y": -3133, 
+                "x": -347, 
+                "w": 347, 
+                "h": 388
+            }
+        }, 
+        "SDKs_copy_AWS_Toolkit_for_Eclipse.png": {
+            "frame": {
+                "y": -3133, 
+                "x": -694, 
+                "w": 347, 
+                "h": 388
+            }, 
+            "rotated": false, 
+            "filename": "SDKs_copy_AWS_Toolkit_for_Eclipse.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 388, 
+                "w": 347
+            }, 
+            "spriteSourceSize": {
+                "y": -3133, 
+                "x": -694, 
+                "w": 347, 
+                "h": 388
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EC2_Elastic_IP.png": {
+            "frame": {
+                "y": -2750, 
+                "x": -3473, 
+                "w": 378, 
+                "h": 124
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EC2_Elastic_IP.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 124, 
+                "w": 378
+            }, 
+            "spriteSourceSize": {
+                "y": -2750, 
+                "x": -3473, 
+                "w": 378, 
+                "h": 124
+            }
+        }, 
+        "Compute_&_Networking_Amazon_Route_53_Route_Table.png": {
+            "frame": {
+                "y": -3133, 
+                "x": -1041, 
+                "w": 374, 
+                "h": 344
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_Route_53_Route_Table.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 344, 
+                "w": 374
+            }, 
+            "spriteSourceSize": {
+                "y": -3133, 
+                "x": -1041, 
+                "w": 374, 
+                "h": 344
+            }
+        }, 
+        "Non-Service_Specific_copy_Tape_Storage.png": {
+            "frame": {
+                "y": -2874, 
+                "x": -3473, 
+                "w": 370, 
+                "h": 194
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Tape_Storage.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 194, 
+                "w": 370
+            }, 
+            "spriteSourceSize": {
+                "y": -2874, 
+                "x": -3473, 
+                "w": 370, 
+                "h": 194
+            }
+        }, 
+        "Storage_&_Content_Delivery_Storage_Gateway_Virtual_Tape_Library.png": {
+            "frame": {
+                "y": 0, 
+                "x": -3874, 
+                "w": 295, 
+                "h": 368
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Storage_Gateway_Virtual_Tape_Library.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 368, 
+                "w": 295
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -3874, 
+                "w": 295, 
+                "h": 368
+            }
+        }, 
+        "Storage_&_Content_Delivery_Storage_Gateway_Non-Cached_Volumn.png": {
+            "frame": {
+                "y": -368, 
+                "x": -3874, 
+                "w": 295, 
+                "h": 368
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Storage_Gateway_Non-Cached_Volumn.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 368, 
+                "w": 295
+            }, 
+            "spriteSourceSize": {
+                "y": -368, 
+                "x": -3874, 
+                "w": 295, 
+                "h": 368
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_Glacier_Vault.png": {
+            "frame": {
+                "y": -736, 
+                "x": -3874, 
+                "w": 262, 
+                "h": 368
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_Glacier_Vault.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 368, 
+                "w": 262
+            }, 
+            "spriteSourceSize": {
+                "y": -736, 
+                "x": -3874, 
+                "w": 262, 
+                "h": 368
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_Glacier_Archive.png": {
+            "frame": {
+                "y": -3521, 
+                "x": 0, 
+                "w": 313, 
+                "h": 368
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_Glacier_Archive.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 368, 
+                "w": 313
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": 0, 
+                "w": 313, 
+                "h": 368
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_EBS_Volume.png": {
+            "frame": {
+                "y": -1104, 
+                "x": -3874, 
+                "w": 262, 
+                "h": 368
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_EBS_Volume.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 368, 
+                "w": 262
+            }, 
+            "spriteSourceSize": {
+                "y": -1104, 
+                "x": -3874, 
+                "w": 262, 
+                "h": 368
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_EBS.png": {
+            "frame": {
+                "y": -1472, 
+                "x": -3874, 
+                "w": 262, 
+                "h": 368
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_EBS.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 368, 
+                "w": 262
+            }, 
+            "spriteSourceSize": {
+                "y": -1472, 
+                "x": -3874, 
+                "w": 262, 
+                "h": 368
+            }
+        }, 
+        "Database_Amazon_RedShift.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -313, 
+                "w": 334, 
+                "h": 368
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RedShift.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 368, 
+                "w": 334
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -313, 
+                "w": 334, 
+                "h": 368
+            }
+        }, 
+        "Storage_&_Content_Delivery_Storage_Gateway_Cached_Volumn.png": {
+            "frame": {
+                "y": -1840, 
+                "x": -3874, 
+                "w": 295, 
+                "h": 367
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Storage_Gateway_Cached_Volumn.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 367, 
+                "w": 295
+            }, 
+            "spriteSourceSize": {
+                "y": -1840, 
+                "x": -3874, 
+                "w": 295, 
+                "h": 367
+            }
+        }, 
+        "App_Services_copy_Amazon_SQS_Queue.png": {
+            "frame": {
+                "y": -2010, 
+                "x": -2670, 
+                "w": 366, 
+                "h": 238
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SQS_Queue.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 238, 
+                "w": 366
+            }, 
+            "spriteSourceSize": {
+                "y": -2010, 
+                "x": -2670, 
+                "w": 366, 
+                "h": 238
+            }
+        }, 
+        "Deployment_&_Management_Elastic_Beanstalk_Deployment.png": {
+            "frame": {
+                "y": -2207, 
+                "x": -3874, 
+                "w": 276, 
+                "h": 365
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_Elastic_Beanstalk_Deployment.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 365, 
+                "w": 276
+            }, 
+            "spriteSourceSize": {
+                "y": -2207, 
+                "x": -3874, 
+                "w": 276, 
+                "h": 365
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_EBS_Snapshot.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -647, 
+                "w": 296, 
+                "h": 362
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_EBS_Snapshot.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 362, 
+                "w": 296
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -647, 
+                "w": 296, 
+                "h": 362
+            }
+        }, 
+        "Deployment_&_Management_AWS_CloudFormation_Stack.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -1858, 
+                "w": 360, 
+                "h": 274
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_AWS_CloudFormation_Stack.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 274, 
+                "w": 360
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -1858, 
+                "w": 360, 
+                "h": 274
+            }
+        }, 
+        "Deployment_&_Management_IAM_Short_Term_Credentials.png": {
+            "frame": {
+                "y": -3133, 
+                "x": -1415, 
+                "w": 351, 
+                "h": 283
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Short_Term_Credentials.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 283, 
+                "w": 351
+            }, 
+            "spriteSourceSize": {
+                "y": -3133, 
+                "x": -1415, 
+                "w": 351, 
+                "h": 283
+            }
+        }, 
+        "Database_DynamoDB_Table.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -943, 
+                "w": 338, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Database_DynamoDB_Table.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 338
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -943, 
+                "w": 338, 
+                "h": 316
+            }
+        }, 
+        "Compute_&_Networking_Kinesis_Enabled_App.png": {
+            "frame": {
+                "y": 0, 
+                "x": -4169, 
+                "w": 323, 
+                "h": 337
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Kinesis_Enabled_App.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 337, 
+                "w": 323
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -4169, 
+                "w": 323, 
+                "h": 337
+            }
+        }, 
+        "App_Services_copy_Amazon_SNS.png": {
+            "frame": {
+                "y": -3889, 
+                "x": 0, 
+                "w": 334, 
+                "h": 336
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SNS.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 336, 
+                "w": 334
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": 0, 
+                "w": 334, 
+                "h": 336
+            }
+        }, 
+        "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Workers.png": {
+            "frame": {
+                "y": -2010, 
+                "x": -2338, 
+                "w": 328, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Workers.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 328
+            }, 
+            "spriteSourceSize": {
+                "y": -2010, 
+                "x": -2338, 
+                "w": 328, 
+                "h": 314
+            }
+        }, 
+        "Non-Service_Specific_copy_Users.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -1281, 
+                "w": 328, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Users.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 328
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -1281, 
+                "w": 328, 
+                "h": 314
+            }
+        }, 
+        "Non-Service_Specific_copy_Multimedia.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -1609, 
+                "w": 326, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Multimedia.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 326
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -1609, 
+                "w": 326, 
+                "h": 314
+            }
+        }, 
+        "Deployment_&_Management_CloudWatch_Alarm.png": {
+            "frame": {
+                "y": -337, 
+                "x": -4169, 
+                "w": 270, 
+                "h": 326
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_CloudWatch_Alarm.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 326, 
+                "w": 270
+            }, 
+            "spriteSourceSize": {
+                "y": -337, 
+                "x": -4169, 
+                "w": 270, 
+                "h": 326
+            }
+        }, 
+        "Compute_&_Networking_Auto_Scaling.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -334, 
+                "w": 326, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Auto_Scaling.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 326
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -334, 
+                "w": 326, 
+                "h": 316
+            }
+        }, 
+        "Storage_&_Content_Delivery_AWS_Import_Export.png": {
+            "frame": {
+                "y": -663, 
+                "x": -4169, 
+                "w": 322, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_AWS_Import_Export.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 322
+            }, 
+            "spriteSourceSize": {
+                "y": -663, 
+                "x": -4169, 
+                "w": 322, 
+                "h": 318
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_CloudFront_Download_Distribution.png": {
+            "frame": {
+                "y": -981, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_CloudFront_Download_Distribution.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 320, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -981, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }
+        }, 
+        "Compute_&_Networking_Elastic_Load_Balancing.png": {
+            "frame": {
+                "y": -1301, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Elastic_Load_Balancing.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 320, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -1301, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }
+        }, 
+        "Compute_&_Networking_Amazon_VPC_VPN_Gateway.png": {
+            "frame": {
+                "y": -1621, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_VPC_VPN_Gateway.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 320, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -1621, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }
+        }, 
+        "Compute_&_Networking_Amazon_VPC_Internet_Gateway.png": {
+            "frame": {
+                "y": -1941, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_VPC_Internet_Gateway.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 320, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -1941, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }
+        }, 
+        "App_Services_copy_Amazon_SWF_Decider.png": {
+            "frame": {
+                "y": -2261, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SWF_Decider.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 320, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -2261, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 320
+            }
+        }, 
+        "Compute_&_Networking_VPC_Peering.png": {
+            "frame": {
+                "y": -2581, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 319
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_VPC_Peering.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 319, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -2581, 
+                "x": -4169, 
+                "w": 308, 
+                "h": 319
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_CloudFront_Streaming_Distribution.png": {
+            "frame": {
+                "y": -2900, 
+                "x": -4169, 
+                "w": 306, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_CloudFront_Streaming_Distribution.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 306
+            }, 
+            "spriteSourceSize": {
+                "y": -2900, 
+                "x": -4169, 
+                "w": 306, 
+                "h": 318
+            }
+        }, 
+        "Non-Service_Specific_copy_Generic_Database.png": {
+            "frame": {
+                "y": -3218, 
+                "x": -4169, 
+                "w": 246, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Generic_Database.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 246
+            }, 
+            "spriteSourceSize": {
+                "y": -3218, 
+                "x": -4169, 
+                "w": 246, 
+                "h": 318
+            }
+        }, 
+        "Non-Service_Specific_copy_Disk.png": {
+            "frame": {
+                "y": -3536, 
+                "x": -4169, 
+                "w": 306, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Disk.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 306
+            }, 
+            "spriteSourceSize": {
+                "y": -3536, 
+                "x": -4169, 
+                "w": 306, 
+                "h": 318
+            }
+        }, 
+        "Deployment_&_Management_IAM_Permissions.png": {
+            "frame": {
+                "y": -2572, 
+                "x": -3874, 
+                "w": 235, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Permissions.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 235
+            }, 
+            "spriteSourceSize": {
+                "y": -2572, 
+                "x": -3874, 
+                "w": 235, 
+                "h": 318
+            }
+        }, 
+        "Deployment_&_Management_Elastic_Beanstalk_Application.png": {
+            "frame": {
+                "y": -2890, 
+                "x": -3874, 
+                "w": 170, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_Elastic_Beanstalk_Application.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 170
+            }, 
+            "spriteSourceSize": {
+                "y": -2890, 
+                "x": -3874, 
+                "w": 170, 
+                "h": 318
+            }
+        }, 
+        "Database_RDS_MasterSQL.png": {
+            "frame": {
+                "y": 0, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_RDS_MasterSQL.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": 0, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 318
+            }
+        }, 
+        "Database_DynamoDB_Items.png": {
+            "frame": {
+                "y": -318, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_DynamoDB_Items.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -318, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 318
+            }
+        }, 
+        "Database_DynamoDB_Item.png": {
+            "frame": {
+                "y": -4225, 
+                "x": 0, 
+                "w": 312, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_DynamoDB_Item.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 312
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": 0, 
+                "w": 312, 
+                "h": 318
+            }
+        }, 
+        "Database_DynamoDB_Attributes.png": {
+            "frame": {
+                "y": -636, 
+                "x": -4492, 
+                "w": 292, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_DynamoDB_Attributes.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 292
+            }, 
+            "spriteSourceSize": {
+                "y": -636, 
+                "x": -4492, 
+                "w": 292, 
+                "h": 318
+            }
+        }, 
+        "Database_DynamoDB_Attribute.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -312, 
+                "w": 306, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_DynamoDB_Attribute.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 306
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -312, 
+                "w": 306, 
+                "h": 318
+            }
+        }, 
+        "Database_Amazon_RDS_Instance_Standby.png": {
+            "frame": {
+                "y": -954, 
+                "x": -4492, 
+                "w": 246, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS_Instance_Standby.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 246
+            }, 
+            "spriteSourceSize": {
+                "y": -954, 
+                "x": -4492, 
+                "w": 246, 
+                "h": 318
+            }
+        }, 
+        "Database_Amazon_RDS_Instance_Read_Replica.png": {
+            "frame": {
+                "y": -1272, 
+                "x": -4492, 
+                "w": 242, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS_Instance_Read_Replica.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 242
+            }, 
+            "spriteSourceSize": {
+                "y": -1272, 
+                "x": -4492, 
+                "w": 242, 
+                "h": 318
+            }
+        }, 
+        "Database_Amazon_RDS_DB_Instance.png": {
+            "frame": {
+                "y": -1590, 
+                "x": -4492, 
+                "w": 246, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS_DB_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 246
+            }, 
+            "spriteSourceSize": {
+                "y": -1590, 
+                "x": -4492, 
+                "w": 246, 
+                "h": 318
+            }
+        }, 
+        "Compute_&_Networking_Amazon_VPC_Router.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -618, 
+                "w": 308, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_VPC_Router.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -618, 
+                "w": 308, 
+                "h": 318
+            }
+        }, 
+        "Compute_&_Networking_Amazon_Route_53_Hosted_Zone.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -926, 
+                "w": 316, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_Route_53_Hosted_Zone.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 316
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -926, 
+                "w": 316, 
+                "h": 318
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EC2_Instances.png": {
+            "frame": {
+                "y": -1908, 
+                "x": -4492, 
+                "w": 282, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EC2_Instances.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 282
+            }, 
+            "spriteSourceSize": {
+                "y": -1908, 
+                "x": -4492, 
+                "w": 282, 
+                "h": 318
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EC2_DB_on_Instance.png": {
+            "frame": {
+                "y": -2226, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EC2_DB_on_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -2226, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 318
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EC2_CloudWatch.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -1242, 
+                "w": 296, 
+                "h": 318
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EC2_CloudWatch.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 318, 
+                "w": 296
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -1242, 
+                "w": 296, 
+                "h": 318
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_CloudFront_Edge_Location.png": {
+            "frame": {
+                "y": -2544, 
+                "x": -4492, 
+                "w": 291, 
+                "h": 317
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_CloudFront_Edge_Location.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 317, 
+                "w": 291
+            }, 
+            "spriteSourceSize": {
+                "y": -2544, 
+                "x": -4492, 
+                "w": 291, 
+                "h": 317
+            }
+        }, 
+        "Compute_&_Networking_EC2_Optimized_Instance.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -1538, 
+                "w": 297, 
+                "h": 317
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_EC2_Optimized_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 317, 
+                "w": 297
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -1538, 
+                "w": 297, 
+                "h": 317
+            }
+        }, 
+        "Compute_&_Networking_Amazon_VPC_Customer_Gateway.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -1835, 
+                "w": 306, 
+                "h": 317
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_VPC_Customer_Gateway.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 317, 
+                "w": 306
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -1835, 
+                "w": 306, 
+                "h": 317
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_S3_Bucket_with_Objects.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -660, 
+                "w": 308, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_S3_Bucket_with_Objects.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 308
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -660, 
+                "w": 308, 
+                "h": 316
+            }
+        }, 
+        "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Requester.png": {
+            "frame": {
+                "y": -2861, 
+                "x": -4492, 
+                "w": 272, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Requester.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 272
+            }, 
+            "spriteSourceSize": {
+                "y": -2861, 
+                "x": -4492, 
+                "w": 272, 
+                "h": 316
+            }
+        }, 
+        "Non-Service_Specific_copy_AWS_Management_Console.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -968, 
+                "w": 316, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_AWS_Management_Console.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 316
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -968, 
+                "w": 316, 
+                "h": 316
+            }
+        }, 
+        "Deployment_&_Management_AWS_CloudFormation_Template.png": {
+            "frame": {
+                "y": -3177, 
+                "x": -4492, 
+                "w": 272, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_AWS_CloudFormation_Template.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 272
+            }, 
+            "spriteSourceSize": {
+                "y": -3177, 
+                "x": -4492, 
+                "w": 272, 
+                "h": 316
+            }
+        }, 
+        "Database_RDS_SlaveSQL.png": {
+            "frame": {
+                "y": -3493, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Database_RDS_SlaveSQL.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3493, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 316
+            }
+        }, 
+        "Database_Dynamo_DB_Global_Secondary_Indexes.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -1284, 
+                "w": 296, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Database_Dynamo_DB_Global_Secondary_Indexes.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 296
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -1284, 
+                "w": 296, 
+                "h": 316
+            }
+        }, 
+        "Database_Amazon_SimpleDB_Domain.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -1580, 
+                "w": 314, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_SimpleDB_Domain.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 314
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -1580, 
+                "w": 314, 
+                "h": 316
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EC2_Instance.png": {
+            "frame": {
+                "y": -3809, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EC2_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3809, 
+                "x": -4492, 
+                "w": 294, 
+                "h": 316
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EC2_AMI.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -1894, 
+                "w": 296, 
+                "h": 316
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EC2_AMI.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 316, 
+                "w": 296
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -1894, 
+                "w": 296, 
+                "h": 316
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_S3_Bucket.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -1935, 
+                "w": 306, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_S3_Bucket.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 306
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -1935, 
+                "w": 306, 
+                "h": 314
+            }
+        }, 
+        "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_assignment_task.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -2241, 
+                "w": 230, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_assignment_task.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 230
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -2241, 
+                "w": 230, 
+                "h": 314
+            }
+        }, 
+        "Non-Service_Specific_copy_Mobile_Client.png": {
+            "frame": {
+                "y": -1914, 
+                "x": -2111, 
+                "w": 204, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Mobile_Client.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 204
+            }, 
+            "spriteSourceSize": {
+                "y": -1914, 
+                "x": -2111, 
+                "w": 204, 
+                "h": 314
+            }
+        }, 
+        "Non-Service_Specific_copy_Corporate_Data_Center.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -2471, 
+                "w": 230, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Corporate_Data_Center.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 230
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -2471, 
+                "w": 230, 
+                "h": 314
+            }
+        }, 
+        "App_Services_copy_Amazon_SWF_Worker.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -2701, 
+                "w": 300, 
+                "h": 314
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SWF_Worker.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 314, 
+                "w": 300
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -2701, 
+                "w": 300, 
+                "h": 314
+            }
+        }, 
+        "Database_Amazon_RDS_PostgreSQL.png": {
+            "frame": {
+                "y": -3208, 
+                "x": -3874, 
+                "w": 294, 
+                "h": 313
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS_PostgreSQL.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 313, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3208, 
+                "x": -3874, 
+                "w": 294, 
+                "h": 313
+            }
+        }, 
+        "Database_Amazon_ElastiCache_Redis.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -3001, 
+                "w": 294, 
+                "h": 313
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_ElastiCache_Redis.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 313, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -3001, 
+                "w": 294, 
+                "h": 313
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EMR_HDFS_Cluster.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -3295, 
+                "w": 305, 
+                "h": 313
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EMR_HDFS_Cluster.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 313, 
+                "w": 305
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -3295, 
+                "w": 305, 
+                "h": 313
+            }
+        }, 
+        "App_Services_copy_Amazon_CloudSearch_SDF_metadata.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -3600, 
+                "w": 278, 
+                "h": 313
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_CloudSearch_SDF_metadata.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 313, 
+                "w": 278
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -3600, 
+                "w": 278, 
+                "h": 313
+            }
+        }, 
+        "Non-Service_Specific_copy_User.png": {
+            "frame": {
+                "y": -3521, 
+                "x": -3878, 
+                "w": 226, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_User.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 226
+            }, 
+            "spriteSourceSize": {
+                "y": -3521, 
+                "x": -3878, 
+                "w": 226, 
+                "h": 312
+            }
+        }, 
+        "Non-Service_Specific_copy_Traditional_Server.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -2190, 
+                "w": 228, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Traditional_Server.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 228
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -2190, 
+                "w": 228, 
+                "h": 312
+            }
+        }, 
+        "Database_Amazon_RDS_Oracle_DB_Instance.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -2418, 
+                "w": 294, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS_Oracle_DB_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -2418, 
+                "w": 294, 
+                "h": 312
+            }
+        }, 
+        "Database_Amazon_RDS_MySQL_DB_Instance.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -2712, 
+                "w": 295, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS_MySQL_DB_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 295
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -2712, 
+                "w": 295, 
+                "h": 312
+            }
+        }, 
+        "Database_Amazon_RDS_MS_SQL_Instance.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -3007, 
+                "w": 294, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_RDS_MS_SQL_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -3007, 
+                "w": 294, 
+                "h": 312
+            }
+        }, 
+        "Database_Amazon_ElasticCache_Node.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -3301, 
+                "w": 294, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_ElasticCache_Node.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -3301, 
+                "w": 294, 
+                "h": 312
+            }
+        }, 
+        "Database_Amazon_ElastiCache_Memcache.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -3595, 
+                "w": 294, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_ElastiCache_Memcache.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -3595, 
+                "w": 294, 
+                "h": 312
+            }
+        }, 
+        "Compute_&_Networking_Amazon_EMR_Cluster.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -3889, 
+                "w": 276, 
+                "h": 312
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_EMR_Cluster.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 312, 
+                "w": 276
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -3889, 
+                "w": 276, 
+                "h": 312
+            }
+        }, 
+        "Deployment_&_Management_IAM_Security_Token_Service.png": {
+            "frame": {
+                "y": -3889, 
+                "x": -4165, 
+                "w": 227, 
+                "h": 311
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Security_Token_Service.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 311, 
+                "w": 227
+            }, 
+            "spriteSourceSize": {
+                "y": -3889, 
+                "x": -4165, 
+                "w": 227, 
+                "h": 311
+            }
+        }, 
+        "Database_Amazon_Redshift_SSD_Family_Cluster.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -2141, 
+                "w": 275, 
+                "h": 311
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_Redshift_SSD_Family_Cluster.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 311, 
+                "w": 275
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -2141, 
+                "w": 275, 
+                "h": 311
+            }
+        }, 
+        "Database_Amazon_Redshift_DW2_Cluster.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -2416, 
+                "w": 276, 
+                "h": 311
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_Redshift_DW2_Cluster.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 311, 
+                "w": 276
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -2416, 
+                "w": 276, 
+                "h": 311
+            }
+        }, 
+        "Database_Amazon_Redshift_DW1_Cluster.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -2692, 
+                "w": 275, 
+                "h": 311
+            }, 
+            "rotated": false, 
+            "filename": "Database_Amazon_Redshift_DW1_Cluster.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 311, 
+                "w": 275
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -2692, 
+                "w": 275, 
+                "h": 311
+            }
+        }, 
+        "Non-Service_Specific_copy_Client.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -2967, 
+                "w": 310, 
+                "h": 310
+            }, 
+            "rotated": false, 
+            "filename": "Non-Service_Specific_copy_Client.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 310, 
+                "w": 310
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -2967, 
+                "w": 310, 
+                "h": 310
+            }
+        }, 
+        "Deployment_&_Management_IAM_MFA_Token.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -3277, 
+                "w": 306, 
+                "h": 307
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_MFA_Token.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 307, 
+                "w": 306
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -3277, 
+                "w": 306, 
+                "h": 307
+            }
+        }, 
+        "Database_RDS_Replica_sets_with_PIOP.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -3583, 
+                "w": 296, 
+                "h": 307
+            }, 
+            "rotated": false, 
+            "filename": "Database_RDS_Replica_sets_with_PIOP.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 307, 
+                "w": 296
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -3583, 
+                "w": 296, 
+                "h": 307
+            }
+        }, 
+        "Compute_&_Networking_Elastic_Network_Instance.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -3879, 
+                "w": 294, 
+                "h": 304
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Elastic_Network_Instance.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 304, 
+                "w": 294
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -3879, 
+                "w": 294, 
+                "h": 304
+            }
+        }, 
+        "Deployment_&_Management_IAM_STS.png": {
+            "frame": {
+                "y": -1664, 
+                "x": -1978, 
+                "w": 302, 
+                "h": 173
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_STS.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 173, 
+                "w": 302
+            }, 
+            "spriteSourceSize": {
+                "y": -1664, 
+                "x": -1978, 
+                "w": 302, 
+                "h": 173
+            }
+        }, 
+        "Deployment_&_Management_IAM_Data_Encryption_Key.png": {
+            "frame": {
+                "y": -4225, 
+                "x": -4173, 
+                "w": 228, 
+                "h": 297
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Data_Encryption_Key.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 297, 
+                "w": 228
+            }, 
+            "spriteSourceSize": {
+                "y": -4225, 
+                "x": -4173, 
+                "w": 228, 
+                "h": 297
+            }
+        }, 
+        "Deployment_&_Management_IAM_Credentials.png": {
+            "frame": {
+                "y": -889, 
+                "x": -1566, 
+                "w": 295, 
+                "h": 222
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Credentials.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 222, 
+                "w": 295
+            }, 
+            "spriteSourceSize": {
+                "y": -889, 
+                "x": -1566, 
+                "w": 295, 
+                "h": 222
+            }
+        }, 
+        "Compute_&_Networking_Amazon_VPC_VPN_Connection.png": {
+            "frame": {
+                "y": -799, 
+                "x": -908, 
+                "w": 292, 
+                "h": 232
+            }, 
+            "rotated": false, 
+            "filename": "Compute_&_Networking_Amazon_VPC_VPN_Connection.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 232, 
+                "w": 292
+            }, 
+            "spriteSourceSize": {
+                "y": -799, 
+                "x": -908, 
+                "w": 292, 
+                "h": 232
+            }
+        }, 
+        "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Human_Intelligence_Tasks.png": {
+            "frame": {
+                "y": -1113, 
+                "x": -1695, 
+                "w": 258, 
+                "h": 276
+            }, 
+            "rotated": false, 
+            "filename": "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Human_Intelligence_Tasks.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 276, 
+                "w": 258
+            }, 
+            "spriteSourceSize": {
+                "y": -1113, 
+                "x": -1695, 
+                "w": 258, 
+                "h": 276
+            }
+        }, 
+        "Deployment_&_Management_IAM_Encrypted_Data.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -2218, 
+                "w": 212, 
+                "h": 273
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Encrypted_Data.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 273, 
+                "w": 212
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -2218, 
+                "w": 212, 
+                "h": 273
+            }
+        }, 
+        "Deployment_&_Management_IAM_Add-on.png": {
+            "frame": {
+                "y": -972, 
+                "x": -1202, 
+                "w": 240, 
+                "h": 136
+            }, 
+            "rotated": false, 
+            "filename": "Deployment_&_Management_IAM_Add-on.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 136, 
+                "w": 240
+            }, 
+            "spriteSourceSize": {
+                "y": -972, 
+                "x": -1202, 
+                "w": 240, 
+                "h": 136
+            }
+        }, 
+        "App_Services_copy_Amazon_SQS_Message.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -2430, 
+                "w": 210, 
+                "h": 238
+            }, 
+            "rotated": false, 
+            "filename": "App_Services_copy_Amazon_SQS_Message.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 238, 
+                "w": 210
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -2430, 
+                "w": 210, 
+                "h": 238
+            }
+        }, 
+        "Storage_&_Content_Delivery_Amazon_S3_Objects.png": {
+            "frame": {
+                "y": -2330, 
+                "x": -2640, 
+                "w": 210, 
+                "h": 228
+            }, 
+            "rotated": false, 
+            "filename": "Storage_&_Content_Delivery_Amazon_S3_Objects.png", 
+            "trimmed": false, 
+            "sourceSize": {
+                "h": 228, 
+                "w": 210
+            }, 
+            "spriteSourceSize": {
+                "y": -2330, 
+                "x": -2640, 
+                "w": 210, 
+                "h": 228
+            }
+        }
+    }, 
+    "meta": {
+        "hash": "f0ac9116ea", 
+        "name": "icons", 
+        "height": 4543, 
+        "sprite_path": "icons.png", 
+        "width": 4786, 
+        "version": "0.11.1", 
+        "sprite_filename": "icons.png"
+    }
+}
