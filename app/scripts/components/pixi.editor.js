@@ -163,21 +163,21 @@ function onScaleIconDragStart(event) {
 }
 
 /*
-var elements = [];
-var el1 = createElement('el1', 100, 100);
-var el2 = createElement('el2', 200, 200);
-var el3 = createElement('el3', 300, 300);
-elements.push(el1);
-elements.push(el2);
-elements.push(el3);
+ var elements = [];
+ var el1 = createElement('el1', 100, 100);
+ var el2 = createElement('el2', 200, 200);
+ var el3 = createElement('el3', 300, 300);
+ elements.push(el1);
+ elements.push(el2);
+ elements.push(el3);
 
-elements.forEach(function(element) {
-  console.log(element.name);
-  console.log(element.position);
-  console.log(element.height + ':' + element.width);
-  stage.addChild(element);
-});
-*/
+ elements.forEach(function(element) {
+ console.log(element.name);
+ console.log(element.position);
+ console.log(element.height + ':' + element.width);
+ stage.addChild(element);
+ });
+ */
 
 function draw() {
 
@@ -198,6 +198,32 @@ var PixiEditor = {
       requestAnimationFrame(animate);
     }
 
+    function onLoaded() {
+      console.log('Assets loaded');
+
+      var EC2Instance = PIXI.Sprite.fromFrame('Compute_&_Networking_Amazon_EC2--.png');
+      console.log('EC2Instance');
+      console.log(EC2Instance);
+      EC2Instance.scale.set(0.2);
+      EC2Instance.position.x = 400;
+      EC2Instance.position.y = 400;
+      EC2Instance.anchor.set(0.5);
+      stage.addChild(EC2Instance);
+    }
+
+    PIXI.loader
+      .add('../resources/sprites/sprites.json')
+      .load(onLoaded);
+
+    $(window).resize(function() {
+      resizeGuiContainer(renderer);
+      winDimension = getWindowDimension();
+      //console.log(newDim);
+      console.log(stage);
+      stage.removeChild(grid);
+      grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
+    });
+
     return {
       template: options.template,
 
@@ -208,9 +234,6 @@ var PixiEditor = {
           return;
         }
 
-        //var width = window.innerWidth;
-        //var height = window.innerHeight;
-
         //var elementSize = 100;
 
         stage.interactive = true;
@@ -218,29 +241,9 @@ var PixiEditor = {
 
         //resizeGuiContainer();
 
-        PIXI.loader
-          .add('../resources/sprites/sprites.json')
-          .load(function() {
+        element.appendChild(renderer.view);
 
-            var EC2Instance = PIXI.Texture.fromFrame('Compute_&_Networking_Amazon_EC2--.png');
-            console.log('EC2Instance');
-            console.log(EC2Instance);
-            stage.addChild(EC2Instance);
-
-            element.appendChild(renderer.view);
-
-            $(window).resize(function() {
-              resizeGuiContainer(renderer);
-              winDimension = getWindowDimension();
-              //console.log(newDim);
-              console.log(stage);
-              stage.removeChild(grid);
-              grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
-            });
-
-            animate();
-
-          });
+        animate();
 
       }
     }

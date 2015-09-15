@@ -5,7 +5,7 @@ var MainPage = require('./views/main.page');
 var SourceEditor = require('./components/source.editor');
 var PixiEditor = require('./components/pixi.editor');
 
-var testData = require('./testData/wordpress.template.json');
+var testData = require('./testData/ec2.json');
 
 var template = m.prop(JSON.stringify(testData, undefined, 2));
 
