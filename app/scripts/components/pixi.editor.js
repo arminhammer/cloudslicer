@@ -201,28 +201,36 @@ var PixiEditor = {
     function onLoaded() {
       console.log('Assets loaded');
 
-      var EC2Instance = PIXI.Sprite.fromFrame('Compute_&_Networking_Amazon_EC2--.png');
+      var AWS_EC2_Instance = PIXI.Sprite.fromFrame('Compute_&_Networking_Amazon_EC2--.png');
       console.log('EC2Instance');
-      console.log(EC2Instance);
-      EC2Instance.scale.set(0.2);
-      EC2Instance.position.x = 400;
-      EC2Instance.position.y = 400;
-      EC2Instance.anchor.set(0.5);
-      stage.addChild(EC2Instance);
+      console.log(AWS_EC2_Instance);
+      AWS_EC2_Instance.scale.set(0.2);
+      AWS_EC2_Instance.position.x = 400;
+      AWS_EC2_Instance.position.y = 400;
+      AWS_EC2_Instance.anchor.set(0.5);
+      AWS_EC2_Instance.interactive = true;
+      AWS_EC2_Instance.buttonMode = true;
+      AWS_EC2_Instance
+        // events for drag start
+        .on('mousedown', onDragStart)
+        .on('touchstart', onDragStart)
+        // events for drag end
+        .on('mouseup', onDragEnd)
+        .on('mouseupoutside', onDragEnd)
+        .on('touchend', onDragEnd)
+        .on('touchendoutside', onDragEnd)
+        // events for drag move
+        .on('mousemove', onDragMove)
+        .on('touchmove', onDragMove)
+        // events for mouse over
+        .on('mouseover', onMouseOver)
+        .on('mouseout', onMouseOut);
+      stage.addChild(AWS_EC2_Instance);
     }
 
     PIXI.loader
       .add('../resources/sprites/sprites.json')
       .load(onLoaded);
-
-    $(window).resize(function() {
-      resizeGuiContainer(renderer);
-      winDimension = getWindowDimension();
-      //console.log(newDim);
-      console.log(stage);
-      stage.removeChild(grid);
-      grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
-    });
 
     return {
       template: options.template,
@@ -242,6 +250,16 @@ var PixiEditor = {
         //resizeGuiContainer();
 
         element.appendChild(renderer.view);
+
+        $(window).resize(function() {
+          console.log('Adding listener...');
+          resizeGuiContainer(renderer);
+          winDimension = getWindowDimension();
+          //console.log(newDim);
+          console.log(stage);
+          stage.removeChild(grid);
+          grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
+        });
 
         animate();
 

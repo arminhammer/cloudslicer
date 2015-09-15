@@ -7,14 +7,7 @@
 //var jsonlint = require('jsonlint');
 
 function resizeEditor(editor) {
-
-  var browserHeight = $('html').height();
-
-  //console.log('Resizing...');
-  //console.log(browserHeight);
-
-  editor.setSize(null, browserHeight);
-
+  editor.setSize(null, window.innerHeight);
 }
 
 var SourceEditor = {
