@@ -4,7 +4,8 @@ var SourceEditor = require('./components/source.editor');
 var PixiEditor = require('./components/pixi.editor');
 
 var testData = require('./testData/ec2.json');
-var template = m.prop(JSON.stringify(testData, undefined, 2));
+
+var template = m.prop(testData);
 
 m.mount(document.getElementById('cloudslicer-app'), m.component(PixiEditor, {
     template: template

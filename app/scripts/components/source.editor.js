@@ -4,8 +4,6 @@
 
 'use strict';
 
-//var jsonlint = require('jsonlint');
-
 function resizeEditor(editor) {
   editor.setSize(null, window.innerHeight);
 }
@@ -28,7 +26,7 @@ var SourceEditor = {
         }
 
         editor = CodeMirror(element, {
-          value: options.template(),
+          value: JSON.stringify(options.template(), undefined, 2),
           lineNumbers: true,
           mode: 'application/json',
           gutters: ['CodeMirror-lint-markers'],
@@ -47,7 +45,7 @@ var SourceEditor = {
 
         editor.on('change', function(editor) {
           m.startComputation();
-          options.template(editor.getValue());
+          options.template(JSON.parse(editor.getValue()));
           m.endComputation();
         });
 
