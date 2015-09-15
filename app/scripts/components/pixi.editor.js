@@ -5,14 +5,11 @@
 'use strict';
 
 var DragDrop = require('./drag.drop');
-
-function getWindowDimension() {
-  return { x: window.innerWidth, y: window.innerHeight };
-}
+var GuiUtil = require('./gui.util');
 
 function resizeGuiContainer(renderer) {
 
-  var dim = getWindowDimension();
+  var dim = GuiUtil.getWindowDimension();
 
   console.log('Resizing...');
   console.log(dim);
@@ -29,52 +26,10 @@ function resizeGuiContainer(renderer) {
 
 }
 
-function drawGrid(width, height) {
-  var grid = new PIXI.Graphics();
-  var interval = 25;
-  var count = interval;
-  grid.lineStyle(1, 0xE5E5E5, 1);
-  while (count < width) {
-    grid.moveTo(count, 0);
-    grid.lineTo(count, height);
-    count = count + interval;
-  }
-  count = interval;
-  while(count < height) {
-    grid.moveTo(0, count);
-    grid.lineTo(width, count);
-    count = count + interval;
-  }
-  return grid;
-}
-
-
-
-/*
- var elements = [];
- var el1 = createElement('el1', 100, 100);
- var el2 = createElement('el2', 200, 200);
- var el3 = createElement('el3', 300, 300);
- elements.push(el1);
- elements.push(el2);
- elements.push(el3);
-
- elements.forEach(function(element) {
- console.log(element.name);
- console.log(element.position);
- console.log(element.height + ':' + element.width);
- stage.addChild(element);
- });
- */
-
-function draw() {
-
-}
-
 var PixiEditor = {
   controller: function(options) {
 
-    var winDimension = getWindowDimension();
+    var winDimension = GuiUtil.getWindowDimension();
 
     var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y,{backgroundColor : 0xFFFFFF});
     var stage = new PIXI.Container();
@@ -120,6 +75,19 @@ var PixiEditor = {
       .add('../resources/sprites/sprites.json')
       .load(onLoaded);
 
+    stage.interactive = true;
+    var grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
+
+    console.log('Adding listener...');
+    $(window).resize(function() {
+      resizeGuiContainer(renderer);
+      winDimension = getWindowDimension();
+      //console.log(newDim);
+      console.log(stage);
+      stage.removeChild(grid);
+      grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
+    });
+
     return {
       template: options.template,
 
@@ -131,24 +99,8 @@ var PixiEditor = {
         }
 
         //var elementSize = 100;
-
-        stage.interactive = true;
-        var grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
-
         //resizeGuiContainer();
-
         element.appendChild(renderer.view);
-
-        $(window).resize(function() {
-          console.log('Adding listener...');
-          resizeGuiContainer(renderer);
-          winDimension = getWindowDimension();
-          //console.log(newDim);
-          console.log(stage);
-          stage.removeChild(grid);
-          grid = stage.addChild(drawGrid(winDimension.x, winDimension.y));
-        });
-
         animate();
 
       }
