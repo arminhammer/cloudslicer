@@ -24,13 +24,13 @@ var DragDrop = {
     {
       var global = this.toGlobal(this.parent);
       var local = this.toLocal(this.parent);
-      console.log('x: ' + this.x + ' y: ' + this.y);
-      console.log('this: ' + this.x+":"+this.y + ", global: " + global.x + ":" + global.y + ", local: " + local.x + ":" + local.y);
+      //console.log('x: ' + this.x + ' y: ' + this.y);
+      //console.log('this: ' + this.x+":"+this.y + ", global: " + global.x + ":" + global.y + ", local: " + local.x + ":" + local.y);
       //console.log('width: ' + this.width + ' height: ' + this.height);
       var newPosition = this.data.getLocalPosition(this.parent);
-      console.log('NEW: ' + newPosition.x + ':' + newPosition.y);
+      //console.log('NEW: ' + newPosition.x + ':' + newPosition.y);
       var local = this.toLocal(this.data);
-      console.log('LOCAL: ' + local.x + ':' + local.y);
+      //console.log('LOCAL: ' + local.x + ':' + local.y);
       this.position.x = newPosition.x;
       this.position.y = newPosition.y;
       //this.moveTo(newPosition.x, newPosition.y);

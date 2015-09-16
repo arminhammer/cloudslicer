@@ -4,8 +4,8 @@
 
 'use strict';
 
-var DragDrop = require('./drag.drop');
 var GuiUtil = require('./gui.util');
+var Element = require('./element');
 
 function resizeGuiContainer(renderer) {
 
@@ -35,40 +35,36 @@ var PixiEditor = {
     var stage = new PIXI.Container();
     var meter = new FPSMeter();
 
+    var fps = 60;
+    var now;
+    var then = Date.now();
+    var interval = 1000/fps;
+    var delta;
+
     function animate() {
-      renderer.render(stage);
-      meter.tick();
       requestAnimationFrame(animate);
+
+      now = Date.now();
+      delta = now - then;
+
+      if (delta > interval) {
+        then = now - (delta % interval);
+        meter.tick();
+        renderer.render(stage);
+      }
     }
 
     function onLoaded() {
       console.log('Assets loaded');
 
-      var AWS_EC2_Instance = PIXI.Sprite.fromFrame('Compute_&_Networking_Amazon_EC2--.png');
-      console.log('EC2Instance');
-      console.log(AWS_EC2_Instance);
-      AWS_EC2_Instance.scale.set(0.2);
-      AWS_EC2_Instance.position.x = 400;
-      AWS_EC2_Instance.position.y = 400;
-      AWS_EC2_Instance.anchor.set(0.5);
-      AWS_EC2_Instance.interactive = true;
-      AWS_EC2_Instance.buttonMode = true;
-      AWS_EC2_Instance
-        // events for drag start
-        .on('mousedown', DragDrop.onDragStart)
-        .on('touchstart', DragDrop.onDragStart)
-        // events for drag end
-        .on('mouseup', DragDrop.onDragEnd)
-        .on('mouseupoutside', DragDrop.onDragEnd)
-        .on('touchend', DragDrop.onDragEnd)
-        .on('touchendoutside', DragDrop.onDragEnd)
-        // events for drag move
-        .on('mousemove', DragDrop.onDragMove)
-        .on('touchmove', DragDrop.onDragMove)
-        // events for mouse over
-        //.on('mouseover', onMouseOver)
-        //.on('mouseout', onMouseOut);
-      stage.addChild(AWS_EC2_Instance);
+      var instance1 = Element.AWS_EC2_Element(400,400);
+
+      stage.addChild(instance1);
+
+      var users = Element.AWS_Users(400, 200);
+
+      stage.addChild(users);
+
     }
 
     PIXI.loader
@@ -81,7 +77,7 @@ var PixiEditor = {
     console.log('Adding listener...');
     $(window).resize(function() {
       resizeGuiContainer(renderer);
-      winDimension = getWindowDimension();
+      winDimension = GuiUtil.getWindowDimension();
       //console.log(newDim);
       console.log(stage);
       stage.removeChild(grid);
@@ -100,7 +96,11 @@ var PixiEditor = {
 
         //var elementSize = 100;
         //resizeGuiContainer();
+
         element.appendChild(renderer.view);
+
+        renderer.render(stage);
+
         animate();
 
       }
