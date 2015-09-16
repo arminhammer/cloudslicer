@@ -4,7 +4,7 @@
 
 var DragDrop = require('./drag.drop');
 
-var DEFAULT_SCALE = 0.2;
+var DEFAULT_SCALE = 0.5;
 
 function construct(iconURL, x, y, scale) {
   var element = PIXI.Sprite.fromFrame(iconURL);

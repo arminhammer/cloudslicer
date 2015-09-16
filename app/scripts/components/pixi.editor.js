@@ -57,11 +57,13 @@ var PixiEditor = {
     function onLoaded() {
       console.log('Assets loaded');
 
-      var instance1 = Element.AWS_EC2_Element(400,400);
+      var dim = GuiUtil.getWindowDimension();
+
+      var instance1 = Element.AWS_EC2_Element(dim.x/2,400);
 
       stage.addChild(instance1);
 
-      var users = Element.AWS_Users(400, 200);
+      var users = Element.AWS_Users(dim.x/2, 200);
 
       stage.addChild(users);
 
@@ -72,7 +74,7 @@ var PixiEditor = {
       .load(onLoaded);
 
     stage.interactive = true;
-    var grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
+    //var grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
 
     console.log('Adding listener...');
     $(window).resize(function() {
@@ -80,8 +82,8 @@ var PixiEditor = {
       winDimension = GuiUtil.getWindowDimension();
       //console.log(newDim);
       console.log(stage);
-      stage.removeChild(grid);
-      grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
+      //stage.removeChild(grid);
+      //grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
     });
 
     return {

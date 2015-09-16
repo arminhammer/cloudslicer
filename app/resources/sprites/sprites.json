@@ -2,1339 +2,1339 @@
 
 "AppStream.png":
 {
-	"frame": {"x":396,"y":2489,"w":332,"h":402},
+	"frame": {"x":728,"y":786,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "App_Services_copy_Amazon_CloudSearch.png":
 {
-	"frame": {"x":405,"y":2085,"w":332,"h":402},
+	"frame": {"x":795,"y":162,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "App_Services_copy_Amazon_CloudSearch_SDF_metadata.png":
 {
-	"frame": {"x":1578,"y":318,"w":278,"h":313},
+	"frame": {"x":1965,"y":1094,"w":140,"h":157},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":278,"h":313},
-	"sourceSize": {"w":278,"h":313}
+	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":157},
+	"sourceSize": {"w":140,"h":157}
 },
 "App_Services_copy_Amazon_Elastic_Transcoder.png":
 {
-	"frame": {"x":768,"y":1549,"w":332,"h":402},
+	"frame": {"x":2058,"y":206,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "App_Services_copy_Amazon_Email.png":
 {
-	"frame": {"x":1060,"y":1211,"w":402,"h":302},
+	"frame": {"x":2755,"y":212,"w":202,"h":152},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":402,"h":302},
-	"sourceSize": {"w":402,"h":302}
+	"spriteSourceSize": {"x":0,"y":0,"w":202,"h":152},
+	"sourceSize": {"w":202,"h":152}
 },
 "App_Services_copy_Amazon_SES.png":
 {
-	"frame": {"x":728,"y":3159,"w":344,"h":402},
+	"frame": {"x":3487,"y":212,"w":172,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":344,"h":402},
-	"sourceSize": {"w":344,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":172,"h":202},
+	"sourceSize": {"w":172,"h":202}
 },
 "App_Services_copy_Amazon_SNS.png":
 {
-	"frame": {"x":1842,"y":2691,"w":334,"h":336},
+	"frame": {"x":761,"y":510,"w":168,"h":168},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":334,"h":336},
-	"sourceSize": {"w":334,"h":336}
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":168},
+	"sourceSize": {"w":168,"h":168}
 },
 "App_Services_copy_Amazon_SNS_Email_Notification.png":
 {
-	"frame": {"x":1668,"y":2,"w":500,"h":312},
+	"frame": {"x":841,"y":2,"w":250,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":500,"h":312},
-	"sourceSize": {"w":500,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":156},
+	"sourceSize": {"w":250,"h":156}
 },
 "App_Services_copy_Amazon_SNS_HTTP_Notification.png":
 {
-	"frame": {"x":1164,"y":2,"w":502,"h":314},
+	"frame": {"x":587,"y":2,"w":252,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":502,"h":314},
-	"sourceSize": {"w":502,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":252,"h":158},
+	"sourceSize": {"w":252,"h":158}
 },
 "App_Services_copy_Amazon_SNS_Topic.png":
 {
-	"frame": {"x":2170,"y":2,"w":496,"h":314},
+	"frame": {"x":1093,"y":2,"w":248,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":496,"h":314},
-	"sourceSize": {"w":496,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":248,"h":158},
+	"sourceSize": {"w":248,"h":158}
 },
 "App_Services_copy_Amazon_SQS.png":
 {
-	"frame": {"x":1818,"y":2287,"w":332,"h":402},
+	"frame": {"x":2226,"y":206,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "App_Services_copy_Amazon_SQS_Message.png":
 {
-	"frame": {"x":2668,"y":1975,"w":210,"h":238},
+	"frame": {"x":1128,"y":1122,"w":106,"h":120},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":210,"h":238},
-	"sourceSize": {"w":210,"h":238}
+	"spriteSourceSize": {"x":0,"y":0,"w":106,"h":120},
+	"sourceSize": {"w":106,"h":120}
 },
 "App_Services_copy_Amazon_SQS_Queue.png":
 {
-	"frame": {"x":1464,"y":2047,"w":366,"h":238},
+	"frame": {"x":2,"y":1133,"w":184,"h":120},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":238},
-	"sourceSize": {"w":366,"h":238}
+	"spriteSourceSize": {"x":0,"y":0,"w":184,"h":120},
+	"sourceSize": {"w":184,"h":120}
 },
 "App_Services_copy_Amazon_SWF.png":
 {
-	"frame": {"x":1808,"y":3341,"w":332,"h":402},
+	"frame": {"x":931,"y":510,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "App_Services_copy_Amazon_SWF_Decider.png":
 {
-	"frame": {"x":2188,"y":3742,"w":308,"h":320},
+	"frame": {"x":2175,"y":597,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":320},
-	"sourceSize": {"w":308,"h":320}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "App_Services_copy_Amazon_SWF_Worker.png":
 {
-	"frame": {"x":4356,"y":1228,"w":300,"h":314},
+	"frame": {"x":1399,"y":368,"w":150,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":314},
-	"sourceSize": {"w":300,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":158},
+	"sourceSize": {"w":150,"h":158}
 },
 "CodeDeploy.png":
 {
-	"frame": {"x":2142,"y":3338,"w":332,"h":402},
+	"frame": {"x":896,"y":714,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Cognito.png":
 {
-	"frame": {"x":2166,"y":722,"w":332,"h":402},
+	"frame": {"x":896,"y":918,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Compute_&_Networking_AWS_Direct_Connect.png":
 {
-	"frame": {"x":2504,"y":359,"w":332,"h":402},
+	"frame": {"x":1064,"y":714,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Compute_&_Networking_Amazon_EC2--.png":
 {
-	"frame": {"x":2500,"y":763,"w":332,"h":402},
+	"frame": {"x":1064,"y":918,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Compute_&_Networking_Amazon_EC2_AMI.png":
 {
-	"frame": {"x":4012,"y":1546,"w":296,"h":316},
+	"frame": {"x":1734,"y":772,"w":148,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":296,"h":316},
-	"sourceSize": {"w":296,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":158},
+	"sourceSize": {"w":148,"h":158}
 },
 "Compute_&_Networking_Amazon_EC2_CloudWatch.png":
 {
-	"frame": {"x":4382,"y":824,"w":296,"h":318},
+	"frame": {"x":3721,"y":782,"w":148,"h":159},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":296,"h":318},
-	"sourceSize": {"w":296,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":159},
+	"sourceSize": {"w":148,"h":159}
 },
 "Compute_&_Networking_Amazon_EC2_DB_on_Instance.png":
 {
-	"frame": {"x":2826,"y":1571,"w":294,"h":318},
+	"frame": {"x":3287,"y":612,"w":148,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":318},
-	"sourceSize": {"w":294,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":160},
+	"sourceSize": {"w":148,"h":160}
 },
 "Compute_&_Networking_Amazon_EC2_Elastic_IP.png":
 {
-	"frame": {"x":1808,"y":3745,"w":378,"h":124},
+	"frame": {"x":2542,"y":326,"w":190,"h":62},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":378,"h":124},
-	"sourceSize": {"w":378,"h":124}
+	"spriteSourceSize": {"x":0,"y":0,"w":190,"h":62},
+	"sourceSize": {"w":190,"h":62}
 },
 "Compute_&_Networking_Amazon_EC2_Instance.png":
 {
-	"frame": {"x":4558,"y":1544,"w":294,"h":316},
+	"frame": {"x":1739,"y":612,"w":148,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":316},
-	"sourceSize": {"w":294,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":158},
+	"sourceSize": {"w":148,"h":158}
 },
 "Compute_&_Networking_Amazon_EC2_Instances.png":
 {
-	"frame": {"x":2880,"y":1891,"w":282,"h":318},
+	"frame": {"x":1817,"y":932,"w":142,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":282,"h":318},
-	"sourceSize": {"w":282,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":160},
+	"sourceSize": {"w":142,"h":160}
 },
 "Compute_&_Networking_Amazon_EMR--.png":
 {
-	"frame": {"x":3060,"y":383,"w":332,"h":402},
+	"frame": {"x":2542,"y":390,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Compute_&_Networking_Amazon_EMR_Cluster.png":
 {
-	"frame": {"x":3036,"y":2851,"w":276,"h":312},
+	"frame": {"x":2034,"y":758,"w":138,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":276,"h":312},
-	"sourceSize": {"w":276,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":156},
+	"sourceSize": {"w":138,"h":156}
 },
 "Compute_&_Networking_Amazon_EMR_HDFS_Cluster.png":
 {
-	"frame": {"x":3900,"y":2823,"w":305,"h":313},
+	"frame": {"x":3415,"y":778,"w":153,"h":157},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":305,"h":313},
-	"sourceSize": {"w":305,"h":313}
+	"spriteSourceSize": {"x":0,"y":0,"w":153,"h":157},
+	"sourceSize": {"w":153,"h":157}
 },
 "Compute_&_Networking_Amazon_Route_53.png":
 {
-	"frame": {"x":4572,"y":2,"w":333,"h":401},
+	"frame": {"x":1551,"y":205,"w":167,"h":201},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":333,"h":401},
-	"sourceSize": {"w":333,"h":401}
+	"spriteSourceSize": {"x":0,"y":0,"w":167,"h":201},
+	"sourceSize": {"w":167,"h":201}
 },
 "Compute_&_Networking_Amazon_Route_53_Hosted_Zone.png":
 {
-	"frame": {"x":2774,"y":3633,"w":316,"h":318},
+	"frame": {"x":2015,"y":596,"w":158,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":316,"h":318},
-	"sourceSize": {"w":316,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":158,"h":160},
+	"sourceSize": {"w":158,"h":160}
 },
 "Compute_&_Networking_Amazon_Route_53_Route_Table.png":
 {
-	"frame": {"x":299,"y":3714,"w":374,"h":344},
+	"frame": {"x":548,"y":612,"w":188,"h":172},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":374,"h":344},
-	"sourceSize": {"w":374,"h":344}
+	"spriteSourceSize": {"x":0,"y":0,"w":188,"h":172},
+	"sourceSize": {"w":188,"h":172}
 },
 "Compute_&_Networking_Amazon_VPC.png":
 {
-	"frame": {"x":3046,"y":787,"w":332,"h":402},
+	"frame": {"x":2710,"y":390,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Compute_&_Networking_Amazon_VPC_Customer_Gateway.png":
 {
-	"frame": {"x":3786,"y":2184,"w":306,"h":317},
+	"frame": {"x":3260,"y":774,"w":153,"h":159},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":306,"h":317},
-	"sourceSize": {"w":306,"h":317}
+	"spriteSourceSize": {"x":0,"y":0,"w":153,"h":159},
+	"sourceSize": {"w":153,"h":159}
 },
 "Compute_&_Networking_Amazon_VPC_Internet_Gateway.png":
 {
-	"frame": {"x":1858,"y":316,"w":308,"h":320},
+	"frame": {"x":3595,"y":620,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":320},
-	"sourceSize": {"w":308,"h":320}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "Compute_&_Networking_Amazon_VPC_Router.png":
 {
-	"frame": {"x":1546,"y":633,"w":308,"h":318},
+	"frame": {"x":3751,"y":620,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":318},
-	"sourceSize": {"w":308,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "Compute_&_Networking_Amazon_VPC_VPN_Connection.png":
 {
-	"frame": {"x":1511,"y":953,"w":292,"h":232},
+	"frame": {"x":382,"y":986,"w":146,"h":116},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":292,"h":232},
-	"sourceSize": {"w":292,"h":232}
+	"spriteSourceSize": {"x":0,"y":0,"w":146,"h":116},
+	"sourceSize": {"w":146,"h":116}
 },
 "Compute_&_Networking_Amazon_VPC_VPN_Gateway.png":
 {
-	"frame": {"x":1856,"y":638,"w":308,"h":320},
+	"frame": {"x":2174,"y":759,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":320},
-	"sourceSize": {"w":308,"h":320}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "Compute_&_Networking_Auto_Scaling.png":
 {
-	"frame": {"x":3700,"y":1228,"w":326,"h":316},
+	"frame": {"x":558,"y":1104,"w":164,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":326,"h":316},
-	"sourceSize": {"w":326,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":158},
+	"sourceSize": {"w":164,"h":158}
 },
 "Compute_&_Networking_EC2_Optimized_Instance.png":
 {
-	"frame": {"x":4094,"y":2184,"w":297,"h":317},
+	"frame": {"x":3570,"y":782,"w":149,"h":159},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":297,"h":317},
-	"sourceSize": {"w":297,"h":317}
+	"spriteSourceSize": {"x":0,"y":0,"w":149,"h":159},
+	"sourceSize": {"w":149,"h":159}
 },
 "Compute_&_Networking_EMR_Engine.png":
 {
-	"frame": {"x":2668,"y":2,"w":413,"h":355},
+	"frame": {"x":1343,"y":2,"w":206,"h":178},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":413,"h":355},
-	"sourceSize": {"w":413,"h":355}
+	"spriteSourceSize": {"x":0,"y":0,"w":206,"h":178},
+	"sourceSize": {"w":206,"h":178}
 },
 "Compute_&_Networking_EMR_MapR_M3_Engine.png":
 {
-	"frame": {"x":1164,"y":318,"w":412,"h":296},
+	"frame": {"x":587,"y":162,"w":206,"h":148},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":412,"h":296},
-	"sourceSize": {"w":412,"h":296}
+	"spriteSourceSize": {"x":0,"y":0,"w":206,"h":148},
+	"sourceSize": {"w":206,"h":148}
 },
 "Compute_&_Networking_EMR_MapR_M5_Engine.png":
 {
-	"frame": {"x":1132,"y":616,"w":412,"h":296},
+	"frame": {"x":571,"y":312,"w":206,"h":148},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":412,"h":296},
-	"sourceSize": {"w":412,"h":296}
+	"spriteSourceSize": {"x":0,"y":0,"w":206,"h":148},
+	"sourceSize": {"w":206,"h":148}
 },
 "Compute_&_Networking_EMR_MapR_M7_Engine.png":
 {
-	"frame": {"x":1097,"y":914,"w":412,"h":295},
+	"frame": {"x":553,"y":462,"w":206,"h":148},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":412,"h":295},
-	"sourceSize": {"w":412,"h":295}
+	"spriteSourceSize": {"x":0,"y":0,"w":206,"h":148},
+	"sourceSize": {"w":206,"h":148}
 },
 "Compute_&_Networking_Elastic_Load_Balancing.png":
 {
-	"frame": {"x":2387,"y":3011,"w":308,"h":320},
+	"frame": {"x":1961,"y":932,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":320},
-	"sourceSize": {"w":308,"h":320}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "Compute_&_Networking_Elastic_Network_Instance.png":
 {
-	"frame": {"x":3388,"y":3762,"w":294,"h":304},
+	"frame": {"x":2787,"y":930,"w":148,"h":152},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":304},
-	"sourceSize": {"w":294,"h":304}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":152},
+	"sourceSize": {"w":148,"h":152}
 },
 "Compute_&_Networking_Kinesis_Enabled_App.png":
 {
-	"frame": {"x":2129,"y":1932,"w":323,"h":337},
+	"frame": {"x":724,"y":1090,"w":162,"h":169},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":323,"h":337},
-	"sourceSize": {"w":323,"h":337}
+	"spriteSourceSize": {"x":0,"y":0,"w":162,"h":169},
+	"sourceSize": {"w":162,"h":169}
 },
 "Compute_&_Networking_VPC_Peering.png":
 {
-	"frame": {"x":2774,"y":3312,"w":308,"h":319},
+	"frame": {"x":2973,"y":612,"w":155,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":319},
-	"sourceSize": {"w":308,"h":319}
+	"spriteSourceSize": {"x":0,"y":0,"w":155,"h":160},
+	"sourceSize": {"w":155,"h":160}
 },
 "Config.png":
 {
-	"frame": {"x":3394,"y":420,"w":332,"h":402},
+	"frame": {"x":2878,"y":408,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Database_Amazon_ElastiCache_Memcache.png":
 {
-	"frame": {"x":3690,"y":3139,"w":294,"h":312},
+	"frame": {"x":2937,"y":934,"w":148,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":312},
-	"sourceSize": {"w":294,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":156},
+	"sourceSize": {"w":148,"h":156}
 },
 "Database_Amazon_ElastiCache_Redis.png":
 {
-	"frame": {"x":4207,"y":2823,"w":294,"h":313},
+	"frame": {"x":2637,"y":916,"w":148,"h":157},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":313},
-	"sourceSize": {"w":294,"h":313}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":157},
+	"sourceSize": {"w":148,"h":157}
 },
 "Database_Amazon_ElasticCache.png":
 {
-	"frame": {"x":3728,"y":420,"w":332,"h":402},
+	"frame": {"x":3046,"y":408,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Database_Amazon_ElasticCache_Node.png":
 {
-	"frame": {"x":3685,"y":3453,"w":294,"h":312},
+	"frame": {"x":3087,"y":934,"w":148,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":312},
-	"sourceSize": {"w":294,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":156},
+	"sourceSize": {"w":148,"h":156}
 },
 "Database_Amazon_RDS.png":
 {
-	"frame": {"x":1102,"y":2209,"w":356,"h":402},
+	"frame": {"x":368,"y":578,"w":178,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":356,"h":402},
-	"sourceSize": {"w":356,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":202},
+	"sourceSize": {"w":178,"h":202}
 },
 "Database_Amazon_RDS_DB_Instance.png":
 {
-	"frame": {"x":3122,"y":1507,"w":246,"h":318},
+	"frame": {"x":1889,"y":595,"w":124,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":246,"h":318},
-	"sourceSize": {"w":246,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":124,"h":160},
+	"sourceSize": {"w":124,"h":160}
 },
 "Database_Amazon_RDS_Instance_Read_Replica.png":
 {
-	"frame": {"x":2995,"y":2211,"w":242,"h":318},
+	"frame": {"x":3907,"y":620,"w":122,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":242,"h":318},
-	"sourceSize": {"w":242,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":160},
+	"sourceSize": {"w":122,"h":160}
 },
 "Database_Amazon_RDS_Instance_Standby.png":
 {
-	"frame": {"x":3036,"y":2531,"w":246,"h":318},
+	"frame": {"x":2273,"y":921,"w":124,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":246,"h":318},
-	"sourceSize": {"w":246,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":124,"h":160},
+	"sourceSize": {"w":124,"h":160}
 },
 "Database_Amazon_RDS_MS_SQL_Instance.png":
 {
-	"frame": {"x":3981,"y":3453,"w":294,"h":312},
+	"frame": {"x":3687,"y":943,"w":147,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":312},
-	"sourceSize": {"w":294,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":147,"h":156},
+	"sourceSize": {"w":147,"h":156}
 },
 "Database_Amazon_RDS_MySQL_DB_Instance.png":
 {
-	"frame": {"x":3388,"y":3448,"w":295,"h":312},
+	"frame": {"x":3237,"y":935,"w":148,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":295,"h":312},
-	"sourceSize": {"w":295,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":156},
+	"sourceSize": {"w":148,"h":156}
 },
 "Database_Amazon_RDS_Oracle_DB_Instance.png":
 {
-	"frame": {"x":4277,"y":3456,"w":294,"h":312},
+	"frame": {"x":3387,"y":937,"w":148,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":312},
-	"sourceSize": {"w":294,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":156},
+	"sourceSize": {"w":148,"h":156}
 },
 "Database_Amazon_RDS_PostgreSQL.png":
 {
-	"frame": {"x":3986,"y":3138,"w":294,"h":313},
+	"frame": {"x":3537,"y":943,"w":148,"h":157},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":313},
-	"sourceSize": {"w":294,"h":313}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":157},
+	"sourceSize": {"w":148,"h":157}
 },
 "Database_Amazon_RedShift.png":
 {
-	"frame": {"x":406,"y":1696,"w":334,"h":368},
+	"frame": {"x":1247,"y":182,"w":168,"h":184},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":334,"h":368},
-	"sourceSize": {"w":334,"h":368}
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":184},
+	"sourceSize": {"w":168,"h":184}
 },
 "Database_Amazon_Redshift_DW1_Cluster.png":
 {
-	"frame": {"x":3684,"y":3767,"w":275,"h":311},
+	"frame": {"x":2233,"y":1083,"w":138,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":275,"h":311},
-	"sourceSize": {"w":275,"h":311}
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":156},
+	"sourceSize": {"w":138,"h":156}
 },
 "Database_Amazon_Redshift_DW2_Cluster.png":
 {
-	"frame": {"x":3314,"y":2822,"w":276,"h":311},
+	"frame": {"x":2373,"y":1083,"w":138,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":276,"h":311},
-	"sourceSize": {"w":276,"h":311}
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":156},
+	"sourceSize": {"w":138,"h":156}
 },
 "Database_Amazon_Redshift_SSD_Family_Cluster.png":
 {
-	"frame": {"x":3961,"y":3767,"w":275,"h":311},
+	"frame": {"x":2771,"y":1084,"w":138,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":275,"h":311},
-	"sourceSize": {"w":275,"h":311}
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":156},
+	"sourceSize": {"w":138,"h":156}
 },
 "Database_Amazon_SimpleDB.png":
 {
-	"frame": {"x":2838,"y":359,"w":220,"h":402},
+	"frame": {"x":963,"y":160,"w":110,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":220,"h":402},
-	"sourceSize": {"w":220,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":110,"h":202},
+	"sourceSize": {"w":110,"h":202}
 },
 "Database_Amazon_SimpleDB_Domain.png":
 {
-	"frame": {"x":3164,"y":1864,"w":314,"h":316},
+	"frame": {"x":2495,"y":594,"w":158,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":314,"h":316},
-	"sourceSize": {"w":314,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":158,"h":158},
+	"sourceSize": {"w":158,"h":158}
 },
 "Database_DynamoDB.png":
 {
-	"frame": {"x":1460,"y":2287,"w":356,"h":402},
+	"frame": {"x":368,"y":782,"w":178,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":356,"h":402},
-	"sourceSize": {"w":356,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":202},
+	"sourceSize": {"w":178,"h":202}
 },
 "Database_DynamoDB_Attribute.png":
 {
-	"frame": {"x":3794,"y":1864,"w":306,"h":318},
+	"frame": {"x":2117,"y":921,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":306,"h":318},
-	"sourceSize": {"w":306,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "Database_DynamoDB_Attributes.png":
 {
-	"frame": {"x":3900,"y":2503,"w":292,"h":318},
+	"frame": {"x":2394,"y":409,"w":146,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":292,"h":318},
-	"sourceSize": {"w":292,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":146,"h":160},
+	"sourceSize": {"w":146,"h":160}
 },
 "Database_DynamoDB_Item.png":
 {
-	"frame": {"x":3480,"y":1864,"w":312,"h":318},
+	"frame": {"x":2815,"y":612,"w":156,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":312,"h":318},
-	"sourceSize": {"w":312,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":156,"h":160},
+	"sourceSize": {"w":156,"h":160}
 },
 "Database_DynamoDB_Items.png":
 {
-	"frame": {"x":4194,"y":2503,"w":294,"h":318},
+	"frame": {"x":2330,"y":759,"w":148,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":318},
-	"sourceSize": {"w":294,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":160},
+	"sourceSize": {"w":148,"h":160}
 },
 "Database_DynamoDB_Table.png":
 {
-	"frame": {"x":1074,"y":3288,"w":338,"h":316},
+	"frame": {"x":386,"y":1104,"w":170,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":338,"h":316},
-	"sourceSize": {"w":338,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":170,"h":158},
+	"sourceSize": {"w":170,"h":158}
 },
 "Database_Dynamo_DB_Global_Secondary_Indexes.png":
 {
-	"frame": {"x":3084,"y":3165,"w":296,"h":316},
+	"frame": {"x":3871,"y":782,"w":148,"h":159},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":296,"h":316},
-	"sourceSize": {"w":296,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":159},
+	"sourceSize": {"w":148,"h":159}
 },
 "Database_RDS_MasterSQL.png":
 {
-	"frame": {"x":4102,"y":1864,"w":294,"h":318},
+	"frame": {"x":2487,"y":916,"w":148,"h":159},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":318},
-	"sourceSize": {"w":294,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":159},
+	"sourceSize": {"w":148,"h":159}
 },
 "Database_RDS_Replica_sets_with_PIOP.png":
 {
-	"frame": {"x":2089,"y":3029,"w":296,"h":307},
+	"frame": {"x":3836,"y":943,"w":148,"h":154},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":296,"h":307},
-	"sourceSize": {"w":296,"h":307}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":154},
+	"sourceSize": {"w":148,"h":154}
 },
 "Database_RDS_SlaveSQL.png":
 {
-	"frame": {"x":3092,"y":3483,"w":294,"h":316},
+	"frame": {"x":1884,"y":772,"w":148,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":294,"h":316},
-	"sourceSize": {"w":294,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":158},
+	"sourceSize": {"w":148,"h":158}
 },
 "Deployment_&_Management_AWS_CloudFormation.png":
 {
-	"frame": {"x":2494,"y":1571,"w":330,"h":402},
+	"frame": {"x":3214,"y":408,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":330,"h":402},
-	"sourceSize": {"w":330,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Deployment_&_Management_AWS_CloudFormation_Stack.png":
 {
-	"frame": {"x":1102,"y":1933,"w":360,"h":274},
+	"frame": {"x":186,"y":851,"w":180,"h":138},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":274},
-	"sourceSize": {"w":360,"h":274}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":138},
+	"sourceSize": {"w":180,"h":138}
 },
 "Deployment_&_Management_AWS_CloudFormation_Template.png":
 {
-	"frame": {"x":4282,"y":3138,"w":272,"h":316},
+	"frame": {"x":2513,"y":1077,"w":136,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":272,"h":316},
-	"sourceSize": {"w":272,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":158},
+	"sourceSize": {"w":136,"h":158}
 },
 "Deployment_&_Management_AWS_Data_Pipeline.png":
 {
-	"frame": {"x":4062,"y":420,"w":332,"h":402},
+	"frame": {"x":3486,"y":416,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Deployment_&_Management_CloudTrail.png":
 {
-	"frame": {"x":394,"y":2893,"w":332,"h":401},
+	"frame": {"x":1237,"y":528,"w":166,"h":201},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":401},
-	"sourceSize": {"w":332,"h":401}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":201},
+	"sourceSize": {"w":166,"h":201}
 },
 "Deployment_&_Management_CloudWatch.png":
 {
-	"frame": {"x":739,"y":2365,"w":354,"h":402},
+	"frame": {"x":548,"y":786,"w":178,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":354,"h":402},
-	"sourceSize": {"w":354,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":202},
+	"sourceSize": {"w":178,"h":202}
 },
 "Deployment_&_Management_CloudWatch_Alarm.png":
 {
-	"frame": {"x":2498,"y":3697,"w":270,"h":326},
+	"frame": {"x":1099,"y":548,"w":136,"h":164},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":270,"h":326},
-	"sourceSize": {"w":270,"h":326}
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":164},
+	"sourceSize": {"w":136,"h":164}
 },
 "Deployment_&_Management_Elastic_Beanstalk.png":
 {
-	"frame": {"x":768,"y":1145,"w":290,"h":402},
+	"frame": {"x":2394,"y":205,"w":146,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":290,"h":402},
-	"sourceSize": {"w":290,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":146,"h":202},
+	"sourceSize": {"w":146,"h":202}
 },
 "Deployment_&_Management_Elastic_Beanstalk_Application.png":
 {
-	"frame": {"x":4396,"y":420,"w":170,"h":318},
+	"frame": {"x":2399,"y":921,"w":86,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":170,"h":318},
-	"sourceSize": {"w":170,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":86,"h":160},
+	"sourceSize": {"w":86,"h":160}
 },
 "Deployment_&_Management_Elastic_Beanstalk_Deployment.png":
 {
-	"frame": {"x":416,"y":803,"w":276,"h":365},
+	"frame": {"x":210,"y":404,"w":138,"h":183},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":276,"h":365},
-	"sourceSize": {"w":276,"h":365}
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":183},
+	"sourceSize": {"w":138,"h":183}
 },
 "Deployment_&_Management_IAM.png":
 {
-	"frame": {"x":2834,"y":763,"w":210,"h":402},
+	"frame": {"x":1559,"y":936,"w":106,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":210,"h":402},
-	"sourceSize": {"w":210,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":106,"h":202},
+	"sourceSize": {"w":106,"h":202}
 },
 "Deployment_&_Management_IAM_Add-on.png":
 {
-	"frame": {"x":3092,"y":3801,"w":240,"h":136},
+	"frame": {"x":3749,"y":1101,"w":120,"h":68},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":136},
-	"sourceSize": {"w":240,"h":136}
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":68},
+	"sourceSize": {"w":120,"h":68}
 },
 "Deployment_&_Management_IAM_Credentials.png":
 {
-	"frame": {"x":1832,"y":2045,"w":295,"h":222},
+	"frame": {"x":530,"y":990,"w":148,"h":112},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":295,"h":222},
-	"sourceSize": {"w":295,"h":222}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":112},
+	"sourceSize": {"w":148,"h":112}
 },
 "Deployment_&_Management_IAM_Data_Encryption_Key.png":
 {
-	"frame": {"x":4238,"y":3770,"w":228,"h":297},
+	"frame": {"x":3517,"y":1102,"w":114,"h":149},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":228,"h":297},
-	"sourceSize": {"w":228,"h":297}
+	"spriteSourceSize": {"x":0,"y":0,"w":114,"h":149},
+	"sourceSize": {"w":114,"h":149}
 },
 "Deployment_&_Management_IAM_Encrypted_Data.png":
 {
-	"frame": {"x":2454,"y":1975,"w":212,"h":273},
+	"frame": {"x":1020,"y":1122,"w":106,"h":137},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":212,"h":273},
-	"sourceSize": {"w":212,"h":273}
+	"spriteSourceSize": {"x":0,"y":0,"w":106,"h":137},
+	"sourceSize": {"w":106,"h":137}
 },
 "Deployment_&_Management_IAM_MFA_Token.png":
 {
-	"frame": {"x":3382,"y":3139,"w":306,"h":307},
+	"frame": {"x":2792,"y":774,"w":154,"h":154},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":306,"h":307},
-	"sourceSize": {"w":306,"h":307}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":154},
+	"sourceSize": {"w":154,"h":154}
 },
 "Deployment_&_Management_IAM_Permissions.png":
 {
-	"frame": {"x":3239,"y":2182,"w":235,"h":318},
+	"frame": {"x":2651,"y":1075,"w":118,"h":159},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":235,"h":318},
-	"sourceSize": {"w":235,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":118,"h":159},
+	"sourceSize": {"w":118,"h":159}
 },
 "Deployment_&_Management_IAM_Roles.png":
 {
-	"frame": {"x":704,"y":2,"w":458,"h":391},
+	"frame": {"x":355,"y":2,"w":230,"h":195},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":458,"h":391},
-	"sourceSize": {"w":458,"h":391}
+	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":195},
+	"sourceSize": {"w":230,"h":195}
 },
 "Deployment_&_Management_IAM_STS.png":
 {
-	"frame": {"x":1775,"y":3871,"w":302,"h":173},
+	"frame": {"x":738,"y":680,"w":152,"h":87},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":302,"h":173},
-	"sourceSize": {"w":302,"h":173}
+	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":87},
+	"sourceSize": {"w":152,"h":87}
 },
 "Deployment_&_Management_IAM_Security_Token_Service.png":
 {
-	"frame": {"x":4667,"y":2183,"w":227,"h":311},
+	"frame": {"x":3285,"y":1095,"w":114,"h":157},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":227,"h":311},
-	"sourceSize": {"w":227,"h":311}
+	"spriteSourceSize": {"x":0,"y":0,"w":114,"h":157},
+	"sourceSize": {"w":114,"h":157}
 },
 "Deployment_&_Management_IAM_Short_Term_Credentials.png":
 {
-	"frame": {"x":1095,"y":2613,"w":351,"h":283},
+	"frame": {"x":779,"y":366,"w":176,"h":142},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":351,"h":283},
-	"sourceSize": {"w":351,"h":283}
+	"spriteSourceSize": {"x":0,"y":0,"w":176,"h":142},
+	"sourceSize": {"w":176,"h":142}
 },
 "Deployment_&_Management_OpsWorks.png":
 {
-	"frame": {"x":3380,"y":824,"w":332,"h":402},
+	"frame": {"x":3654,"y":416,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Deployment_&_Management_OpsWorks_Apps.png":
 {
-	"frame": {"x":2,"y":1278,"w":402,"h":402},
+	"frame": {"x":1551,"y":2,"w":202,"h":201},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":402,"h":402},
-	"sourceSize": {"w":402,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":202,"h":201},
+	"sourceSize": {"w":202,"h":201}
 },
 "Deployment_&_Management_OpsWorks_Deployments.png":
 {
-	"frame": {"x":3083,"y":2,"w":401,"h":379},
+	"frame": {"x":2557,"y":2,"w":201,"h":190},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":401,"h":379},
-	"sourceSize": {"w":401,"h":379}
+	"spriteSourceSize": {"x":0,"y":0,"w":201,"h":190},
+	"sourceSize": {"w":201,"h":190}
 },
 "Deployment_&_Management_OpsWorks_Instances.png":
 {
-	"frame": {"x":2,"y":1682,"w":402,"h":401},
+	"frame": {"x":1755,"y":2,"w":202,"h":201},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":402,"h":401},
-	"sourceSize": {"w":402,"h":401}
+	"spriteSourceSize": {"x":0,"y":0,"w":202,"h":201},
+	"sourceSize": {"w":202,"h":201}
 },
 "Deployment_&_Management_OpsWorks_Layers.png":
 {
-	"frame": {"x":2,"y":2085,"w":401,"h":402},
+	"frame": {"x":1959,"y":2,"w":201,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":401,"h":402},
-	"sourceSize": {"w":401,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":201,"h":202},
+	"sourceSize": {"w":201,"h":202}
 },
 "Deployment_&_Management_OpsWorks_Monitoring.png":
 {
-	"frame": {"x":694,"y":807,"w":401,"h":336},
+	"frame": {"x":350,"y":407,"w":201,"h":169},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":401,"h":336},
-	"sourceSize": {"w":401,"h":336}
+	"spriteSourceSize": {"x":0,"y":0,"w":201,"h":169},
+	"sourceSize": {"w":201,"h":169}
 },
 "Deployment_&_Management_OpsWorks_Permissions.png":
 {
-	"frame": {"x":1832,"y":960,"w":332,"h":401},
+	"frame": {"x":1720,"y":205,"w":167,"h":201},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":401},
-	"sourceSize": {"w":332,"h":401}
+	"spriteSourceSize": {"x":0,"y":0,"w":167,"h":201},
+	"sourceSize": {"w":167,"h":201}
 },
 "Deployment_&_Management_OpsWorks_Resources.png":
 {
-	"frame": {"x":727,"y":3563,"w":338,"h":395},
+	"frame": {"x":1075,"y":162,"w":170,"h":198},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":338,"h":395},
-	"sourceSize": {"w":338,"h":395}
+	"spriteSourceSize": {"x":0,"y":0,"w":170,"h":198},
+	"sourceSize": {"w":170,"h":198}
 },
 "Deployment_&_Management_OpsWorks_Stack.png":
 {
-	"frame": {"x":2,"y":2893,"w":390,"h":401},
+	"frame": {"x":2360,"y":2,"w":195,"h":201},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":390,"h":401},
-	"sourceSize": {"w":390,"h":401}
+	"spriteSourceSize": {"x":0,"y":0,"w":195,"h":201},
+	"sourceSize": {"w":195,"h":201}
 },
 "Directory_Service.png":
 {
-	"frame": {"x":3714,"y":824,"w":332,"h":402},
+	"frame": {"x":3822,"y":416,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Final_Style_Amazon_WorkSpaces.png":
 {
-	"frame": {"x":2,"y":803,"w":412,"h":473},
+	"frame": {"x":2,"y":404,"w":206,"h":237},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":412,"h":473},
-	"sourceSize": {"w":412,"h":473}
+	"spriteSourceSize": {"x":0,"y":0,"w":206,"h":237},
+	"sourceSize": {"w":206,"h":237}
 },
 "Kinesis.png":
 {
-	"frame": {"x":1067,"y":3606,"w":334,"h":402},
+	"frame": {"x":3661,"y":212,"w":168,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":334,"h":402},
-	"sourceSize": {"w":334,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":202},
+	"sourceSize": {"w":168,"h":202}
 },
 "Lambda.png":
 {
-	"frame": {"x":4048,"y":824,"w":332,"h":402},
+	"frame": {"x":1232,"y":731,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Mobile_Analytics.png":
 {
-	"frame": {"x":2,"y":2489,"w":392,"h":402},
+	"frame": {"x":2162,"y":2,"w":196,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":392,"h":402},
-	"sourceSize": {"w":392,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":196,"h":202},
+	"sourceSize": {"w":196,"h":202}
 },
 "Non-Service_Specific_copy_AWS_Management_Console.png":
 {
-	"frame": {"x":3694,"y":1546,"w":316,"h":316},
+	"frame": {"x":2655,"y":594,"w":158,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":316,"h":316},
-	"sourceSize": {"w":316,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":158,"h":158},
+	"sourceSize": {"w":158,"h":158}
 },
 "Non-Service_Specific_copy_Client.png":
 {
-	"frame": {"x":1777,"y":3029,"w":310,"h":310},
+	"frame": {"x":3437,"y":620,"w":156,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":310,"h":310},
-	"sourceSize": {"w":310,"h":310}
+	"spriteSourceSize": {"x":0,"y":0,"w":156,"h":156},
+	"sourceSize": {"w":156,"h":156}
 },
 "Non-Service_Specific_copy_Corporate_Data_Center.png":
 {
-	"frame": {"x":4490,"y":2502,"w":230,"h":314},
+	"frame": {"x":3049,"y":1092,"w":116,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":314},
-	"sourceSize": {"w":230,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":116,"h":158},
+	"sourceSize": {"w":116,"h":158}
 },
 "Non-Service_Specific_copy_Disk.png":
 {
-	"frame": {"x":3284,"y":2502,"w":306,"h":318},
+	"frame": {"x":2480,"y":754,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":306,"h":318},
-	"sourceSize": {"w":306,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "Non-Service_Specific_copy_Forums.png":
 {
-	"frame": {"x":704,"y":395,"w":426,"h":410},
+	"frame": {"x":355,"y":199,"w":214,"h":206},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":426,"h":410},
-	"sourceSize": {"w":426,"h":410}
+	"spriteSourceSize": {"x":0,"y":0,"w":214,"h":206},
+	"sourceSize": {"w":214,"h":206}
 },
 "Non-Service_Specific_copy_Generic_Database.png":
 {
-	"frame": {"x":4310,"y":1544,"w":246,"h":318},
+	"frame": {"x":2107,"y":1102,"w":124,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":246,"h":318},
-	"sourceSize": {"w":246,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":124,"h":160},
+	"sourceSize": {"w":124,"h":160}
 },
 "Non-Service_Specific_copy_Internet.png":
 {
-	"frame": {"x":1448,"y":2691,"w":392,"h":258},
+	"frame": {"x":184,"y":991,"w":196,"h":130},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":392,"h":258},
-	"sourceSize": {"w":392,"h":258}
+	"spriteSourceSize": {"x":0,"y":0,"w":196,"h":130},
+	"sourceSize": {"w":196,"h":130}
 },
 "Non-Service_Specific_copy_Mobile_Client.png":
 {
-	"frame": {"x":2834,"y":1167,"w":204,"h":314},
+	"frame": {"x":3382,"y":408,"w":102,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":204,"h":314},
-	"sourceSize": {"w":204,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":102,"h":158},
+	"sourceSize": {"w":102,"h":158}
 },
 "Non-Service_Specific_copy_Multimedia.png":
 {
-	"frame": {"x":4028,"y":1228,"w":326,"h":314},
+	"frame": {"x":1233,"y":368,"w":164,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":326,"h":314},
-	"sourceSize": {"w":326,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":158},
+	"sourceSize": {"w":164,"h":158}
 },
 "Non-Service_Specific_copy_Tape_Storage.png":
 {
-	"frame": {"x":1403,"y":3861,"w":370,"h":194},
+	"frame": {"x":680,"y":990,"w":186,"h":98},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":370,"h":194},
-	"sourceSize": {"w":370,"h":194}
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":98},
+	"sourceSize": {"w":186,"h":98}
 },
 "Non-Service_Specific_copy_Traditional_Server.png":
 {
-	"frame": {"x":4556,"y":3134,"w":228,"h":312},
+	"frame": {"x":3401,"y":1095,"w":114,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":228,"h":312},
-	"sourceSize": {"w":228,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":114,"h":156},
+	"sourceSize": {"w":114,"h":156}
 },
 "Non-Service_Specific_copy_User.png":
 {
-	"frame": {"x":4573,"y":3448,"w":226,"h":312},
+	"frame": {"x":3633,"y":1102,"w":114,"h":156},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":226,"h":312},
-	"sourceSize": {"w":226,"h":312}
+	"spriteSourceSize": {"x":0,"y":0,"w":114,"h":156},
+	"sourceSize": {"w":114,"h":156}
 },
 "Non-Service_Specific_copy_Users.png":
 {
-	"frame": {"x":3040,"y":1191,"w":328,"h":314},
+	"frame": {"x":1573,"y":612,"w":164,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":328,"h":314},
-	"sourceSize": {"w":328,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":158},
+	"sourceSize": {"w":164,"h":158}
 },
 "Non-Service_Specific_copy_Virtual_Private_CLoud_.png":
 {
-	"frame": {"x":1414,"y":3341,"w":392,"h":258},
+	"frame": {"x":188,"y":1123,"w":196,"h":130},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":392,"h":258},
-	"sourceSize": {"w":392,"h":258}
+	"spriteSourceSize": {"x":0,"y":0,"w":196,"h":130},
+	"sourceSize": {"w":196,"h":130}
 },
 "Non-Service_Specific_copy__AWS_Cloud.png":
 {
-	"frame": {"x":1414,"y":3601,"w":392,"h":258},
+	"frame": {"x":2557,"y":194,"w":196,"h":130},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":392,"h":258},
-	"sourceSize": {"w":392,"h":258}
+	"spriteSourceSize": {"x":0,"y":0,"w":196,"h":130},
+	"sourceSize": {"w":196,"h":130}
 },
 "On-Demand_Workforce_copy_Amazon_Mechanical_Turk.png":
 {
-	"frame": {"x":1826,"y":1363,"w":332,"h":402},
+	"frame": {"x":1405,"y":528,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Human_Intelligence_Tasks.png":
 {
-	"frame": {"x":1826,"y":1767,"w":258,"h":276},
+	"frame": {"x":888,"y":1122,"w":130,"h":138},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":258,"h":276},
-	"sourceSize": {"w":258,"h":276}
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":138},
+	"sourceSize": {"w":130,"h":138}
 },
 "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Requester.png":
 {
-	"frame": {"x":4393,"y":2184,"w":272,"h":316},
+	"frame": {"x":2911,"y":1092,"w":136,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":272,"h":316},
-	"sourceSize": {"w":272,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":158},
+	"sourceSize": {"w":136,"h":158}
 },
 "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_Workers.png":
 {
-	"frame": {"x":3370,"y":1228,"w":328,"h":314},
+	"frame": {"x":1568,"y":772,"w":164,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":328,"h":314},
-	"sourceSize": {"w":328,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":158},
+	"sourceSize": {"w":164,"h":158}
 },
 "On-Demand_Workforce_copy_Amazon_Mechanical_Turk_assignment_task.png":
 {
-	"frame": {"x":4503,"y":2818,"w":230,"h":314},
+	"frame": {"x":3167,"y":1093,"w":116,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":314},
-	"sourceSize": {"w":230,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":116,"h":158},
+	"sourceSize": {"w":116,"h":158}
 },
 "SDKs_Javascript.png":
 {
-	"frame": {"x":2,"y":3296,"w":361,"h":415},
+	"frame": {"x":2760,"y":2,"w":181,"h":208},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":361,"h":415},
-	"sourceSize": {"w":361,"h":415}
+	"spriteSourceSize": {"x":0,"y":0,"w":181,"h":208},
+	"sourceSize": {"w":181,"h":208}
 },
 "SDKs_copy_AWS_Toolkit_for_Eclipse.png":
 {
-	"frame": {"x":730,"y":2769,"w":347,"h":388},
+	"frame": {"x":2959,"y":212,"w":174,"h":194},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":347,"h":388},
-	"sourceSize": {"w":347,"h":388}
+	"spriteSourceSize": {"x":0,"y":0,"w":174,"h":194},
+	"sourceSize": {"w":174,"h":194}
 },
 "SDKs_copy_AWS_Toolkit_for_Visual_Studio.png":
 {
-	"frame": {"x":1079,"y":2898,"w":347,"h":388},
+	"frame": {"x":3135,"y":212,"w":174,"h":194},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":347,"h":388},
-	"sourceSize": {"w":347,"h":388}
+	"spriteSourceSize": {"x":0,"y":0,"w":174,"h":194},
+	"sourceSize": {"w":174,"h":194}
 },
 "SDKs_copy_Android.png":
 {
-	"frame": {"x":3486,"y":2,"w":360,"h":416},
+	"frame": {"x":2943,"y":2,"w":180,"h":208},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":416},
-	"sourceSize": {"w":360,"h":416}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":208},
+	"sourceSize": {"w":180,"h":208}
 },
 "SDKs_copy_CLI.png":
 {
-	"frame": {"x":742,"y":1953,"w":358,"h":410},
+	"frame": {"x":186,"y":643,"w":180,"h":206},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":358,"h":410},
-	"sourceSize": {"w":358,"h":410}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":206},
+	"sourceSize": {"w":180,"h":206}
 },
 "SDKs_copy_Java.png":
 {
-	"frame": {"x":3848,"y":2,"w":360,"h":416},
+	"frame": {"x":3125,"y":2,"w":180,"h":208},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":416},
-	"sourceSize": {"w":360,"h":416}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":208},
+	"sourceSize": {"w":180,"h":208}
 },
 "SDKs_copy_Net.png":
 {
-	"frame": {"x":4210,"y":2,"w":360,"h":416},
+	"frame": {"x":3307,"y":2,"w":180,"h":208},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":416},
-	"sourceSize": {"w":360,"h":416}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":208},
+	"sourceSize": {"w":180,"h":208}
 },
 "SDKs_copy_PHP.png":
 {
-	"frame": {"x":365,"y":3296,"w":360,"h":416},
+	"frame": {"x":3489,"y":2,"w":180,"h":208},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":416},
-	"sourceSize": {"w":360,"h":416}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":208},
+	"sourceSize": {"w":180,"h":208}
 },
 "SDKs_copy_Python.png":
 {
-	"frame": {"x":406,"y":1278,"w":360,"h":416},
+	"frame": {"x":3671,"y":2,"w":180,"h":208},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":416},
-	"sourceSize": {"w":360,"h":416}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":208},
+	"sourceSize": {"w":180,"h":208}
 },
 "SDKs_copy_Ruby.png":
 {
-	"frame": {"x":1102,"y":1515,"w":360,"h":416},
+	"frame": {"x":2,"y":888,"w":180,"h":243},
 	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":1,"w":360,"h":416},
-	"sourceSize": {"w":360,"h":417}
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":243},
+	"sourceSize": {"w":180,"h":243}
 },
 "SDKs_copy_Tools_for_Windows_PowerShell.png":
 {
-	"frame": {"x":1428,"y":2951,"w":347,"h":388},
+	"frame": {"x":3311,"y":212,"w":174,"h":194},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":347,"h":388},
-	"sourceSize": {"w":347,"h":388}
+	"spriteSourceSize": {"x":0,"y":0,"w":174,"h":194},
+	"sourceSize": {"w":174,"h":194}
 },
 "SDKs_copy_iOS.png":
 {
-	"frame": {"x":1464,"y":1211,"w":360,"h":416},
+	"frame": {"x":3853,"y":2,"w":180,"h":208},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":416},
-	"sourceSize": {"w":360,"h":416}
+	"spriteSourceSize": {"x":0,"y":0,"w":180,"h":208},
+	"sourceSize": {"w":180,"h":208}
 },
 "SDKs_copy_nodeJS.png":
 {
-	"frame": {"x":1464,"y":1629,"w":360,"h":416},
+	"frame": {"x":2,"y":643,"w":182,"h":243},
 	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":1,"w":360,"h":416},
-	"sourceSize": {"w":364,"h":417}
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":182,"h":243},
+	"sourceSize": {"w":182,"h":243}
 },
 "Storage_&_Content_Delivery_AWS_Import_Export.png":
 {
-	"frame": {"x":3370,"y":1544,"w":322,"h":318},
+	"frame": {"x":2331,"y":571,"w":162,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":322,"h":318},
-	"sourceSize": {"w":322,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":162,"h":160},
+	"sourceSize": {"w":162,"h":160}
 },
 "Storage_&_Content_Delivery_AWS_Storage_Gateway.png":
 {
-	"frame": {"x":4572,"y":405,"w":333,"h":401},
+	"frame": {"x":1889,"y":206,"w":167,"h":201},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":333,"h":401},
-	"sourceSize": {"w":333,"h":401}
+	"spriteSourceSize": {"x":0,"y":0,"w":167,"h":201},
+	"sourceSize": {"w":167,"h":201}
 },
 "Storage_&_Content_Delivery_Amazon_CloudFront.png":
 {
-	"frame": {"x":2168,"y":318,"w":334,"h":402},
+	"frame": {"x":3831,"y":212,"w":168,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":334,"h":402},
-	"sourceSize": {"w":334,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":202},
+	"sourceSize": {"w":168,"h":202}
 },
 "Storage_&_Content_Delivery_Amazon_CloudFront_Download_Distribution.png":
 {
-	"frame": {"x":2697,"y":2990,"w":308,"h":320},
+	"frame": {"x":3130,"y":612,"w":155,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":320},
-	"sourceSize": {"w":308,"h":320}
+	"spriteSourceSize": {"x":0,"y":0,"w":155,"h":160},
+	"sourceSize": {"w":155,"h":160}
 },
 "Storage_&_Content_Delivery_Amazon_CloudFront_Edge_Location.png":
 {
-	"frame": {"x":4398,"y":1864,"w":291,"h":317},
+	"frame": {"x":1817,"y":1094,"w":146,"h":159},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":291,"h":317},
-	"sourceSize": {"w":291,"h":317}
+	"spriteSourceSize": {"x":0,"y":0,"w":146,"h":159},
+	"sourceSize": {"w":146,"h":159}
 },
 "Storage_&_Content_Delivery_Amazon_CloudFront_Streaming_Distribution.png":
 {
-	"frame": {"x":3592,"y":2503,"w":306,"h":318},
+	"frame": {"x":2636,"y":754,"w":154,"h":160},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":306,"h":318},
-	"sourceSize": {"w":306,"h":318}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":160},
+	"sourceSize": {"w":154,"h":160}
 },
 "Storage_&_Content_Delivery_Amazon_EBS.png":
 {
-	"frame": {"x":2467,"y":2250,"w":262,"h":368},
+	"frame": {"x":1417,"y":182,"w":132,"h":184},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":262,"h":368},
-	"sourceSize": {"w":262,"h":368}
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":184},
+	"sourceSize": {"w":132,"h":184}
 },
 "Storage_&_Content_Delivery_Amazon_EBS_Snapshot.png":
 {
-	"frame": {"x":2476,"y":3333,"w":296,"h":362},
+	"frame": {"x":1667,"y":932,"w":148,"h":182},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":296,"h":362},
-	"sourceSize": {"w":296,"h":362}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":182},
+	"sourceSize": {"w":148,"h":182}
 },
 "Storage_&_Content_Delivery_Amazon_EBS_Volume.png":
 {
-	"frame": {"x":2475,"y":2620,"w":262,"h":368},
+	"frame": {"x":1099,"y":362,"w":132,"h":184},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":262,"h":368},
-	"sourceSize": {"w":262,"h":368}
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":184},
+	"sourceSize": {"w":132,"h":184}
 },
 "Storage_&_Content_Delivery_Amazon_Glacier.png":
 {
-	"frame": {"x":2166,"y":1126,"w":332,"h":400},
+	"frame": {"x":1391,"y":936,"w":166,"h":200},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":400},
-	"sourceSize": {"w":332,"h":400}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":200},
+	"sourceSize": {"w":166,"h":200}
 },
 "Storage_&_Content_Delivery_Amazon_Glacier_Archive.png":
 {
-	"frame": {"x":2152,"y":2271,"w":313,"h":368},
+	"frame": {"x":1232,"y":935,"w":157,"h":184},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":313,"h":368},
-	"sourceSize": {"w":313,"h":368}
+	"spriteSourceSize": {"x":0,"y":0,"w":157,"h":184},
+	"sourceSize": {"w":157,"h":184}
 },
 "Storage_&_Content_Delivery_Amazon_Glacier_Vault.png":
 {
-	"frame": {"x":2731,"y":2215,"w":262,"h":368},
+	"frame": {"x":1741,"y":408,"w":132,"h":184},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":262,"h":368},
-	"sourceSize": {"w":262,"h":368}
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":184},
+	"sourceSize": {"w":132,"h":184}
 },
 "Storage_&_Content_Delivery_Amazon_S3.png":
 {
-	"frame": {"x":2500,"y":1167,"w":332,"h":402},
+	"frame": {"x":1400,"y":732,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "Storage_&_Content_Delivery_Amazon_S3_Bucket.png":
 {
-	"frame": {"x":3592,"y":2823,"w":306,"h":314},
+	"frame": {"x":2948,"y":774,"w":154,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":306,"h":314},
-	"sourceSize": {"w":306,"h":314}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":158},
+	"sourceSize": {"w":154,"h":158}
 },
 "Storage_&_Content_Delivery_Amazon_S3_Bucket_with_Objects.png":
 {
-	"frame": {"x":3476,"y":2184,"w":308,"h":316},
+	"frame": {"x":3104,"y":774,"w":154,"h":158},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":308,"h":316},
-	"sourceSize": {"w":308,"h":316}
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":158},
+	"sourceSize": {"w":154,"h":158}
 },
 "Storage_&_Content_Delivery_Amazon_S3_Objects.png":
 {
-	"frame": {"x":4680,"y":808,"w":210,"h":228},
+	"frame": {"x":1236,"y":1121,"w":106,"h":114},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":210,"h":228},
-	"sourceSize": {"w":210,"h":228}
+	"spriteSourceSize": {"x":0,"y":0,"w":106,"h":114},
+	"sourceSize": {"w":106,"h":114}
 },
 "Storage_&_Content_Delivery_Storage_Gateway_Cached_Volumn.png":
 {
-	"frame": {"x":2,"y":3713,"w":295,"h":367},
+	"frame": {"x":1875,"y":409,"w":148,"h":184},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":295,"h":367},
-	"sourceSize": {"w":295,"h":367}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":184},
+	"sourceSize": {"w":148,"h":184}
 },
 "Storage_&_Content_Delivery_Storage_Gateway_Non-Cached_Volumn.png":
 {
-	"frame": {"x":2178,"y":2641,"w":295,"h":368},
+	"frame": {"x":2025,"y":410,"w":148,"h":184},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":295,"h":368},
-	"sourceSize": {"w":295,"h":368}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":184},
+	"sourceSize": {"w":148,"h":184}
 },
 "Storage_&_Content_Delivery_Storage_Gateway_Virtual_Tape_Library.png":
 {
-	"frame": {"x":2739,"y":2585,"w":295,"h":368},
+	"frame": {"x":2175,"y":410,"w":148,"h":185},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":295,"h":368},
-	"sourceSize": {"w":295,"h":368}
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":185},
+	"sourceSize": {"w":148,"h":185}
 },
 "Trusted_Advisor.png":
 {
-	"frame": {"x":2160,"y":1528,"w":332,"h":402},
+	"frame": {"x":1573,"y":408,"w":166,"h":202},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":332,"h":402},
-	"sourceSize": {"w":332,"h":402}
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":202},
+	"sourceSize": {"w":166,"h":202}
 },
 "WorkDocs.png":
 {
-	"frame": {"x":2,"y":2,"w":700,"h":799},
+	"frame": {"x":2,"y":2,"w":351,"h":400},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":700,"h":799},
-	"sourceSize": {"w":700,"h":799}
+	"spriteSourceSize": {"x":0,"y":0,"w":351,"h":400},
+	"sourceSize": {"w":351,"h":400}
 }},
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker",
 	"version": "1.0",
 	"image": "sprites.png",
 	"format": "RGBA8888",
-	"size": {"w":4907,"h":4082},
+	"size": {"w":4035,"h":1264},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:cefaff042e71182b3ba284a1d3f13897:a2ef8a05693e063f349114731d7db671:1eabdf11f75e3a4fe3147baf7b5be24b$"
+	"smartupdate": "$TexturePacker:SmartUpdate:e1ff21ba5e980fca3dced4de4aaf2f5e:cea86448ef0b563180779b862672a4c8:1eabdf11f75e3a4fe3147baf7b5be24b$"
 }
 }
