@@ -21,7 +21,10 @@ var GuiUtil = {
       grid.lineTo(width, count);
       count = count + interval;
     }
-    return grid;
+    //return grid;
+    var container = new PIXI.Container();
+    container.addChild(grid);
+    return container;
   }
 
 };

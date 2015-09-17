@@ -31,8 +31,14 @@ var PixiEditor = {
 
     var winDimension = GuiUtil.getWindowDimension();
 
-    var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y,{backgroundColor : 0xFFFFFF});
+    var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
+    //var renderer = new PIXI.CanvasRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
+    console.log('Using ');
+    console.log(renderer);
     var stage = new PIXI.Container();
+
+    var elementsContainer = new PIXI.Container();
+
     var meter = new FPSMeter();
 
     var fps = 60;
@@ -60,13 +66,12 @@ var PixiEditor = {
       var dim = GuiUtil.getWindowDimension();
 
       var instance1 = Element.AWS_EC2_Element(dim.x/2,400);
-
-      stage.addChild(instance1);
+      elementsContainer.addChild(instance1);
 
       var users = Element.AWS_Users(dim.x/2, 200);
+      elementsContainer.addChild(users);
 
-      stage.addChild(users);
-
+      stage.addChild(elementsContainer);
     }
 
     PIXI.loader
@@ -74,7 +79,7 @@ var PixiEditor = {
       .load(onLoaded);
 
     stage.interactive = true;
-    //var grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
+    var grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
 
     console.log('Adding listener...');
     $(window).resize(function() {
@@ -82,8 +87,8 @@ var PixiEditor = {
       winDimension = GuiUtil.getWindowDimension();
       //console.log(newDim);
       console.log(stage);
-      //stage.removeChild(grid);
-      //grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
+      stage.removeChild(grid);
+      grid = stage.addChild(GuiUtil.drawGrid(winDimension.x, winDimension.y));
     });
 
     return {
