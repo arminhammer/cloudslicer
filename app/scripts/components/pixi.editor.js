@@ -6,6 +6,7 @@
 
 var GuiUtil = require('./gui.util');
 var Element = require('./element');
+var Arrow = require('./arrow');
 
 function resizeGuiContainer(renderer) {
 
@@ -39,6 +40,8 @@ var PixiEditor = {
 
     var elementsContainer = new PIXI.Container();
 
+    var arrowGraphics = new PIXI.Graphics();
+
     var meter = new FPSMeter();
 
     var fps = 60;
@@ -56,6 +59,7 @@ var PixiEditor = {
       if (delta > interval) {
         then = now - (delta % interval);
         meter.tick();
+
         renderer.render(stage);
       }
     }
@@ -65,11 +69,19 @@ var PixiEditor = {
 
       var dim = GuiUtil.getWindowDimension();
 
+      var users = Element.AWS_Users(dim.x/2, 200);
+      elementsContainer.addChild(users);
+
       var instance1 = Element.AWS_EC2_Element(dim.x/2,400);
       elementsContainer.addChild(instance1);
 
-      var users = Element.AWS_Users(dim.x/2, 200);
-      elementsContainer.addChild(users);
+      console.log(elementsContainer.getLocalBounds());
+
+      //users.addArrow(instance1);
+
+      console.log('Children:');
+      console.log(elementsContainer.children);
+      //var arrow = Arrow.drawBetween(users, instance1);
 
       stage.addChild(elementsContainer);
     }

@@ -4,10 +4,11 @@
 
 var DragDrop = require('./drag.drop');
 
-var DEFAULT_SCALE = 0.5;
+var DEFAULT_SCALE = 0.8;
 
 function construct(iconURL, x, y, scale) {
   var element = PIXI.Sprite.fromFrame(iconURL);
+  element.name = iconURL;
   //console.log('EC2Instance');
   //console.log(element);
   element.scale.set(scale);
@@ -27,10 +28,11 @@ function construct(iconURL, x, y, scale) {
     .on('touchendoutside', DragDrop.onDragEnd)
     // events for drag move
     .on('mousemove', DragDrop.onDragMove)
-    .on('touchmove', DragDrop.onDragMove);
-  // events for mouse over
-  //.on('mouseover', onMouseOver)
-  //.on('mouseout', onMouseOut);
+    .on('touchmove', DragDrop.onDragMove)
+    // events for mouse over
+    .on('mouseover', DragDrop.onMouseOver)
+    .on('mouseout', DragDrop.onMouseOut);
+  element.arrows = [];
   return element;
 }
 
@@ -42,6 +44,23 @@ var Element = {
 
   AWS_Users: function(x,y) {
     return construct('Non-Service_Specific_copy_Users.png', x, y, DEFAULT_SCALE)
+  },
+
+  addArrowTo: function(b) {
+    this.arrows.push(b);
+  },
+
+  removeArrowTo: function(index) {
+    this.arrows.remove(index);
+  },
+
+  drawArrowTo: function(b) {
+
+    var arrow = new PIXI.Graphics();
+
+    console.log(a.getBounds());
+    console.log(b.getBounds());
+
   }
 
 };

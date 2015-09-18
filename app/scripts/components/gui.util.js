@@ -21,9 +21,9 @@ var GuiUtil = {
       grid.lineTo(width, count);
       count = count + interval;
     }
-    //return grid;
     var container = new PIXI.Container();
     container.addChild(grid);
+    container.cacheAsBitmap = true;
     return container;
   }
 
