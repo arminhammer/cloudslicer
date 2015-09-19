@@ -35,13 +35,9 @@ var PixiEditor = {
     var winDimension = GuiUtil.getWindowDimension();
 
     var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
-    //var renderer = new PIXI.CanvasRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
-    console.log('Using ');
-    console.log(renderer);
+
     var stage = new PIXI.Container();
-
-    var elementsContainer = new PIXI.Container();
-
+    var elements = new PIXI.Container();
     var arrowGraphics = new PIXI.Graphics();
 
     var meter = new FPSMeter();
@@ -70,22 +66,25 @@ var PixiEditor = {
       console.log('Assets loaded');
 
       var dim = GuiUtil.getWindowDimension();
+      console.log(elements.position);
+      var users = new AWS_Users('users', dim.x/2, 100);
+      console.log(users.position);
+      elements.addChild(users);
 
-      var users = new AWS_Users(dim.x/2, 200);
-      elementsContainer.addChild(users);
+      var instance1 = new AWS_EC2_Instance('instance1', dim.x/2, 400);
+      console.log(instance1.position);
+      elements.addChild(instance1);
 
-      var instance1 = new AWS_EC2_Instance(dim.x/2,400);
-      elementsContainer.addChild(instance1);
+      //console.log(elementsContainer.getLocalBounds());
 
-      console.log(elementsContainer.getLocalBounds());
-
-      users.addArrowTo(instance1);
+      //users.addArrowTo(instance1);
 
       console.log('Children:');
-      console.log(elementsContainer.children);
+      console.log(elements.children);
       //var arrow = Arrow.drawBetween(users, instance1);
 
-      stage.addChild(elementsContainer);
+      stage.addChild(elements);
+      console.log(stage.children);
     }
 
     PIXI.loader

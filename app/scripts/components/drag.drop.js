@@ -22,20 +22,23 @@ var DragDrop = {
   },
 
   onDragMove: function() {
-    if (this.dragging)
+    var self = this;
+    if (self.dragging)
     {
-      var global = this.toGlobal(this.parent);
-      var local = this.toLocal(this.parent);
-      //console.log('x: ' + this.x + ' y: ' + this.y);
-      //console.log('this: ' + this.x+":"+this.y + ", global: " + global.x + ":" + global.y + ", local: " + local.x + ":" + local.y);
-      //console.log('width: ' + this.width + ' height: ' + this.height);
-      var newPosition = this.data.getLocalPosition(this.parent);
+      console.log(self.parent);
+      console.log(self);
+      //var global = self.toGlobal(self.parent);
+      var local = self.toLocal(self.parent);
+      //console.log('x: ' + self.x + ' y: ' + self.y);
+      //console.log('self: ' + self.x+":"+self.y + ", global: " + global.x + ":" + global.y + ", local: " + local.x + ":" + local.y);
+      //console.log('width: ' + self.width + ' height: ' + self.height);
+      var newPosition = self.data.getLocalPosition(self.parent);
       //console.log('NEW: ' + newPosition.x + ':' + newPosition.y);
-      var local = this.toLocal(this.data);
+      var local = self.toLocal(self.data);
       //console.log('LOCAL: ' + local.x + ':' + local.y);
-      this.position.x = newPosition.x;
-      this.position.y = newPosition.y;
-      //this.moveTo(newPosition.x, newPosition.y);
+      self.position.x = newPosition.x;
+      self.position.y = newPosition.y;
+      //self.moveTo(newPosition.x, newPosition.y);
     }
   },
 
