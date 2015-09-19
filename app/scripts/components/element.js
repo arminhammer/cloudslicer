@@ -36,7 +36,7 @@ function construct(iconURL, x, y, scale) {
   return element;
 }
 
-var Element = {
+var Element1 = {
 
   AWS_EC2_Element: function(x,y) {
     return construct('Compute_&_Networking_Amazon_EC2--.png', x, y, DEFAULT_SCALE)
@@ -46,23 +46,22 @@ var Element = {
     return construct('Non-Service_Specific_copy_Users.png', x, y, DEFAULT_SCALE)
   },
 
-  addArrowTo: function(b) {
-    this.arrows.push(b);
-  },
+};
 
-  removeArrowTo: function(index) {
-    this.arrows.remove(index);
-  },
+var Element = function() {
 
-  drawArrowTo: function(b) {
+  var self = this;
+  self.arrows = [];
 
-    var arrow = new PIXI.Graphics();
+  self.addArrowTo = function(b) {
+    self.arrows.push(b);
+  };
 
-    console.log(a.getBounds());
-    console.log(b.getBounds());
-
-  }
+  self.removeArrowTo = function(index) {
+    self.arrows.remove(index);
+  };
 
 };
+Element.prototype = new PIXI.Sprite;
 
 module.exports = Element;

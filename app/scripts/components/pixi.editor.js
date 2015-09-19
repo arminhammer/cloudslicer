@@ -7,6 +7,8 @@
 var GuiUtil = require('./gui.util');
 var Element = require('./element');
 var Arrow = require('./arrow');
+var AWS_Users = require('./aws/AWS_Users');
+var AWS_EC2_Instance = require('./aws/AWS_EC2_Instance');
 
 function resizeGuiContainer(renderer) {
 
@@ -69,15 +71,15 @@ var PixiEditor = {
 
       var dim = GuiUtil.getWindowDimension();
 
-      var users = Element.AWS_Users(dim.x/2, 200);
+      var users = new AWS_Users(dim.x/2, 200);
       elementsContainer.addChild(users);
 
-      var instance1 = Element.AWS_EC2_Element(dim.x/2,400);
+      var instance1 = new AWS_EC2_Instance(dim.x/2,400);
       elementsContainer.addChild(instance1);
 
       console.log(elementsContainer.getLocalBounds());
 
-      //users.addArrow(instance1);
+      users.addArrowTo(instance1);
 
       console.log('Children:');
       console.log(elementsContainer.children);
