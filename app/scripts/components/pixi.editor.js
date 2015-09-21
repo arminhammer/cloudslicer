@@ -9,6 +9,7 @@ var Element = require('./element');
 var Arrow = require('./arrow');
 var AWS_Users = require('./aws/AWS_Users');
 var AWS_EC2_Instance = require('./aws/AWS_EC2_Instance');
+var Collection = require('./collection');
 
 function resizeGuiContainer(renderer) {
 
@@ -37,7 +38,7 @@ var PixiEditor = {
     var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
 
     var stage = new PIXI.Container();
-    var elements = new PIXI.Container();
+    var elements = new Collection();
     var arrowGraphics = new PIXI.Graphics();
 
     var meter = new FPSMeter();
@@ -69,11 +70,11 @@ var PixiEditor = {
       console.log(elements.position);
       var users = new AWS_Users('users', dim.x/2, 100);
       console.log(users.position);
-      elements.addChild(users);
+      elements.add(users);
 
       var instance1 = new AWS_EC2_Instance('instance1', dim.x/2, 400);
       console.log(instance1.position);
-      elements.addChild(instance1);
+      elements.add(instance1);
 
       //console.log(elementsContainer.getLocalBounds());
 
