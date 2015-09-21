@@ -33,6 +33,9 @@ function resizeGuiContainer(renderer) {
 var PixiEditor = {
   controller: function(options) {
 
+    var template = options.template();
+    console.log(template);
+
     var winDimension = GuiUtil.getWindowDimension();
 
     var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
@@ -68,6 +71,13 @@ var PixiEditor = {
 
       var dim = GuiUtil.getWindowDimension();
       console.log(elements.position);
+
+      var keys = Object.keys(template.Resources);
+      var keyLen = keys.length;
+      for(var i =0; i < keyLen; i++) {
+        console.log(keys[i]);
+        console.log(template.Resources[keys[i]].Type);
+      }
       var users = new AWS_Users('users', dim.x/2, 100);
       console.log(users.position);
       elements.add(users);
