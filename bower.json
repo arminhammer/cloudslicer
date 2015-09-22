@@ -9,7 +9,7 @@
     "d3-tip": "~0.6.7",
     "fpsmeter": "~0.3.1",
     "jsonlint": "~1.6.0",
-    "lodash": "~3.10.0",
+    "lodash": "~3.10.1",
     "mithril": "~0.2.0",
     "modernizr": "~2.8.1",
     "opentip": "~2.4.6",

@@ -44,7 +44,7 @@ gulp.task('browserify', function() {
   return bundle();
 });
 
-gulp.task('styles', () => {
+/*gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
@@ -57,7 +57,7 @@ gulp.task('styles', () => {
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
-});
+});*/
 
 function lint(files, options) {
   return () => {
@@ -77,7 +77,7 @@ const testLintOptions = {
 gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
-gulp.task('html', ['styles'], () => {
+gulp.task('html', () => {
   const assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('app/*.html')
@@ -125,7 +125,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'fonts', 'browserify'], () => {
+gulp.task('serve', ['fonts', 'browserify'], () => {
   browserSync({
     notify: false,
     port: 9000,

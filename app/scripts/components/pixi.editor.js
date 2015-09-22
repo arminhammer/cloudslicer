@@ -72,15 +72,24 @@ var PixiEditor = {
       var dim = GuiUtil.getWindowDimension();
       console.log(elements.position);
 
+      var users = new AWS_Users('users', dim.x/2, 100);
+      console.log(users.position);
+      elements.add(users);
+
+      console.log(template.Resources);
+      var sec_groups = _.reduce(template.Resources, function(result, n, key) {
+        if(n.Type === 'AWS::EC2::SecurityGroup') { result[key] = n; }
+        return result;
+      }, {});
+      console.log('Sec grps:');
+      console.log(sec_groups);
+
       var keys = Object.keys(template.Resources);
       var keyLen = keys.length;
       for(var i =0; i < keyLen; i++) {
         console.log(keys[i]);
         console.log(template.Resources[keys[i]].Type);
       }
-      var users = new AWS_Users('users', dim.x/2, 100);
-      console.log(users.position);
-      elements.add(users);
 
       var instance1 = new AWS_EC2_Instance('instance1', dim.x/2, 400);
       console.log(instance1.position);
