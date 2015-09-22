@@ -7,7 +7,7 @@ var GuiUtil = {
 
   drawGrid: function(width, height) {
     var grid = new PIXI.Graphics();
-    var interval = 25;
+    var interval = 100;
     var count = interval;
     grid.lineStyle(1, 0xE5E5E5, 1);
     while (count < width) {

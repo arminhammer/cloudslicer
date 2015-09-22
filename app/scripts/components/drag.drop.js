@@ -46,7 +46,7 @@ var DragDrop = {
     console.log('Moused over!');
     var self = this;
     self.scale.set(self.scale.x*MOUSE_OVER_SCALE_RATIO);
-    var iconSize = 20;
+    var iconSize = 10;
     var elementSize = 100;
 
     var global = self.toGlobal(self.position);
@@ -75,7 +75,7 @@ var DragDrop = {
       icon.interactive = true;
       icon.buttonMode = true;
       icon.lineStyle(1, 0x0000FF, 1);
-      icon.beginFill(0x000000, 1);
+      icon.beginFill(0xFFFFFF, 1);
       icon.drawCircle(loc.x, loc.y, loc.size);
       icon.endFill();
 
