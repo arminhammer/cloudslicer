@@ -9,6 +9,7 @@ var Element = require('./element');
 var Arrow = require('./arrow');
 var AWS_Users = require('./aws/AWS_Users');
 var AWS_EC2_Instance = require('./aws/AWS_EC2_Instance');
+var AWS_EC2_EIP = require('./aws/AWS_EC2_EIP');
 var Collection = require('./collection');
 
 function resizeGuiContainer(renderer) {
