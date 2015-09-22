@@ -77,6 +77,13 @@ var PixiEditor = {
       elements.add(users);
 
       console.log(template.Resources);
+      var instances = _.reduce(template.Resources, function(result, n, key) {
+        if(n.Type === 'AWS::EC2::Instance') { result[key] = n; }
+        return result;
+      }, {});
+      console.log('Instances:');
+      console.log(instances);
+
       var sec_groups = _.reduce(template.Resources, function(result, n, key) {
         if(n.Type === 'AWS::EC2::SecurityGroup') { result[key] = n; }
         return result;
