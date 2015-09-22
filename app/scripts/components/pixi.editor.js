@@ -38,7 +38,9 @@ var PixiEditor = {
 
     var stage = new PIXI.Container();
     var elements = new PIXI.Container();
+    var arrows = new PIXI.Container();
     var arrowGraphics = new PIXI.Graphics();
+    arrowGraphics.lineStyle(2, 0x00E5E5, 1);
 
     var meter = new FPSMeter();
 
@@ -77,7 +79,7 @@ var PixiEditor = {
 
       //console.log(elementsContainer.getLocalBounds());
 
-      //users.addArrowTo(instance1);
+      users.addArrowTo(instance1);
 
       console.log('Children:');
       console.log(elements.children);
@@ -85,6 +87,21 @@ var PixiEditor = {
 
       stage.addChild(elements);
       console.log(stage.children);
+
+      arrowGraphics.clear();
+      elements.children.forEach(function(element) {
+        console.log('Element pos:');
+        console.log(element.position);
+        arrowGraphics.moveTo(element.position.x, element.position.y);
+        element.arrows.forEach(function(target) {
+          console.log('Target pos:');
+          console.log(target.position);
+          arrowGraphics.lineTo(target.position.x, target.position.y);
+        })
+      });
+      console.log(arrowGraphics);
+      arrows.addChild(arrowGraphics);
+      stage.addChild(arrows);
     }
 
     PIXI.loader
