@@ -78,6 +78,30 @@ var PixiEditor = {
       elements.add(users);
 
       console.log(template.Resources);
+
+      var groupings = _.reduce(template.Resources, function(result, n, key) {
+        result[n.Type] = {};
+        result[n.Type][key] = n;
+        return result
+      }, {});
+      console.log('Groupings:');
+      console.log(groupings);
+
+      var instances = {};
+      _.each(groupings['AWS::EC2::Instance'], function(n, key) {
+        var instance = new AWS_EC2_Instance('instance1', dim.x/2, 400);
+        instances[key] = instance;
+      });
+
+      _.each(instances, function(instance, key) {
+        elements.add(instance);
+      });
+
+      /*
+      _.each(groupings['AWS::EC2::EIPAssociation'], function(n) {
+
+      });
+
       var instances = _.reduce(template.Resources, function(result, n, key) {
         if(n.Type === 'AWS::EC2::Instance') { result[key] = n; }
         return result;
@@ -98,10 +122,13 @@ var PixiEditor = {
         console.log(keys[i]);
         console.log(template.Resources[keys[i]].Type);
       }
+      */
 
+      /*
       var instance1 = new AWS_EC2_Instance('instance1', dim.x/2, 400);
       console.log(instance1.position);
       elements.add(instance1);
+      */
 
       //console.log(elementsContainer.getLocalBounds());
 
