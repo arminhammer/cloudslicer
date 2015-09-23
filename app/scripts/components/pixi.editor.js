@@ -89,12 +89,51 @@ var PixiEditor = {
 
       var instances = {};
       _.each(groupings['AWS::EC2::Instance'], function(n, key) {
-        var instance = new AWS_EC2_Instance('instance1', dim.x/2, 400);
+        var instance = new AWS_EC2_Instance(key, dim.x/2, 400);
         instances[key] = instance;
+      });
+
+      var eips = {};
+      _.each(groupings['AWS::EC2::EIP'], function(n, key) {
+        console.log('Adding EIP ', key);
+        var eip = new AWS_EC2_EIP(key, dim.x/2, 500);
+        eips[key] = eip;
+      });
+
+      var comboInstances = {};
+      _.each(groupings['AWS::EC2::EIPAssociation'], function(n, key) {
+        console.log('Checking association');
+        console.log(n);
+        console.log(key);
+        console.log(eips);
+        console.log('Ref: ',n.Properties.EIP.Ref);
+        var instance = instances[n.Properties.InstanceId.Ref];
+        if(instance) {
+          var eip = eips[n.Properties.EIP.Ref];
+          if(eip) {
+            console.log('Association has a match!');
+            var container = new Collection();
+            container.add(instance);
+            container.add(eip);
+            comboInstances[key] = container;
+            delete instances[n.Properties.InstanceId.Ref];
+            delete eips[n.Properties.EIP.Ref];
+          }
+        }
+        //var eip = new AWS_EC2_EIP(key, dim.x/2, 500);
+        //eips[key] = eip;
+      });
+
+      _.each(comboInstances, function(combo, key) {
+        elements.add(combo);
       });
 
       _.each(instances, function(instance, key) {
         elements.add(instance);
+      });
+
+      _.each(eips, function(eip, key) {
+        elements.add(eip);
       });
 
       /*
