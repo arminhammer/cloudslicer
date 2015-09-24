@@ -41,7 +41,7 @@ var PixiEditor = {
 
     var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
 
-    var stage = new PIXI.Container();
+    var stage = new PIXI.Stage();
     var elements = new Collection();
     var arrowGraphics = new PIXI.Graphics();
 
