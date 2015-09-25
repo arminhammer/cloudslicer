@@ -42,7 +42,7 @@ var PixiEditor = {
 
     var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
 
-    var stage = new PIXI.Container();
+    var stage = new PIXI.Stage();
     var elements = new Collection();
     var arrowGraphics = new PIXI.Graphics();
 
@@ -191,6 +191,30 @@ var PixiEditor = {
 
       stage.addChild(elements);
       console.log(stage.children);
+
+      var menuSprite = new PIXI.Sprite();
+      menuSprite.texture = PIXI.Texture.fromFrame('Compute_&_Networking_Amazon_EC2_Instance.png');
+      menuSprite.scale.set(0.2);
+      menuSprite.y = dim.y/2;
+      menuSprite.x = dim.x-40;
+      menuSprite.interactive = true;
+      menuSprite.buttonMode = true;
+      menuSprite.anchor.set(0.5);
+      menuSprite
+        .on('mouseover', function() {
+        var self = this;
+        self.scale.set(self.scale.x*1.2);
+      })
+        .on('mouseout', function() {
+          var self = this;
+          self.scale.set(self.scale.x/1.2);
+        })
+        .on('mouseup', function() {
+          console.log('Clicked.');
+          var instance = new AWS_EC2_Instance('New_Instance', dim.x/2, dim.y/2);
+          elements.add(instance);
+        });
+      stage.addChild(menuSprite);
     }
 
     PIXI.loader
