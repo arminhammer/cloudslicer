@@ -10,6 +10,7 @@ var Arrow = require('./arrow');
 var AWS_Users = require('./aws/AWS_Users');
 var AWS_EC2_Instance = require('./aws/AWS_EC2_Instance');
 var AWS_EC2_EIP = require('./aws/AWS_EC2_EIP');
+var AWS_EC2_SecurityGroup = require('./aws/AWS_EC2_SecurityGroup');
 var Collection = require('./collection');
 
 function resizeGuiContainer(renderer) {
@@ -100,6 +101,13 @@ var PixiEditor = {
         eips[key] = eip;
       });
 
+      var secgroups = {};
+      _.each(groupings['AWS::EC2::SecurityGroup'], function(n, key) {
+        console.log('Adding Security Group ', key);
+        var secgroup = new AWS_EC2_SecurityGroup(key, dim.x/2, 500);
+        secgroups[key] = secgroup;
+      });
+
       var comboInstances = {};
       _.each(groupings['AWS::EC2::EIPAssociation'], function(n, key) {
         console.log('Checking association');
@@ -134,6 +142,10 @@ var PixiEditor = {
 
       _.each(eips, function(eip, key) {
         elements.add(eip);
+      });
+
+      _.each(secgroups, function(s, key) {
+        elements.add(s);
       });
 
       /*

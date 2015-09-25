@@ -10,9 +10,9 @@ var AWS_EC2_SecurityGroup = function(name,x,y) {
   self.name = name;
 
   self.draw = new PIXI.Graphics();
-  self.draw.lineStyle(1, 0xE5E5E5, 1);
+  self.draw.lineStyle(3, 0x000000, 1);
   //self.draw.moveTo(x,y);
-  self.draw.buildRoundedRectangle(x,y,200,200,10);
+  self.draw.drawRoundedRect(x,y,200,200,10);
   self.add(self.draw);
 
 };
