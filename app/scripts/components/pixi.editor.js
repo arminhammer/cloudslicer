@@ -54,7 +54,7 @@ var PixiEditor = {
     var interval = 1000/fps;
     var delta;
 
-    function animate() {
+    function animate(time) {
       requestAnimationFrame(animate);
 
       now = Date.now();
@@ -64,6 +64,7 @@ var PixiEditor = {
         then = now - (delta % interval);
         meter.tick();
 
+        TWEEN.update(time);
         renderer.render(stage);
       }
     }

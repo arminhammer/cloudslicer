@@ -94,6 +94,43 @@ var DragDrop = {
     self.scaleIcons.forEach(function(s) {
       self.addChild(s);
     });
+
+    self.tooltip = new PIXI.Graphics();
+    self.tooltip.lineStyle(3, 0x0000FF, 1);
+    self.tooltip.beginFill(0x000000, 1);
+    //self.draw.moveTo(x,y);
+    self.tooltip.drawRoundedRect(0+20,-self.height,200,100,10);
+    self.tooltip.endFill();
+    self.tooltip.textStyle = {
+      font : 'bold italic 28px Arial',
+      fill : '#F7EDCA',
+      stroke : '#4a1850',
+      strokeThickness : 5,
+      dropShadow : true,
+      dropShadowColor : '#000000',
+      dropShadowAngle : Math.PI / 6,
+      dropShadowDistance : 6,
+      wordWrap : true,
+      wordWrapWidth : 440
+    };
+
+    self.tooltip.text = new PIXI.Text(self.name,self.tooltip.textStyle);
+    self.tooltip.text.x = 0+30;
+    self.tooltip.text.y = -self.height;
+
+    var tooltipTween = new TWEEN.Tween(self.tooltip)
+      .to({x:self.width},700)
+      .easing( TWEEN.Easing.Elastic.InOut )
+      .start();
+    var tooltipTextTween = new TWEEN.Tween(self.tooltip.text)
+      .to({x:self.width+20},700)
+      .easing( TWEEN.Easing.Elastic.InOut )
+      .start();
+
+    console.log('Adding tooltip');
+    self.addChild(self.tooltip);
+
+    self.addChild(self.tooltip.text);
   },
 
   onMouseOut: function() {
@@ -109,6 +146,8 @@ var DragDrop = {
     //console.log('Size: ');
     //console.log(this.getBounds());
 
+    self.removeChild(self.tooltip);
+    self.removeChild(self.tooltip.text);
   },
 
   onScaleIconDragStart: function(event) {

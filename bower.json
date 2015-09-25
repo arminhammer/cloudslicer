@@ -5,16 +5,13 @@
     "bootstrap-sass": "~3.3.5",
     "classie": "~1.0.1",
     "codemirror": "~5.4.0",
-    "d3": "~3.5.6",
-    "d3-tip": "~0.6.7",
     "fpsmeter": "~0.3.1",
     "jsonlint": "~1.6.0",
     "lodash": "~3.10.1",
     "mithril": "~0.2.0",
     "modernizr": "~2.8.1",
-    "opentip": "~2.4.6",
     "pixi.js": "~3.0.7",
-    "snap.svg": "~0.4.1"
+    "tween.js": "tweenjs#*"
   },
   "overrides": {
     "bootstrap-sass": {
