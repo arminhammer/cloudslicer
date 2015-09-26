@@ -28,6 +28,14 @@ var DragDrop = {
       this.filters = [shadow];
       this.alpha = 1;
       this.dragging = false;
+      console.log('Parent:');
+      console.log(this.parent.parent);
+      if(this.parent.parent.selected) {
+        this.parent.parent.selected.filters = null;
+        this.parent.parent.selected = null;
+      }
+      this.parent.parent.clickedOnlyStage = false;
+      this.parent.parent.selected = this;
     }
   },
 

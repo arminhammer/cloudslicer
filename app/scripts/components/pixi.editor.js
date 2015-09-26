@@ -43,6 +43,22 @@ var PixiEditor = {
     var renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
 
     var stage = new PIXI.Stage();
+    stage.name = 'stage';
+    stage.selected = null;
+    stage.clickedOnlyStage = true;
+    stage.on('mouseup', function() {
+      if(stage.clickedOnlyStage) {
+        console.log('Found stage click');
+        if(stage.selected) {
+          console.log(stage.selected);
+          stage.selected.filters = null;
+          stage.selected = null;
+        }
+      }
+      else {
+        stage.clickedOnlyStage = true;
+      }
+    });
     var elements = new Collection();
     var arrowGraphics = new PIXI.Graphics();
 
