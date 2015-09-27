@@ -134,6 +134,10 @@ var EditorManager = function(template) {
       //eips[key] = eip;
     });
 
+    _.each(secgroups, function(s, key) {
+      self.elements.add(s);
+    });
+
     _.each(comboInstances, function(combo, key) {
       self.elements.add(combo);
     });
@@ -144,10 +148,6 @@ var EditorManager = function(template) {
 
     _.each(eips, function(eip, key) {
       self.elements.add(eip);
-    });
-
-    _.each(secgroups, function(s, key) {
-      self.elements.add(s);
     });
 
     console.log('Children:');
@@ -179,7 +179,37 @@ var EditorManager = function(template) {
         self.elements.add(instance);
       });
     self.stage.addChild(menuSprite);
-  }
+
+    var menuSecGroup = new PIXI.Sprite();
+    var menuGraphic = new PIXI.Graphics();
+    menuGraphic.lineStyle(3, 0x000000, 1);
+    menuGraphic.beginFill(0xFFFFFF, 1);
+    menuGraphic.drawRoundedRect(0,0,30,30,6);
+    menuGraphic.endFill();
+    menuSecGroup.texture = menuGraphic.generateTexture();
+
+    menuSecGroup.interactive = true;
+    menuSecGroup.buttonMode = true;
+    menuSecGroup.position.y = dim.y/2+40;
+    menuSecGroup.position.x = dim.x-40;
+    menuSecGroup.scale.set(1.0);
+    menuSecGroup.anchor.set(0.5);
+    menuSecGroup
+      .on('mouseover', function() {
+        var self = this;
+        self.scale.set(self.scale.x*1.1);
+      })
+      .on('mouseout', function() {
+        var self = this;
+        self.scale.set(self.scale.x/1.1);
+      })
+      .on('mouseup', function() {
+        console.log('Clicked.');
+        var instance = new AWS_EC2_SecurityGroup('New_Security_Group', dim.x/2, dim.y/2);
+        self.elements.add(instance);
+      });
+    self.stage.addChild(menuSecGroup);
+  };
 
   self.init = function() {
     self.gridOn();
