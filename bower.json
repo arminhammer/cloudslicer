@@ -11,7 +11,8 @@
     "mithril": "~0.2.0",
     "modernizr": "~2.8.1",
     "pixi.js": "~3.0.7",
-    "tween.js": "tweenjs#*"
+    "tween.js": "tweenjs#*",
+    "stats.js": "*"
   },
   "overrides": {
     "bootstrap-sass": {

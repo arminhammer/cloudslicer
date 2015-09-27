@@ -13,12 +13,37 @@ var EditorManager = function(template) {
 
   var self = this;
 
+  var fpsStats = new Stats();
+  fpsStats.setMode(0);
+  // align top-left
+  fpsStats.domElement.style.position = 'absolute';
+  fpsStats.domElement.style.left = '0px';
+  fpsStats.domElement.style.top = '0px';
+  document.body.appendChild( fpsStats.domElement );
+
+  var msStats = new Stats();
+  msStats.setMode(1);
+  // align top-left
+  msStats.domElement.style.position = 'absolute';
+  msStats.domElement.style.left = '80px';
+  msStats.domElement.style.top = '0px';
+  document.body.appendChild( msStats.domElement );
+
+  var mbStats = new Stats();
+  mbStats.setMode(2);
+  // align top-left
+  mbStats.domElement.style.position = 'absolute';
+  mbStats.domElement.style.left = '160px';
+  mbStats.domElement.style.top = '0px';
+  document.body.appendChild( mbStats.domElement );
+
+
   fps = 60;
   var now;
   var then = Date.now();
   var interval = 1000/fps;
   var delta;
-  var meter = new FPSMeter();
+  //var meter = new FPSMeter();
   var winDimension = GuiUtil.getWindowDimension();
   var grid = null;
 
@@ -43,21 +68,31 @@ var EditorManager = function(template) {
     }
   });
 
+  self.securitygroups = new Collection();
   self.elements = new Collection();
 
   self.animate = function(time) {
-    requestAnimationFrame(self.animate);
 
     now = Date.now();
     delta = now - then;
 
     if (delta > interval) {
+      fpsStats.begin();
+      msStats.begin();
+      mbStats.begin();
+
       then = now - (delta % interval);
-      meter.tick();
+      //meter.tick();
 
       TWEEN.update(time);
       self.renderer.render(self.stage);
+
+      fpsStats.end();
+      msStats.end();
+      mbStats.end();
     }
+
+    requestAnimationFrame(self.animate);
   };
 
   self.gridOn = function() {
@@ -135,7 +170,7 @@ var EditorManager = function(template) {
     });
 
     _.each(secgroups, function(s, key) {
-      self.elements.add(s);
+      self.securitygroups.add(s);
     });
 
     _.each(comboInstances, function(combo, key) {
@@ -153,6 +188,7 @@ var EditorManager = function(template) {
     console.log('Children:');
     console.log(self.elements.children);
 
+    self.stage.addChild(self.securitygroups);
     self.stage.addChild(self.elements);
     console.log(self.stage.children);
 
@@ -206,7 +242,7 @@ var EditorManager = function(template) {
       .on('mouseup', function() {
         console.log('Clicked.');
         var instance = new AWS_EC2_SecurityGroup('New_Security_Group', dim.x/2, dim.y/2);
-        self.elements.add(instance);
+        self.securitygroups.add(instance);
       });
     self.stage.addChild(menuSecGroup);
   };
