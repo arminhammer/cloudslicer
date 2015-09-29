@@ -68,8 +68,48 @@ var EditorManager = function(template) {
     }
   });
 
+  self.stage.MANAGER = self;
+
   self.securitygroups = new Collection();
   self.elements = new Collection();
+
+  var collisionmanager = function() {
+
+    var collSelf = this;
+
+    collSelf.secGroupVsElements = function() {
+      var secGrps = self.securitygroups;
+      var elems = self.elements;
+
+      _.each(secGrps.elements, function(s) {
+
+        _.each(elems.elements, function(e) {
+
+          var xdist = s.position.x - e.position.x;
+
+          if(xdist > -s.width/2 && xdist < s.width/2)
+          {
+            var ydist = s.position.y - e.position.y;
+
+            if(ydist > -s.height/2 && ydist < s.height/2)
+            {
+              //  console.log('Collision detected!');
+            }
+          }
+
+        });
+
+      });
+
+    };
+
+    collSelf.update = function() {
+      collSelf.secGroupVsElements();
+    };
+
+  };
+
+  self.CollisionManager = new collisionmanager();
 
   self.animate = function(time) {
 
@@ -80,6 +120,8 @@ var EditorManager = function(template) {
       fpsStats.begin();
       msStats.begin();
       mbStats.begin();
+
+      //self.CollisionManager.update();
 
       then = now - (delta % interval);
       //meter.tick();
