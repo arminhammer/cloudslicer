@@ -49,7 +49,7 @@ var EditorManager = function(template) {
 
   self.renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
 
-  self.stage = new PIXI.Stage();
+  self.stage = new PIXI.Container();
   self.stage.name = 'stage';
   self.stage.selected = null;
   self.stage.clickedOnlyStage = true;

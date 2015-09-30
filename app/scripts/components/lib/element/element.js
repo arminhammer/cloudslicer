@@ -2,33 +2,31 @@
  * Created by arming on 9/15/15.
  */
 
-var DragDrop = require('./../../drag.drop.js');
+var Component = require('../component/component');
+var ElementDragDrop = require('./element.drag.drop');
 
 var DEFAULT_SCALE = 0.7;
 
 var Element = function() {
-  PIXI.Sprite.call(this);
+  Component.call(this);
   var self = this;
 
   self.scale.set(DEFAULT_SCALE);
-  self.anchor.set(0.5);
-  self.interactive = true;
-  self.buttonMode = true;
   self
     // events for drag start
-    .on('mousedown', DragDrop.onDragStart)
-    .on('touchstart', DragDrop.onDragStart)
+    .on('mousedown', ElementDragDrop.onDragStart)
+    .on('touchstart', ElementDragDrop.onDragStart)
     // events for drag end
-    .on('mouseup', DragDrop.onDragEnd)
-    .on('mouseupoutside', DragDrop.onDragEnd)
-    .on('touchend', DragDrop.onDragEnd)
-    .on('touchendoutside', DragDrop.onDragEnd)
+    .on('mouseup', ElementDragDrop.onDragEnd)
+    .on('mouseupoutside', ElementDragDrop.onDragEnd)
+    .on('touchend', ElementDragDrop.onDragEnd)
+    .on('touchendoutside', ElementDragDrop.onDragEnd)
     // events for drag move
-    .on('mousemove', DragDrop.onDragMove)
-    .on('touchmove', DragDrop.onDragMove)
+    .on('mousemove', ElementDragDrop.onDragMove)
+    .on('touchmove', ElementDragDrop.onDragMove)
     // events for mouse over
-    .on('mouseover', DragDrop.onMouseOver)
-    .on('mouseout', DragDrop.onMouseOut);
+    .on('mouseover', ElementDragDrop.onMouseOver)
+    .on('mouseout', ElementDragDrop.onMouseOut);
 
   self.arrows = [];
 
@@ -41,6 +39,6 @@ var Element = function() {
   };
 
 };
-Element.prototype = Object.create(PIXI.Sprite.prototype);
+Element.prototype = Object.create(Component.prototype);
 
 module.exports = Element;

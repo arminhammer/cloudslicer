@@ -2,12 +2,13 @@
  * Created by arming on 9/15/15.
  */
 
-var DragDrop = require('./../../drag.drop.js');
+var Component = require('../component/component');
+var GroupDragDrop = require('./group.drag.drop');
 
 var DEFAULT_SCALE = 0.7;
 
-var Element = function() {
-  PIXI.Sprite.call(this);
+var Group = function() {
+  Component.call(this);
   var self = this;
 
   self.scale.set(DEFAULT_SCALE);
@@ -16,19 +17,19 @@ var Element = function() {
   self.buttonMode = true;
   self
     // events for drag start
-    .on('mousedown', DragDrop.onDragStart)
-    .on('touchstart', DragDrop.onDragStart)
+    .on('mousedown', GroupDragDrop.onDragStart)
+    .on('touchstart', GroupDragDrop.onDragStart)
     // events for drag end
-    .on('mouseup', DragDrop.onDragEnd)
-    .on('mouseupoutside', DragDrop.onDragEnd)
-    .on('touchend', DragDrop.onDragEnd)
-    .on('touchendoutside', DragDrop.onDragEnd)
+    .on('mouseup', GroupDragDrop.onDragEnd)
+    .on('mouseupoutside', GroupDragDrop.onDragEnd)
+    .on('touchend', GroupDragDrop.onDragEnd)
+    .on('touchendoutside', GroupDragDrop.onDragEnd)
     // events for drag move
-    .on('mousemove', DragDrop.onDragMove)
-    .on('touchmove', DragDrop.onDragMove)
+    .on('mousemove', GroupDragDrop.onDragMove)
+    .on('touchmove', GroupDragDrop.onDragMove)
     // events for mouse over
-    .on('mouseover', DragDrop.onMouseOver)
-    .on('mouseout', DragDrop.onMouseOut);
+    .on('mouseover', GroupDragDrop.onMouseOver)
+    .on('mouseout', GroupDragDrop.onMouseOut);
 
   self.arrows = [];
 
@@ -41,6 +42,6 @@ var Element = function() {
   };
 
 };
-Element.prototype = Object.create(PIXI.Sprite.prototype);
+Group.prototype = Object.create(Component.prototype);
 
-module.exports = Element;
+module.exports = Group;

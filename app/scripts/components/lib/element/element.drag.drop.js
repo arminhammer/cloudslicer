@@ -4,7 +4,7 @@
 
 var MOUSE_OVER_SCALE_RATIO = 1.1;
 
-var DragDrop = {
+var ElementDragDrop = {
 
   onDragStart: function(event) {
     console.log();
@@ -88,9 +88,6 @@ var DragDrop = {
     var iconSize = 10;
 
     var global = self.toGlobal(self.position);
-    //console.log('official: ' + self.position.x + ':' + self.position.y);
-    //console.log('GLOBAL: ' + global.x + ':' + global.y);
-    //console.log(self.getLocalBounds());
 
     var scaleLocations = [
       {x: 0, y: 0-self.getLocalBounds().height/2-iconSize/2, size: iconSize},
@@ -196,8 +193,7 @@ var DragDrop = {
     console.log('Resizing!');
   }
 
-
 };
 
-module.exports = DragDrop;
+module.exports = ElementDragDrop;
 

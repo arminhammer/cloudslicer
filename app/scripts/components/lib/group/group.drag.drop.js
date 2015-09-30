@@ -22,36 +22,6 @@ var DragDrop = {
       this.dragging = false;
       this.moved = false;
       this.data = null;
-
-      if(!this.securityGroup) {
-
-          //console.log('Parent');
-        //console.log(self.parent.parent.MANAGER);
-          var secGrps = self.parent.parent.MANAGER.securitygroups;
-
-          _.each(secGrps.elements, function(s) {
-
-              var xdist = s.position.x - self.position.x;
-
-              if(xdist > -s.width/2 && xdist < s.width/2)
-              {
-                var ydist = s.position.y - self.position.y;
-
-                if(ydist > -s.height/2 && ydist < s.height/2)
-                {
-                    console.log('Collision detected!');
-                  self.position.x = 0;
-                  self.position.y = 0;
-                  self.securityGroup = s;
-                    s.addChild(self);
-                  console.log(self);
-                  console.log(s);
-                }
-              }
-
-          });
-
-      }
     }
     else {
       console.log('Found click while NOT dragging');

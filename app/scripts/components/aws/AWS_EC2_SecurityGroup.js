@@ -2,10 +2,10 @@
  * Created by arminhammer on 9/21/15.
  */
 
-var Element = require('../lib/element/element');
+var Group = require('../lib/group/group');
 
 var AWS_EC2_SecurityGroup = function(name,x,y) {
-  Element.call(this);
+  Group.call(this);
 
   var self = this;
   self.name = name;
@@ -21,6 +21,6 @@ var AWS_EC2_SecurityGroup = function(name,x,y) {
   self.position.y = y;
 
 };
-AWS_EC2_SecurityGroup.prototype = Object.create(Element.prototype);
+AWS_EC2_SecurityGroup.prototype = Object.create(Group.prototype);
 
 module.exports = AWS_EC2_SecurityGroup;
