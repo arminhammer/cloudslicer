@@ -5,7 +5,7 @@
 'use strict';
 
 var GuiUtil = require('./gui.util');
-var Element = require('./element');
+var Element = require('./lib/element/element');
 //var Arrow = require('./arrow');
 var EditorManager = require('./EditorManager');
 
@@ -39,7 +39,7 @@ var PixiEditor = {
 
     console.log('Adding listener...');
     $(window).resize(function() {
-      resizeGuiContainer(renderer);
+      resizeGuiContainer(MANAGER.renderer);
     });
 
     return {

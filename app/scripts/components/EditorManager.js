@@ -3,7 +3,7 @@
  */
 
 var GuiUtil = require('./gui.util');
-var Collection = require('./collection');
+var Collection = require('./lib/collection/collection');
 var AWS_Users = require('./aws/AWS_Users');
 var AWS_EC2_Instance = require('./aws/AWS_EC2_Instance');
 var AWS_EC2_EIP = require('./aws/AWS_EC2_EIP');

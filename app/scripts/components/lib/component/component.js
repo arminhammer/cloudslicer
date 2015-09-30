@@ -2,15 +2,10 @@
  * Created by arming on 9/15/15.
  */
 
-var DragDrop = require('./drag.drop');
-
-var DEFAULT_SCALE = 0.7;
-
-var Element = function() {
+var Component = function() {
   PIXI.Sprite.call(this);
   var self = this;
 
-  self.scale.set(DEFAULT_SCALE);
   self.anchor.set(0.5);
   self.interactive = true;
   self.buttonMode = true;
@@ -30,17 +25,7 @@ var Element = function() {
     .on('mouseover', DragDrop.onMouseOver)
     .on('mouseout', DragDrop.onMouseOut);
 
-  self.arrows = [];
-
-  self.addArrowTo = function(b) {
-    self.arrows.push(b);
-  };
-
-  self.removeArrowTo = function(index) {
-    self.arrows.remove(index);
-  };
-
 };
-Element.prototype = Object.create(PIXI.Sprite.prototype);
+Component.prototype = Object.create(PIXI.Sprite.prototype);
 
-module.exports = Element;
+module.exports = Component;

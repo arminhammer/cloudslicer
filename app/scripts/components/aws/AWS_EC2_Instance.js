@@ -2,7 +2,7 @@
  * Created by arminhammer on 9/19/15.
  */
 
-var Element = require('../element');
+var Element = require('../lib/element/element');
 var DragDrop = require('../drag.drop');
 
 var AWS_EC2_Instance = function(name,x,y) {

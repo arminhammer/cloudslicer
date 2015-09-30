@@ -2,7 +2,7 @@
  * Created by arminhammer on 9/21/15.
  */
 
-var Element = require('../element');
+var Element = require('../lib/element/element');
 
 var AWS_EC2_SecurityGroup = function(name,x,y) {
   Element.call(this);
