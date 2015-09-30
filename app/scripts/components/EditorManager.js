@@ -234,15 +234,27 @@ var EditorManager = function(template) {
     self.stage.addChild(self.elements);
     console.log(self.stage.children);
 
-    var menuSprite = new PIXI.Sprite();
-    menuSprite.texture = PIXI.Texture.fromFrame('Compute_&_Networking_Amazon_EC2_Instance.png');
-    menuSprite.scale.set(0.2);
-    menuSprite.y = dim.y/2;
-    menuSprite.x = dim.x-40;
-    menuSprite.interactive = true;
-    menuSprite.buttonMode = true;
-    menuSprite.anchor.set(0.5);
-    menuSprite
+    var menu = self.drawComponentMenu();
+    self.stage.addChild(menu);
+  };
+
+  self.init = function() {
+    self.gridOn();
+    PIXI.loader
+      .add('../resources/sprites/sprites.json')
+      .load(self.onLoaded);
+  };
+
+  function buildMenuComponent(x,y, texture, scale, mouseUpCallback) {
+    var menuComponent = new PIXI.Sprite();
+    menuComponent.texture = texture;
+    menuComponent.scale.set(scale);
+    menuComponent.x = x;
+    menuComponent.y = y;
+    menuComponent.interactive = true;
+    menuComponent.buttonMode = true;
+    menuComponent.anchor.set(0.5);
+    menuComponent
       .on('mouseover', function() {
         var self = this;
         self.scale.set(self.scale.x*1.2);
@@ -251,49 +263,41 @@ var EditorManager = function(template) {
         var self = this;
         self.scale.set(self.scale.x/1.2);
       })
-      .on('mouseup', function() {
-        console.log('Clicked.');
-        var instance = new AWS_EC2_Instance('New_Instance', dim.x/2, dim.y/2);
-        self.elements.add(instance);
+      .on('mouseup', mouseUpCallback);
+    return menuComponent;
+  }
+
+  self.drawComponentMenu = function() {
+
+    var dim = GuiUtil.getWindowDimension();
+    var container = new PIXI.Container();
+
+    var menu = {};
+    var xoffset = dim.x-40;
+    var yoffset = dim.y/2;
+
+    menu.instance = buildMenuComponent(xoffset, yoffset, PIXI.Texture.fromFrame('Compute_&_Networking_Amazon_EC2_Instance.png'), 0.2,
+      function() {
+        self.elements.add(new AWS_EC2_Instance('New_Instance', dim.x/2, dim.y/2));
       });
-    self.stage.addChild(menuSprite);
 
-    var menuSecGroup = new PIXI.Sprite();
-    var menuGraphic = new PIXI.Graphics();
-    menuGraphic.lineStyle(3, 0x000000, 1);
-    menuGraphic.beginFill(0xFFFFFF, 1);
-    menuGraphic.drawRoundedRect(0,0,30,30,6);
-    menuGraphic.endFill();
-    menuSecGroup.texture = menuGraphic.generateTexture();
+    container.addChild(menu.instance);
 
-    menuSecGroup.interactive = true;
-    menuSecGroup.buttonMode = true;
-    menuSecGroup.position.y = dim.y/2+40;
-    menuSecGroup.position.x = dim.x-40;
-    menuSecGroup.scale.set(1.0);
-    menuSecGroup.anchor.set(0.5);
-    menuSecGroup
-      .on('mouseover', function() {
-        var self = this;
-        self.scale.set(self.scale.x*1.1);
-      })
-      .on('mouseout', function() {
-        var self = this;
-        self.scale.set(self.scale.x/1.1);
-      })
-      .on('mouseup', function() {
-        console.log('Clicked.');
-        var instance = new AWS_EC2_SecurityGroup('New_Security_Group', dim.x/2, dim.y/2);
-        self.securitygroups.add(instance);
+    var secGrpGraphic = new PIXI.Graphics();
+    secGrpGraphic.lineStyle(3, 0x000000, 1);
+    secGrpGraphic.beginFill(0xFFFFFF, 1);
+    secGrpGraphic.drawRoundedRect(0,0,30,30,6);
+    secGrpGraphic.endFill();
+
+    menu.secgrp = buildMenuComponent(xoffset, yoffset+40, secGrpGraphic.generateTexture(), 1.0,
+      function() {
+        self.securitygroups.add(new AWS_EC2_SecurityGroup('New_Security_Group', dim.x/2, dim.y/2));
       });
-    self.stage.addChild(menuSecGroup);
-  };
 
-  self.init = function() {
-    self.gridOn();
-    PIXI.loader
-      .add('../resources/sprites/sprites.json')
-      .load(self.onLoaded);
+    container.addChild(menu.secgrp);
+
+    return container;
+
   }
 
 };
