@@ -46,10 +46,10 @@ var EditorManager = function(template) {
   var interval = 1000/fps;
   var delta;
   //var meter = new FPSMeter();
-  var winDimension = GuiUtil.getWindowDimension();
+  self.winDimension = GuiUtil.getWindowDimension();
   var grid = null;
 
-  self.renderer = PIXI.autoDetectRenderer(winDimension.x, winDimension.y, {backgroundColor : 0xFFFFFF});
+  self.renderer = PIXI.autoDetectRenderer(self.winDimension.x, self.winDimension.y, {backgroundColor : 0xFFFFFF});
 
   self.stage = new PIXI.Container();
   self.stage.name = 'stage';
@@ -75,6 +75,7 @@ var EditorManager = function(template) {
   self.securitygroups = new Collection();
   self.elements = new Collection();
 
+  /*
   var collisionmanager = function() {
 
     var collSelf = this;
@@ -112,6 +113,7 @@ var EditorManager = function(template) {
   };
 
   self.CollisionManager = new collisionmanager();
+  */
 
   self.animate = function(time) {
 
@@ -140,7 +142,7 @@ var EditorManager = function(template) {
   };
 
   self.gridOn = function() {
-    grid = GuiUtil.drawGrid(winDimension.x, winDimension.y);
+    grid = GuiUtil.drawGrid(self.winDimension.x, self.winDimension.y);
     self.stage.addChild(grid);
   };
 
@@ -149,17 +151,8 @@ var EditorManager = function(template) {
     self.grid = null;
   };
 
-  self.onLoaded = function() {
-    console.log('Assets loaded');
-
-    var dim = GuiUtil.getWindowDimension();
-    console.log(self.elements.position);
-
-    var users = new AWS_Users('users', dim.x/2, 100);
-    console.log(users.position);
-    self.elements.add(users);
-
-    console.log(template.Resources);
+  self.processTemplate = function() {
+    //console.log(template.Resources);
 
     var groupings = _.reduce(template.Resources, function(result, n, key) {
       result[n.Type] = {};
@@ -171,21 +164,21 @@ var EditorManager = function(template) {
 
     var instances = {};
     _.each(groupings['AWS::EC2::Instance'], function(n, key) {
-      var instance = new AWS_EC2_Instance(key, dim.x/2, 400);
+      var instance = new AWS_EC2_Instance(key, self.winDimension.x/2, 400);
       instances[key] = instance;
     });
 
     var eips = {};
     _.each(groupings['AWS::EC2::EIP'], function(n, key) {
       console.log('Adding EIP ', key);
-      var eip = new AWS_EC2_EIP(key, dim.x/2, 500);
+      var eip = new AWS_EC2_EIP(key, self.winDimension.x/2, 500);
       eips[key] = eip;
     });
 
     var secgroups = {};
     _.each(groupings['AWS::EC2::SecurityGroup'], function(n, key) {
       console.log('Adding Security Group ', key);
-      var secgroup = new AWS_EC2_SecurityGroup(key, dim.x/2, 500);
+      var secgroup = new AWS_EC2_SecurityGroup(key, self.winDimension.x/2, 500);
       secgroups[key] = secgroup;
     });
 
@@ -235,6 +228,18 @@ var EditorManager = function(template) {
     self.stage.addChild(self.securitygroups);
     self.stage.addChild(self.elements);
     console.log(self.stage.children);
+  };
+
+  self.onLoaded = function() {
+    console.log('Assets loaded');
+
+    self.processTemplate();
+    console.log('Processed template');
+    console.log(self.elements.position);
+
+    var users = new AWS_Users('users', self.winDimension.x/2, 100);
+    console.log(users.position);
+    self.elements.add(users);
 
     //var menu = self.drawComponentMenu();
     var menu = new Menu(self);
