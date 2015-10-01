@@ -4,6 +4,8 @@
 
 var GuiUtil = require('./gui.util');
 var Collection = require('./lib/collection/collection');
+var Menu = require('./menu');
+
 var AWS_Users = require('./aws/AWS_Users');
 var AWS_EC2_Instance = require('./aws/AWS_EC2_Instance');
 var AWS_EC2_EIP = require('./aws/AWS_EC2_EIP');
@@ -234,7 +236,8 @@ var EditorManager = function(template) {
     self.stage.addChild(self.elements);
     console.log(self.stage.children);
 
-    var menu = self.drawComponentMenu();
+    //var menu = self.drawComponentMenu();
+    var menu = new Menu(self);
     self.stage.addChild(menu);
   };
 
@@ -244,61 +247,6 @@ var EditorManager = function(template) {
       .add('../resources/sprites/sprites.json')
       .load(self.onLoaded);
   };
-
-  function buildMenuComponent(x,y, texture, scale, mouseUpCallback) {
-    var menuComponent = new PIXI.Sprite();
-    menuComponent.texture = texture;
-    menuComponent.scale.set(scale);
-    menuComponent.x = x;
-    menuComponent.y = y;
-    menuComponent.interactive = true;
-    menuComponent.buttonMode = true;
-    menuComponent.anchor.set(0.5);
-    menuComponent
-      .on('mouseover', function() {
-        var self = this;
-        self.scale.set(self.scale.x*1.2);
-      })
-      .on('mouseout', function() {
-        var self = this;
-        self.scale.set(self.scale.x/1.2);
-      })
-      .on('mouseup', mouseUpCallback);
-    return menuComponent;
-  }
-
-  self.drawComponentMenu = function() {
-
-    var dim = GuiUtil.getWindowDimension();
-    var container = new PIXI.Container();
-
-    var menu = {};
-    var xoffset = dim.x-40;
-    var yoffset = dim.y/2;
-
-    menu.instance = buildMenuComponent(xoffset, yoffset, PIXI.Texture.fromFrame('Compute_&_Networking_Amazon_EC2_Instance.png'), 0.2,
-      function() {
-        self.elements.add(new AWS_EC2_Instance('New_Instance', dim.x/2, dim.y/2));
-      });
-
-    container.addChild(menu.instance);
-
-    var secGrpGraphic = new PIXI.Graphics();
-    secGrpGraphic.lineStyle(3, 0x000000, 1);
-    secGrpGraphic.beginFill(0xFFFFFF, 1);
-    secGrpGraphic.drawRoundedRect(0,0,30,30,6);
-    secGrpGraphic.endFill();
-
-    menu.secgrp = buildMenuComponent(xoffset, yoffset+40, secGrpGraphic.generateTexture(), 1.0,
-      function() {
-        self.securitygroups.add(new AWS_EC2_SecurityGroup('New_Security_Group', dim.x/2, dim.y/2));
-      });
-
-    container.addChild(menu.secgrp);
-
-    return container;
-
-  }
 
 };
 

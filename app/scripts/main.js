@@ -3,7 +3,7 @@
 var SourceEditor = require('./components/source.editor');
 var PixiEditor = require('./components/pixi.editor');
 
-var testData = require('./testData/ec2.json');
+var testData = require('./testData/empty.json');
 
 var template = m.prop(testData);
 
