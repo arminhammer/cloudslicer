@@ -43,11 +43,15 @@ var PixiEditor = {
     });
 
     return {
-      template: options.template,
+      //template: options.template,
 
       drawCanvasEditor: function (element, isInitialized, context) {
 
         if (isInitialized) {
+          if(MANAGER.template != options.template) {
+            console.log('We noticed a template change!');
+            MANAGER.processTemplate();
+          }
           MANAGER.animate();
           return;
         }

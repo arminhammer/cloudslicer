@@ -47,6 +47,7 @@ var EditorManager = function(template) {
   var delta;
   //var meter = new FPSMeter();
   self.winDimension = GuiUtil.getWindowDimension();
+  self.template = template;
   var grid = null;
 
   self.renderer = PIXI.autoDetectRenderer(self.winDimension.x, self.winDimension.y, {backgroundColor : 0xFFFFFF});
